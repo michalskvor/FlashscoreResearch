@@ -1,0 +1,98 @@
+/* NavigationTopbar Component CSS */
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+}
+
+/* Navigation Topbar */
+.nav-topbar {
+    width: 100%;
+    background-color: #00141E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 8px 0;
+}
+
+.nav-topbar__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    width: 100%;
+    max-width: 1148px;
+}
+
+/* SEO Text */
+.nav-topbar__seo {
+    width: 100%;
+}
+
+.nav-topbar__seo p {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #FFFFFF;
+}
+
+/* Banner */
+.nav-topbar__banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-topbar__banner-ad {
+    width: 970px;
+    height: 90px;
+    overflow: hidden;
+}
+
+.nav-topbar__banner-ad img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.nav-topbar__banner-label {
+    width: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-topbar__banner-label span {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 10px;
+    line-height: 12px;
+    color: #EEEEEE;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    width: 65px;
+    text-align: center;
+}
+
+/* Design System Notes */
+/*
+- Background color: #00141E (dark navigation)
+- Text color: #FFFFFF (white)
+- Label color: #EEEEEE (light grey)
+- Max width: 1148px (centered)
+- Padding: 8px vertical
+- Gap: 8px between elements
+- SEO text: 12px bold, 14px line-height
+- Banner: 970x90px
+- Label: 10px, rotated -90deg
+- All spacing values are even numbers (8px grid)
+*/

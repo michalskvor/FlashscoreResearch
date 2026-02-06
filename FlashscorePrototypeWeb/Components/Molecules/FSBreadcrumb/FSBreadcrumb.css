@@ -1,0 +1,152 @@
+/* FSBreadcrumb Component CSS */
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+}
+
+/* Breadcrumb Container */
+.fs-breadcrumb {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Boxed Variant - White background with padding */
+
+.fs-breadcrumb--boxed .fs-breadcrumb__items {
+    padding: 16px;
+}
+
+/* Items Container */
+.fs-breadcrumb__items {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+/* Not boxed variant padding */
+.fs-breadcrumb:not(.fs-breadcrumb--boxed) .fs-breadcrumb__items {
+    padding: 12px 0;
+}
+
+/* Breadcrumb Item */
+.fs-breadcrumb__item {
+    display: flex;
+    align-items: center;
+    height: 14px;
+}
+
+/* Base type - no icon, just text */
+.fs-breadcrumb__item--base {
+    gap: 0;
+}
+
+/* Sport, Tournament, Country types - with icon/flag */
+.fs-breadcrumb__item--sport,
+.fs-breadcrumb__item--tournament,
+.fs-breadcrumb__item--country {
+    gap: 8px;
+}
+
+/* Item Icon Container (Sport & Tournament) */
+.fs-breadcrumb__item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.fs-breadcrumb__item-icon svg {
+    width: 14px;
+    height: 14px;
+    display: block;
+}
+
+/* Item Flag Container (Country) */
+.fs-breadcrumb__item-flag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.fs-breadcrumb__item-flag svg {
+    width: 14px;
+    height: auto;
+    display: block;
+}
+
+/* Breadcrumb Text */
+.fs-breadcrumb__text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #555E61;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Breadcrumb Separator (Chevron) */
+.fs-breadcrumb__separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+}
+
+.fs-breadcrumb__separator svg {
+    width: 10px;
+    height: 10px;
+    display: block;
+}
+
+/* Divider - Only for boxed variant */
+.fs-breadcrumb__divider {
+    width: 100%;
+    height: 1px;
+    background-color: #EEEEEE;
+    flex-shrink: 0;
+}
+
+/* Design System Notes */
+/*
+- Font: Livesport Finder LCGJK Bold (700 weight)
+- Font size: 12px
+- Line height: 14px
+- Text color: #555E61
+- Separator icon color: #999999
+- Separator icon size: 10px
+- Item icon/flag size: 14px
+- Sport icon color: #555E61
+- Tournament icon color: #E31E24
+- Gap between icon and text: 8px
+- Gap between items: 8px
+- Boxed padding: 16px
+- Not boxed padding: 12px 0
+- Divider: 1px solid #EEEEEE (boxed variant only)
+- Text transform: uppercase
+
+Item Types:
+- Base: Text only, no icon
+- Sport: 14px sport icon + text (icon color #555E61)
+- Tournament: 14px tournament icon + text (icon color #E31E24)
+- Country: 14px flag + text
+*/

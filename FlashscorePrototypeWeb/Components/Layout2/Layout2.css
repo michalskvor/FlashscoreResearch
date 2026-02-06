@@ -1,0 +1,383 @@
+/* Layout2 Template CSS - Desktop 1440px Viewport */
+
+/* Global Reset & Box Model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    color: #001E28;
+    background-color: #EEEEEE;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation Container - Full Width, 277px Height */
+.layout2-nav-container {
+    width: 100%;
+    height: auto;
+    background-color: #00141E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.layout2-nav-inner {
+    flex: 1 0 0;
+    max-width: 1188px;
+    background-color: #00141E;
+}
+
+/* Main Wrapper - Max Width 1188px, Centered */
+.layout2-wrapper {
+    width: 100%;
+    max-width: 1188px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Inner Wrapper - Contains the three columns */
+.layout2-inner-wrapper {
+    display: flex;
+    flex: 1 0 0;
+    gap: 0; /* Flush alignment - no gaps between containers */
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 48px;
+}
+
+/* Left Container - 172px Fixed */
+.layout2-left {
+    flex: 0 0 172px;
+    height: 100%;
+    background-color: #EEEEEE;
+    padding: 0 8px;
+}
+
+/* Menu Component */
+.layout2-menu {
+    width: 100%;
+}
+
+.layout2-menu__section {
+    width: 156px;
+    padding-bottom: 32px;
+}
+
+/* Menu Header */
+.layout2-menu__header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 0 12px 8px;
+    border-radius: 4px;
+}
+
+.layout2-menu__header-content {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.layout2-menu__header-icon {
+    display: flex;
+    align-items: center;
+    height: 16px;
+}
+
+.layout2-menu__header-icon svg {
+    width: 14px;
+    height: 14px;
+}
+
+.layout2-menu__header-text {
+    flex: 1;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #001E28;
+    text-transform: uppercase;
+}
+
+.layout2-menu__header-text--no-icon {
+    padding-left: 0;
+}
+
+.layout2-menu__divider {
+    width: 100%;
+    height: 1px;
+    background-color: #DFDFDF;
+}
+
+/* Menu List */
+.layout2-menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.layout2-menu__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 26px;
+    padding: 0 8px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.layout2-menu__item:hover {
+    background-color: #DFDFDF;
+}
+
+.layout2-menu__item-flag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+
+.layout2-menu__item-flag svg {
+    width: 18px;
+    height: 12px;
+}
+
+.layout2-menu__item-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+}
+
+.layout2-menu__item-logo img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.layout2-menu__item-text {
+    flex: 1;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #001E28;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Menu Button */
+.layout2-menu__button {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+    padding: 7px;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.layout2-menu__button:hover {
+    background-color: #DFDFDF;
+}
+
+.layout2-menu__button svg {
+    width: 14px;
+    height: 14px;
+}
+
+.layout2-menu__button span {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #FF0046;
+    text-transform: uppercase;
+}
+
+/* Menu Banner */
+.layout2-menu__banner {
+    padding: 14px 0 12px 8px;
+    position: relative;
+}
+
+.layout2-menu__banner-image {
+    width: 120px;
+    height: 240px;
+    display: block;
+    object-fit: cover;
+}
+
+.layout2-menu__banner-label {
+    text-align: center;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 10px;
+    line-height: 12px;
+    color: #999999;
+    padding: 4px 0;
+}
+
+/* Countries List */
+.layout2-menu__countries {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 6px;
+}
+
+.layout2-menu__country {
+    display: flex;
+    align-items: center;
+    height: 26px;
+    padding-left: 8px;
+    border-radius: 4px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #001E28;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.layout2-menu__country:hover {
+    background-color: #DFDFDF;
+}
+
+/* Main Container - Flexible (fills remaining space) */
+.layout2-main {
+    flex: 1 1 auto;
+    height: 100%;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 0;
+}
+
+.layout2-main__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #001E28;
+    margin-bottom: 16px;
+}
+
+.layout2-main__text {
+    font-size: 14px;
+    color: #555E61;
+    margin-bottom: 24px;
+    line-height: 20px;
+}
+
+.layout2-main__content {
+    background-color: #F5F5F5;
+    border: 1px solid #EEEEEE;
+    border-radius: 8px;
+    padding: 32px;
+    text-align: center;
+    color: #999999;
+    font-size: 14px;
+}
+
+/* Right Container - 328px Fixed */
+.layout2-right {
+    flex: 0 0 328px;
+    height: 100%;
+    background-color: #EEEEEE;
+    padding: 0 14px;
+}
+
+.layout2-right__title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #001E28;
+    margin-bottom: 8px;
+}
+
+.layout2-right__text {
+    font-size: 12px;
+    color: #555E61;
+    line-height: 16px;
+}
+
+/* Banner Component */
+.layout2-banner {
+    width: 300px;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.layout2-banner__image {
+    width: 300px;
+    height: 600px;
+    display: block;
+    object-fit: cover;
+}
+
+.layout2-banner__label {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 10px;
+    line-height: 12px;
+    color: #999999;
+    padding: 4px 0;
+}
+
+/* Footer - Full Width, 277px Height */
+.layout2-footer {
+    width: 100%;
+    height: 277px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.layout2-footer__content {
+    text-align: center;
+    color: #555E61;
+    font-size: 14px;
+}
+
+/* Design System Compliance Notes */
+/*
+- All spacing values are even numbers (8px grid: 8, 16, 24, 32, 48, etc.)
+- All colors use HEX values only
+- Navigation height: 277px
+- Footer height: 277px
+- Content max-width: 1188px (centered)
+- Left container: 172px (fixed)
+- Right container: 328px (fixed)
+- Main container: flexible (fills remaining space)
+- Main container border-radius: 8px
+- Background: #EEEEEE
+- Navigation/Footer specific backgrounds as per design
+*/

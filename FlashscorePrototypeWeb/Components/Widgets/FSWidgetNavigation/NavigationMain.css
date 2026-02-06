@@ -1,0 +1,212 @@
+/* NavigationMain Component CSS */
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+}
+
+/* Navigation Main */
+.nav-main {
+    width: 100%;
+    background-color: #001E28;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.nav-main__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1188px;
+    height: 88px;
+    padding: 0 16px;
+}
+
+/* Left Content */
+.nav-main__left {
+    display: flex;
+    align-items: center;
+    gap: 68px;
+    flex: 1;
+}
+
+/* Logo */
+.nav-main__logo {
+    width: 225px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-main__logo img {
+    width: 191.666px;
+    height: 31.166px;
+}
+
+/* Nav Items */
+.nav-main__items {
+    display: flex;
+    align-items: center;
+}
+
+.nav-main__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 88px;
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav-main__item--active {
+    background-color: #00141E;
+}
+
+.nav-main__item-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 20px;
+    height: 100%;
+}
+
+.nav-main__item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+.nav-main__item-icon img {
+    width: 20px;
+    height: 20px;
+    display: block;
+    filter: brightness(0) invert(1);
+}
+
+.nav-main__item-text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #C8CDCD;
+}
+
+.nav-main__item--active .nav-main__item-text {
+    color: #FFFFFF;
+}
+
+.nav-main__item-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #FF0046;
+    border-radius: 2px 2px 0 0;
+}
+
+/* Right Buttons */
+.nav-main__buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-main__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 40px;
+    padding: 11px;
+    background-color: #0F2D37;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-main__button:hover {
+    background-color: #1A3D47;
+}
+
+.nav-main__button img {
+    width: 18px;
+    height: 18px;
+    display: block;
+    filter: brightness(0) invert(1);
+}
+
+.nav-main__button--with-text span {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+/* Pulsing Icon */
+.nav-main__button-pulse {
+    position: absolute;
+    bottom: 9px;
+    right: 9px;
+    width: 5px;
+    height: 5px;
+    background-color: #FF0046;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 70, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 5px rgba(255, 0, 70, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 70, 0);
+    }
+}
+
+/* Design System Notes */
+/*
+- Background color: #001E28 (main navigation)
+- Active background: #00141E (darker shade)
+- Button background: #0F2D37
+- Text color active: #FFFFFF (white)
+- Text color inactive: #C8CDCD (grey)
+- Active underline: #FF0046 (brand)
+- Height: 88px
+- Max width: 1188px (centered)
+- Padding: 16px horizontal
+- Logo container: 225px width
+- Gap between logo and nav: 68px
+- Nav item padding: 20px horizontal
+- Gap between icon and text: 8px
+- Button padding: 11px
+- Button border radius: 8px
+- Font: Livesport Finder LCGJK Bold
+- Font size: 13px
+- Line height: 16px
+- Text transform: uppercase
+- All spacing values are even numbers (8px grid)
+*/

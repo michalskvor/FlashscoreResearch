@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSBreadcrumb - Molecule Component</title>
+    <link rel="stylesheet" href="FSBreadcrumb.css">
+</head>
+<body>
+    <div style="padding: 24px; background-color: #F5F5F5;">
+        <h1 style="margin-bottom: 24px; font-size: 24px;">FSBreadcrumb Component - Item Types</h1>
+
+        <!-- Item Types Examples -->
+        <div style="margin-bottom: 24px;">
+            <h2 style="margin-bottom: 16px; font-size: 16px;">Item Types</h2>
+            <div class="fs-breadcrumb fs-breadcrumb--boxed">
+                <div class="fs-breadcrumb__items">
+                    <!-- Base type - no icon -->
+                    <div class="fs-breadcrumb__item fs-breadcrumb__item--base">
+                        <span class="fs-breadcrumb__text">Base</span>
+                    </div>
+                    <div class="fs-breadcrumb__separator">
+                        <svg width="10" height="10" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#999999"/>
+                        </svg>
+                    </div>
+                    <!-- Sport type - with sport icon -->
+                    <div class="fs-breadcrumb__item fs-breadcrumb__item--sport">
+                        <div class="fs-breadcrumb__item-icon">
+                            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.0064 2.93437C13.1159 -0.956071 6.80828 -0.956071 2.91783 2.93437C-0.972611 6.82482 -0.972611 13.1325 2.91783 17.0229C5.43451 19.5396 9.10265 20.5225 12.5405 19.6013C15.9783 18.6801 18.6636 15.9949 19.5848 12.557C20.5059 9.11919 19.5231 5.45105 17.0064 2.93437ZM17.4117 5.69926C18.0188 6.75267 18.3929 7.92406 18.5087 9.13438L16.6652 8.0985L17.4117 5.69926ZM16.0377 3.90613C16.1667 4.03514 16.2904 4.16796 16.4102 4.30308L15.2995 7.86949L13.9697 8.26796L10.6491 5.85651V4.50384L13.8094 2.29697C14.6325 2.71078 15.3838 3.25408 16.0346 3.90613H16.0377ZM9.96211 1.39086C10.7392 1.38999 11.5129 1.49424 12.2621 1.70079L9.96211 3.30384L7.66211 1.70079C8.41129 1.49424 9.18497 1.38999 9.96211 1.39086ZM3.89341 3.90613C4.543 3.25414 5.29299 2.71059 6.11478 2.29621L9.27509 4.50384V5.85651L5.95448 8.26949L4.62852 7.86949L3.51707 4.30308C3.63692 4.16796 3.76058 4.03514 3.89341 3.90613ZM2.51936 5.69926L3.26593 8.09544L1.41554 9.13132C1.53173 7.92206 1.90579 6.75175 2.51249 5.69926H2.51936ZM3.89341 16.0512C3.81707 15.9748 3.74684 15.8985 3.67509 15.8222H5.68883L6.34073 17.768C5.43101 17.3429 4.60272 16.7619 3.89341 16.0512ZM5.90257 14.4481H2.62699C1.93296 13.314 1.51464 12.0328 1.40562 10.7077L4.16135 9.15957L5.5728 9.5901L6.84532 13.5038L5.90257 14.4481ZM11.9484 18.3351C10.6444 18.6405 9.28748 18.6405 7.98348 18.3351L6.96974 15.3222L8.06516 14.2267H11.8591L12.9545 15.3222L11.9484 18.3351ZM11.8789 12.9008H8.04532L6.86058 9.2527L9.96211 6.99926L13.0636 9.2527L11.8789 12.9008ZM16.0346 16.0535C15.3244 16.7654 14.4947 17.3472 13.5835 17.7725L14.2354 15.8267H16.2529C16.1835 15.9008 16.1071 15.9771 16.0346 16.0512V16.0535ZM14.0255 14.4504L13.0789 13.5038L14.3514 9.58781L15.7621 9.16415L18.5186 10.7122C18.4096 12.0374 17.9913 13.3185 17.2972 14.4527L14.0255 14.4504Z" fill="#555E61"/>
+                            </svg>
+                        </div>
+                        <span class="fs-breadcrumb__text">Football</span>
+                    </div>
+                    <div class="fs-breadcrumb__separator">
+                        <svg width="10" height="10" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#999999"/>
+                        </svg>
+                    </div>
+                    <!-- Tournament type - with tournament icon -->
+                    <div class="fs-breadcrumb__item fs-breadcrumb__item--tournament">
+                        <div class="fs-breadcrumb__item-icon">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="6" y="0" width="2" height="14" fill="#E31E24"/>
+                                <rect x="0" y="6" width="14" height="2" fill="#E31E24"/>
+                            </svg>
+                        </div>
+                        <span class="fs-breadcrumb__text">Championship</span>
+                    </div>
+                    <div class="fs-breadcrumb__separator">
+                        <svg width="10" height="10" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#999999"/>
+                        </svg>
+                    </div>
+                    <!-- Country type - with flag -->
+                    <div class="fs-breadcrumb__item fs-breadcrumb__item--country">
+                        <div class="fs-breadcrumb__item-flag">
+                            <svg width="14" height="10" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 16H24V1.90735e-06H0V16Z" fill="#F9F9F9"/>
+                                <path d="M10.392 16H13.608V1.90735e-06H10.392V16Z" fill="#CE1124"/>
+                                <path d="M0 9.60098H24V6.39999H0V9.60098Z" fill="#CE1124"/>
+                            </svg>
+                        </div>
+                        <span class="fs-breadcrumb__text">England</span>
+                    </div>
+                </div>
+                <div class="fs-breadcrumb__divider"></div>
+            </div>
+        </div>
+
+        <!-- Complete Breadcrumb - Sport > Country > Tournament > Match -->
+        <div style="margin-bottom: 24px;">
+            <h2 style="margin-bottom: 16px; font-size: 16px;">Complete Example - Boxed</h2>
+            <div class="fs-breadcrumb fs-breadcrumb--boxed">
+                <div class="fs-breadcrumb__items">
+                    <div class="fs-breadcrumb__item fs-breadcrumb__item--sport">
+                        <div class="fs-breadcrumb__item-icon">
+                            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.0064 2.93437C13.1159 -0.956071 6.80828 -0.956071 2.91783 2.93437C-0.972611 6.82482 -0.972611 13.1325 2.91783 17.0229C5.43451 19.5396 9.10265 20.5225 12.5405 19.6013C15.9783 18.6801 18.6636 15.9949 19.5848 12.557C20.5059 9.11919 19.5231 5.45105 17.0064 2.93437ZM17.4117 5.69926C18.0188 6.75267 18.3929 7.92406 18.5087 9.13438L16.6652 8.0985L17.4117 5.69926ZM16.0377 3.90613C16.1667 4.03514 16.2904 4.16796 16.4102 4.30308L15.2995 7.86949L13.9697 8.26796L10.6491 5.85651V4.50384L13.8094 2.29697C14.6325 2.71078 15.3838 3.25408 16.0346 3.90613H16.0377ZM9.96211 1.39086C10.7392 1.38999 11.5129 1.49424 12.2621 1.70079L9.96211 3.30384L7.66211 1.70079C8.41129 1.49424 9.18497 1.38999 9.96211 1.39086ZM3.89341 3.90613C4.543 3.25414 5.29299 2.71059 6.11478 2.29621L9.27509 4.50384V5.85651L5.95448 8.26949L4.62852 7.86949L3.51707 4.30308C3.63692 4.16796 3.76058 4.03514 3.89341 3.90613ZM2.51936 5.69926L3.26593 8.09544L1.41554 9.13132C1.53173 7.92206 1.90579 6.75175 2.51249 5.69926H2.51936ZM3.89341 16.0512C3.81707 15.9748 3.74684 15.8985 3.67509 15.8222H5.68883L6.34073 17.768C5.43101 17.3429 4.60272 16.7619 3.89341 16.0512ZM5.90257 14.4481H2.62699C1.93296 13.314 1.51464 12.0328 1.40562 10.7077L4.16135 9.15957L5.5728 9.5901L6.84532 13.5038L5.90257 14.4481ZM11.9484 18.3351C10.6444 18.6405 9.28748 18.6405 7.98348 18.3351L6.96974 15.3222L8.06516 14.2267H11.8591L12.9545 15.3222L11.9484 18.3351ZM11.8789 12.9008H8.04532L6.86058 9.2527L9.96211 6.99926L13.0636 9.2527L11.8789 12.9008ZM16.0346 16.0535C15.3244 16.7654 14.4947 17.3472 13.5835 17.7725L14.2354 15.8267H16.2529C16.1835 15.9008 16.1071 15.9771 16.0346 16.0512V16.0535ZM14.0255 14.4504L13.0789 13.5038L14.3514 9.58781L15.7621 9.16415L18.5186 10.7122C18.4096 12.0374 17.9913 13.3185 17.2972 14.4527L14.0255 14.4504Z" fill="#555E61"/>
+                            </svg>
+                        </div>
+                        <span class="fs-breadcrumb__text">Football</span>
+                    </div>
+                    <div class="fs-breadcrumb__separator">
+                        <svg width="10" height="10" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#999999"/>
+                        </svg>
+                    </div>
+                    <div class="fs-breadcrumb__item fs-breadcrumb__item--country">
+                        <div class="fs-breadcrumb__item-flag">
+                            <svg width="14" height="10" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 16H24V1.90735e-06H0V16Z" fill="#F9F9F9"/>
+                                <path d="M10.392 16H13.608V1.90735e-06H10.392V16Z" fill="#CE1124"/>
+                                <path d="M0 9.60098H24V6.39999H0V9.60098Z" fill="#CE1124"/>
+                            </svg>
+                        </div>
+                        <span class="fs-breadcrumb__text">England</span>
+                    </div>
+                    <div class="fs-breadcrumb__separator">
+                        <svg width="10" height="10" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#999999"/>
+                        </svg>
+                    </div>
+                    <div class="fs-breadcrumb__item fs-breadcrumb__item--tournament">
+                        <div class="fs-breadcrumb__item-icon">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="6" y="0" width="2" height="14" fill="#E31E24"/>
+                                <rect x="0" y="6" width="14" height="2" fill="#E31E24"/>
+                            </svg>
+                        </div>
+                        <span class="fs-breadcrumb__text">Championship</span>
+                    </div>
+                    <div class="fs-breadcrumb__separator">
+                        <svg width="10" height="10" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#999999"/>
+                        </svg>
+                    </div>
+                    <div class="fs-breadcrumb__item fs-breadcrumb__item--base">
+                        <span class="fs-breadcrumb__text">Brentford - Bournemouth</span>
+                    </div>
+                </div>
+                <div class="fs-breadcrumb__divider"></div>
+            </div>
+        </div>
+
+        <!-- Not Boxed variant -->
+        <div style="margin-bottom: 24px;">
+            <h2 style="margin-bottom: 16px; font-size: 16px;">Complete Example - Not Boxed</h2>
+            <div class="fs-breadcrumb">
+                <div class="fs-breadcrumb__items">
+                    <div class="fs-breadcrumb__item fs-breadcrumb__item--sport">
+                        <div class="fs-breadcrumb__item-icon">
+                            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.0064 2.93437C13.1159 -0.956071 6.80828 -0.956071 2.91783 2.93437C-0.972611 6.82482 -0.972611 13.1325 2.91783 17.0229C5.43451 19.5396 9.10265 20.5225 12.5405 19.6013C15.9783 18.6801 18.6636 15.9949 19.5848 12.557C20.5059 9.11919 19.5231 5.45105 17.0064 2.93437ZM17.4117 5.69926C18.0188 6.75267 18.3929 7.92406 18.5087 9.13438L16.6652 8.0985L17.4117 5.69926ZM16.0377 3.90613C16.1667 4.03514 16.2904 4.16796 16.4102 4.30308L15.2995 7.86949L13.9697 8.26796L10.6491 5.85651V4.50384L13.8094 2.29697C14.6325 2.71078 15.3838 3.25408 16.0346 3.90613H16.0377ZM9.96211 1.39086C10.7392 1.38999 11.5129 1.49424 12.2621 1.70079L9.96211 3.30384L7.66211 1.70079C8.41129 1.49424 9.18497 1.38999 9.96211 1.39086ZM3.89341 3.90613C4.543 3.25414 5.29299 2.71059 6.11478 2.29621L9.27509 4.50384V5.85651L5.95448 8.26949L4.62852 7.86949L3.51707 4.30308C3.63692 4.16796 3.76058 4.03514 3.89341 3.90613ZM2.51936 5.69926L3.26593 8.09544L1.41554 9.13132C1.53173 7.92206 1.90579 6.75175 2.51249 5.69926H2.51936ZM3.89341 16.0512C3.81707 15.9748 3.74684 15.8985 3.67509 15.8222H5.68883L6.34073 17.768C5.43101 17.3429 4.60272 16.7619 3.89341 16.0512ZM5.90257 14.4481H2.62699C1.93296 13.314 1.51464 12.0328 1.40562 10.7077L4.16135 9.15957L5.5728 9.5901L6.84532 13.5038L5.90257 14.4481ZM11.9484 18.3351C10.6444 18.6405 9.28748 18.6405 7.98348 18.3351L6.96974 15.3222L8.06516 14.2267H11.8591L12.9545 15.3222L11.9484 18.3351ZM11.8789 12.9008H8.04532L6.86058 9.2527L9.96211 6.99926L13.0636 9.2527L11.8789 12.9008ZM16.0346 16.0535C15.3244 16.7654 14.4947 17.3472 13.5835 17.7725L14.2354 15.8267H16.2529C16.1835 15.9008 16.1071 15.9771 16.0346 16.0512V16.0535ZM14.0255 14.4504L13.0789 13.5038L14.3514 9.58781L15.7621 9.16415L18.5186 10.7122C18.4096 12.0374 17.9913 13.3185 17.2972 14.4527L14.0255 14.4504Z" fill="#555E61"/>
+                            </svg>
+                        </div>
+                        <span class="fs-breadcrumb__text">Football</span>
+                    </div>
+                    <div class="fs-breadcrumb__separator">
+                        <svg width="10" height="10" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#999999"/>
+                        </svg>
+                    </div>
+                    <div class="fs-breadcrumb__item fs-breadcrumb__item--country">
+                        <div class="fs-breadcrumb__item-flag">
+                            <svg width="14" height="10" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 16H24V1.90735e-06H0V16Z" fill="#F9F9F9"/>
+                                <path d="M10.392 16H13.608V1.90735e-06H10.392V16Z" fill="#CE1124"/>
+                                <path d="M0 9.60098H24V6.39999H0V9.60098Z" fill="#CE1124"/>
+                            </svg>
+                        </div>
+                        <span class="fs-breadcrumb__text">England</span>
+                    </div>
+                    <div class="fs-breadcrumb__separator">
+                        <svg width="10" height="10" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#999999"/>
+                        </svg>
+                    </div>
+                    <div class="fs-breadcrumb__item fs-breadcrumb__item--tournament">
+                        <div class="fs-breadcrumb__item-icon">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="6" y="0" width="2" height="14" fill="#E31E24"/>
+                                <rect x="0" y="6" width="14" height="2" fill="#E31E24"/>
+                            </svg>
+                        </div>
+                        <span class="fs-breadcrumb__text">Championship</span>
+                    </div>
+                    <div class="fs-breadcrumb__separator">
+                        <svg width="10" height="10" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#999999"/>
+                        </svg>
+                    </div>
+                    <div class="fs-breadcrumb__item fs-breadcrumb__item--base">
+                        <span class="fs-breadcrumb__text">Brentford - Bournemouth</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

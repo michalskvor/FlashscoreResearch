@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Main - FSWidgetNavigation</title>
+    <link rel="stylesheet" href="NavigationMain.css">
+</head>
+<body>
+    <div style="padding: 24px; background-color: #EEEEEE;">
+        <h1 style="margin-bottom: 24px; font-size: 24px;">Navigation Main Component</h1>
+
+        <!-- Navigation Main -->
+        <nav class="nav-main">
+            <div class="nav-main__content">
+                <!-- Left content -->
+                <div class="nav-main__left">
+                    <!-- Logo -->
+                    <div class="nav-main__logo">
+                        <img src="../../../Assets/FlashscoreLogos/flashscore-default-negative.imageset/flashscore-default-negative.svg" alt="FlashScore">
+                    </div>
+
+                    <!-- Nav items -->
+                    <div class="nav-main__items">
+                        <!-- SCORES - Active -->
+                        <div class="nav-main__item nav-main__item--active">
+                            <div class="nav-main__item-container">
+                                <div class="nav-main__item-icon">
+                                    <img src="../../../Assets/Icons/Notification/Result.svg" alt="Scores">
+                                </div>
+                                <span class="nav-main__item-text">Scores</span>
+                            </div>
+                            <div class="nav-main__item-underline"></div>
+                        </div>
+
+                        <!-- NEWS - Inactive -->
+                        <button class="nav-main__item">
+                            <div class="nav-main__item-container">
+                                <div class="nav-main__item-icon">
+                                    <img src="../../../Assets/Icons/Action/Navigation/News.svg" alt="News">
+                                </div>
+                                <span class="nav-main__item-text">News</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right buttons -->
+                <div class="nav-main__buttons">
+                    <!-- Notification button with pulsing icon -->
+                    <button class="nav-main__button">
+                        <img src="../../../Assets/Icons/Action/State/Notification active.svg" alt="Notifications">
+                        <div class="nav-main__button-pulse"></div>
+                    </button>
+
+                    <!-- Gift button -->
+                    <button class="nav-main__button">
+                        <img src="../../../Assets/Icons/Action/State/Gift.svg" alt="Gift">
+                    </button>
+
+                    <!-- Search button -->
+                    <button class="nav-main__button">
+                        <img src="../../../Assets/Icons/Action/Search.svg" alt="Search">
+                    </button>
+
+                    <!-- Login button -->
+                    <button class="nav-main__button nav-main__button--with-text">
+                        <img src="../../../Assets/Icons/Action/State/User.svg" alt="Login">
+                        <span>Login</span>
+                    </button>
+
+                    <!-- Menu button -->
+                    <button class="nav-main__button">
+                        <img src="../../../Assets/Icons/Action/Navigation/Burger menu.svg" alt="Menu">
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>
