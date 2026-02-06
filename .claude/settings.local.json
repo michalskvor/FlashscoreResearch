@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude mcp:*)",
+      "WebFetch(domain:www.figma.com)",
+      "mcp__figma-desktop__get_screenshot",
+      "mcp__figma-desktop__get_design_context",
+      "Bash(git init:*)"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+/* FSIncidentBadgeFieldRow - Molecule Component */
+
+.fs-incident-badge-field-row {
+    display: flex;
+}
+
+/* Orientation variants */
+.fs-incident-badge-field-row--vertical {
+    flex-direction: column;
+}
+
+.fs-incident-badge-field-row--horizontal {
+    flex-direction: row;
+}
+
+/* Size variants with negative margins for overlapping */
+.fs-incident-badge-field-row--vertical.fs-incident-badge-field-row--small .fs-incident-badge-field:not(:last-child) {
+    margin-bottom: -3px;
+}
+
+.fs-incident-badge-field-row--horizontal.fs-incident-badge-field-row--small .fs-incident-badge-field:not(:last-child) {
+    margin-right: -3px;
+}
+
+.fs-incident-badge-field-row--vertical.fs-incident-badge-field-row--medium .fs-incident-badge-field:not(:last-child) {
+    margin-bottom: -1px;
+}
+
+.fs-incident-badge-field-row--horizontal.fs-incident-badge-field-row--medium .fs-incident-badge-field:not(:last-child) {
+    margin-right: -1px;
+}
+
+/* Alignment variants */
+.fs-incident-badge-field-row--vertical.fs-incident-badge-field-row--top {
+    justify-content: flex-end;
+}
+
+.fs-incident-badge-field-row--vertical.fs-incident-badge-field-row--bottom {
+    justify-content: flex-start;
+    padding-bottom: 2px;
+}
+
+.fs-incident-badge-field-row--horizontal.fs-incident-badge-field-row--top {
+    justify-content: flex-start;
+    padding-right: 2px;
+}
+
+.fs-incident-badge-field-row--horizontal.fs-incident-badge-field-row--bottom {
+    justify-content: flex-end;
+}
+
+/* Z-index layering for top alignment variants */
+.fs-incident-badge-field-row--top .fs-incident-badge-field:nth-child(1) {
+    z-index: 4;
+    position: relative;
+}
+
+.fs-incident-badge-field-row--top .fs-incident-badge-field:nth-child(2) {
+    z-index: 3;
+    position: relative;
+}
+
+.fs-incident-badge-field-row--top .fs-incident-badge-field:nth-child(3) {
+    z-index: 2;
+    position: relative;
+}
+
+.fs-incident-badge-field-row--top .fs-incident-badge-field:nth-child(4) {
+    z-index: 1;
+    position: relative;
+}

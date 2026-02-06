@@ -1,0 +1,188 @@
+/* FSBadgeForm Component Styles */
+
+/* Base badge styles */
+.fs-badge-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Text inside badge */
+.fs-badge-form__text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 16px;
+    color: #FFFFFF; /* white */
+    text-align: center;
+}
+
+/* Icon styles */
+.fs-badge-form__icon {
+    flex-shrink: 0;
+}
+
+.fs-badge-form__icon-info {
+    flex-shrink: 0;
+}
+
+/* Win variant */
+.fs-badge-form--win {
+    background-color: #00A83F; /* green - win background */
+}
+
+/* Draw variant */
+.fs-badge-form--draw {
+    background-color: #F3A000; /* orange - draw background */
+}
+
+/* Lose variant */
+.fs-badge-form--lose {
+    background-color: #DC0000; /* red - lose background */
+}
+
+/* Unknown variant */
+.fs-badge-form--unknown {
+    background-color: #C8CDCD; /* grey - unknown background */
+}
+
+/* Plus variant */
+.fs-badge-form--plus {
+    background-color: #00A83F; /* green - same as win */
+}
+
+/* Minus variant */
+.fs-badge-form--minus {
+    background-color: #DC0000; /* red - same as lose */
+}
+
+/* Informative variant */
+.fs-badge-form--informative {
+    background-color: #FFFFFF; /* white */
+}
+
+/* Corner indicator for combined statuses */
+.fs-badge-form__corner {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 10px 10px;
+}
+
+/* Corner colors based on status */
+.fs-badge-form__corner--win {
+    border-color: transparent transparent #00A83F transparent;
+}
+
+.fs-badge-form__corner--draw {
+    border-color: transparent transparent #F3A000 transparent;
+}
+
+.fs-badge-form__corner--lose {
+    border-color: transparent transparent #DC0000 transparent;
+}
+
+/* Combined status variants - just apply the main status background */
+.fs-badge-form--win-draw {
+    background-color: #00A83F;
+}
+
+.fs-badge-form--win-lose {
+    background-color: #00A83F;
+}
+
+.fs-badge-form--draw-win {
+    background-color: #F3A000;
+}
+
+.fs-badge-form--draw-lose {
+    background-color: #F3A000;
+}
+
+.fs-badge-form--lose-win {
+    background-color: #DC0000;
+}
+
+.fs-badge-form--lose-draw {
+    background-color: #DC0000;
+}
+
+/* Demo container styles */
+.demo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+}
+
+.demo-container h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #001E28;
+}
+
+.demo-container h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    color: #001E28;
+}
+
+.demo-container > p {
+    font-size: 14px;
+    color: #555E61;
+    margin-bottom: 24px;
+}
+
+.demo-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.demo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.demo-label {
+    font-size: 12px;
+    color: #555E61;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 639px) {
+    .demo-container {
+        padding: 24px 16px;
+    }
+
+    .demo-container h1 {
+        font-size: 24px;
+    }
+
+    .demo-container h2 {
+        font-size: 18px;
+        margin-top: 24px;
+    }
+
+    .demo-row {
+        gap: 16px;
+    }
+}

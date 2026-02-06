@@ -1,0 +1,256 @@
+/* FSWidgetHeadersMatch - Widget Component */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'FS Numbers';
+    src: url('../../../DesignTokens/Typography/font-family/FS Numbers.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Main container */
+.fs-widget-headers-match {
+    background-color: #FFFFFF; /* white */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 8px;
+}
+
+/* Main content wrapper */
+.fs-widget-headers-match__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-bottom: 4px;
+    width: 100%;
+}
+
+/* Participant sections (home and away) */
+.fs-widget-headers-match__participant {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    flex: 1 0 0;
+    max-width: 250px;
+    min-width: 110px;
+}
+
+/* Participant icons container */
+.fs-widget-headers-match__participant-icons {
+    display: flex;
+    width: 100%;
+}
+
+.fs-widget-headers-match__participant--home .fs-widget-headers-match__participant-icons {
+    align-items: flex-end;
+}
+
+.fs-widget-headers-match__participant--away .fs-widget-headers-match__participant-icons {
+    align-items: center;
+}
+
+/* Icon container sections */
+.fs-widget-headers-match__participant-icons-left,
+.fs-widget-headers-match__participant-icons-right {
+    display: flex;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+.fs-widget-headers-match__participant-icons-center {
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+}
+
+/* Empty cell for flex spacing */
+.fs-widget-headers-match__empty-cell {
+    flex: 1 0 0;
+    height: 100%;
+    min-height: 1px;
+    min-width: 1px;
+}
+
+/* Favorite icon container */
+.fs-widget-headers-match__favorite {
+    height: 100%;
+    width: 32px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Serve indicator placeholder */
+.fs-widget-headers-match__serve {
+    height: 100%;
+    width: 32px;
+    overflow: hidden;
+}
+
+/* Participant info section */
+.fs-widget-headers-match__participant-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Participant name container */
+.fs-widget-headers-match__participant-name {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px 4px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Participant icon (next stage icon) */
+.fs-widget-headers-match__participant-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+/* Participant text */
+.fs-widget-headers-match__participant-text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #001E28; /* text-primary */
+    margin: 0;
+}
+
+.fs-widget-headers-match__participant-text--bold {
+    font-weight: 700;
+}
+
+/* Score container */
+.fs-widget-headers-match__score-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    align-self: stretch;
+}
+
+/* Date container */
+.fs-widget-headers-match__date-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.fs-widget-headers-match__date {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #555E61; /* text-secondary */
+    text-align: center;
+    white-space: nowrap;
+    margin: 0;
+}
+
+/* Score section */
+.fs-widget-headers-match__score {
+    display: flex;
+    flex: 1 0 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 1px;
+    min-width: 1px;
+    width: 100%;
+}
+
+/* Score content */
+.fs-widget-headers-match__score-content {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    min-width: 92px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.fs-widget-headers-match__score-home {
+    display: flex;
+    flex: 1 0 0;
+    height: 55px;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 1px;
+    min-width: 1px;
+    overflow: hidden;
+    font-family: 'FS Numbers', 'Noto Sans', sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 46px;
+    color: #001E28; /* text-primary */
+    text-align: right;
+    white-space: nowrap;
+}
+
+.fs-widget-headers-match__score-separator {
+    display: flex;
+    height: 55px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: 'FS Numbers', 'Noto Sans', sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 46px;
+    color: #001E28; /* text-primary */
+    text-align: center;
+    white-space: nowrap;
+}
+
+.fs-widget-headers-match__score-away {
+    display: flex;
+    flex: 1 0 0;
+    height: 55px;
+    align-items: center;
+    min-height: 1px;
+    min-width: 1px;
+    overflow: hidden;
+    font-family: 'FS Numbers', 'Noto Sans', sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 46px;
+    color: #001E28; /* text-primary */
+    white-space: nowrap;
+}
+
+/* State section */
+.fs-widget-headers-match__state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 8px;
+    width: 100%;
+}
+
+.fs-widget-headers-match__state-text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #001E28; /* text-primary */
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin: 0;
+}

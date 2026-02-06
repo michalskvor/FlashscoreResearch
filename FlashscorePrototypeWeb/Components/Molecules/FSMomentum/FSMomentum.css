@@ -1,0 +1,192 @@
+/* FSMomentum Component */
+
+.fs-momentum {
+    width: 100%;
+    max-width: 640px;
+    position: relative;
+}
+
+/* Time markers */
+.fs-momentum__time-markers {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 8px;
+    padding: 0 2px;
+}
+
+.fs-momentum__time-marker {
+    font-family: 'Livesport Finder LCGJK', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #555E61;
+    position: relative;
+    z-index: 10;
+}
+
+/* Chart container */
+.fs-momentum__chart-container {
+    position: relative;
+    width: 100%;
+    background-color: #EEEEEE;
+    padding: 8px 0;
+}
+
+/* Divider lines */
+.fs-momentum__dividers {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    right: 0;
+    height: 160px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.fs-momentum__divider {
+    width: 1px;
+    height: 100%;
+    background-color: #C8CDCD;
+    position: absolute;
+    top: 0;
+}
+
+/* Center axis */
+.fs-momentum__axis {
+    position: absolute;
+    top: 88px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #C8CDCD;
+    z-index: 2;
+}
+
+/* Bars container */
+.fs-momentum__bars {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 160px;
+    z-index: 3;
+}
+
+/* Half containers */
+.fs-momentum__half {
+    display: flex;
+    gap: 1px;
+    flex: 1 0 0;
+}
+
+/* Half-time gap */
+.fs-momentum__halftime-gap {
+    width: 5px;
+    flex-shrink: 0;
+}
+
+/* Individual bars */
+.fs-momentum__bar {
+    flex: 1 0 0;
+    min-width: 1px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+}
+
+/* Positive values - extend upward from center */
+.fs-momentum__bar[data-value="100"]::after,
+.fs-momentum__bar[data-value="90"]::after,
+.fs-momentum__bar[data-value="80"]::after,
+.fs-momentum__bar[data-value="70"]::after,
+.fs-momentum__bar[data-value="60"]::after,
+.fs-momentum__bar[data-value="50"]::after,
+.fs-momentum__bar[data-value="40"]::after,
+.fs-momentum__bar[data-value="30"]::after,
+.fs-momentum__bar[data-value="20"]::after,
+.fs-momentum__bar[data-value="10"]::after,
+.fs-momentum__bar[data-value="5"]::after {
+    content: '';
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    background-color: #001E28;
+    border-radius: 1px 1px 0 0;
+}
+
+.fs-momentum__bar[data-value="100"]::after { height: 80px; }
+.fs-momentum__bar[data-value="90"]::after { height: 64px; }
+.fs-momentum__bar[data-value="80"]::after { height: 60px; }
+.fs-momentum__bar[data-value="70"]::after { height: 54px; }
+.fs-momentum__bar[data-value="60"]::after { height: 50px; }
+.fs-momentum__bar[data-value="50"]::after { height: 40px; }
+.fs-momentum__bar[data-value="40"]::after { height: 30px; }
+.fs-momentum__bar[data-value="30"]::after { height: 24px; }
+.fs-momentum__bar[data-value="20"]::after { height: 14px; }
+.fs-momentum__bar[data-value="10"]::after { height: 10px; }
+.fs-momentum__bar[data-value="5"]::after { height: 4px; }
+
+/* Negative values - extend downward from center */
+.fs-momentum__bar[data-value="-100"]::after,
+.fs-momentum__bar[data-value="-90"]::after,
+.fs-momentum__bar[data-value="-80"]::after,
+.fs-momentum__bar[data-value="-70"]::after,
+.fs-momentum__bar[data-value="-60"]::after,
+.fs-momentum__bar[data-value="-50"]::after,
+.fs-momentum__bar[data-value="-40"]::after,
+.fs-momentum__bar[data-value="-30"]::after,
+.fs-momentum__bar[data-value="-20"]::after,
+.fs-momentum__bar[data-value="-10"]::after,
+.fs-momentum__bar[data-value="-5"]::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    background-color: #FF0046;
+    border-radius: 0 0 1px 1px;
+}
+
+.fs-momentum__bar[data-value="-100"]::after { height: 80px; }
+.fs-momentum__bar[data-value="-90"]::after { height: 64px; }
+.fs-momentum__bar[data-value="-80"]::after { height: 60px; }
+.fs-momentum__bar[data-value="-70"]::after { height: 54px; }
+.fs-momentum__bar[data-value="-60"]::after { height: 50px; }
+.fs-momentum__bar[data-value="-50"]::after { height: 40px; }
+.fs-momentum__bar[data-value="-40"]::after { height: 30px; }
+.fs-momentum__bar[data-value="-30"]::after { height: 24px; }
+.fs-momentum__bar[data-value="-20"]::after { height: 14px; }
+.fs-momentum__bar[data-value="-10"]::after { height: 10px; }
+.fs-momentum__bar[data-value="-5"]::after { height: 4px; }
+
+/* Zero value - show dot at center */
+.fs-momentum__bar[data-value="0"]::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3px;
+    height: 3px;
+    background-color: #C8CDCD;
+    border-radius: 0;
+}
+
+/* Responsive behavior */
+@media (max-width: 799px) {
+    .fs-momentum {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 639px) {
+    .fs-momentum {
+        max-width: 100%;
+    }
+
+    .fs-momentum__time-marker {
+        font-size: 11px;
+    }
+}

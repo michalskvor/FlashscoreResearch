@@ -1,0 +1,50 @@
+/* FSActionsFavorite - Atom Component */
+
+.fs-actions-favorite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Size variants - Container sizes */
+.fs-actions-favorite--small {
+    width: 24px;
+    height: 24px;
+}
+
+.fs-actions-favorite--medium {
+    width: 32px;
+    height: 32px;
+}
+
+.fs-actions-favorite--large {
+    width: 32px;
+    height: 32px;
+}
+
+/* Icon element */
+.fs-actions-favorite__icon {
+    display: block;
+    flex-shrink: 0;
+}
+
+/* Size variants - Icon sizes */
+.fs-actions-favorite--small .fs-actions-favorite__icon {
+    width: 12px;
+    height: 12px;
+}
+
+.fs-actions-favorite--medium .fs-actions-favorite__icon {
+    width: 16px;
+    height: 16px;
+}
+
+.fs-actions-favorite--large .fs-actions-favorite__icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* State variants - Colors are defined inline in the SVG */
+/* Base state: #999999 (gray) */
+/* Active state: #FFCD00 (yellow) */

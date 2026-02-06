@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSWidgetHeadersMatch - Widget Component</title>
+    <link rel="stylesheet" href="FSWidgetHeadersMatch.css">
+    <link rel="stylesheet" href="../../Atoms/FSAssetBoxed/FSAssetBoxed.css">
+    <link rel="stylesheet" href="../../Atoms/FSActionsFavorite/FSActionsFavorite.css">
+</head>
+<body style="padding: 40px; background: #F5F5F5;">
+    <h1>FSWidgetHeadersMatch - Widget Component</h1>
+
+    <!-- Example: Championship Match Header - Finished -->
+    <div class="fs-widget-headers-match">
+        <div class="fs-widget-headers-match__content">
+            <!-- Left Participant (Home Team) -->
+            <div class="fs-widget-headers-match__participant fs-widget-headers-match__participant--home">
+                <div class="fs-widget-headers-match__participant-icons">
+                    <div class="fs-widget-headers-match__participant-icons-left">
+                        <div class="fs-widget-headers-match__empty-cell"></div>
+                    </div>
+                    <div class="fs-widget-headers-match__participant-icons-center">
+                        <div class="fs-widget-headers-match__favorite">
+                            <div class="fs-actions-favorite fs-actions-favorite--large fs-actions-favorite--active">
+                                <svg class="fs-actions-favorite__icon" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.346 0L7.245 6.847L0.404 6.832L0 8.141L5.544 12.354L3.415 19.191L4.473 20L9.999 15.758L15.526 20L16.584 19.191L14.455 12.354L19.999 8.141L19.596 6.832L12.753 6.847L10.654 0H9.346Z" fill="#FFCD00"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="fs-asset-boxed fs-asset-boxed--82px fs-asset-boxed--asset">
+                            <img src="../../../Assets/TeamLogos/Championship/Brentford.png" alt="Brentford" class="fs-asset-boxed__image fs-asset-boxed__image--asset">
+                        </div>
+                        <div class="fs-widget-headers-match__serve"></div>
+                    </div>
+                    <div class="fs-widget-headers-match__participant-icons-right">
+                        <div class="fs-widget-headers-match__empty-cell"></div>
+                    </div>
+                </div>
+                <div class="fs-widget-headers-match__participant-info">
+                    <div class="fs-widget-headers-match__participant-name">
+                        <p class="fs-widget-headers-match__participant-text fs-widget-headers-match__participant-text--bold">Brentford</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Score Container -->
+            <div class="fs-widget-headers-match__score-container">
+                <div class="fs-widget-headers-match__date-container">
+                    <p class="fs-widget-headers-match__date">22.01.2025 15:00</p>
+                </div>
+                <div class="fs-widget-headers-match__score">
+                    <div class="fs-widget-headers-match__score-content">
+                        <div class="fs-widget-headers-match__score-home">2</div>
+                        <div class="fs-widget-headers-match__score-separator">-</div>
+                        <div class="fs-widget-headers-match__score-away">1</div>
+                    </div>
+                    <div class="fs-widget-headers-match__state">
+                        <p class="fs-widget-headers-match__state-text">FINISHED</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Participant (Away Team) -->
+            <div class="fs-widget-headers-match__participant fs-widget-headers-match__participant--away">
+                <div class="fs-widget-headers-match__participant-icons">
+                    <div class="fs-widget-headers-match__participant-icons-left">
+                        <div class="fs-widget-headers-match__empty-cell"></div>
+                    </div>
+                    <div class="fs-widget-headers-match__participant-icons-center">
+                        <div class="fs-widget-headers-match__serve"></div>
+                        <div class="fs-asset-boxed fs-asset-boxed--82px fs-asset-boxed--asset">
+                            <img src="../../../Assets/TeamLogos/Championship/Bournemouth.png" alt="Bournemouth" class="fs-asset-boxed__image fs-asset-boxed__image--asset">
+                        </div>
+                        <div class="fs-widget-headers-match__favorite">
+                            <div class="fs-actions-favorite fs-actions-favorite--large fs-actions-favorite--base">
+                                <svg class="fs-actions-favorite__icon" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.346 0L7.245 6.847L0.404 6.832L0 8.141L5.544 12.354L3.415 19.191L4.473 20L9.999 15.758L15.526 20L16.584 19.191L14.455 12.354L19.999 8.141L19.596 6.832L12.753 6.847L10.654 0H9.346ZM8.399 7.793L9.999 2.575L11.6 7.793L12.256 8.293L17.468 8.282L13.245 11.493L12.994 12.302L14.616 17.511L10.404 14.281H9.594L5.384 17.511L7.005 12.302L6.754 11.493L2.53 8.282L7.744 8.293L8.399 7.793Z" fill="#999999"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-widget-headers-match__participant-icons-right">
+                        <div class="fs-widget-headers-match__empty-cell"></div>
+                    </div>
+                </div>
+                <div class="fs-widget-headers-match__participant-info">
+                    <div class="fs-widget-headers-match__participant-name">
+                        <p class="fs-widget-headers-match__participant-text">Bournemouth</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <!-- Example 2: Soccer Match Header - Live -->
+    <div class="fs-widget-headers-match">
+        <div class="fs-widget-headers-match__content">
+            <!-- Left Participant (Home Team) -->
+            <div class="fs-widget-headers-match__participant fs-widget-headers-match__participant--home">
+                <div class="fs-widget-headers-match__participant-icons">
+                    <div class="fs-widget-headers-match__participant-icons-left">
+                        <div class="fs-widget-headers-match__empty-cell"></div>
+                    </div>
+                    <div class="fs-widget-headers-match__participant-icons-center">
+                        <div class="fs-widget-headers-match__favorite">
+                            <div class="fs-actions-favorite fs-actions-favorite--large fs-actions-favorite--active">
+                                <svg class="fs-actions-favorite__icon" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.346 0L7.245 6.847L0.404 6.832L0 8.141L5.544 12.354L3.415 19.191L4.473 20L9.999 15.758L15.526 20L16.584 19.191L14.455 12.354L19.999 8.141L19.596 6.832L12.753 6.847L10.654 0H9.346Z" fill="#FFCD00"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="fs-asset-boxed fs-asset-boxed--82px fs-asset-boxed--asset">
+                            <img src="../../../Assets/TeamLogos/Bundesliga/Hoffenheim.png" alt="Hoffenheim" class="fs-asset-boxed__image fs-asset-boxed__image--asset">
+                        </div>
+                        <div class="fs-widget-headers-match__serve"></div>
+                    </div>
+                    <div class="fs-widget-headers-match__participant-icons-right">
+                        <div class="fs-widget-headers-match__empty-cell"></div>
+                    </div>
+                </div>
+                <div class="fs-widget-headers-match__participant-info">
+                    <div class="fs-widget-headers-match__participant-name">
+                        <p class="fs-widget-headers-match__participant-text fs-widget-headers-match__participant-text--bold">Hoffenheim</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Score Container -->
+            <div class="fs-widget-headers-match__score-container">
+                <div class="fs-widget-headers-match__date-container">
+                    <p class="fs-widget-headers-match__date">Today 18:30</p>
+                </div>
+                <div class="fs-widget-headers-match__score">
+                    <div class="fs-widget-headers-match__score-content">
+                        <div class="fs-widget-headers-match__score-home">2</div>
+                        <div class="fs-widget-headers-match__score-separator">-</div>
+                        <div class="fs-widget-headers-match__score-away">1</div>
+                    </div>
+                    <div class="fs-widget-headers-match__state">
+                        <p class="fs-widget-headers-match__state-text">LIVE 67'</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Participant (Away Team) -->
+            <div class="fs-widget-headers-match__participant fs-widget-headers-match__participant--away">
+                <div class="fs-widget-headers-match__participant-icons">
+                    <div class="fs-widget-headers-match__participant-icons-left">
+                        <div class="fs-widget-headers-match__empty-cell"></div>
+                    </div>
+                    <div class="fs-widget-headers-match__participant-icons-center">
+                        <div class="fs-widget-headers-match__serve"></div>
+                        <div class="fs-asset-boxed fs-asset-boxed--82px fs-asset-boxed--asset">
+                            <img src="../../../Assets/TeamLogos/Bundesliga/Frankfurt.png" alt="Frankfurt" class="fs-asset-boxed__image fs-asset-boxed__image--asset">
+                        </div>
+                        <div class="fs-widget-headers-match__favorite">
+                            <div class="fs-actions-favorite fs-actions-favorite--large fs-actions-favorite--base">
+                                <svg class="fs-actions-favorite__icon" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.346 0L7.245 6.847L0.404 6.832L0 8.141L5.544 12.354L3.415 19.191L4.473 20L9.999 15.758L15.526 20L16.584 19.191L14.455 12.354L19.999 8.141L19.596 6.832L12.753 6.847L10.654 0H9.346ZM8.399 7.793L9.999 2.575L11.6 7.793L12.256 8.293L17.468 8.282L13.245 11.493L12.994 12.302L14.616 17.511L10.404 14.281H9.594L5.384 17.511L7.005 12.302L6.754 11.493L2.53 8.282L7.744 8.293L8.399 7.793Z" fill="#999999"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-widget-headers-match__participant-icons-right">
+                        <div class="fs-widget-headers-match__empty-cell"></div>
+                    </div>
+                </div>
+                <div class="fs-widget-headers-match__participant-info">
+                    <div class="fs-widget-headers-match__participant-name">
+                        <p class="fs-widget-headers-match__participant-text">Frankfurt</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

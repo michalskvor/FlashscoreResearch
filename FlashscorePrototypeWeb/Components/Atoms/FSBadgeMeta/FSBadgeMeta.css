@@ -1,0 +1,114 @@
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../Typography/font-family/LivesportFinderLCGJK-Light_Static.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Design System Tokens */
+:root {
+    /* Colors from primitives.json */
+    --badge-alert-background: #FFE6F3; /* brand-red/50 */
+    --badge-alert-ink: #FF0046; /* brand-red/500 */
+    --badge-base-background: #001E281A; /* slate-black-shades/10 */
+    --badge-base-ink: #001E28; /* brand-slate-black/500 */
+
+    /* Typography tokens */
+    --badge-font-family: 'Livesport Finder LCGJK', sans-serif;
+    --badge-font-size: 12px;
+    --badge-font-weight: 400;
+    --badge-line-height: 14px;
+    --badge-letter-spacing: 0;
+
+    /* Component spacing */
+    --badge-border-radius: 4px;
+    --badge-padding-vertical: 4px;
+    --badge-padding-horizontal: 8px;
+    --badge-height: 24px;
+}
+
+/* FSBadgeMeta Component - Base Styles */
+.fs-badge-meta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--badge-height);
+    padding: var(--badge-padding-vertical) var(--badge-padding-horizontal);
+    border-radius: var(--badge-border-radius);
+    overflow: hidden;
+}
+
+.fs-badge-meta__text {
+    font-family: var(--badge-font-family);
+    font-size: var(--badge-font-size);
+    font-weight: var(--badge-font-weight);
+    line-height: var(--badge-line-height);
+    letter-spacing: var(--badge-letter-spacing);
+    white-space: nowrap;
+}
+
+/* Variant: Alert */
+.fs-badge-meta--alert {
+    background-color: var(--badge-alert-background);
+}
+
+.fs-badge-meta--alert .fs-badge-meta__text {
+    color: var(--badge-alert-ink);
+}
+
+/* Variant: Base */
+.fs-badge-meta--base {
+    background-color: var(--badge-base-background);
+}
+
+.fs-badge-meta--base .fs-badge-meta__text {
+    color: var(--badge-base-ink);
+}
+
+/* Demo styling (remove in production) */
+.demo-container {
+    padding: 40px;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #001E28;
+}
+
+.demo-container h2 {
+    font-size: 18px;
+    margin-top: 32px;
+    margin-bottom: 8px;
+    color: #001E28;
+}
+
+.demo-container p {
+    font-size: 14px;
+    margin-bottom: 16px;
+    color: #555E61;
+}
+
+.demo-container .fs-badge-meta {
+    margin-right: 12px;
+    margin-bottom: 12px;
+}

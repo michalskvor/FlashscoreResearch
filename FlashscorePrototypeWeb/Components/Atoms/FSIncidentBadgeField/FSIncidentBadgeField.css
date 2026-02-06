@@ -1,0 +1,173 @@
+/* FSIncidentBadgeField Component Styles */
+
+/* Base badge container */
+.fs-incident-badge-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF; /* white */
+    border: 1px solid #C8CDCD; /* grey-a/500 */
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* Size variants */
+.fs-incident-badge-field--small {
+    width: 14px;
+    height: 14px;
+}
+
+.fs-incident-badge-field--medium {
+    width: 16px;
+    height: 16px;
+}
+
+/* Icon styling */
+.fs-incident-badge-field__icon {
+    flex-shrink: 0;
+    color: #001E28; /* brand-slate-black/500 - icon color */
+}
+
+.fs-incident-badge-field--small .fs-incident-badge-field__icon {
+    width: 10px;
+    height: 10px;
+}
+
+.fs-incident-badge-field--medium .fs-incident-badge-field__icon {
+    width: 12px;
+    height: 12px;
+}
+
+/* Demo container styles */
+.demo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+}
+
+.demo-container h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #001E28;
+}
+
+.demo-container h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 8px;
+    color: #001E28;
+}
+
+.demo-container h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    color: #001E28;
+}
+
+.demo-container > p,
+.demo-container h2 + p,
+.use-case-section > p {
+    font-size: 14px;
+    color: #555E61;
+    margin-bottom: 16px;
+}
+
+.demo-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 24px;
+    background-color: #F1F1F1;
+    border-radius: 8px;
+}
+
+.demo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.demo-label {
+    font-size: 11px;
+    color: #555E61;
+    text-align: center;
+}
+
+.use-case-section {
+    margin-top: 32px;
+    padding: 24px;
+    background-color: #F1F1F1;
+    border-radius: 8px;
+}
+
+/* Specifications table */
+.specs-table {
+    margin-top: 24px;
+    overflow-x: auto;
+}
+
+.specs-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.specs-table th {
+    background-color: #EEEEEE;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: bold;
+    color: #001E28;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.specs-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #EEEEEE;
+    color: #555E61;
+}
+
+.specs-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 639px) {
+    .demo-container {
+        padding: 24px 16px;
+    }
+
+    .demo-container h1 {
+        font-size: 24px;
+    }
+
+    .demo-container h2 {
+        font-size: 18px;
+        margin-top: 32px;
+    }
+
+    .demo-row {
+        gap: 24px;
+        padding: 16px;
+    }
+
+    .specs-table {
+        font-size: 12px;
+    }
+
+    .specs-table th,
+    .specs-table td {
+        padding: 8px 12px;
+    }
+}
