@@ -1,0 +1,321 @@
+/* FSTabs Component CSS */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Base Tab Component */
+.fs-tabs {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    height: 40px;
+}
+
+/* Remove button default styles */
+button.fs-tabs {
+    font-family: inherit;
+    outline: none;
+}
+
+/* Tab Text */
+.fs-tabs__text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #555E61;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+/* Active State */
+.fs-tabs--active .fs-tabs__text {
+    color: #FF0046;
+}
+
+/* Underline (only visible on active state) */
+.fs-tabs__underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #FF0046;
+    border-radius: 1px;
+}
+
+/* Hover State for Inactive Tabs */
+button.fs-tabs:hover .fs-tabs__text {
+    color: #001E28;
+}
+
+/* Focus State for Accessibility */
+button.fs-tabs:focus-visible {
+    outline: 2px solid #FF0046;
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* Active State (non-button version for current page) */
+.fs-tabs--active {
+    cursor: default;
+}
+
+/* Disabled State */
+button.fs-tabs:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+button.fs-tabs:disabled:hover .fs-tabs__text {
+    color: #555E61;
+}
+
+/* ========================================== */
+/* SECONDARY VARIANT (Pill Style)            */
+/* ========================================== */
+
+/* Secondary Base Styles */
+.fs-tabs--secondary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    height: auto;
+}
+
+/* Secondary Text Styles */
+.fs-tabs--secondary .fs-tabs__text {
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #555E61;
+    white-space: nowrap;
+}
+
+/* Secondary Active State */
+.fs-tabs--secondary.fs-tabs--active {
+    background-color: #FF0046;
+}
+
+.fs-tabs--secondary.fs-tabs--active .fs-tabs__text {
+    color: #FFFFFF;
+}
+
+/* Secondary Hover State (Inactive Only) */
+button.fs-tabs--secondary:hover {
+    background-color: #EEEEEE;
+}
+
+button.fs-tabs--secondary:hover .fs-tabs__text {
+    color: #001E28;
+}
+
+/* Secondary Active Hover (no change on active) */
+button.fs-tabs--secondary.fs-tabs--active:hover {
+    background-color: #FF0046;
+}
+
+button.fs-tabs--secondary.fs-tabs--active:hover .fs-tabs__text {
+    color: #FFFFFF;
+}
+
+/* Secondary Focus State */
+button.fs-tabs--secondary:focus-visible {
+    outline: 2px solid #FF0046;
+    outline-offset: 2px;
+    border-radius: 8px;
+}
+
+/* Secondary Disabled State */
+button.fs-tabs--secondary:disabled {
+    background-color: #DFDFDF;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+button.fs-tabs--secondary:disabled .fs-tabs__text {
+    color: #999999;
+}
+
+button.fs-tabs--secondary:disabled:hover {
+    background-color: #DFDFDF;
+}
+
+button.fs-tabs--secondary:disabled:hover .fs-tabs__text {
+    color: #999999;
+}
+
+/* Secondary Grey Base Variant */
+.fs-tabs--secondary.fs-tabs--grey-base {
+    background-color: #EEEEEE;
+}
+
+.fs-tabs--secondary.fs-tabs--grey-base .fs-tabs__text {
+    color: #555E61;
+}
+
+button.fs-tabs--secondary.fs-tabs--grey-base:hover {
+    background-color: #DFDFDF;
+}
+
+button.fs-tabs--secondary.fs-tabs--grey-base:hover .fs-tabs__text {
+    color: #001E28;
+}
+
+.fs-tabs--secondary.fs-tabs--grey-base.fs-tabs--active {
+    background-color: #FF0046;
+}
+
+.fs-tabs--secondary.fs-tabs--grey-base.fs-tabs--active .fs-tabs__text {
+    color: #FFFFFF;
+}
+
+button.fs-tabs--secondary.fs-tabs--grey-base.fs-tabs--active:hover {
+    background-color: #FF0046;
+}
+
+/* ========================================== */
+/* TERTIARY VARIANT (Grey Background Style)  */
+/* ========================================== */
+
+/* Tertiary Base Styles */
+.fs-tabs--tertiary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    height: auto;
+}
+
+/* Tertiary Text Styles */
+.fs-tabs--tertiary .fs-tabs__text {
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #555E61;
+    white-space: nowrap;
+}
+
+/* Tertiary Active State - White background */
+.fs-tabs--tertiary.fs-tabs--active {
+    background-color: #FFFFFF;
+}
+
+.fs-tabs--tertiary.fs-tabs--active .fs-tabs__text {
+    color: #001E28;
+}
+
+/* Tertiary Hover State (Inactive Only) */
+button.fs-tabs--tertiary:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+button.fs-tabs--tertiary:hover .fs-tabs__text {
+    color: #001E28;
+}
+
+/* Tertiary Active Hover (no change on active) */
+button.fs-tabs--tertiary.fs-tabs--active:hover {
+    background-color: #FFFFFF;
+}
+
+button.fs-tabs--tertiary.fs-tabs--active:hover .fs-tabs__text {
+    color: #001E28;
+}
+
+/* Tertiary Focus State */
+button.fs-tabs--tertiary:focus-visible {
+    outline: 2px solid #FF0046;
+    outline-offset: 2px;
+    border-radius: 8px;
+}
+
+/* Tertiary Disabled State */
+button.fs-tabs--tertiary:disabled {
+    background-color: transparent;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+button.fs-tabs--tertiary:disabled .fs-tabs__text {
+    color: #999999;
+}
+
+button.fs-tabs--tertiary:disabled:hover {
+    background-color: transparent;
+}
+
+button.fs-tabs--tertiary:disabled:hover .fs-tabs__text {
+    color: #999999;
+}
+
+/* ========================================== */
+/* TAB ROW CONTAINERS (Spacing)              */
+/* ========================================== */
+
+/* Base tab row container */
+.fs-tabs-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Primary variant row - 28px gap */
+.fs-tabs-row--primary {
+    gap: 28px;
+    align-items: center;
+    padding-left: 26px;
+    overflow: hidden;
+}
+
+/* Secondary variant row - 8px gap */
+.fs-tabs-row--secondary {
+    gap: 8px;
+    align-items: center;
+    margin-top: 16px;
+    padding-left: 12px;
+}
+
+/* Tertiary variant row - 8px gap */
+.fs-tabs-row--tertiary {
+    gap: 8px;
+    align-items: center;
+}
+
+/* ========================================== */
+/* GREY BACKGROUND CONTAINER (for tertiary) */
+/* ========================================== */
+
+/* Grey container for tertiary tabs */
+.fs-tabs-grey-container {
+    background-color: #EEEEEE;
+    padding: 8px;
+    border-radius: 8px;
+}

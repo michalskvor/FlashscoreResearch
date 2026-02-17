@@ -1,0 +1,228 @@
+/* Footer Component CSS */
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 36px 146px 20px;
+    position: relative;
+}
+
+.footer__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1188px;
+    padding: 0 16px;
+}
+
+/* SEO Columns Group */
+.footer__seo-group {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+
+/* Promo Group */
+.footer__promo-group {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    padding: 66px 0 46px;
+}
+
+/* Double Columns Container */
+.footer__double-columns {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+}
+
+/* Column */
+.footer__column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.footer__column--follow {
+    width: 210.4px;
+    flex: none;
+}
+
+.footer__column--apps {
+    flex: 1;
+}
+
+/* Headline */
+.footer__headline {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #001E28;
+    padding-bottom: 16px;
+}
+
+.footer__headline--grey {
+    color: #555E61;
+}
+
+.footer__headline--empty {
+    height: 32px;
+}
+
+/* Links Container */
+.footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer__links--social {
+    gap: 12px;
+}
+
+/* Link */
+.footer__link {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #001E28;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer__link:hover {
+    color: #FF0046;
+}
+
+/* Link with Icon */
+.footer__link--with-icon {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Social Icon */
+.footer__social-icon {
+    width: 14px;
+    height: 14px;
+    display: block;
+}
+
+/* Apps Text */
+.footer__apps-text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #555E61;
+    margin-bottom: 12px;
+}
+
+/* App Badges */
+.footer__app-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer__app-badge {
+    width: 92.56px;
+    display: block;
+}
+
+.footer__app-badge img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Floating Buttons */
+.footer__scroll-top,
+.footer__cookie-settings {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    padding: 11px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.footer__scroll-top {
+    right: 20px;
+    background-color: #0F2D37;
+}
+
+.footer__scroll-top:hover {
+    background-color: #1A3D47;
+}
+
+.footer__scroll-top img {
+    width: 18px;
+    height: 18px;
+    display: block;
+    filter: brightness(0) invert(1);
+}
+
+.footer__cookie-settings {
+    left: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #EEEEEE;
+}
+
+.footer__cookie-settings:hover {
+    background-color: #F9F9F9;
+}
+
+.footer__cookie-settings img {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+/* Design System Notes */
+/*
+- Background color: #FFFFFF (white)
+- Text color primary: #001E28 (dark)
+- Text color grey: #555E61 (grey)
+- Link hover: #FF0046 (brand red)
+- Max width: 1188px (centered)
+- Padding: 36px top, 146px horizontal, 20px bottom
+- Content padding: 16px horizontal
+- Column gap: 16px
+- Link gap: 12px
+- Headline font: Livesport Finder LCGJK Bold, 13px, 16px line-height, uppercase
+- Link font: Livesport Finder LCGJK Regular, 13px, 18px line-height
+- Apps text: 13px, 16px line-height
+- Social icon size: 14px
+- App badge width: 92.56px
+- App badge gap: 6px
+- Floating button size: 40px min-width, 11px padding
+- Floating button border radius: 8px
+- Floating button icon size: 18px
+- All spacing values follow 8px grid
+*/

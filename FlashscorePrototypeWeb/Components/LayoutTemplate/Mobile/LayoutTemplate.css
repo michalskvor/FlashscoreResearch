@@ -1,0 +1,374 @@
+/* LayoutTemplate Template CSS - Mobile 393px Viewport */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Global Reset & Box Model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    color: #001E28;
+    background-color: #EEEEEE;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Default mobile width: 393px, but responsive */
+    max-width: 639px; /* Mobile breakpoint max */
+    margin: 0 auto;
+}
+
+/* Responsive behavior for different mobile sizes */
+@media (min-width: 393px) and (max-width: 639px) {
+    body {
+        width: 100%;
+    }
+}
+
+@media (max-width: 392px) {
+    body {
+        width: 100%;
+    }
+}
+
+/* Navigation Container - Full Width */
+.layouttemplate-nav-container {
+    width: 100%;
+    background-color: #00141E;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.layouttemplate-nav-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mobile Navigation Header */
+.nav-mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    padding: 0 16px;
+    background-color: #00141E;
+}
+
+.nav-mobile-header__logo {
+    display: flex;
+    align-items: center;
+    height: 24px;
+}
+
+.nav-mobile-header__logo img {
+    height: 24px;
+    width: auto;
+}
+
+.nav-mobile-header__buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-mobile-header__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav-mobile-header__button:active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-mobile-header__button img {
+    width: 24px;
+    height: 24px;
+}
+
+.nav-mobile-header__button-pulse {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: #FF0046;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
+/* Mobile Tab Navigation */
+.nav-mobile-tabs {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    background-color: #00141E;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.nav-mobile-tabs::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.nav-mobile-tabs__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-width: 80px;
+    height: 100%;
+    padding: 0 12px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.nav-mobile-tabs__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+}
+
+.nav-mobile-tabs__icon img {
+    width: 16px;
+    height: 16px;
+    opacity: 0.6;
+}
+
+.nav-mobile-tabs__item--active .nav-mobile-tabs__icon img {
+    opacity: 1;
+}
+
+.nav-mobile-tabs__text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #FFFFFF;
+    opacity: 0.6;
+    white-space: nowrap;
+}
+
+.nav-mobile-tabs__item--active .nav-mobile-tabs__text {
+    opacity: 1;
+    font-weight: 700;
+}
+
+.nav-mobile-tabs__underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #FF0046;
+}
+
+/* Main Content Wrapper */
+.layouttemplate-wrapper {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #EEEEEE;
+}
+
+/* Main Container - Full Width, Fills Screen */
+.layouttemplate-main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+}
+
+.layouttemplate-main__breadcrumb {
+    width: 100%;
+    padding: 4px 16px 4px 16px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.layouttemplate-main__content {
+    flex: 1;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+.layouttemplate-main__placeholder {
+    padding: 24px 16px;
+    text-align: center;
+    color: #001E28;
+    font-size: 14px;
+}
+
+/* Footer Container - Full Width */
+.layouttemplate-footer {
+    width: 100%;
+    background-color: #F5F5F5;
+    padding: 24px 16px;
+    border-top: 1px solid #EEEEEE;
+}
+
+.layouttemplate-footer__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.layouttemplate-footer__links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.layouttemplate-footer__link {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #555E61;
+    text-decoration: none;
+}
+
+.layouttemplate-footer__link:active {
+    color: #FF0046;
+}
+
+.layouttemplate-footer__separator {
+    color: #DFDFDF;
+    font-size: 12px;
+}
+
+.layouttemplate-footer__copyright {
+    text-align: center;
+}
+
+.layouttemplate-footer__copyright p {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #999999;
+}
+
+
+
+/* Add bottom padding to main content to account for fixed bottom nav */
+.layouttemplate-wrapper {
+    padding-bottom: 56px; /* Height of bottom nav */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 360px) {
+    .nav-mobile-header {
+        padding: 0 12px;
+    }
+
+    .nav-mobile-header__buttons {
+        gap: 4px;
+    }
+
+    .nav-mobile-header__button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .nav-mobile-tabs__item {
+        min-width: 70px;
+        padding: 0 8px;
+    }
+
+    .layouttemplate-main__breadcrumb {
+        padding: 10px 12px;
+    }
+
+    .layouttemplate-main__placeholder {
+        padding: 20px 12px;
+    }
+
+    .layouttemplate-footer {
+        padding: 20px 12px;
+    }
+}
+
+@media (min-width: 640px) {
+    /* Above mobile breakpoint - template shouldn't be used */
+    body::before {
+        content: "⚠ This template is designed for mobile (≤639px). Please use Tablet or Desktop template.";
+        display: block;
+        padding: 12px;
+        background-color: #FF0046;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 700;
+    }
+}
+
+/* Design System Compliance Notes */
+/*
+- All spacing values are even numbers (2px, 4px, 6px, 8px, 12px, 16px, 24px, etc.)
+- All colors use HEX values only
+- Mobile viewport: 393px default, responsive 0px-639px
+- Navigation height: 56px (header) + 48px (tabs) = 104px total
+- Bottom nav height: 56px (fixed)
+- Content fills 100% width
+- Font family: Livesport Finder LCGJK
+- Background: #EEEEEE (body), #FFFFFF (content)
+- Navigation background: #00141E
+*/

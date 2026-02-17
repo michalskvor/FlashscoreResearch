@@ -1,0 +1,203 @@
+/* NavigationSub Component CSS */
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+}
+
+/* Navigation Sub */
+.nav-sub {
+    width: 100%;
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.nav-sub__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1188px;
+    height: 60px;
+}
+
+/* Items Container */
+.nav-sub__items {
+    display: flex;
+    align-items: stretch;
+    flex: 1;
+    height: 100%;
+}
+
+/* Nav Sub Item */
+.nav-sub__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 14px;
+}
+
+.nav-sub__item-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 60px;
+}
+
+.nav-sub__item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+.nav-sub__item-icon img {
+    width: 20px;
+    height: 20px;
+    display: block;
+    filter: brightness(0) saturate(100%) invert(38%) sepia(8%) saturate(766%) hue-rotate(146deg) brightness(93%) contrast(87%);
+}
+
+.nav-sub__item--active .nav-sub__item-icon img {
+    filter: brightness(0) saturate(100%) invert(13%) sepia(95%) saturate(6527%) hue-rotate(338deg) brightness(102%) contrast(118%);
+}
+
+.nav-sub__item-text-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-sub__item-text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #555E61;
+}
+
+.nav-sub__item--active .nav-sub__item-text {
+    color: #FF0046;
+}
+
+/* Badge */
+.nav-sub__item-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 2px;
+    background-color: #C8CDCD;
+    border-radius: 4px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 12px;
+    color: #001E28;
+}
+
+/* Active Underline */
+.nav-sub__item-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #FF0046;
+    border-radius: 2px 2px 0 0;
+}
+
+/* More Button */
+.nav-sub__more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    padding: 0 14px;
+}
+
+.nav-sub__more-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 60px;
+}
+
+.nav-sub__more-text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #555E61;
+}
+
+.nav-sub__more-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12px;
+    height: 12px;
+}
+
+.nav-sub__more-icon img {
+    width: 12px;
+    height: 12px;
+    display: block;
+    filter: brightness(0) saturate(100%) invert(38%) sepia(8%) saturate(766%) hue-rotate(146deg) brightness(93%) contrast(87%);
+}
+
+/* Bottom Divider */
+.nav-sub__divider {
+    width: 100%;
+    height: 1px;
+    background-color: #C8CDCD;
+}
+
+/* Design System Notes */
+/*
+- Background color: #EEEEEE (light grey)
+- Height: 60px
+- Max width: 1188px (centered)
+- Text color inactive: #555E61 (dark grey)
+- Text color active: #FF0046 (brand red)
+- Icon color inactive: #555E61
+- Icon color active: #FF0046
+- Active underline: #FF0046, 4px height
+- Badge background: #C8CDCD
+- Badge text: #001E28
+- Item padding: 14px horizontal
+- Gap between icon and text: 8px
+- Gap between text and badge: 4px
+- Font: Livesport Finder LCGJK Bold
+- Font size: 13px
+- Line height: 16px
+- Text transform: uppercase
+- Badge font size: 10px
+- Badge line height: 12px
+- Badge min-width: 16px
+- Badge height: 16px
+- Badge border radius: 4px
+- Bottom divider: 1px, #C8CDCD
+- All spacing values are even numbers (4px, 8px, 14px)
+*/

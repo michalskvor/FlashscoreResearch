@@ -45,7 +45,7 @@
 }
 
 .fs-widget-headers-match__participant--home .fs-widget-headers-match__participant-icons {
-    align-items: flex-end;
+    align-items: center;
 }
 
 .fs-widget-headers-match__participant--away .fs-widget-headers-match__participant-icons {
@@ -63,7 +63,7 @@
 .fs-widget-headers-match__participant-icons-center {
     display: flex;
     gap: 16px;
-    align-items: flex-end;
+    align-items: center;
 }
 
 /* Empty cell for flex spacing */
@@ -164,7 +164,7 @@
 /* Score section */
 .fs-widget-headers-match__score {
     display: flex;
-    flex: 1 0 0;
+    flex: 1 1 1;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -253,4 +253,90 @@
     text-transform: uppercase;
     white-space: nowrap;
     margin: 0;
+}
+
+/* ========================================== */
+/* LIVE STATE VARIANT                         */
+/* ========================================== */
+
+/* Live state modifier - red scores */
+.fs-widget-headers-match--live .fs-widget-headers-match__score-home,
+.fs-widget-headers-match--live .fs-widget-headers-match__score-separator,
+.fs-widget-headers-match--live .fs-widget-headers-match__score-away {
+    color: #FF0046; /* brand-red */
+}
+
+/* Live info container */
+.fs-widget-headers-match__live-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Live period text (e.g., "2ND HALF") */
+.fs-widget-headers-match__live-period {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #FF0046; /* brand-red */
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin: 0;
+}
+
+/* Live time container (minutes + icon) */
+.fs-widget-headers-match__live-time {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Live minutes text */
+.fs-widget-headers-match__live-minutes {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #FF0046; /* brand-red */
+    white-space: nowrap;
+}
+
+
+/* Live stream button */
+.fs-widget-headers-match__live-stream-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 3px 8px;
+    background-color: #FFFFFF;
+    border: 1px solid #FF0046;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    margin-top: 8px;
+}
+
+.fs-widget-headers-match__live-stream-button:hover {
+    background-color: #FAFAFA;
+    border-color: #DFDFDF;
+}
+
+.fs-widget-headers-match__live-stream-button:focus-visible {
+    outline: 2px solid #FF0046;
+    outline-offset: 2px;
+}
+
+/* Live stream text */
+.fs-widget-headers-match__live-stream-text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #FF0046; /* brand-red */
+    text-transform: uppercase;
+    white-space: nowrap;
 }

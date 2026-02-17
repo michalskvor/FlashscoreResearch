@@ -1,0 +1,287 @@
+/* FSSummaryIncidentRow - Molecule Component */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================== */
+/* ROW CONTAINER                               */
+/* =========================================== */
+
+.fs-summary-incident-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+.fs-summary-incident-row--right {
+    align-items: flex-end;
+}
+
+/* =========================================== */
+/* MAIN LINE                                   */
+/* =========================================== */
+
+.fs-summary-incident-row__main {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+}
+
+/* =========================================== */
+/* TIME                                        */
+/* =========================================== */
+
+/* 13px Bold, #555E61, min-width 20px */
+.fs-summary-incident-row__time {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #555E61;
+    min-width: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.fs-summary-incident-row--right .fs-summary-incident-row__time {
+    text-align: right;
+}
+
+/* =========================================== */
+/* INCIDENT BADGE                              */
+/* =========================================== */
+
+/* 28px total: 6px padding + 16px icon, border 1px #EEEEEE, radius 8px */
+.fs-summary-incident-row__badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border: 1px solid #EEEEEE;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.fs-summary-incident-row__badge-icon {
+    width: 16px;
+    height: 16px;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* =========================================== */
+/* NAMES                                       */
+/* =========================================== */
+
+/* Left: pr-4px, Right: pl-4px */
+.fs-summary-incident-row__names {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-right: 4px;
+    flex-shrink: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.fs-summary-incident-row--right .fs-summary-incident-row__names {
+    padding-right: 0;
+    padding-left: 4px;
+    justify-content: flex-end;
+}
+
+/* =========================================== */
+/* PLAYER + DESCRIPTION GROUP                  */
+/* =========================================== */
+
+.fs-summary-incident-row__player-group {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.fs-summary-incident-row--right .fs-summary-incident-row__player-group {
+    flex-direction: row-reverse;
+}
+
+/* =========================================== */
+/* PLAYER NAME                                 */
+/* =========================================== */
+
+/* 13px Bold, #001E28 */
+.fs-summary-incident-row__player {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #001E28;
+    white-space: nowrap;
+}
+
+/* =========================================== */
+/* DESCRIPTION                                 */
+/* =========================================== */
+
+/* 13px Regular, #555E61, nowrap */
+.fs-summary-incident-row__description {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #555E61;
+    white-space: nowrap;
+}
+
+/* =========================================== */
+/* SUBPLAYER                                   */
+/* =========================================== */
+
+/* 13px Regular, #555E61 */
+.fs-summary-incident-row__subplayer {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #555E61;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Badge score text — e.g. "1 - 0", "2 - 0" shown next to icon for goals */
+.fs-summary-incident-row__badge--with-score {
+    flex-direction: row;
+    gap: 6px;
+}
+
+.fs-summary-incident-row__badge-score {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #001E28;
+    white-space: nowrap;
+}
+
+/* =========================================== */
+/* VIDEO ICON                                  */
+/* =========================================== */
+
+/* 16px icon, color #001E28 */
+.fs-summary-incident-row__video-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    display: block;
+    /* Color: #001E28 (icon/primary/base) */
+    filter: brightness(0) saturate(100%);
+}
+
+/* =========================================== */
+/* ASSISTANCE LINE                             */
+/* =========================================== */
+
+.fs-summary-incident-row__assistance {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.fs-summary-incident-row--right .fs-summary-incident-row__assistance {
+    justify-content: flex-end;
+}
+
+/* Assist name — 13px Regular, #555E61 */
+.fs-summary-incident-row__assist {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #555E61;
+}
+
+/* Separator '+' */
+.fs-summary-incident-row__separator {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #555E61;
+}
+
+/* =========================================== */
+/* DEMO STYLES                                 */
+/* =========================================== */
+
+.demo-container {
+    max-width: 639px;
+    margin: 0 auto;
+    padding: 32px 16px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    background-color: #FFFFFF;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #001E28;
+    margin: 0 0 8px;
+}
+
+.demo-container > p {
+    font-size: 13px;
+    color: #555E61;
+    margin: 0 0 32px;
+}
+
+.demo-container h2 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999999;
+    margin: 24px 0 8px;
+}
+
+.demo-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 0;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+- align=Left: time → badge → player(bold) + description(regular) → subplayer → video-icon
+- align=Right: video-icon → subplayer → description(regular) + player(bold) → badge → time
+- Row gap (between lines): 5px
+- Main row gap: 8px
+- Player+Description gap: 4px
+- Assistance gap: 2px
+- Time: 13px Bold, #555E61, min-width 20px
+- Badge: 6px padding, 1px #EEEEEE border, 8px radius, 16px icon inside
+- Player: 13px Bold, #001E28
+- Description/Subplayer: 13px Regular, #555E61
+- Video icon: 16px, #001E28
+- Names left: pr-4px; names right: pl-4px
+- Right variant: all text-right, row reversed, assistance right-aligned
+*/

@@ -1,9 +1,9 @@
-# Layout2 Spec
+# LayoutTemplate Spec
 
 ## **Desktop Layout - 1440px Viewport**
 
 ### **Overview**
-Layout2 is an alternative desktop layout template featuring a larger navigation area (277px height) and centered content wrapper. Unlike Layout (with fixed 64px navigation), Layout2 provides more vertical space for navigation and footer sections.
+LayoutTemplate is an alternative desktop layout template featuring a larger navigation area (277px height) and centered content wrapper. Unlike Layout (with fixed 64px navigation), LayoutTemplate provides more vertical space for navigation and footer sections.
 
 ### **Grid & Canvas Dimensions**
 - **Viewport Width**: 1440px minimum
@@ -42,7 +42,7 @@ Layout2 is an alternative desktop layout template featuring a larger navigation 
 
 ### **Key Differences from Layout**
 
-| Feature | Layout | Layout2 |
+| Feature | Layout | LayoutTemplate |
 |---------|--------|---------|
 | Navigation Height | 64px (fixed to top) | 277px (in flow) |
 | Footer Height | Variable | 277px (fixed) |

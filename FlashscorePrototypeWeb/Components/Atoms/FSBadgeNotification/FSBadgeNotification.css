@@ -1,0 +1,185 @@
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Design System Tokens */
+:root {
+    /* Typography tokens */
+    --notification-badge-font-family: 'Livesport Finder LCGJK', sans-serif;
+    --notification-badge-font-size: 10px;
+    --notification-badge-font-weight: 700;
+
+    /* Transition */
+    --transition-duration: 0.2s;
+
+    /* Primary Badge Colors */
+    --color-badge-notification-general-background-base: #C8CDCD; /* slate-black-shades/10 */
+    --color-badge-notification-general-fill-base: #001E28; /* brand-slate-black/500 */
+    --color-badge-notification-general-background-active: #ffffff; /* brand-red/500 */
+    --color-badge-notification-general-fill-active: #001E28; /* white */
+
+    /* Secondary Badge Colors */
+    --color-badge-notification-secondary-background-base: #EEEEEE; /* slate-black-shades/100 */
+    --color-badge-notification-secondary-fill-base: #001E28; /* brand-slate-black/500 */
+    --color-badge-notification-secondary-background-active: #FFFFFF; /* brand-slate-black/500 */
+    --color-badge-notification-secondary-fill-active: #001E28; /* white */
+
+    /* Live Badge Colors */
+    --color-badge-notification-live-background-base: #FF0046; /* brand-red/50 */
+    --color-badge-notification-live-fill-base: #FFFFFF; /* brand-red/500 */
+    --color-badge-notification-live-background-active: #FFFFFF; /* brand-red/500 */
+    --color-badge-notification-live-fill-active: #001E28; /* white */
+}
+
+/* FSBadgeNotification Component - Base Styles */
+.badge {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 4px;
+    background-color: var(--color-badge-notification-general-background-base);
+    color: var(--color-badge-notification-general-fill-base);
+    font-family: var(--notification-badge-font-family);
+    font-weight: var(--notification-badge-font-weight);
+    font-size: var(--notification-badge-font-size);
+    transition:
+        background-color var(--transition-duration),
+        color var(--transition-duration);
+}
+
+/* Primary Variant */
+.badge-primary:hover:not(.badge-selected),
+.badge-primary.badge-selected {
+    background-color: var(--color-badge-notification-general-background-active);
+    color: var(--color-badge-notification-general-fill-active);
+}
+
+/* Secondary Variant */
+.badge-secondary {
+    background-color: var(--color-badge-notification-secondary-background-base);
+    color: var(--color-badge-notification-secondary-fill-base);
+}
+
+.badge-secondary:hover:not(.badge-selected),
+.badge-secondary.badge-selected {
+    background-color: var(--color-badge-notification-secondary-background-active);
+    color: var(--color-badge-notification-secondary-fill-active);
+}
+
+/* Live Variant */
+.badge-live {
+    background-color: var(--color-badge-notification-live-background-base);
+    color: var(--color-badge-notification-live-fill-base);
+}
+
+.badge-live.badge-selected {
+    background-color: var(--color-badge-notification-live-background-active);
+    color: var(--color-badge-notification-live-fill-active);
+}
+
+/* Positioned Variant (for absolute positioning over icons) */
+.badge-positioned {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+}
+
+/* Demo styling (remove in production) */
+.demo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+}
+
+.demo-container h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #001E28;
+}
+
+.demo-container h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    color: #001E28;
+}
+
+.demo-container h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    color: #001E28;
+}
+
+.demo-container > p {
+    font-size: 14px;
+    color: #555E61;
+    margin-bottom: 24px;
+}
+
+.demo-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.demo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.demo-label {
+    font-size: 12px;
+    color: #555E61;
+    text-align: center;
+}
+
+/* Badge positioning inside tabs */
+.fs-tabs--secondary .badge {
+    margin-left: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 639px) {
+    .demo-container {
+        padding: 24px 16px;
+    }
+
+    .demo-container h1 {
+        font-size: 24px;
+    }
+
+    .demo-container h2 {
+        font-size: 18px;
+        margin-top: 24px;
+    }
+
+    .demo-row {
+        gap: 24px;
+    }
+}

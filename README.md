@@ -79,7 +79,7 @@ Basic width of screen for these three layout types is 393px for mobile view, 744
 
 ## Prototyping Workflow
 
-**Analyze:** Review the screen previews to understand component placement.
+**Analyze:** Review the screen previews and read Prototypes.md file to understand component placement.
 **Verify:** Check the Assets, Colors, and Typography files for existing matches.
 **Implement:** Code the layout using the breakpoint logic above.
 **Validate:** Ensure no new color variables were created and FS Numbers is only applied to large-scale digits.
@@ -91,3 +91,35 @@ The system is built on a strict geometric progression to ensure visual harmony.
 **8px Grid:** All high-level layout structures must align with an 8px grid.
 **The Even-Number Rule:** All spacing (padding, margin, gap) and sizing (width, height) must use even numbers ($2, 4, 6, 8, 10, \dots$).
 **Exception:** Odd numbers are permitted **only** if they are explicitly specified in a pre-existing component within the documentation or screen previews.
+
+##Rules for Prototyping
+
+###Repository & File Location
+
+New prototype files must be placed in the following directory based on their target device. Do not create files in the root directory.
+/FlashscorePrototypeWeb/Prototypes/[PrototypeName].html
+/FlashscorePrototypeWeb/Prototypes/[PrototypeName].css
+
+###Rapid Prototyping & Template Rule
+
+To ensure layout consistency across all prototypes, Claude must use the **LayoutTemplate** as the foundation for every new file.
+
+- **Immutable Structure:** The LayoutTemplate must be used without changes to its core structural logic (Nav, Footer, and Container wrappers).
+
+- **Atomic Editing (The "Container Only" Rule):** When adding or editing content (e.g., adding a widget to the left-container or a chart to the main-container), Claude is strictly prohibited from modifying any other part of the template.
+
+-**Scope:** Changes must be scoped exclusively to the target container's inner HTML/CSS.
+
+###Prototyping Workflow
+
+**1) Initialize:** Copy LayoutTemplate into the correct /prototypes folder.
+
+**2)Target:** Identify the specific container requiring changes (left, main, or right).
+
+**3)Inject:** Add the component code (e.g., the 90-bar Momentum chart) **only inside the target container.**
+
+**4)Validate:** Ensure no global styles or other containers were altered.
+
+###Prototyping Data
+
+**Unless specified (prompt) otherwise by the designer, always use Premier League names, teams and images.*

@@ -1,0 +1,39 @@
+/* FSWidgetSummaryIncident - Widget Component */
+
+/* =========================================== */
+/* WIDGET CONTAINER                            */
+/* =========================================== */
+
+.fs-widget-summary-incident {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* LINES CONTAINER                             */
+/* =========================================== */
+
+.fs-widget-summary-incident__lines {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+- Header: FSHeadersSection — left "1ST HALF", right score "2 - 0"
+- Lines: flex-col, gap 8px, padding 0 12px
+- Widget bottom padding: 20px (section/vertical/l)
+- Rows: FSSummaryIncidentRow (Left/Right variants)
+- Goal badge uses --with-score modifier: icon + score side by side, gap 6px
+- All spacing follows 4/8px grid
+*/

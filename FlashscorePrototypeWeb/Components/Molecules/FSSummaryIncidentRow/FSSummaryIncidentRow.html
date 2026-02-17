@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSSummaryIncidentRow - Molecule Component</title>
+    <link rel="stylesheet" href="FSSummaryIncidentRow.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>FSSummaryIncidentRow</h1>
+        <p>Match summary incident row. Two alignment variants (Left/Right) and optional assistance second line.</p>
+
+        <!-- ================================ -->
+        <!-- VARIANT: Left — with assistance  -->
+        <!-- ================================ -->
+        <h2>Left — with assistance</h2>
+        <div class="demo-row">
+            <div class="fs-summary-incident-row fs-summary-incident-row--left">
+                <!-- Line 1: Main -->
+                <div class="fs-summary-incident-row__main">
+                    <span class="fs-summary-incident-row__time">22'</span>
+                    <div class="fs-summary-incident-row__badge">
+                        <img src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="" class="fs-summary-incident-row__badge-icon">
+                    </div>
+                    <div class="fs-summary-incident-row__names">
+                        <div class="fs-summary-incident-row__player-group">
+                            <span class="fs-summary-incident-row__player">Haaland</span>
+                            <span class="fs-summary-incident-row__description">(Goal)</span>
+                        </div>
+                        <span class="fs-summary-incident-row__subplayer">De Bruyne</span>
+                    </div>
+                    <img src="../../../Assets/Icons/Action/Video/Available.svg" alt="" class="fs-summary-incident-row__video-icon">
+                </div>
+                <!-- Line 2: Assistance -->
+                <div class="fs-summary-incident-row__assistance">
+                    <span class="fs-summary-incident-row__assist">De Bruyne</span>
+                    <span class="fs-summary-incident-row__separator">+</span>
+                    <span class="fs-summary-incident-row__assist">Silva</span>
+                    <span class="fs-summary-incident-row__separator">+</span>
+                    <span class="fs-summary-incident-row__assist">Foden</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================== -->
+        <!-- VARIANT: Left — no assistance  -->
+        <!-- ============================== -->
+        <h2>Left — no assistance</h2>
+        <div class="demo-row">
+            <div class="fs-summary-incident-row fs-summary-incident-row--left">
+                <!-- Line 1: Main -->
+                <div class="fs-summary-incident-row__main">
+                    <span class="fs-summary-incident-row__time">45'</span>
+                    <div class="fs-summary-incident-row__badge">
+                        <img src="../../../Assets/Icons/Incidents/Yellow card.svg" alt="" class="fs-summary-incident-row__badge-icon">
+                    </div>
+                    <div class="fs-summary-incident-row__names">
+                        <div class="fs-summary-incident-row__player-group">
+                            <span class="fs-summary-incident-row__player">Rodri</span>
+                        </div>
+                    </div>
+                    <img src="../../../Assets/Icons/Action/Video/Available.svg" alt="" class="fs-summary-incident-row__video-icon">
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- VARIANT: Right — with assistance  -->
+        <!-- ================================= -->
+        <h2>Right — with assistance</h2>
+        <div class="demo-row">
+            <div class="fs-summary-incident-row fs-summary-incident-row--right">
+                <!-- Line 1: Main (mirrored) -->
+                <div class="fs-summary-incident-row__main">
+                    <img src="../../../Assets/Icons/Action/Video/Available.svg" alt="" class="fs-summary-incident-row__video-icon">
+                    <div class="fs-summary-incident-row__names">
+                        <span class="fs-summary-incident-row__subplayer">Andreas</span>
+                        <div class="fs-summary-incident-row__player-group">
+                            <span class="fs-summary-incident-row__description">(Goal)</span>
+                            <span class="fs-summary-incident-row__player">Mitrović</span>
+                        </div>
+                    </div>
+                    <div class="fs-summary-incident-row__badge">
+                        <img src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="" class="fs-summary-incident-row__badge-icon">
+                    </div>
+                    <span class="fs-summary-incident-row__time">63'</span>
+                </div>
+                <!-- Line 2: Assistance (right-aligned) -->
+                <div class="fs-summary-incident-row__assistance">
+                    <span class="fs-summary-incident-row__assist">Tete</span>
+                    <span class="fs-summary-incident-row__separator">+</span>
+                    <span class="fs-summary-incident-row__assist">Willian</span>
+                    <span class="fs-summary-incident-row__separator">+</span>
+                    <span class="fs-summary-incident-row__assist">Smith</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- =============================== -->
+        <!-- VARIANT: Right — no assistance  -->
+        <!-- =============================== -->
+        <h2>Right — no assistance</h2>
+        <div class="demo-row">
+            <div class="fs-summary-incident-row fs-summary-incident-row--right">
+                <!-- Line 1: Main (mirrored) -->
+                <div class="fs-summary-incident-row__main">
+                    <img src="../../../Assets/Icons/Action/Video/Available.svg" alt="" class="fs-summary-incident-row__video-icon">
+                    <div class="fs-summary-incident-row__names">
+                        <div class="fs-summary-incident-row__player-group">
+                            <span class="fs-summary-incident-row__description">(Substitution)</span>
+                            <span class="fs-summary-incident-row__player">Wilson</span>
+                        </div>
+                    </div>
+                    <div class="fs-summary-incident-row__badge">
+                        <img src="../../../Assets/Icons/Incidents/Substitution.svg" alt="" class="fs-summary-incident-row__badge-icon">
+                    </div>
+                    <span class="fs-summary-incident-row__time">71'</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

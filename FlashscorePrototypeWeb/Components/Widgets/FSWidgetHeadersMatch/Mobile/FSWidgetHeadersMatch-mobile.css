@@ -1,0 +1,326 @@
+/* FSWidgetHeadersMatch - Mobile CSS */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'FS Numbers';
+    src: url('../../../../DesignTokens/Typography/font-family/FS Numbers.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Main container */
+.fs-widget-headers-match-mobile {
+    background-color: #FFFFFF;
+    width: 100%;
+    max-width: 639px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 8px 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+/* Date container */
+.fs-widget-headers-match-mobile__date-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.fs-widget-headers-match-mobile__date {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #555E61;
+    text-align: center;
+    white-space: nowrap;
+    margin: 0;
+}
+
+/* Main content row */
+.fs-widget-headers-match-mobile__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-bottom: 4px;
+    width: 100%;
+}
+
+/* Participant sections */
+.fs-widget-headers-match-mobile__participant {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    flex: 1 0 0;
+    max-width: 250px;
+    min-width: 110px;
+}
+
+/* Participant icons row */
+.fs-widget-headers-match-mobile__participant-icons {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+}
+
+/* Empty flex spacer cells */
+.fs-widget-headers-match-mobile__empty-cell {
+    flex: 1 0 0;
+    height: 100%;
+    min-height: 1px;
+    min-width: 1px;
+}
+
+/* Center icons group (favorite + logo + serve) */
+.fs-widget-headers-match-mobile__participant-icons-center {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Favorite icon container */
+.fs-widget-headers-match-mobile__favorite {
+    height: 100%;
+    width: 32px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Serve indicator placeholder */
+.fs-widget-headers-match-mobile__serve {
+    height: 100%;
+    width: 32px;
+    overflow: hidden;
+}
+
+/* Participant info */
+.fs-widget-headers-match-mobile__participant-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Participant name row */
+.fs-widget-headers-match-mobile__participant-name {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 4px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Next stage icon (e.g. arrow up) */
+.fs-widget-headers-match-mobile__next-stage-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    filter: brightness(0) saturate(100%) invert(60%) sepia(5%) saturate(500%) hue-rotate(144deg) brightness(90%) contrast(85%);
+}
+
+/* Participant name text - Mobile: 14px (simpleTxt-5 mobile) */
+.fs-widget-headers-match-mobile__participant-text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #001E28;
+    margin: 0;
+    text-align: center;
+}
+
+.fs-widget-headers-match-mobile__participant-text--bold {
+    font-weight: 700;
+}
+
+/* Score container */
+.fs-widget-headers-match-mobile__score-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+    max-width: 180px;
+    align-self: stretch;
+}
+
+/* Score row */
+.fs-widget-headers-match-mobile__score-content {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    justify-content: center;
+    min-width: 61px;
+    width: 100%;
+}
+
+/* Mobile score: 20px FS Numbers (score-4 mobile) */
+.fs-widget-headers-match-mobile__score-home {
+    display: flex;
+    flex: 1 0 0;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 1px;
+    min-width: 1px;
+    overflow: hidden;
+    font-family: 'FS Numbers', 'Noto Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #001E28;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.fs-widget-headers-match-mobile__score-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: 'FS Numbers', 'Noto Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #001E28;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.fs-widget-headers-match-mobile__score-away {
+    display: flex;
+    flex: 1 0 0;
+    align-items: center;
+    min-height: 1px;
+    min-width: 1px;
+    overflow: hidden;
+    font-family: 'FS Numbers', 'Noto Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #001E28;
+    white-space: nowrap;
+}
+
+/* Match state (FINISHED / LIVE info) */
+.fs-widget-headers-match-mobile__state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 8px;
+    width: 100%;
+}
+
+.fs-widget-headers-match-mobile__state-text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #001E28;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin: 0;
+}
+
+/* ============================= */
+/* LIVE STATE VARIANT            */
+/* ============================= */
+
+.fs-widget-headers-match-mobile--live .fs-widget-headers-match-mobile__score-home,
+.fs-widget-headers-match-mobile--live .fs-widget-headers-match-mobile__score-separator,
+.fs-widget-headers-match-mobile--live .fs-widget-headers-match-mobile__score-away {
+    color: #FF0046;
+}
+
+/* Live info container */
+.fs-widget-headers-match-mobile__live-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.fs-widget-headers-match-mobile__live-period {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #FF0046;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.fs-widget-headers-match-mobile__live-time {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.fs-widget-headers-match-mobile__live-minutes {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #FF0046;
+    white-space: nowrap;
+}
+
+/* Live stream button */
+.fs-widget-headers-match-mobile__live-stream-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 3px 8px;
+    background-color: #FFFFFF;
+    border: 1px solid #FF0046;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.fs-widget-headers-match-mobile__live-stream-button:hover {
+    background-color: #FAFAFA;
+}
+
+.fs-widget-headers-match-mobile__live-stream-text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #FF0046;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Design System Compliance Notes */
+/*
+- Background: #FFFFFF (white)
+- Text primary: #001E28
+- Text secondary: #555E61
+- Brand red: #FF0046
+- Max width: 639px (mobile breakpoint)
+- Padding: 24px top, 8px horizontal, 20px bottom
+- Participant name: 14px Livesport Finder LCGJK (mobile simpletxt-5)
+- Date: 13px Livesport Finder LCGJK regular, color #555E61
+- Score: 20px FS Numbers (mobile score-4)
+- State/live: 13px Livesport Finder LCGJK Bold, uppercase
+- Team logo: 52px FSAssetBoxed (2XL mobile size)
+- Favorite icon: 32px
+- Next-stage icon: 14px
+- Icon center gap: 8px
+- Score gap: 2px
+- All spacing values follow 8px grid
+*/

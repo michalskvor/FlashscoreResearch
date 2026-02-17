@@ -1,0 +1,111 @@
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Design System Tokens */
+:root {
+    /* Colors from primitives.json */
+    --badge-highlight-background: #FF0046; /* brand-red/500 */
+    --badge-highlight-text: #FFFFFF; /* white */
+    --badge-highlight-icon-color: #001E28; /* brand-slate-black/500 */
+
+    /* Typography tokens - overline style */
+    --badge-highlight-font-family: 'Livesport Finder LCGJK', sans-serif;
+    --badge-highlight-font-size: 10px;
+    --badge-highlight-font-weight: 700; /* Bold */
+    --badge-highlight-line-height: 12px;
+    --badge-highlight-letter-spacing: 0;
+
+    /* Component spacing */
+    --badge-highlight-border-radius: 4px;
+    --badge-highlight-padding-vertical: 2px;
+    --badge-highlight-padding-horizontal: 4px;
+    --badge-highlight-icon-size: 8px;
+    --badge-highlight-gap: 2px;
+}
+
+/* FSBadgeHighlight Component - Base Styles */
+.fs-badge-highlight {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--badge-highlight-gap);
+    padding: var(--badge-highlight-padding-vertical) var(--badge-highlight-padding-horizontal);
+    background-color: var(--badge-highlight-background);
+    border-radius: var(--badge-highlight-border-radius);
+    overflow: hidden;
+}
+
+.fs-badge-highlight__text {
+    font-family: var(--badge-highlight-font-family);
+    font-size: var(--badge-highlight-font-size);
+    font-weight: var(--badge-highlight-font-weight);
+    line-height: var(--badge-highlight-line-height);
+    letter-spacing: var(--badge-highlight-letter-spacing);
+    color: var(--badge-highlight-text);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Icon Styles */
+.fs-badge-highlight__icon {
+    width: var(--badge-highlight-icon-size);
+    height: var(--badge-highlight-icon-size);
+    flex-shrink: 0;
+}
+
+/* With Icon Variant */
+.fs-badge-highlight--with-icon {
+    /* Additional styles for when icon is present */
+    /* Gap is already handled by base styles */
+}
+
+/* Demo styling (remove in production) */
+.demo-container {
+    padding: 40px;
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #F5F5F5;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #001E28;
+}
+
+.demo-container h2 {
+    font-size: 18px;
+    margin-top: 32px;
+    margin-bottom: 8px;
+    color: #001E28;
+}
+
+.demo-container p {
+    font-size: 14px;
+    margin-bottom: 16px;
+    color: #555E61;
+}
+
+.demo-container .fs-badge-highlight {
+    margin-right: 12px;
+    margin-bottom: 12px;
+}
+
+.example-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}

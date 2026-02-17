@@ -1,0 +1,56 @@
+/* FSWidgetTVchannels - Widget Component */
+
+/* =========================================== */
+/* WIDGET CONTAINER                            */
+/* =========================================== */
+
+.fs-widget-tv-channels {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* BODY                                        */
+/* =========================================== */
+
+.fs-widget-tv-channels__body {
+    padding: 16px 12px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* CHANNELS WRAP                               */
+/* =========================================== */
+
+.fs-widget-tv-channels__channels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    width: 100%;
+}
+
+/* =========================================== */
+/* SHOW MORE BUTTON — modifier                 */
+/* =========================================== */
+
+/* Override icon filter: #001E28 (icon/primary/base) instead of #999 */
+.fs-button-stream--show-more .fs-button-stream__icon {
+    filter: brightness(0) saturate(100%);
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+- Header: FSHeadersSection molecule, "TV CHANNEL" left-only
+- Channels: flex-wrap, gap 8px, each channel is FSButtonStream atom
+- Body padding: 16px top, 12px horizontal, 0 bottom
+- Widget bottom padding: 20px (section/vertical/l)
+- "Show more" button: same as FSButtonStream but with right-arrow icon (#001E28)
+- All spacing follows 4/8px grid
+*/

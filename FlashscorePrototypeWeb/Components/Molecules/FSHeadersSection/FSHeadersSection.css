@@ -1,0 +1,125 @@
+/* FSHeadersSection - Molecule Component */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================== */
+/* BASE CONTAINER                              */
+/* =========================================== */
+
+.fs-headers-section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 28px;
+    padding: 0 12px;
+    background-color: #EEEEEE;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* SLOTS                                       */
+/* =========================================== */
+
+/* Left slot — text aligns to the left */
+.fs-headers-section__left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1 0 0;
+    min-width: 0;
+    min-height: 1px;
+    gap: 4px;
+}
+
+/* Center slot — text aligns to the center */
+.fs-headers-section__center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 0;
+    min-width: 0;
+    min-height: 1px;
+}
+
+/* Right slot — text aligns to the right */
+.fs-headers-section__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1 0 0;
+    min-width: 0;
+    min-height: 1px;
+}
+
+/* =========================================== */
+/* TEXT                                        */
+/* =========================================== */
+
+/* overline/overline-2 Bold — 11px, 14px line-height, uppercase */
+.fs-headers-section__text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #555E61;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* =========================================== */
+/* DEMO STYLES                                 */
+/* =========================================== */
+
+.demo-container {
+    max-width: 639px;
+    margin: 0 auto;
+    padding: 32px 16px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    background-color: #FFFFFF;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #001E28;
+    margin: 0 0 8px;
+}
+
+.demo-container > p {
+    font-size: 13px;
+    color: #555E61;
+    margin: 0 0 32px;
+}
+
+.demo-container h2 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999999;
+    margin: 24px 0 8px;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+- Background: #EEEEEE (container/general/secondary)
+- Text color: #555E61 (text/secondary)
+- Font: Livesport Finder LCGJK Bold, 11px, 14px line-height, uppercase
+- Min-height: 28px
+- Horizontal padding: 12px
+- Three equal flex slots (flex: 1 each): left, center, right
+- Left slot: justify-content flex-start
+- Center slot: justify-content center
+- Right slot: justify-content flex-end
+- Slots are always present; leave empty when not needed
+- Gap between items within a slot: 4px (for icon + text combos)
+- All spacing follows 4/8px grid
+*/

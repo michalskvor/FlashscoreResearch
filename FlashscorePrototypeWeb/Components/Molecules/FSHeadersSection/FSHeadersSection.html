@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSHeadersSection - Molecule Component</title>
+    <link rel="stylesheet" href="FSHeadersSection.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>FSHeadersSection</h1>
+        <p>Section header with up to three text slots: left, center, right.</p>
+
+        <!-- ======================== -->
+        <!-- VARIANT: All three slots -->
+        <!-- ======================== -->
+        <h2>All three slots</h2>
+        <div class="fs-headers-section">
+            <div class="fs-headers-section__left">
+                <span class="fs-headers-section__text">TEAM</span>
+            </div>
+            <div class="fs-headers-section__center">
+                <span class="fs-headers-section__text">PLAYED</span>
+            </div>
+            <div class="fs-headers-section__right">
+                <span class="fs-headers-section__text">POINTS</span>
+            </div>
+        </div>
+
+        <!-- ======================== -->
+        <!-- VARIANT: Left only       -->
+        <!-- ======================== -->
+        <h2>Left only</h2>
+        <div class="fs-headers-section">
+            <div class="fs-headers-section__left">
+                <span class="fs-headers-section__text">MATCH SUMMARY</span>
+            </div>
+            <div class="fs-headers-section__center"></div>
+            <div class="fs-headers-section__right"></div>
+        </div>
+
+        <!-- ======================== -->
+        <!-- VARIANT: Center only     -->
+        <!-- ======================== -->
+        <h2>Center only</h2>
+        <div class="fs-headers-section">
+            <div class="fs-headers-section__left"></div>
+            <div class="fs-headers-section__center">
+                <span class="fs-headers-section__text">HIGHLIGHTS</span>
+            </div>
+            <div class="fs-headers-section__right"></div>
+        </div>
+
+        <!-- ======================== -->
+        <!-- VARIANT: Right only      -->
+        <!-- ======================== -->
+        <h2>Right only</h2>
+        <div class="fs-headers-section">
+            <div class="fs-headers-section__left"></div>
+            <div class="fs-headers-section__center"></div>
+            <div class="fs-headers-section__right">
+                <span class="fs-headers-section__text">SEE ALL</span>
+            </div>
+        </div>
+
+        <!-- =============================== -->
+        <!-- VARIANT: Left + Right (no center) -->
+        <!-- =============================== -->
+        <h2>Left + Right</h2>
+        <div class="fs-headers-section">
+            <div class="fs-headers-section__left">
+                <span class="fs-headers-section__text">TOP SCORERS</span>
+            </div>
+            <div class="fs-headers-section__center"></div>
+            <div class="fs-headers-section__right">
+                <span class="fs-headers-section__text">SEE ALL</span>
+            </div>
+        </div>
+
+        <!-- =============================== -->
+        <!-- VARIANT: Left + Center          -->
+        <!-- =============================== -->
+        <h2>Left + Center</h2>
+        <div class="fs-headers-section">
+            <div class="fs-headers-section__left">
+                <span class="fs-headers-section__text">HOME</span>
+            </div>
+            <div class="fs-headers-section__center">
+                <span class="fs-headers-section__text">OVERALL</span>
+            </div>
+            <div class="fs-headers-section__right"></div>
+        </div>
+    </div>
+</body>
+</html>

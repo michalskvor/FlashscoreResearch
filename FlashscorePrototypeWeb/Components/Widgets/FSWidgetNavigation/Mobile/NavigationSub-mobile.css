@@ -1,0 +1,199 @@
+/* NavigationSub - Mobile CSS */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* NavigationSub Mobile Container */
+.nav-sub-mobile {
+    width: 100%;
+    box-sizing:border-box;
+    max-width: 639px;
+    height: 48px;
+    background-color: #EEEEEE;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.nav-sub-mobile::-webkit-scrollbar {
+    display: none;
+}
+
+/* Favorites Icon Button */
+.nav-sub-mobile__favorites {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 48px;
+    padding: 0 8px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.nav-sub-mobile__favorites-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+}
+
+.nav-sub-mobile__favorites-icon img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) saturate(100%) invert(39%) sepia(7%) saturate(645%) hue-rotate(144deg) brightness(96%) contrast(88%);
+}
+
+/* Badge on Favorites Icon - Using FSBadgeNotification Component */
+.nav-sub-mobile__favorites-badge {
+    position: absolute;
+    top: -9px;
+    right: -11px;
+}
+
+/* Sports Items Container */
+.nav-sub-mobile__items {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    height: 48px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.nav-sub-mobile__items::-webkit-scrollbar {
+    display: none;
+}
+
+/* Individual Sport Item */
+.nav-sub-mobile__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 48px;
+    padding: 0 8px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Item Text */
+.nav-sub-mobile__item-text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #555E61;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Active Item Text */
+.nav-sub-mobile__item--active .nav-sub-mobile__item-text {
+    color: #FF0046;
+}
+
+/* Item Underline (Active state only) */
+.nav-sub-mobile__item-underline {
+    position: absolute;
+    bottom: 0;
+    left: 8px;
+    right: 8px;
+    height: 3px;
+    background-color: #FF0046;
+    border-radius: 2px 2px 0 0;
+}
+
+/* More Button */
+.nav-sub-mobile__more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 48px;
+    padding: 0 8px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.nav-sub-mobile__more img {
+    width: 12px;
+    height: 12px;
+    filter: brightness(0) saturate(100%) invert(39%) sepia(7%) saturate(645%) hue-rotate(144deg) brightness(96%) contrast(88%);
+}
+
+/* Divider */
+.nav-sub-mobile__divider {
+    width: 100%;
+    max-width: 639px;
+    height: 1px;
+    background-color: #C8CDCD;
+}
+
+/* Demo Container */
+.demo-container {
+    width: 100%;
+    max-width: 639px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 360px) {
+    .nav-sub-mobile__item {
+        padding: 0 6px;
+    }
+
+    .nav-sub-mobile__item-text {
+        font-size: 11px;
+    }
+
+    .nav-sub-mobile__favorites {
+        padding: 0 6px;
+    }
+
+    .nav-sub-mobile__more {
+        padding: 0 6px;
+    }
+}
+
+/* Design System Compliance Notes */
+/*
+- All spacing values are even numbers (2px, 4px, 6px, 8px, 10px, 12px, 16px, 18px)
+- All colors use HEX values only
+- Background: #EEEEEE (light grey)
+- Active text: #FF0046 (brand red)
+- Inactive text: #555E61 (grey)
+- Badge: Uses FSBadgeNotification component (badge-secondary variant)
+- Badge positioning: top: -9px, right: -11px
+- Divider: #C8CDCD
+- Height: 48px
+- Font: Livesport Finder LCGJK Bold, 12px
+- Underline height: 3px (odd - from Figma spec)
+- Icon size: 18px (favorites), 12px (more)
+- Horizontal scroll enabled with hidden scrollbar
+*/

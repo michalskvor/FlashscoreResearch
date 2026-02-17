@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSTabs - Tab Component</title>
+    <link rel="stylesheet" href="FSTabs.css">
+</head>
+<body style="background-color: #FFFFFF; padding: 40px;">
+
+    <h2 style="font-family: 'Livesport Finder LCGJK', sans-serif; margin-bottom: 32px;">FSTabs - Active State</h2>
+
+    <!-- Active Tab -->
+    <div class="fs-tabs fs-tabs--active">
+        <span class="fs-tabs__text">Summary</span>
+        <div class="fs-tabs__underline"></div>
+    </div>
+
+    <h2 style="font-family: 'Livesport Finder LCGJK', sans-serif; margin: 48px 0 32px;">FSTabs - Inactive State</h2>
+
+    <!-- Inactive Tab (as button) -->
+    <button class="fs-tabs">
+        <span class="fs-tabs__text">Statistics</span>
+    </button>
+
+    <h2 style="font-family: 'Livesport Finder LCGJK', sans-serif; margin: 48px 0 32px;">FSTabs - Example Row</h2>
+
+    <!-- Example: Row of Tabs -->
+    <div class="fs-tabs-row fs-tabs-row--primary">
+        <div class="fs-tabs fs-tabs--active">
+            <span class="fs-tabs__text">Summary</span>
+            <div class="fs-tabs__underline"></div>
+        </div>
+
+        <button class="fs-tabs">
+            <span class="fs-tabs__text">Statistics</span>
+        </button>
+
+        <button class="fs-tabs">
+            <span class="fs-tabs__text">Lineups</span>
+        </button>
+
+        <button class="fs-tabs">
+            <span class="fs-tabs__text">H2H</span>
+        </button>
+
+        <button class="fs-tabs">
+            <span class="fs-tabs__text">Standings</span>
+        </button>
+    </div>
+
+    <h2 style="font-family: 'Livesport Finder LCGJK', sans-serif; margin: 48px 0 32px;">FSTabs - Short Labels</h2>
+
+    <div class="fs-tabs-row fs-tabs-row--primary">
+        <div class="fs-tabs fs-tabs--active">
+            <span class="fs-tabs__text">All</span>
+            <div class="fs-tabs__underline"></div>
+        </div>
+
+        <button class="fs-tabs">
+            <span class="fs-tabs__text">Live</span>
+        </button>
+
+        <button class="fs-tabs">
+            <span class="fs-tabs__text">Finished</span>
+        </button>
+
+        <button class="fs-tabs">
+            <span class="fs-tabs__text">Scheduled</span>
+        </button>
+    </div>
+
+    <!-- SECONDARY VARIANT -->
+    <h1 style="font-family: 'Livesport Finder LCGJK', sans-serif; margin: 80px 0 32px; border-top: 2px solid #EEEEEE; padding-top: 40px;">Secondary Variant (Pill Style)</h1>
+
+    <h2 style="font-family: 'Livesport Finder LCGJK', sans-serif; margin-bottom: 32px;">FSTabs Secondary - Active State</h2>
+
+    <!-- Secondary Active Tab -->
+    <div class="fs-tabs fs-tabs--secondary fs-tabs--active">
+        <span class="fs-tabs__text">[LABEL]</span>
+    </div>
+
+    <h2 style="font-family: 'Livesport Finder LCGJK', sans-serif; margin: 48px 0 32px;">FSTabs Secondary - Inactive State</h2>
+
+    <!-- Secondary Inactive Tab -->
+    <button class="fs-tabs fs-tabs--secondary">
+        <span class="fs-tabs__text">[LABEL]</span>
+    </button>
+
+    <h2 style="font-family: 'Livesport Finder LCGJK', sans-serif; margin: 48px 0 32px;">FSTabs Secondary - Example Row</h2>
+
+    <div class="fs-tabs-row fs-tabs-row--secondary">
+        <div class="fs-tabs fs-tabs--secondary fs-tabs--active">
+            <span class="fs-tabs__text">[LABEL]</span>
+        </div>
+
+        <button class="fs-tabs fs-tabs--secondary">
+            <span class="fs-tabs__text">[LABEL]</span>
+        </button>
+
+        <button class="fs-tabs fs-tabs--secondary">
+            <span class="fs-tabs__text">[LABEL]</span>
+        </button>
+
+        <button class="fs-tabs fs-tabs--secondary">
+            <span class="fs-tabs__text">[LABEL]</span>
+        </button>
+    </div>
+
+    <h2 style="font-family: 'Livesport Finder LCGJK', sans-serif; margin: 48px 0 32px;">FSTabs Secondary - Real Labels</h2>
+
+    <div class="fs-tabs-row fs-tabs-row--secondary">
+        <div class="fs-tabs fs-tabs--secondary fs-tabs--active">
+            <span class="fs-tabs__text">All</span>
+        </div>
+
+        <button class="fs-tabs fs-tabs--secondary">
+            <span class="fs-tabs__text">Live</span>
+        </button>
+
+        <button class="fs-tabs fs-tabs--secondary">
+            <span class="fs-tabs__text">Finished</span>
+        </button>
+
+        <button class="fs-tabs fs-tabs--secondary">
+            <span class="fs-tabs__text">Scheduled</span>
+        </button>
+    </div>
+
+    <h2 style="font-family: 'Livesport Finder LCGJK', sans-serif; margin: 48px 0 32px;">FSTabs Secondary - Match Filters</h2>
+
+    <div class="fs-tabs-row fs-tabs-row--secondary">
+        <div class="fs-tabs fs-tabs--secondary fs-tabs--active">
+            <span class="fs-tabs__text">Summary</span>
+        </div>
+
+        <button class="fs-tabs fs-tabs--secondary">
+            <span class="fs-tabs__text">Statistics</span>
+        </button>
+
+        <button class="fs-tabs fs-tabs--secondary">
+            <span class="fs-tabs__text">Lineups</span>
+        </button>
+
+        <button class="fs-tabs fs-tabs--secondary">
+            <span class="fs-tabs__text">H2H</span>
+        </button>
+
+        <button class="fs-tabs fs-tabs--secondary">
+            <span class="fs-tabs__text">Standings</span>
+        </button>
+    </div>
+
+    <!-- TERTIARY VARIANT -->
+    <h1 style="font-family: 'Livesport Finder LCGJK', sans-serif; margin: 80px 0 32px; border-top: 2px solid #EEEEEE; padding-top: 40px;">Tertiary Variant (Grey Background Style)</h1>
+
+    <h2 style="font-family: 'Livesport Finder LCGJK', sans-serif; margin-bottom: 32px;">FSTabs Tertiary - Active State (on grey background)</h2>
+
+    <div class="fs-tabs-grey-container" style="display: inline-block;">
+        <!-- Tertiary Active Tab -->
+        <div class="fs-tabs fs-tabs--tertiary fs-tabs--active">
+            <span class="fs-tabs__text">[LABEL]</span>
+        </div>
+    </div>
+
+    <h2 style="font-family: 'Livesport Finder LCGJK', sans-serif; margin: 48px 0 32px;">FSTabs Tertiary - Inactive State (on grey background)</h2>
+
+    <div class="fs-tabs-grey-container" style="display: inline-block;">
+        <!-- Tertiary Inactive Tab -->
+        <button class="fs-tabs fs-tabs--tertiary">
+            <span class="fs-tabs__text">[LABEL]</span>
+        </button>
+    </div>
+
+    <h2 style="font-family: 'Livesport Finder LCGJK', sans-serif; margin: 48px 0 32px;">FSTabs Tertiary - Example Row (on grey background)</h2>
+
+    <div class="fs-tabs-grey-container">
+        <div class="fs-tabs-row fs-tabs-row--tertiary">
+            <div class="fs-tabs fs-tabs--tertiary fs-tabs--active">
+                <span class="fs-tabs__text">[LABEL]</span>
+            </div>
+
+            <button class="fs-tabs fs-tabs--tertiary">
+                <span class="fs-tabs__text">[LABEL]</span>
+            </button>
+
+            <button class="fs-tabs fs-tabs--tertiary">
+                <span class="fs-tabs__text">[LABEL]</span>
+            </button>
+
+            <button class="fs-tabs fs-tabs--tertiary">
+                <span class="fs-tabs__text">[LABEL]</span>
+            </button>
+        </div>
+    </div>
+
+    <h2 style="font-family: 'Livesport Finder LCGJK', sans-serif; margin: 48px 0 32px;">FSTabs Tertiary - Real Labels (on grey background)</h2>
+
+    <div class="fs-tabs-grey-container">
+        <div class="fs-tabs-row fs-tabs-row--tertiary">
+            <div class="fs-tabs fs-tabs--tertiary fs-tabs--active">
+                <span class="fs-tabs__text">Summary</span>
+            </div>
+
+            <button class="fs-tabs fs-tabs--tertiary">
+                <span class="fs-tabs__text">Statistics</span>
+            </button>
+
+            <button class="fs-tabs fs-tabs--tertiary">
+                <span class="fs-tabs__text">Lineups</span>
+            </button>
+
+            <button class="fs-tabs fs-tabs--tertiary">
+                <span class="fs-tabs__text">H2H</span>
+            </button>
+        </div>
+    </div>
+
+    <h2 style="font-family: 'Livesport Finder LCGJK', sans-serif; margin: 48px 0 32px;">FSTabs Tertiary - Tournament Sections (on grey background)</h2>
+
+    <div class="fs-tabs-grey-container">
+        <div class="fs-tabs-row fs-tabs-row--tertiary">
+            <div class="fs-tabs fs-tabs--tertiary fs-tabs--active">
+                <span class="fs-tabs__text">Matches</span>
+            </div>
+
+            <button class="fs-tabs fs-tabs--tertiary">
+                <span class="fs-tabs__text">Table</span>
+            </button>
+
+            <button class="fs-tabs fs-tabs--tertiary">
+                <span class="fs-tabs__text">Archive</span>
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>

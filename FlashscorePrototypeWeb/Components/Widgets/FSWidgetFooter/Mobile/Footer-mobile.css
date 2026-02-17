@@ -1,0 +1,241 @@
+/* Footer Mobile CSS */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Footer Mobile Container */
+.footer-mobile {
+    width: 100%;
+    max-width: 639px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px 16px;
+    box-sizing: border-box;
+}
+
+/* SEO Grid (2 columns for first 4 sections) */
+.footer-mobile__seo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+/* Section */
+.footer-mobile__section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.footer-mobile__seo-grid .footer-mobile__section {
+    margin-bottom: 0;
+}
+
+.footer-mobile__section:last-child {
+    margin-bottom: 0;
+}
+
+/* Headline */
+.footer-mobile__headline {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #001E28;
+    margin-bottom: 12px;
+}
+
+.footer-mobile__headline--grey {
+    color: #555E61;
+}
+
+/* Links Container */
+.footer-mobile__links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Links Grid (for Flashscore.co.uk section with two columns) */
+.footer-mobile__links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Link */
+.footer-mobile__link {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #001E28;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-mobile__link:hover {
+    color: #FF0046;
+}
+
+/* Link with Icon */
+.footer-mobile__link--with-icon {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Social Icon */
+.footer-mobile__social-icon {
+    width: 14px;
+    height: 14px;
+    display: block;
+}
+
+/* Apps Text */
+.footer-mobile__apps-text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #555E61;
+    margin-bottom: 12px;
+}
+
+/* App Badges */
+.footer-mobile__app-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-mobile__app-badge {
+    width: 92.56px;
+    display: block;
+}
+
+.footer-mobile__app-badge img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Bottom Section */
+.footer-mobile__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid #EEEEEE;
+}
+
+/* Lite Version Link */
+.footer-mobile__lite-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #001E28;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.footer-mobile__lite-link:hover {
+    color: #FF0046;
+}
+
+.footer-mobile__arrow {
+    width: 12px;
+    height: 12px;
+    display: block;
+}
+
+/* Legal Text */
+.footer-mobile__legal {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #999999;
+    margin: 0;
+}
+
+/* Privacy Link */
+.footer-mobile__privacy-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #001E28;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.footer-mobile__privacy-link:hover {
+    color: #FF0046;
+}
+
+.footer-mobile__privacy-icon {
+    width: 14px;
+    height: 14px;
+    display: block;
+}
+
+/* Demo Container */
+.demo-container {
+    width: 100%;
+    max-width: 639px;
+    margin: 0 auto;
+    background-color: #EEEEEE;
+    padding: 16px;
+}
+
+/* Design System Compliance Notes */
+/*
+- All spacing values are even numbers (4px, 6px, 8px, 12px, 16px, 24px)
+- All colors use HEX values only
+- Background: #FFFFFF (white)
+- Text color primary: #001E28 (dark)
+- Text color grey: #555E61 (grey)
+- Legal text: #999999 (light grey)
+- Link hover: #FF0046 (brand red)
+- Max width: 639px (mobile breakpoint)
+- Padding: 24px top, 16px horizontal, 16px bottom
+- Section spacing: 24px
+- Link gap: 12px
+- Headline font: Livesport Finder LCGJK Bold, 13px, 16px line-height, uppercase
+- Link font: Livesport Finder LCGJK Regular, 13px, 18px line-height
+- Legal font: Livesport Finder LCGJK Regular, 11px, 14px line-height
+- Apps text: 13px, 16px line-height
+- Social icon size: 14px
+- Privacy icon size: 14px
+- Arrow icon size: 12px
+- App badge width: 92.56px
+- App badge gap: 6px
+- SEO sections grid: 2 equal columns with 16px gap (Football + Tennis, Other Sports + Trending)
+- Flashscore.co.uk links grid: 2 equal columns with 16px gap
+- All spacing values follow 8px grid (except 6px for app badges)
+*/

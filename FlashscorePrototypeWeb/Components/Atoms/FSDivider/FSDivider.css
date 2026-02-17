@@ -1,0 +1,170 @@
+/* FSDivider - Atom Component */
+
+/* Font Face */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================== */
+/* BASE                                        */
+/* =========================================== */
+
+.fs-divider {
+    display: block;
+    flex-shrink: 0;
+}
+
+/* =========================================== */
+/* ORIENTATION                                 */
+/* =========================================== */
+
+/* Horizontal — 1px tall, full width */
+.fs-divider--horizontal {
+    width: 100%;
+    min-width: 1px;
+    height: 1px;
+}
+
+/* Vertical — 1px wide, full height of parent */
+.fs-divider--vertical {
+    width: 1px;
+    min-height: 1px;
+    height: 100%;
+    align-self: stretch;
+}
+
+/* =========================================== */
+/* PADDED MODIFIER (horizontal only)           */
+/* =========================================== */
+
+.fs-divider--horizontal.fs-divider--padded {
+    width: calc(100% - 32px);
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+/* =========================================== */
+/* TYPE VARIANTS                               */
+/* =========================================== */
+
+/* Primary — #EEEEEE (chalk-white/500) - lightest separator */
+.fs-divider--primary {
+    background-color: #EEEEEE;
+}
+
+/* Secondary — #C8CDCD (support-grey) - slightly more visible */
+.fs-divider--secondary {
+    background-color: #C8CDCD;
+}
+
+/* Base — #D9D9D9 - between primary and secondary */
+.fs-divider--base {
+    background-color: #D9D9D9;
+}
+
+/* Gap — thick background block separator (8px height) */
+.fs-divider--gap {
+    background-color: #EEEEEE;
+}
+
+.fs-divider--horizontal.fs-divider--gap {
+    height: 8px;
+}
+
+.fs-divider--vertical.fs-divider--gap {
+    width: 8px;
+}
+
+/* Navigation Primary — for use on dark navigation backgrounds */
+.fs-divider--navigation-primary {
+    background-color: rgba(255, 255, 255, 0.10);
+}
+
+/* Navigation Secondary — more subtle, on dark navigation backgrounds */
+.fs-divider--navigation-secondary {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* =========================================== */
+/* DEMO STYLES                                 */
+/* =========================================== */
+
+.demo-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    color: #001E28;
+    background-color: #FFFFFF;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: #001E28;
+}
+
+.demo-container > p {
+    font-size: 13px;
+    color: #555E61;
+    margin: 0 0 32px;
+}
+
+.demo-container h2 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #555E61;
+    margin: 32px 0 12px;
+}
+
+.demo-block {
+    background-color: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    padding: 16px;
+}
+
+.demo-block--tight {
+    padding: 0;
+}
+
+.demo-block--dark {
+    background-color: #001E28;
+    border-color: #001E28;
+    padding: 16px;
+}
+
+.demo-block--row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 8px 16px;
+}
+
+.demo-label {
+    font-size: 11px;
+    color: #999999;
+    margin: 0 0 8px;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+- All colors use HEX values only
+- Type: Primary    → #EEEEEE  (separator/primary, chalk-white/500)
+- Type: Secondary  → #C8CDCD  (support-grey)
+- Type: Base       → #D9D9D9
+- Type: Gap        → #EEEEEE background, 8px height (horizontal) / 8px width (vertical)
+- Type: Navigation Primary   → rgba(255, 255, 255, 0.10) — on dark bg
+- Type: Navigation Secondary → rgba(255, 255, 255, 0.06) — on dark bg, more subtle
+- Horizontal: height 1px, width 100%
+- Vertical: width 1px, height 100% (align-self: stretch)
+- Padded: 16px horizontal margin on each side
+- No font required for this component
+*/

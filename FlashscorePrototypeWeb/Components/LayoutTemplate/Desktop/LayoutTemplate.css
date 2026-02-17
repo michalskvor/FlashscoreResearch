@@ -1,4 +1,4 @@
-/* Layout2 Template CSS - Desktop 1440px Viewport */
+/* LayoutTemplate Template CSS - Desktop 1440px Viewport */
 
 /* Global Reset & Box Model */
 * {
@@ -22,7 +22,7 @@ body {
 }
 
 /* Navigation Container - Full Width, 277px Height */
-.layout2-nav-container {
+.layouttemplate-nav-container {
     width: 100%;
     height: auto;
     background-color: #00141E;
@@ -32,14 +32,14 @@ body {
     overflow: hidden;
 }
 
-.layout2-nav-inner {
+.layouttemplate-nav-inner {
     flex: 1 0 0;
     max-width: 1188px;
     background-color: #00141E;
 }
 
 /* Main Wrapper - Max Width 1188px, Centered */
-.layout2-wrapper {
+.layouttemplate-wrapper {
     width: 100%;
     max-width: 1188px;
     margin: 0 auto;
@@ -49,7 +49,7 @@ body {
 }
 
 /* Inner Wrapper - Contains the three columns */
-.layout2-inner-wrapper {
+.layouttemplate-inner-wrapper {
     display: flex;
     flex: 1 0 0;
     gap: 0; /* Flush alignment - no gaps between containers */
@@ -60,7 +60,7 @@ body {
 }
 
 /* Left Container - 172px Fixed */
-.layout2-left {
+.layouttemplate-left {
     flex: 0 0 172px;
     height: 100%;
     background-color: #EEEEEE;
@@ -68,17 +68,17 @@ body {
 }
 
 /* Menu Component */
-.layout2-menu {
+.layouttemplate-menu {
     width: 100%;
 }
 
-.layout2-menu__section {
+.layouttemplate-menu__section {
     width: 156px;
     padding-bottom: 32px;
 }
 
 /* Menu Header */
-.layout2-menu__header {
+.layouttemplate-menu__header {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -86,24 +86,24 @@ body {
     border-radius: 4px;
 }
 
-.layout2-menu__header-content {
+.layouttemplate-menu__header-content {
     display: flex;
     gap: 10px;
     align-items: flex-start;
 }
 
-.layout2-menu__header-icon {
+.layouttemplate-menu__header-icon {
     display: flex;
     align-items: center;
     height: 16px;
 }
 
-.layout2-menu__header-icon svg {
+.layouttemplate-menu__header-icon svg {
     width: 14px;
     height: 14px;
 }
 
-.layout2-menu__header-text {
+.layouttemplate-menu__header-text {
     flex: 1;
     font-family: 'Livesport Finder LCGJK', sans-serif;
     font-size: 13px;
@@ -113,25 +113,25 @@ body {
     text-transform: uppercase;
 }
 
-.layout2-menu__header-text--no-icon {
+.layouttemplate-menu__header-text--no-icon {
     padding-left: 0;
 }
 
-.layout2-menu__divider {
+.layouttemplate-menu__divider {
     width: 100%;
     height: 1px;
     background-color: #DFDFDF;
 }
 
 /* Menu List */
-.layout2-menu__list {
+.layouttemplate-menu__list {
     display: flex;
     flex-direction: column;
     gap: 4px;
     margin-bottom: 8px;
 }
 
-.layout2-menu__item {
+.layouttemplate-menu__item {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -141,11 +141,11 @@ body {
     text-decoration: none;
 }
 
-.layout2-menu__item:hover {
+.layouttemplate-menu__item:hover {
     background-color: #DFDFDF;
 }
 
-.layout2-menu__item-flag {
+.layouttemplate-menu__item-flag {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -154,12 +154,12 @@ body {
     overflow: hidden;
 }
 
-.layout2-menu__item-flag svg {
+.layouttemplate-menu__item-flag svg {
     width: 18px;
     height: 12px;
 }
 
-.layout2-menu__item-logo {
+.layouttemplate-menu__item-logo {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -168,13 +168,13 @@ body {
     overflow: hidden;
 }
 
-.layout2-menu__item-logo img {
+.layouttemplate-menu__item-logo img {
     width: 18px;
     height: 18px;
     object-fit: contain;
 }
 
-.layout2-menu__item-text {
+.layouttemplate-menu__item-text {
     flex: 1;
     font-family: 'Livesport Finder LCGJK', sans-serif;
     font-size: 13px;
@@ -187,7 +187,7 @@ body {
 }
 
 /* Menu Button */
-.layout2-menu__button {
+.layouttemplate-menu__button {
     display: flex;
     gap: 4px;
     align-items: center;
@@ -200,16 +200,16 @@ body {
     cursor: pointer;
 }
 
-.layout2-menu__button:hover {
+.layouttemplate-menu__button:hover {
     background-color: #DFDFDF;
 }
 
-.layout2-menu__button svg {
+.layouttemplate-menu__button svg {
     width: 14px;
     height: 14px;
 }
 
-.layout2-menu__button span {
+.layouttemplate-menu__button span {
     font-family: 'Livesport Finder LCGJK', sans-serif;
     font-size: 11px;
     font-weight: 700;
@@ -219,19 +219,19 @@ body {
 }
 
 /* Menu Banner */
-.layout2-menu__banner {
+.layouttemplate-menu__banner {
     padding: 14px 0 12px 8px;
     position: relative;
 }
 
-.layout2-menu__banner-image {
+.layouttemplate-menu__banner-image {
     width: 120px;
     height: 240px;
     display: block;
     object-fit: cover;
 }
 
-.layout2-menu__banner-label {
+.layouttemplate-menu__banner-label {
     text-align: center;
     font-family: 'Livesport Finder LCGJK', sans-serif;
     font-size: 10px;
@@ -241,14 +241,14 @@ body {
 }
 
 /* Countries List */
-.layout2-menu__countries {
+.layouttemplate-menu__countries {
     display: flex;
     flex-direction: column;
     gap: 6px;
     padding-bottom: 6px;
 }
 
-.layout2-menu__country {
+.layouttemplate-menu__country {
     display: flex;
     align-items: center;
     height: 26px;
@@ -265,12 +265,12 @@ body {
     white-space: nowrap;
 }
 
-.layout2-menu__country:hover {
+.layouttemplate-menu__country:hover {
     background-color: #DFDFDF;
 }
 
 /* Main Container - Flexible (fills remaining space) */
-.layout2-main {
+.layouttemplate-main {
     flex: 1 1 auto;
     height: 100%;
     background-color: #FFFFFF;
@@ -278,21 +278,21 @@ body {
     padding: 0;
 }
 
-.layout2-main__title {
+.layouttemplate-main__title {
     font-size: 24px;
     font-weight: 700;
     color: #001E28;
     margin-bottom: 16px;
 }
 
-.layout2-main__text {
+.layouttemplate-main__text {
     font-size: 14px;
     color: #555E61;
     margin-bottom: 24px;
     line-height: 20px;
 }
 
-.layout2-main__content {
+.layouttemplate-main__content {
     background-color: #F5F5F5;
     border: 1px solid #EEEEEE;
     border-radius: 8px;
@@ -303,28 +303,28 @@ body {
 }
 
 /* Right Container - 328px Fixed */
-.layout2-right {
+.layouttemplate-right {
     flex: 0 0 328px;
     height: 100%;
     background-color: #EEEEEE;
     padding: 0 14px;
 }
 
-.layout2-right__title {
+.layouttemplate-right__title {
     font-size: 14px;
     font-weight: 700;
     color: #001E28;
     margin-bottom: 8px;
 }
 
-.layout2-right__text {
+.layouttemplate-right__text {
     font-size: 12px;
     color: #555E61;
     line-height: 16px;
 }
 
 /* Banner Component */
-.layout2-banner {
+.layouttemplate-banner {
     width: 300px;
     height: auto;
     position: relative;
@@ -333,14 +333,14 @@ body {
     overflow: hidden;
 }
 
-.layout2-banner__image {
+.layouttemplate-banner__image {
     width: 300px;
     height: 600px;
     display: block;
     object-fit: cover;
 }
 
-.layout2-banner__label {
+.layouttemplate-banner__label {
     bottom: 0;
     left: 0;
     right: 0;
@@ -352,7 +352,7 @@ body {
 }
 
 /* Footer - Full Width, 277px Height */
-.layout2-footer {
+.layouttemplate-footer {
     width: 100%;
     height: 277px;
     background-color: #FFFFFF;
@@ -361,7 +361,7 @@ body {
     justify-content: center;
 }
 
-.layout2-footer__content {
+.layouttemplate-footer__content {
     text-align: center;
     color: #555E61;
     font-size: 14px;

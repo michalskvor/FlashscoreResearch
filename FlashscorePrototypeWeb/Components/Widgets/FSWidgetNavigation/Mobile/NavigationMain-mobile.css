@@ -1,0 +1,239 @@
+/* NavigationMain - Mobile CSS */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* NavigationMain Mobile Container */
+.nav-main-mobile {
+    width: 100%;
+    max-width: 639px;
+    background-color: #001E28;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 10px;
+}
+
+/* Headline Section (Logo + Buttons) */
+.nav-main-mobile__headline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+}
+
+/* Logo */
+.nav-main-mobile__logo {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    height: 24px;
+    margin-right: 12px;
+}
+
+.nav-main-mobile__logo img {
+    height: 24px;
+    width: auto;
+    max-width: 100%;
+}
+
+/* Action Buttons Container */
+.nav-main-mobile__buttons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+/* Individual Button */
+.nav-main-mobile__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    background-color: #0F2D37;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.nav-main-mobile__button:active {
+    background-color: #1A3D4A;
+}
+
+.nav-main-mobile__button img {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
+/* Button Pulse Animation */
+.nav-main-mobile__button-pulse {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    width: 5px;
+    height: 5px;
+    background-color: #FF0046;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
+/* Navigation Items Container (SCORES / NEWS) */
+.nav-main-mobile__items {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Individual Navigation Item */
+.nav-main-mobile__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    height: 44px;
+    gap: 16px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-main-mobile__item--active {
+    background-color: #00141E;
+}
+
+/* Item Container */
+.nav-main-mobile__item-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 24px;
+    flex: 1;
+    width: 100%;
+}
+
+/* Item Icon */
+.nav-main-mobile__item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+}
+
+.nav-main-mobile__item-icon img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Inactive state - grey icon */
+.nav-main-mobile__item:not(.nav-main-mobile__item--active) .nav-main-mobile__item-icon img {
+    filter: brightness(0) saturate(100%) invert(82%) sepia(5%) saturate(174%) hue-rotate(144deg) brightness(93%) contrast(87%);
+}
+
+/* Active state - white icon */
+.nav-main-mobile__item--active .nav-main-mobile__item-icon img {
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
+/* Item Text */
+.nav-main-mobile__item-text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+}
+
+/* Inactive text color */
+.nav-main-mobile__item:not(.nav-main-mobile__item--active) .nav-main-mobile__item-text {
+    color: #C8CDCD;
+}
+
+/* Active text color */
+.nav-main-mobile__item--active .nav-main-mobile__item-text {
+    color: #FFFFFF;
+}
+
+/* Item Underline (Active state only) */
+.nav-main-mobile__item-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #FF0046;
+    border-radius: 2px 2px 0 0;
+}
+
+/* Demo Container */
+.demo-container {
+    width: 100%;
+    max-width: 639px;
+    margin: 0 auto;
+    background-color: #EEEEEE;
+    min-height: 100vh;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 360px) {
+    .nav-main-mobile__headline {
+        padding: 0 8px;
+    }
+
+    .nav-main-mobile__buttons {
+        gap: 2px;
+    }
+
+    .nav-main-mobile__button {
+        width: 28px;
+        height: 28px;
+    }
+
+    .nav-main-mobile__item-container {
+        padding: 0 16px;
+    }
+}
+
+/* Design System Compliance Notes */
+/*
+- All spacing values are even numbers (4px, 6px, 8px, 10px, 12px, 16px, 24px, 32px)
+- All colors use HEX values only
+- Background: #001E28 (slate black)
+- Active background: #00141E (darker slate)
+- Button background: #0F2D37
+- Active text: #FFFFFF (white)
+- Inactive text: #C8CDCD (support grey)
+- Active accent: #FF0046 (brand red)
+- Font family: Livesport Finder LCGJK Bold
+- Headline height: auto (logo 24px)
+- Navigation items height: 44px
+- Button size: 32px × 32px
+- Gap between sections: 6px
+- Padding top: 10px
+*/

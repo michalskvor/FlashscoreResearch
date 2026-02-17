@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSDivider - Atom Component</title>
+    <link rel="stylesheet" href="FSDivider.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>FSDivider</h1>
+        <p>Separator component used to visually divide content sections.</p>
+
+        <!-- HORIZONTAL DIVIDERS -->
+        <h2>Horizontal — Type: Primary</h2>
+        <div class="demo-block">
+            <p class="demo-label">Default (no padding)</p>
+            <div class="fs-divider fs-divider--horizontal fs-divider--primary"></div>
+
+            <p class="demo-label" style="margin-top: 24px;">Padded</p>
+            <div class="fs-divider fs-divider--horizontal fs-divider--primary fs-divider--padded"></div>
+        </div>
+
+        <h2>Horizontal — Type: Secondary</h2>
+        <div class="demo-block">
+            <div class="fs-divider fs-divider--horizontal fs-divider--secondary"></div>
+        </div>
+
+        <h2>Horizontal — Type: Base</h2>
+        <div class="demo-block">
+            <div class="fs-divider fs-divider--horizontal fs-divider--base"></div>
+        </div>
+
+        <h2>Horizontal — Type: Gap</h2>
+        <div class="demo-block demo-block--tight">
+            <div style="background: #FFFFFF; padding: 8px 12px; font-size: 13px;">Content above</div>
+            <div class="fs-divider fs-divider--horizontal fs-divider--gap"></div>
+            <div style="background: #FFFFFF; padding: 8px 12px; font-size: 13px;">Content below</div>
+        </div>
+
+        <h2>Horizontal — Type: Navigation Primary</h2>
+        <div class="demo-block demo-block--dark">
+            <div class="fs-divider fs-divider--horizontal fs-divider--navigation-primary"></div>
+        </div>
+
+        <h2>Horizontal — Type: Navigation Secondary</h2>
+        <div class="demo-block demo-block--dark">
+            <div class="fs-divider fs-divider--horizontal fs-divider--navigation-secondary"></div>
+        </div>
+
+        <!-- VERTICAL DIVIDERS -->
+        <h2>Vertical Dividers</h2>
+        <div class="demo-block demo-block--row">
+            <div style="font-size: 13px; padding: 4px 8px;">Item A</div>
+            <div class="fs-divider fs-divider--vertical fs-divider--primary"></div>
+            <div style="font-size: 13px; padding: 4px 8px;">Item B</div>
+            <div class="fs-divider fs-divider--vertical fs-divider--secondary"></div>
+            <div style="font-size: 13px; padding: 4px 8px;">Item C</div>
+            <div class="fs-divider fs-divider--vertical fs-divider--base"></div>
+            <div style="font-size: 13px; padding: 4px 8px;">Item D</div>
+        </div>
+    </div>
+</body>
+</html>

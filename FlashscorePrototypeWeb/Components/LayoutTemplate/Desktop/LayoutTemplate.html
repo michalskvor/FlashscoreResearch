@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashScore LayoutTemplate - Desktop 1440px</title>
+    <link rel="stylesheet" href="LayoutTemplate.css">
+    <link rel="stylesheet" href="../../Molecules/FSBreadcrumb/FSBreadcrumb.css">
+    <link rel="stylesheet" href="../../Widgets/FSWidgetNavigation/NavigationTopbar.css">
+    <link rel="stylesheet" href="../../Widgets/FSWidgetNavigation/NavigationMain.css">
+    <link rel="stylesheet" href="../../Widgets/FSWidgetNavigation/NavigationSub.css">
+    <link rel="stylesheet" href="../../Widgets/FSWidgetFooter/Footer.css">
+</head>
+<body>
+    <!-- Navigation Container - Full Width, 277px Height -->
+    <nav class="layouttemplate-nav-container">
+        <div class="layouttemplate-nav-inner">
+            <!-- FSWidgetNavigation - NavigationTopbar -->
+            <div class="nav-topbar">
+                <div class="nav-topbar__content">
+                    <!-- SEO text -->
+                    <div class="nav-topbar__seo">
+                        <p>Football Live Scores, Latest Football Results, EPL, LaLiga, Serie A</p>
+                    </div>
+
+                    <!-- Banner / Ads -->
+                    <div class="nav-topbar__banner">
+                        <div class="nav-topbar__banner-ad">
+                            <img src="../../../Assets/BookmakerBanner/970x90/ad=Bet365.png" alt="Advertisement">
+                        </div>
+                        <div class="nav-topbar__banner-label">
+                            <span>Advertisement</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FSWidgetNavigation - NavigationMain -->
+            <div class="nav-main">
+                <div class="nav-main__content">
+                    <!-- Left content -->
+                    <div class="nav-main__left">
+                        <!-- Logo -->
+                        <div class="nav-main__logo">
+                            <img src="../../../Assets/FlashscoreLogos/flashscore-default-negative.imageset/flashscore-default-negative.svg" alt="FlashScore">
+                        </div>
+
+                        <!-- Nav items -->
+                        <div class="nav-main__items">
+                            <!-- SCORES - Active -->
+                            <div class="nav-main__item nav-main__item--active">
+                                <div class="nav-main__item-container">
+                                    <div class="nav-main__item-icon">
+                                        <img src="../../../Assets/Icons/Notification/Result.svg" alt="Scores">
+                                    </div>
+                                    <span class="nav-main__item-text">Scores</span>
+                                </div>
+                                <div class="nav-main__item-underline"></div>
+                            </div>
+
+                            <!-- NEWS - Inactive -->
+                            <button class="nav-main__item">
+                                <div class="nav-main__item-container">
+                                    <div class="nav-main__item-icon">
+                                        <img src="../../../Assets/Icons/Action/Navigation/News.svg" alt="News">
+                                    </div>
+                                    <span class="nav-main__item-text">News</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right buttons -->
+                    <div class="nav-main__buttons">
+                        <!-- Notification button with pulsing icon -->
+                        <button class="nav-main__button">
+                            <img src="../../../Assets/Icons/Action/State/Notification active.svg" alt="Notifications">
+                            <div class="nav-main__button-pulse"></div>
+                        </button>
+
+                        <!-- Gift button -->
+                        <button class="nav-main__button">
+                            <img src="../../../Assets/Icons/Action/State/Gift.svg" alt="Gift">
+                        </button>
+
+                        <!-- Search button -->
+                        <button class="nav-main__button">
+                            <img src="../../../Assets/Icons/Action/Search.svg" alt="Search">
+                        </button>
+
+                        <!-- Login button -->
+                        <button class="nav-main__button nav-main__button--with-text">
+                            <img src="../../../Assets/Icons/Action/State/User.svg" alt="Login">
+                            <span>Login</span>
+                        </button>
+
+                        <!-- Menu button -->
+                        <button class="nav-main__button">
+                            <img src="../../../Assets/Icons/Action/Navigation/Burger menu.svg" alt="Menu">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FSWidgetNavigation - NavigationSub -->
+    <div class="nav-sub">
+        <div class="nav-sub__content">
+            <!-- Items container -->
+            <div class="nav-sub__items">
+                <!-- FAVORITES - with badge -->
+                <button class="nav-sub__item">
+                    <div class="nav-sub__item-container">
+                        <div class="nav-sub__item-icon">
+                            <img src="../../../Assets/Icons/Action/State/Favorite.svg" alt="Favorites">
+                        </div>
+                        <div class="nav-sub__item-text-badge">
+                            <span class="nav-sub__item-text">Favorites</span>
+                            <div class="nav-sub__item-badge">1</div>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- FOOTBALL - Active -->
+                <div class="nav-sub__item nav-sub__item--active">
+                    <div class="nav-sub__item-container">
+                        <div class="nav-sub__item-icon">
+                            <img src="../../../Assets/Icons/Sport/Soccer.svg" alt="Football">
+                        </div>
+                        <div class="nav-sub__item-text-badge">
+                            <span class="nav-sub__item-text">Football</span>
+                        </div>
+                    </div>
+                    <div class="nav-sub__item-underline"></div>
+                </div>
+
+                <!-- TENNIS - Inactive -->
+                <button class="nav-sub__item">
+                    <div class="nav-sub__item-container">
+                        <div class="nav-sub__item-icon">
+                            <img src="../../../Assets/Icons/Sport/Tennis.svg" alt="Tennis">
+                        </div>
+                        <div class="nav-sub__item-text-badge">
+                            <span class="nav-sub__item-text">Tennis</span>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- BASKETBALL - Inactive -->
+                <button class="nav-sub__item">
+                    <div class="nav-sub__item-container">
+                        <div class="nav-sub__item-icon">
+                            <img src="../../../Assets/Icons/Sport/Basketball.svg" alt="Basketball">
+                        </div>
+                        <div class="nav-sub__item-text-badge">
+                            <span class="nav-sub__item-text">Basketball</span>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- HOCKEY - Inactive -->
+                <button class="nav-sub__item">
+                    <div class="nav-sub__item-container">
+                        <div class="nav-sub__item-icon">
+                            <img src="../../../Assets/Icons/Sport/Ice hockey.svg" alt="Hockey">
+                        </div>
+                        <div class="nav-sub__item-text-badge">
+                            <span class="nav-sub__item-text">Hockey</span>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- RUGBY UNION - Inactive -->
+                <button class="nav-sub__item">
+                    <div class="nav-sub__item-container">
+                        <div class="nav-sub__item-icon">
+                            <img src="../../../Assets/Icons/Sport/Rugby union.svg" alt="Rugby Union">
+                        </div>
+                        <div class="nav-sub__item-text-badge">
+                            <span class="nav-sub__item-text">Rugby union</span>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- CRICKET - Inactive -->
+                <button class="nav-sub__item">
+                    <div class="nav-sub__item-container">
+                        <div class="nav-sub__item-icon">
+                            <img src="../../../Assets/Icons/Sport/Cricket.svg" alt="Cricket">
+                        </div>
+                        <div class="nav-sub__item-text-badge">
+                            <span class="nav-sub__item-text">Cricket</span>
+                        </div>
+                    </div>
+                </button>
+
+                <!-- BASEBALL - Inactive -->
+                <button class="nav-sub__item">
+                    <div class="nav-sub__item-container">
+                        <div class="nav-sub__item-icon">
+                            <img src="../../../Assets/Icons/Sport/Baseball.svg" alt="Baseball">
+                        </div>
+                        <div class="nav-sub__item-text-badge">
+                            <span class="nav-sub__item-text">Baseball</span>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+            <!-- MORE button -->
+            <div class="nav-sub__more">
+                <div class="nav-sub__more-container">
+                    <span class="nav-sub__more-text">More</span>
+                    <div class="nav-sub__more-icon">
+                        <img src="../../../Assets/Icons/Action/Navigation/Arrow/Down.svg" alt="More">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom divider -->
+        <div class="nav-sub__divider"></div>
+    </div>
+
+    <!-- Main Wrapper - Max Width 1188px, Centered -->
+    <div class="layouttemplate-wrapper">
+        <div class="layouttemplate-inner-wrapper">
+            <!-- Left Container - 172px Fixed -->
+            <aside class="layouttemplate-left">
+                <!-- My Menu -->
+                <div class="layouttemplate-menu">
+                    <!-- Pinned Leagues Section -->
+                    <div class="layouttemplate-menu__section">
+                        <div class="layouttemplate-menu__header">
+                            <div class="layouttemplate-menu__header-content">
+                                <div class="layouttemplate-menu__header-icon">
+                                    <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.2882 8.95524L12.5842 6.71663L13.8353 3.08693L13.8744 0H6.11308V2.85385L7.40486 6.71663L4.70001 8.95524V13.1443H9.29411V19.2909L9.99413 20L10.6941 19.2909V13.1443H15.2882V8.95524Z" fill="#001E28"/>
+                                    </svg>
+                                </div>
+                                <span class="layouttemplate-menu__header-text">Pinned leagues</span>
+                            </div>
+                            <div class="layouttemplate-menu__divider"></div>
+                        </div>
+                        <div class="layouttemplate-menu__list">
+                            <a href="#" class="layouttemplate-menu__item">
+                                <div class="layouttemplate-menu__item-flag">
+                                    <svg width="18" height="12" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 16H24V1.90735e-06H0V16Z" fill="#F9F9F9"/>
+                                        <path d="M10.392 16H13.608V1.90735e-06H10.392V16Z" fill="#CE1124"/>
+                                        <path d="M0 9.60098H24V6.39999H0V9.60098Z" fill="#CE1124"/>
+                                    </svg>
+                                </div>
+                                <span class="layouttemplate-menu__item-text">Premier League</span>
+                            </a>
+                            <a href="#" class="layouttemplate-menu__item">
+                                <div class="layouttemplate-menu__item-flag">
+                                    <svg width="18" height="12" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="8" height="16" fill="#002654"/>
+                                        <rect x="8" width="8" height="16" fill="white"/>
+                                        <rect x="16" width="8" height="16" fill="#ED2939"/>
+                                    </svg>
+                                </div>
+                                <span class="layouttemplate-menu__item-text">Ligue 1</span>
+                            </a>
+                            <a href="#" class="layouttemplate-menu__item">
+                                <div class="layouttemplate-menu__item-flag">
+                                    <svg width="18" height="12" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="24" height="5.33" fill="#000000"/>
+                                        <rect y="5.33" width="24" height="5.33" fill="#DD0000"/>
+                                        <rect y="10.67" width="24" height="5.33" fill="#FFCE00"/>
+                                    </svg>
+                                </div>
+                                <span class="layouttemplate-menu__item-text">Bundesliga</span>
+                            </a>
+                            <a href="#" class="layouttemplate-menu__item">
+                                <div class="layouttemplate-menu__item-flag">
+                                    <svg width="18" height="12" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="8" height="16" fill="#009246"/>
+                                        <rect x="8" width="8" height="16" fill="white"/>
+                                        <rect x="16" width="8" height="16" fill="#CE2B37"/>
+                                    </svg>
+                                </div>
+                                <span class="layouttemplate-menu__item-text">Serie A</span>
+                            </a>
+                            <a href="#" class="layouttemplate-menu__item">
+                                <div class="layouttemplate-menu__item-flag">
+                                    <svg width="18" height="12" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="24" height="5.33" fill="#AE1C28"/>
+                                        <rect y="5.33" width="24" height="5.33" fill="white"/>
+                                        <rect y="10.67" width="24" height="5.33" fill="#21468B"/>
+                                    </svg>
+                                </div>
+                                <span class="layouttemplate-menu__item-text">Eredivisie</span>
+                            </a>
+                        </div>
+                        <!-- Banner -->
+                        <div class="layouttemplate-menu__banner">
+                            <img src="../../../Assets/BookmakerBanner/120x240/ad=bet365.png" alt="Bet365" class="layouttemplate-menu__banner-image">
+                            <div class="layouttemplate-menu__banner-label">Advertisement</div>
+                        </div>
+                    </div>
+
+                    <!-- My Teams Section -->
+                    <div class="layouttemplate-menu__section">
+                        <div class="layouttemplate-menu__header">
+                            <div class="layouttemplate-menu__header-content">
+                                <div class="layouttemplate-menu__header-icon">
+                                    <svg width="20" height="20" viewBox="0 0 44 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0)">
+                                            <path d="M6.75973 17.6298C6.61732 16.8223 6.58152 15.9997 6.65325 15.1829L0.0612511 14.6058C-0.182939 17.4038 0.313104 20.2168 1.4996 22.7625L7.49739 19.9664C7.15 19.2233 6.90198 18.4377 6.75973 17.6298Z" fill="#001E28"/>
+                                            <path d="M8.816 22.0292L3.74731 26.2825C5.2521 28.0678 7.12665 29.5051 9.24138 30.4949L12.037 24.4965C10.7975 23.9168 9.69855 23.075 8.816 22.0292Z" fill="#001E28"/>
+                                            <path d="M17.6298 25.2408C16.8221 25.3831 15.9993 25.4187 15.1823 25.3468L14.6052 31.9388C15.9983 32.0611 17.4014 31.9997 18.7785 31.7561C19.2414 31.6745 19.6949 31.5724 20.1407 31.4538L18.4276 25.0615C18.1666 25.1316 17.9012 25.1928 17.6298 25.2408Z" fill="#001E28"/>
+                                            <path d="M14.3707 6.76027C15.473 6.56459 16.6014 6.56889 17.7021 6.77296L20.5451 0.662066C18.17 -0.0458985 15.6623 -0.188921 13.2221 0.244411C6.91199 1.35724 2.1153 6.04745 0.547852 11.8621L6.93958 13.5724C7.85875 10.1633 10.6703 7.41241 14.3707 6.76027Z" fill="#001E28"/>
+                                            <path d="M22.0281 23.1845L26.2825 28.2527C27.3514 27.3528 28.2986 26.3175 29.1001 25.173L23.6828 21.3799C23.2119 22.0507 22.6557 22.6574 22.0281 23.1845Z" fill="#001E28"/>
+                                            <path d="M31.9382 14.6058L25.3456 15.1829C25.3936 15.7271 25.3936 16.2745 25.3456 16.8188L31.9393 17.3959C32.0206 16.4676 32.0202 15.534 31.9382 14.6058Z" fill="#001E28"/>
+                                            <path d="M23.4598 0L17.3037 13.2022L43.9156 0H23.4598Z" fill="#FF0046"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <span class="layouttemplate-menu__header-text">My teams</span>
+                            </div>
+                            <div class="layouttemplate-menu__divider"></div>
+                        </div>
+                        <div class="layouttemplate-menu__list">
+                            <a href="#" class="layouttemplate-menu__item">
+                                <div class="layouttemplate-menu__item-logo">
+                                    <img src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Manchester City">
+                                </div>
+                                <span class="layouttemplate-menu__item-text">Manchester City</span>
+                            </a>
+                        </div>
+                        <button class="layouttemplate-menu__button">
+                            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 0H11V9H20V11H11V20H9V11H0V9H9V0Z" fill="#FF0046"/>
+                            </svg>
+                            <span>add the team</span>
+                        </button>
+                    </div>
+
+                    <!-- Countries Section -->
+                    <div class="layouttemplate-menu__section">
+                        <div class="layouttemplate-menu__header">
+                            <div class="layouttemplate-menu__header-content">
+                                <span class="layouttemplate-menu__header-text layouttemplate-menu__header-text--no-icon">Countries</span>
+                            </div>
+                            <div class="layouttemplate-menu__divider"></div>
+                        </div>
+                        <div class="layouttemplate-menu__countries">
+                            <a href="#" class="layouttemplate-menu__country">Albania</a>
+                            <a href="#" class="layouttemplate-menu__country">Algeria</a>
+                            <a href="#" class="layouttemplate-menu__country">Andorra</a>
+                            <a href="#" class="layouttemplate-menu__country">Angola</a>
+                            <a href="#" class="layouttemplate-menu__country">Argentina</a>
+                            <a href="#" class="layouttemplate-menu__country">Armenia</a>
+                            <a href="#" class="layouttemplate-menu__country">Aruba</a>
+                            <a href="#" class="layouttemplate-menu__country">Australia</a>
+                            <a href="#" class="layouttemplate-menu__country">Austria</a>
+                            <a href="#" class="layouttemplate-menu__country">Azerbaijan</a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Container - Flexible (fills remaining space) -->
+            <main class="layouttemplate-main">
+                <!-- FSBreadcrumb Component -->
+                <div class="fs-breadcrumb fs-breadcrumb--boxed">
+                    <div class="fs-breadcrumb__items">
+                        <div class="fs-breadcrumb__item fs-breadcrumb__item--sport">
+                            <div class="fs-breadcrumb__item-icon">
+                                <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.0064 2.93437C13.1159 -0.956071 6.80828 -0.956071 2.91783 2.93437C-0.972611 6.82482 -0.972611 13.1325 2.91783 17.0229C5.43451 19.5396 9.10265 20.5225 12.5405 19.6013C15.9783 18.6801 18.6636 15.9949 19.5848 12.557C20.5059 9.11919 19.5231 5.45105 17.0064 2.93437ZM17.4117 5.69926C18.0188 6.75267 18.3929 7.92406 18.5087 9.13438L16.6652 8.0985L17.4117 5.69926ZM16.0377 3.90613C16.1667 4.03514 16.2904 4.16796 16.4102 4.30308L15.2995 7.86949L13.9697 8.26796L10.6491 5.85651V4.50384L13.8094 2.29697C14.6325 2.71078 15.3838 3.25408 16.0346 3.90613H16.0377ZM9.96211 1.39086C10.7392 1.38999 11.5129 1.49424 12.2621 1.70079L9.96211 3.30384L7.66211 1.70079C8.41129 1.49424 9.18497 1.38999 9.96211 1.39086ZM3.89341 3.90613C4.543 3.25414 5.29299 2.71059 6.11478 2.29621L9.27509 4.50384V5.85651L5.95448 8.26949L4.62852 7.86949L3.51707 4.30308C3.63692 4.16796 3.76058 4.03514 3.89341 3.90613ZM2.51936 5.69926L3.26593 8.09544L1.41554 9.13132C1.53173 7.92206 1.90579 6.75175 2.51249 5.69926H2.51936ZM3.89341 16.0512C3.81707 15.9748 3.74684 15.8985 3.67509 15.8222H5.68883L6.34073 17.768C5.43101 17.3429 4.60272 16.7619 3.89341 16.0512ZM5.90257 14.4481H2.62699C1.93296 13.314 1.51464 12.0328 1.40562 10.7077L4.16135 9.15957L5.5728 9.5901L6.84532 13.5038L5.90257 14.4481ZM11.9484 18.3351C10.6444 18.6405 9.28748 18.6405 7.98348 18.3351L6.96974 15.3222L8.06516 14.2267H11.8591L12.9545 15.3222L11.9484 18.3351ZM11.8789 12.9008H8.04532L6.86058 9.2527L9.96211 6.99926L13.0636 9.2527L11.8789 12.9008ZM16.0346 16.0535C15.3244 16.7654 14.4947 17.3472 13.5835 17.7725L14.2354 15.8267H16.2529C16.1835 15.9008 16.1071 15.9771 16.0346 16.0512V16.0535ZM14.0255 14.4504L13.0789 13.5038L14.3514 9.58781L15.7621 9.16415L18.5186 10.7122C18.4096 12.0374 17.9913 13.3185 17.2972 14.4527L14.0255 14.4504Z" fill="#555E61"/>
+                                </svg>
+                            </div>
+                            <span class="fs-breadcrumb__text">Football</span>
+                        </div>
+                        <div class="fs-breadcrumb__separator">
+                            <svg width="10" height="10" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#999999"/>
+                            </svg>
+                        </div>
+                        <div class="fs-breadcrumb__item fs-breadcrumb__item--country">
+                            <div class="fs-breadcrumb__item-flag">
+                                <svg width="14" height="10" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 16H24V1.90735e-06H0V16Z" fill="#F9F9F9"/>
+                                    <path d="M10.392 16H13.608V1.90735e-06H10.392V16Z" fill="#CE1124"/>
+                                    <path d="M0 9.60098H24V6.39999H0V9.60098Z" fill="#CE1124"/>
+                                </svg>
+                            </div>
+                            <span class="fs-breadcrumb__text">England</span>
+                        </div>
+                        <div class="fs-breadcrumb__separator">
+                            <svg width="10" height="10" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#999999"/>
+                            </svg>
+                        </div>
+                        <div class="fs-breadcrumb__item fs-breadcrumb__item--tournament">
+                            <div class="fs-breadcrumb__item-icon">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="6" y="0" width="2" height="14" fill="#E31E24"/>
+                                    <rect x="0" y="6" width="14" height="2" fill="#E31E24"/>
+                                </svg>
+                            </div>
+                            <span class="fs-breadcrumb__text">Championship</span>
+                        </div>
+                    </div>
+                    <div class="fs-breadcrumb__divider"></div>
+                </div>
+            </main>
+
+            <!-- Right Container - 328px Fixed -->
+            <aside class="layouttemplate-right">
+                <div class="layouttemplate-banner">
+                    <img class="layouttemplate-banner__image" src="../../../Assets/BookmakerBanner/300x600/ad=bet365.png" alt="Bet365">
+                    <div class="layouttemplate-banner__label">Advertisement</div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- FSWidgetFooter -->
+    <footer class="footer">
+        <div class="footer__content">
+            <!-- SEO Columns Group -->
+            <div class="footer__seo-group">
+                <!-- Football Column -->
+                <div class="footer__column">
+                    <h3 class="footer__headline">Football</h3>
+                    <div class="footer__links">
+                        <a href="#" class="footer__link">Football News</a>
+                        <a href="#" class="footer__link">Premier League Scores</a>
+                        <a href="#" class="footer__link">Premier League Fixtures</a>
+                        <a href="#" class="footer__link">Premier League Standings</a>
+                        <a href="#" class="footer__link">Championship Scores</a>
+                        <a href="#" class="footer__link">EFL League One</a>
+                        <a href="#" class="footer__link">Scottish Premiership</a>
+                    </div>
+                </div>
+
+                <!-- Tennis Column -->
+                <div class="footer__column">
+                    <h3 class="footer__headline">Tennis</h3>
+                    <div class="footer__links">
+                        <a href="#" class="footer__link">ATP Australian Open 2025</a>
+                        <a href="#" class="footer__link">WTA Australian Open 2025</a>
+                        <a href="#" class="footer__link">Australian Open News</a>
+                        <a href="#" class="footer__link">Jack Draper</a>
+                        <a href="#" class="footer__link">Cameron Norrie</a>
+                        <a href="#" class="footer__link">Katie Boulter</a>
+                        <a href="#" class="footer__link">Emma Raducanu</a>
+                    </div>
+                </div>
+
+                <!-- Other Sports Column -->
+                <div class="footer__column">
+                    <h3 class="footer__headline">Other Sports</h3>
+                    <div class="footer__links">
+                        <a href="#" class="footer__link">Premiership Rugby</a>
+                        <a href="#" class="footer__link">Snooker The Masters 2025</a>
+                        <a href="#" class="footer__link">Snooker World Grand Prix 2025</a>
+                        <a href="#" class="footer__link">NBA Scores</a>
+                        <a href="#" class="footer__link">Cricket Scores</a>
+                        <a href="#" class="footer__link">Cricket Test Series 2025</a>
+                        <a href="#" class="footer__link">Bahrain Darts Masters 2025</a>
+                    </div>
+                </div>
+
+                <!-- Trending Column -->
+                <div class="footer__column">
+                    <h3 class="footer__headline">Trending</h3>
+                    <div class="footer__links">
+                        <a href="#" class="footer__link">Draper v Vukic</a>
+                        <a href="#" class="footer__link">Humphries v Aspinall</a>
+                        <a href="#" class="footer__link">Littler v Price</a>
+                        <a href="#" class="footer__link">Nebrida v Wright</a>
+                        <a href="#" class="footer__link">Celtic v Kilmarnock</a>
+                        <a href="#" class="footer__link">Rangers v Fraserburgh</a>
+                        <a href="#" class="footer__link">Celtic v Young Boys</a>
+                    </div>
+                </div>
+
+                <!-- Football Live Scores Column -->
+                <div class="footer__column">
+                    <h3 class="footer__headline">Football Live Scores</h3>
+                    <div class="footer__links">
+                        <a href="#" class="footer__link">Brentford v Liverpool</a>
+                        <a href="#" class="footer__link">Arsenal v Aston Villa</a>
+                        <a href="#" class="footer__link">Man Utd v Brighton</a>
+                        <a href="#" class="footer__link">Everton v Tottenham</a>
+                        <a href="#" class="footer__link">Ipswich v Man City</a>
+                        <a href="#" class="footer__link">Monaco v Aston Villa</a>
+                        <a href="#" class="footer__link">Liverpool v Lille</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Promo Group -->
+            <div class="footer__promo-group">
+                <!-- Flashscore.co.uk Double Columns -->
+                <div class="footer__double-columns">
+                    <!-- First Column -->
+                    <div class="footer__column">
+                        <h3 class="footer__headline footer__headline--grey">Flashscore.co.uk</h3>
+                        <div class="footer__links">
+                            <a href="#" class="footer__link">Terms of Use</a>
+                            <a href="#" class="footer__link">Privacy Policy</a>
+                            <a href="#" class="footer__link">GDPR and Journalism</a>
+                            <a href="#" class="footer__link">Advertise</a>
+                            <a href="#" class="footer__link">Contact</a>
+                            <a href="#" class="footer__link">Mobile</a>
+                        </div>
+                    </div>
+
+                    <!-- Second Column (no headline) -->
+                    <div class="footer__column">
+                        <h3 class="footer__headline footer__headline--empty"></h3>
+                        <div class="footer__links">
+                            <a href="#" class="footer__link">Livescore</a>
+                            <a href="#" class="footer__link">Recommended Sites</a>
+                            <a href="#" class="footer__link">FAQ</a>
+                            <a href="#" class="footer__link">Audio</a>
+                            <a href="#" class="footer__link">Betting offers</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Follow Us Column -->
+                <div class="footer__column footer__column--follow">
+                    <h3 class="footer__headline footer__headline--grey">Follow Us</h3>
+                    <div class="footer__links footer__links--social">
+                        <a href="#" class="footer__link footer__link--with-icon">
+                            <img src="../../../Assets/Icons/Other/Social/Facebook.svg" alt="Facebook" class="footer__social-icon">
+                            <span>Facebook</span>
+                        </a>
+                        <a href="#" class="footer__link footer__link--with-icon">
+                            <img src="../../../Assets/Icons/Other/Social/X.svg" alt="X" class="footer__social-icon">
+                            <span>X</span>
+                        </a>
+                        <a href="#" class="footer__link footer__link--with-icon">
+                            <img src="../../../Assets/Icons/Other/Social/Instagram.svg" alt="Instagram" class="footer__social-icon">
+                            <span>Instagram</span>
+                        </a>
+                        <a href="#" class="footer__link footer__link--with-icon">
+                            <img src="../../../Assets/Icons/Other/Social/TikTok.svg" alt="TikTok" class="footer__social-icon">
+                            <span>TikTok</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Applications Column -->
+                <div class="footer__column footer__column--apps">
+                    <h3 class="footer__headline footer__headline--grey">Mobile Applications</h3>
+                    <p class="footer__apps-text">Our mobile app is optimized for your phone. Download is for free!</p>
+                    <div class="footer__app-badges">
+                        <a href="#" class="footer__app-badge">
+                            <img src="../../../Assets/SocialButtons/AppStore.png" alt="Download on App Store">
+                        </a>
+                        <a href="#" class="footer__app-badge">
+                            <img src="../../../Assets/SocialButtons/GooglePlay.png" alt="Get it on Google Play">
+                        </a>
+                        <a href="#" class="footer__app-badge">
+                            <img src="../../../Assets/SocialButtons/Huawei.png" alt="Explore it on AppGallery">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Buttons -->
+        <button class="footer__scroll-top">
+            <img src="../../../Assets/Icons/Action/Navigation/Arrow/Up.svg" alt="Scroll to top">
+        </button>
+
+        <button class="footer__cookie-settings">
+            <img src="../../../Assets/Icons/Settings/Cookies.svg" alt="Cookie settings">
+        </button>
+    </footer>
+</body>
+</html>

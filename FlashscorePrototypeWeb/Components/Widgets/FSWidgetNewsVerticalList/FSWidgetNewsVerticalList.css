@@ -1,0 +1,36 @@
+/* FSWidgetNewsVerticalList - Widget Component */
+
+/* =========================================== */
+/* WIDGET CONTAINER                            */
+/* =========================================== */
+
+.fs-widget-news-vertical-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* ARTICLES CONTAINER                          */
+/* =========================================== */
+
+.fs-widget-news-vertical-list__articles {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+- Header: FSHeadersSection — left "Flashscore News"
+- Articles: flex-col, gap 12px, padding 0 12px
+- Widget bottom padding: 20px (section/vertical/l)
+- All spacing follows 4/8px grid
+*/

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSBadgeNotification Component</title>
+    <link rel="stylesheet" href="../FSTabs/FSTabs.css">
+    <link rel="stylesheet" href="FSBadgeNotification.css">
+</head>
+<body>
+    <!-- Demo container -->
+    <div class="demo-container">
+        <h1>FSBadgeNotification Component</h1>
+        <p>Notification badges for displaying counts and alerts</p>
+
+        <h2>Primary Variant (Default)</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="badge badge-primary">1</div>
+                <span class="demo-label">Base state</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="badge badge-primary">5</div>
+                <span class="demo-label">With count</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="badge badge-primary">12</div>
+                <span class="demo-label">Double digit</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="badge badge-primary badge-selected">3</div>
+                <span class="demo-label">Selected state</span>
+            </div>
+        </div>
+
+        <h2>Secondary Variant</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="badge badge-secondary">1</div>
+                <span class="demo-label">Base state</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="badge badge-secondary">8</div>
+                <span class="demo-label">With count</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="badge badge-secondary badge-selected">5</div>
+                <span class="demo-label">Selected state</span>
+            </div>
+        </div>
+
+        <h2>Live Variant</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="badge badge-live">LIVE</div>
+                <span class="demo-label">Base state</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="badge badge-live">3</div>
+                <span class="demo-label">With count</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="badge badge-live badge-selected">LIVE</div>
+                <span class="demo-label">Selected state</span>
+            </div>
+        </div>
+
+        <h2>Usage in Tabs Secondary</h2>
+        <p>Badge inside secondary tabs next to text:</p>
+
+        <div class="fs-tabs-row fs-tabs-row--secondary">
+            <button class="fs-tabs fs-tabs--secondary">
+                <span class="fs-tabs__text">All</span>
+                <div class="badge badge-secondary">24</div>
+            </button>
+
+            <div class="fs-tabs fs-tabs--secondary fs-tabs--active">
+                <span class="fs-tabs__text">Live</span>
+                <div class="badge badge-live badge-selected">5</div>
+            </div>
+
+            <button class="fs-tabs fs-tabs--secondary">
+                <span class="fs-tabs__text">Finished</span>
+                <div class="badge badge-secondary">12</div>
+            </button>
+
+            <button class="fs-tabs fs-tabs--secondary">
+                <span class="fs-tabs__text">Scheduled</span>
+                <div class="badge badge-secondary">7</div>
+            </button>
+        </div>
+
+        <h2>Interactive States</h2>
+        <p>Hover over badges to see the transition effect:</p>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="badge badge-primary">Hover me</div>
+                <span class="demo-label">Primary hover</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="badge badge-secondary">Hover me</div>
+                <span class="demo-label">Secondary hover</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

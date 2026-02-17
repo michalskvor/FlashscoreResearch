@@ -105,9 +105,23 @@ The widget consists of three main sections arranged horizontally:
 - **Match state**: 13px / 16px line-height, uppercase, font-weight 700
 
 ### Colors
+
+#### Default/Finished State:
 - **Primary text**: #001E28
 - **Secondary text**: #555E61
+- **Score numbers**: #001E28
 - **Background**: #FFFFFF
+
+#### Live State:
+- **Score numbers**: #FF0046 (brand-red)
+- **Live period text**: #FF0046 (brand-red)
+- **Live minutes**: #FF0046 (brand-red)
+- **Live icon fill**: #FF0046 (brand-red)
+- **Live stream button text**: #FF0046 (brand-red)
+- **Live stream button border**: #EEEEEE
+- **Live stream button background**: #FFFFFF
+- **Live stream button hover background**: #FAFAFA
+- **Live stream button hover border**: #DFDFDF
 
 ### Component Integration
 
@@ -130,25 +144,156 @@ The widget consists of three main sections arranged horizontally:
 
 ## States and Variations
 
+### Match State Variants
+
+#### Pre-Match State (Scheduled)
+The state for upcoming/scheduled matches that haven't started yet.
+
+**Visual Characteristics:**
+- Dash (-) instead of score numbers (using same class as separator)
+- Only date/time displayed (no match state text)
+- Team names in regular font weight (no winner)
+- Both favorite icons available
+
+**Typography:**
+- Dash: 38px / 46px line-height, FS Numbers font, #001E28 (reuses `.fs-widget-headers-match__score-separator`)
+
+**Usage Example:**
+```html
+<div class="fs-widget-headers-match">
+    <!-- ... participants ... -->
+    <div class="fs-widget-headers-match__score-container">
+        <div class="fs-widget-headers-match__date-container">
+            <p class="fs-widget-headers-match__date">15.02.2025 20:00</p>
+        </div>
+        <div class="fs-widget-headers-match__score">
+            <div class="fs-widget-headers-match__score-content">
+                <div class="fs-widget-headers-match__score-separator">-</div>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+**When to Use:**
+- Matches that haven't started yet
+- Scheduled/upcoming fixtures
+- When only date/time information is available
+
+#### Finished State (Default)
+The standard state for completed matches.
+
+**Visual Characteristics:**
+- Score numbers in default black (#001E28)
+- Match state shows "FINISHED" in uppercase
+- No additional indicators
+
+**Usage Example:**
+```html
+<div class="fs-widget-headers-match">
+    <!-- ... participants ... -->
+    <div class="fs-widget-headers-match__score-container">
+        <div class="fs-widget-headers-match__date-container">
+            <p class="fs-widget-headers-match__date">22.01.2025 15:00</p>
+        </div>
+        <div class="fs-widget-headers-match__score">
+            <div class="fs-widget-headers-match__score-content">
+                <div class="fs-widget-headers-match__score-home">2</div>
+                <div class="fs-widget-headers-match__score-separator">-</div>
+                <div class="fs-widget-headers-match__score-away">1</div>
+            </div>
+            <div class="fs-widget-headers-match__state">
+                <p class="fs-widget-headers-match__state-text">FINISHED</p>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+#### Live State (`.fs-widget-headers-match--live`)
+The active state for ongoing matches with real-time information.
+
+**Visual Characteristics:**
+- Score numbers in brand red (#FF0046)
+- Live period text (e.g., "2ND HALF") in red
+- Live minutes with red dot indicator (e.g., "65'")
+- Optional "LIVE STREAM" button below score
+
+**Typography:**
+- Live period: 11px / 14px line-height, font-weight 700, uppercase, #FF0046
+- Live minutes: 11px / 14px line-height, font-weight 700, #FF0046
+- Live stream button text: 11px / 14px line-height, font-weight 700, uppercase, #FF0046
+
+**Layout:**
+- Live info container: 4px gap between period and time
+- Live time: 4px gap between minutes and icon
+- Live stream button: 8px top margin, 8px internal gap, 8px × 12px padding
+
+**Usage Example:**
+```html
+<div class="fs-widget-headers-match fs-widget-headers-match--live">
+    <!-- ... participants ... -->
+    <div class="fs-widget-headers-match__score-container">
+        <div class="fs-widget-headers-match__date-container">
+            <p class="fs-widget-headers-match__date">28.12.2023 12:30</p>
+        </div>
+        <div class="fs-widget-headers-match__score">
+            <div class="fs-widget-headers-match__score-content">
+                <div class="fs-widget-headers-match__score-home">2</div>
+                <div class="fs-widget-headers-match__score-separator">-</div>
+                <div class="fs-widget-headers-match__score-away">1</div>
+            </div>
+            <div class="fs-widget-headers-match__state">
+                <div class="fs-widget-headers-match__live-info">
+                    <p class="fs-widget-headers-match__live-period">2ND HALF</p>
+                    <div class="fs-widget-headers-match__live-time">
+                        <span class="fs-widget-headers-match__live-minutes">65'</span>
+                        <svg class="fs-widget-headers-match__live-icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="4" cy="4" r="4" fill="#FF0046"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Optional: Live Stream Button -->
+        <button class="fs-widget-headers-match__live-stream-button">
+            <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0V12L10 6L0 0Z" fill="#FF0046"/>
+            </svg>
+            <span class="fs-widget-headers-match__live-stream-text">LIVE STREAM</span>
+        </button>
+    </div>
+</div>
+```
+
+**When to Use:**
+- During live/in-progress matches
+- When real-time score updates are active
+- When displaying current match minute/period
+- When live streaming is available
+
+**Live Period Examples (Football):**
+- `1ST HALF` - First half in progress
+- `2ND HALF` - Second half in progress
+- `HALF TIME` - Halftime break
+- `EXTRA TIME` - Extra time period
+- `PENALTIES` - Penalty shootout
+
 ### Team Name Variants
 - **With icon**: Bold text with 14px icon (e.g., "next stage" indicator)
 - **Without icon**: Bold or regular text only
-
-### Match State Examples
-- `FINISHED` - Completed match
-- `LIVE 67'` - Live match with current minute
-- `POSTPONED` - Delayed/postponed match
-- `SCHEDULED` - Upcoming match
+- Team name has bold text only for finished state of match and indicates winner of the match
 
 ### Favorite States
 - Base (gray star outline) - Not favorited
 - Active (yellow filled star) - Favorited
 
 ## Design System Compliance
-- HEX color values only (#FFFFFF, #001E28, #555E61, #FFCD00, #999999)
-- Even number spacing (4px, 8px, 16px, 24px)
+- HEX color values only (#FFFFFF, #001E28, #555E61, #FF0046, #FFCD00, #999999, #EEEEEE, #DFDFDF, #FAFAFA)
+- Even number spacing (4px, 8px, 12px, 16px, 24px)
 - 8px grid alignment for major elements
 - Typography from Livesport Finder LCGJK and FS Numbers font families
+- Live state uses brand red (#FF0046) for all active/dynamic elements
 
 ## Usage Context
 This widget is typically used on:
@@ -168,3 +313,7 @@ This widget is typically used on:
 - **Team logos**: May link to team detail pages
 - **Team names**: May link to team detail pages
 - **Score**: May link to match statistics or detailed scoring breakdown
+- **Live stream button** (Live state only): Opens live video stream or streaming options
+  - Hover state: Light grey background (#FAFAFA) with darker border (#DFDFDF)
+  - Focus state: 2px red outline (#FF0046) with 2px offset
+  - Includes play icon (10px × 12px triangle) in brand red
