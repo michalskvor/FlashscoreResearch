@@ -1,0 +1,191 @@
+/* FSBannerBookmaker - Molecule Component */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================== */
+/* BANNER CONTAINER                            */
+/* =========================================== */
+
+/* Background color set inline per bookmaker brand */
+.fs-banner-bookmaker {
+    display: flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* =========================================== */
+/* CONTENT                                     */
+/* =========================================== */
+
+.fs-banner-bookmaker__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 0;
+}
+
+/* =========================================== */
+/* MAIN ROW                                    */
+/* =========================================== */
+
+.fs-banner-bookmaker__main {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    min-height: 28px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+/* =========================================== */
+/* PROMO TEXT                                  */
+/* =========================================== */
+
+/* 13px Bold, line-height 18px — color set inline per brand */
+.fs-banner-bookmaker__text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* =========================================== */
+/* CTA BUTTON                                  */
+/* =========================================== */
+
+/* Background color set inline per bookmaker brand */
+.fs-banner-bookmaker__button {
+    display: flex;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 4px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* 12px Bold, line-height 14px — color set inline per brand */
+.fs-banner-bookmaker__button-label {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* =========================================== */
+/* ADDITIONAL (FINE PRINT)                     */
+/* =========================================== */
+
+.fs-banner-bookmaker__additional {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 4px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+/* 7px Regular, line-height 7px — color set inline per brand */
+.fs-banner-bookmaker__fine-print {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 7px;
+    font-weight: 400;
+    line-height: 7px;
+    width: 100%;
+}
+
+/* =========================================== */
+/* DEMO STYLES                                 */
+/* =========================================== */
+
+.demo-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 32px 16px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    background-color: #FFFFFF;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #001E28;
+    margin: 0 0 8px;
+}
+
+.demo-container > p {
+    font-size: 13px;
+    color: #555E61;
+    margin: 0 0 32px;
+}
+
+.demo-container h2 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999999;
+    margin: 24px 0 8px;
+}
+
+.demo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.demo-section--dark {
+    background: #00141E;
+    padding: 16px;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.demo-section--dark h2 {
+    color: #555E61;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+- Container: min-height 36px, padding 4px 12px, border-radius 4px
+- Background color: set inline per bookmaker brand
+- Main row: gap 12px, min-height 28px, align-items center
+- Promo text: 13px Bold, line-height 18px, flex: 1
+- Button: height 28px, padding 4px 8px, border-radius 4px, overflow hidden
+- Button label: 12px Bold, line-height 14px
+- Additional: padding-bottom 4px
+- Fine print: 7px Regular, line-height 7px
+- Text colors and button colors set inline per brand (light/dark variants)
+- All spacing follows 4/8px grid
+*/
