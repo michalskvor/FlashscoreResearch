@@ -1,0 +1,171 @@
+/* FSButtonLink - Atom Component */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================== */
+/* BUTTON CONTAINER                            */
+/* =========================================== */
+
+.fs-button-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+}
+
+.fs-button-link--tertiary {
+    gap: 8px;
+    min-height: 20px;
+}
+
+/* =========================================== */
+/* LABEL                                       */
+/* =========================================== */
+
+/* Primary, Secondary, Inversed: 12px Bold, underlined */
+.fs-button-link__label {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Tertiary: 14px Bold, NO underline */
+.fs-button-link--tertiary .fs-button-link__label {
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: none;
+}
+
+/* Primary */
+.fs-button-link--primary .fs-button-link__label {
+    color: #001E28;
+    text-decoration: underline;
+}
+
+/* Secondary */
+.fs-button-link--secondary .fs-button-link__label {
+    color: #999999;
+    text-decoration: underline;
+}
+
+/* Tertiary */
+.fs-button-link--tertiary .fs-button-link__label {
+    color: #555E61;
+}
+
+/* Inversed */
+.fs-button-link--inversed .fs-button-link__label {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+/* =========================================== */
+/* TRAILING ICON                               */
+/* =========================================== */
+
+.fs-button-link__icon {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    display: block;
+}
+
+/* Primary */
+.fs-button-link--primary .fs-button-link__icon {
+    filter: brightness(0) saturate(100%) invert(7%) sepia(16%) saturate(2065%) hue-rotate(155deg) brightness(98%) contrast(101%);
+}
+
+/* Secondary */
+.fs-button-link--secondary .fs-button-link__icon {
+    filter: brightness(0) saturate(100%) invert(67%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(85%);
+}
+
+/* Tertiary */
+.fs-button-link--tertiary .fs-button-link__icon {
+    filter: brightness(0) saturate(100%) invert(38%) sepia(9%) saturate(635%) hue-rotate(155deg) brightness(93%) contrast(89%);
+}
+
+/* Inversed */
+.fs-button-link--inversed .fs-button-link__icon {
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
+/* =========================================== */
+/* DEMO STYLES                                 */
+/* =========================================== */
+
+.demo-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 32px 16px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    background-color: #FFFFFF;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #001E28;
+    margin: 0 0 8px;
+}
+
+.demo-container > p {
+    font-size: 13px;
+    color: #555E61;
+    margin: 0 0 32px;
+}
+
+.demo-container h2 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999999;
+    margin: 24px 0 8px;
+}
+
+.demo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.demo-section--dark {
+    background: #00141E;
+    padding: 16px;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.demo-section--dark h2 {
+    color: #555E61;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+- Primary: 12px Bold #001E28, underlined, icon #001E28, gap 4px
+- Secondary: 12px Bold #999999, underlined, icon #999999, gap 4px
+- Tertiary: 14px Bold #555E61, NO underline, icon #555E61, gap 8px, min-height 20px
+- Inversed: 12px Bold white, underlined, icon white, gap 4px
+- Icon: 12px × 12px right arrow
+- Text: line-height 14px for 12px, 18px for 14px
+- All spacing follows 4/8px grid
+*/

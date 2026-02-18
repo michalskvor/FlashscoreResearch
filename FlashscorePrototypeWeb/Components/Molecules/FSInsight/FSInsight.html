@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSInsight - Molecule Component</title>
+    <link rel="stylesheet" href="../../Atoms/FSButtonLink/FSButtonLink.css">
+    <link rel="stylesheet" href="FSInsight.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>FSInsight</h1>
+        <p>AI-powered insight card. Single or multi-row layout with optional team icon and optional AI sparkle icon. FSButtonLink at the bottom for expandable content.</p>
+
+        <!-- ================================= -->
+        <!-- Single row, icon + text, no AI    -->
+        <!-- ================================= -->
+        <h2>Single row — icon + text</h2>
+        <div class="demo-list">
+
+            <!-- Mbappe scored 5 goals -->
+            <div class="fs-insight">
+                <div class="fs-insight__row">
+                    <div class="fs-insight__icon-container">
+                        <img src="../../../Assets/TeamLogos/Random Footballl/PSG.png" alt="PSG" class="fs-insight__icon">
+                    </div>
+                    <p class="fs-insight__text"><strong>Mbappe</strong> scored 5 goals in last 4 games.</p>
+                </div>
+            </div>
+
+            <!-- Haaland with Man City -->
+            <div class="fs-insight">
+                <div class="fs-insight__row">
+                    <div class="fs-insight__icon-container">
+                        <img src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City" class="fs-insight__icon">
+                    </div>
+                    <p class="fs-insight__text"><strong>Haaland</strong> has netted in 6 consecutive home matches.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================================= -->
+        <!-- Single row, text only + AI icon   -->
+        <!-- ================================= -->
+        <h2>Single row — text + AI icon</h2>
+        <div class="demo-list">
+
+            <!-- Without Bellingham -->
+            <div class="fs-insight">
+                <div class="fs-insight__row">
+                    <p class="fs-insight__text"><strong>Without Bellingham</strong>, Real Madrid's average goals per game historically fall by 0.4 goals.</p>
+                    <img src="../../../Assets/Icons/Other/AI.svg" alt="AI insight" class="fs-insight__ai-icon">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================================= -->
+        <!-- Single row, icon + text + AI icon -->
+        <!-- ================================= -->
+        <h2>Single row — icon + text + AI icon</h2>
+        <div class="demo-list">
+
+            <!-- Absence of Bellingham critical -->
+            <div class="fs-insight">
+                <div class="fs-insight__row">
+                    <div class="fs-insight__icon-container">
+                        <img src="../../../Assets/TeamLogos/Random Footballl/Real.png" alt="Real Madrid" class="fs-insight__icon">
+                    </div>
+                    <p class="fs-insight__text"><strong>Absence of Bellingham critical:</strong> Madrid's midfield drive &amp; creativity reduced. Real's attacking engine that averaged 2.4 goals per game.</p>
+                    <img src="../../../Assets/Icons/Other/AI.svg" alt="AI insight" class="fs-insight__ai-icon">
+                </div>
+            </div>
+
+            <!-- Arsenal without Saka -->
+            <div class="fs-insight">
+                <div class="fs-insight__row">
+                    <div class="fs-insight__icon-container">
+                        <img src="../../../Assets/TeamLogos/Premier league/Arsenal.png" alt="Arsenal" class="fs-insight__icon">
+                    </div>
+                    <p class="fs-insight__text"><strong>Without Saka:</strong> Arsenal's right flank loses its primary creative outlet, dropping average xG from 1.8 to 1.1 per match.</p>
+                    <img src="../../../Assets/Icons/Other/AI.svg" alt="AI insight" class="fs-insight__ai-icon">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================================= -->
+        <!-- Multi-row + Show more button      -->
+        <!-- ================================= -->
+        <h2>Multi-row — list + FSButtonLink</h2>
+        <div class="demo-list">
+
+            <!-- Madrid vs Osasuna: Most likely outcomes -->
+            <div class="fs-insight">
+                <div class="fs-insight__rows">
+                    <div class="fs-insight__row">
+                        <div class="fs-insight__icon-container">
+                            <img src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="" class="fs-insight__icon">
+                        </div>
+                        <p class="fs-insight__text">Most likely outcomes 1:0 or 2:1 for Madrid.</p>
+                    </div>
+                    <div class="fs-insight__row">
+                        <div class="fs-insight__icon-container">
+                            <img src="../../../Assets/TeamLogos/Random Footballl/Real.png" alt="Real Madrid" class="fs-insight__icon">
+                        </div>
+                        <p class="fs-insight__text">Madrid missing Bellingham (0.5 goals / match).</p>
+                    </div>
+                    <div class="fs-insight__row">
+                        <div class="fs-insight__icon-container">
+                            <img src="../../../Assets/TeamLogos/Random Footballl/Barcelona.png" alt="Barcelona" class="fs-insight__icon">
+                        </div>
+                        <p class="fs-insight__text">Opponent creates fewer chances but is effective on the counter.</p>
+                    </div>
+                </div>
+                <div class="fs-insight__button">
+                    <a href="#" class="fs-button-link fs-button-link--primary">
+                        <span class="fs-button-link__label">Show more insights</span>
+                        <img src="../../../Assets/Icons/Action/Navigation/Arrow/Down.svg" alt="" class="fs-button-link__icon">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Liverpool vs Chelsea -->
+            <div class="fs-insight">
+                <div class="fs-insight__rows">
+                    <div class="fs-insight__row">
+                        <div class="fs-insight__icon-container">
+                            <img src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="" class="fs-insight__icon">
+                        </div>
+                        <p class="fs-insight__text">Most likely outcome 1:1 or 2:1 for Liverpool.</p>
+                    </div>
+                    <div class="fs-insight__row">
+                        <div class="fs-insight__icon-container">
+                            <img src="../../../Assets/TeamLogos/Premier league/Liverpool.png" alt="Liverpool" class="fs-insight__icon">
+                        </div>
+                        <p class="fs-insight__text">Liverpool's high press likely to disrupt Chelsea's build-up.</p>
+                    </div>
+                    <div class="fs-insight__row">
+                        <div class="fs-insight__icon-container">
+                            <img src="../../../Assets/TeamLogos/Premier league/Chelsea.png" alt="Chelsea" class="fs-insight__icon">
+                        </div>
+                        <p class="fs-insight__text">Chelsea travel as favourites with Palmer and Nkunku in form.</p>
+                    </div>
+                </div>
+                <div class="fs-insight__button">
+                    <a href="#" class="fs-button-link fs-button-link--primary">
+                        <span class="fs-button-link__label">Show more insights</span>
+                        <img src="../../../Assets/Icons/Action/Navigation/Arrow/Down.svg" alt="" class="fs-button-link__icon">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================================= -->
+        <!-- Multi-row + AI icon               -->
+        <!-- ================================= -->
+        <h2>Multi-row — rows + AI icon</h2>
+        <div class="demo-list">
+
+            <!-- Fluminense vs Chelsea with AI -->
+            <div class="fs-insight">
+                <div class="fs-insight__rows">
+                    <div class="fs-insight__row">
+                        <div class="fs-insight__icon-container">
+                            <img src="../../../Assets/TeamLogos/Random Footballl/Inter Milan.png" alt="Inter Milan" class="fs-insight__icon">
+                        </div>
+                        <p class="fs-insight__text">Fluminense rely on Thiago Silva's experience and Cano's finishing. Their patient build-up and home support could challenge Chelsea's tempo.</p>
+                        <img src="../../../Assets/Icons/Other/AI.svg" alt="AI insight" class="fs-insight__ai-icon">
+                    </div>
+                    <div class="fs-insight__row">
+                        <div class="fs-insight__icon-container">
+                            <img src="../../../Assets/TeamLogos/Premier league/Chelsea.png" alt="Chelsea" class="fs-insight__icon">
+                        </div>
+                        <p class="fs-insight__text">Chelsea travel as favourites with Palmer and Nkunku in form. Pochettino's side look to exploit Fluminense's slower defence through pace and pressing.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

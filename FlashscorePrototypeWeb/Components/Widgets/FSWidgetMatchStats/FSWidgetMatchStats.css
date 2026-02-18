@@ -1,0 +1,50 @@
+/* FSWidgetMatchStats - Widget Component */
+
+/* =========================================== */
+/* WIDGET CONTAINER                            */
+/* =========================================== */
+
+.fs-widget-match-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* STATS CONTAINER                             */
+/* =========================================== */
+
+.fs-widget-match-stats__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* BUTTON CONTAINER                            */
+/* =========================================== */
+
+.fs-widget-match-stats__button {
+    display: flex;
+    justify-content: center;
+    padding: 0 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+- Header: FSHeadersSection — left "Stats"
+- Stats: flex-col, gap 16px, padding 0 12px
+- Widget bottom padding: 20px (section/vertical/l)
+- Individual stat rows: FSMatchStats component
+- All spacing follows 4/8px grid
+*/

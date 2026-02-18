@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="../Components/Widgets/FSWidgetSummaryIncident/FSWidgetSummaryIncident.css">
     <link rel="stylesheet" href="../Components/Molecules/FSHeadersSection/FSHeadersSection.css">
     <link rel="stylesheet" href="../Components/Atoms/FSButtonStream/FSButtonStream.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSMatchStats/FSMatchStats.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSButtonLink/FSButtonLink.css">
+    <link rel="stylesheet" href="../Components/Widgets/FSWidgetMatchStats/FSWidgetMatchStats.css">
     <link rel="stylesheet" href="../Components/Widgets/FSWidgetTVchannels/FSWidgetTVchannels.css">
     <link rel="stylesheet" href="../Components/Widgets/FSWidgetMatchInformation/FSWidgetMatchInformation.css">
     <link rel="stylesheet" href="../Components/Molecules/FSArticlePreview/FSArticlePreview.css">
@@ -602,6 +605,101 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+
+            <!-- FSWidgetMatchStats -->
+            <div class="fs-widget-match-stats">
+
+                <!-- Section Header: "Stats" left -->
+                <div class="fs-headers-section">
+                    <div class="fs-headers-section__left">
+                        <span class="fs-headers-section__text">Stats</span>
+                    </div>
+                    <div class="fs-headers-section__center"></div>
+                    <div class="fs-headers-section__right"></div>
+                </div>
+
+                <!-- Stats -->
+                <div class="fs-widget-match-stats__stats">
+
+                    <!-- Expected Goals (xG): Home 2.1 vs Away 0.8 — Home dominant -->
+                    <div class="fs-match-stats">
+                        <div class="fs-match-stats__values">
+                            <div class="fs-match-stats__home">
+                                <span class="fs-match-stats__home-value">2.1</span>
+                            </div>
+                            <span class="fs-match-stats__label">Expected goals (xG)</span>
+                            <div class="fs-match-stats__away">
+                                <span class="fs-match-stats__away-value">0.8</span>
+                            </div>
+                        </div>
+                        <div class="fs-match-stats__bars">
+                            <div class="fs-match-stats__bar-home">
+                                <!-- Home: 2.1/(2.1+0.8) = 72.41% -->
+                                <div class="fs-match-stats__bar-fill fs-match-stats__bar-fill--dominant" style="width: 72.41%;"></div>
+                            </div>
+                            <div class="fs-match-stats__bar-away">
+                                <!-- Away: 0.8/(2.1+0.8) = 27.59% -->
+                                <div class="fs-match-stats__bar-fill fs-match-stats__bar-fill--neutral" style="width: 27.59%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ball Possession: Home 65% vs Away 35% — Home dominant -->
+                    <div class="fs-match-stats">
+                        <div class="fs-match-stats__values">
+                            <div class="fs-match-stats__home">
+                                <span class="fs-match-stats__home-value">65%</span>
+                            </div>
+                            <span class="fs-match-stats__label">Ball possession</span>
+                            <div class="fs-match-stats__away">
+                                <span class="fs-match-stats__away-value">35%</span>
+                            </div>
+                        </div>
+                        <div class="fs-match-stats__bars">
+                            <div class="fs-match-stats__bar-home">
+                                <!-- Home: 65/(65+35) = 65% -->
+                                <div class="fs-match-stats__bar-fill fs-match-stats__bar-fill--dominant" style="width: 65%;"></div>
+                            </div>
+                            <div class="fs-match-stats__bar-away">
+                                <!-- Away: 35/(65+35) = 35% -->
+                                <div class="fs-match-stats__bar-fill fs-match-stats__bar-fill--neutral" style="width: 35%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Total Shots: Home 18 vs Away 9 — Home dominant -->
+                    <div class="fs-match-stats">
+                        <div class="fs-match-stats__values">
+                            <div class="fs-match-stats__home">
+                                <span class="fs-match-stats__home-value">18</span>
+                            </div>
+                            <span class="fs-match-stats__label">Total shots</span>
+                            <div class="fs-match-stats__away">
+                                <span class="fs-match-stats__away-value">9</span>
+                            </div>
+                        </div>
+                        <div class="fs-match-stats__bars">
+                            <div class="fs-match-stats__bar-home">
+                                <!-- Home: 18/(18+9) = 66.67% -->
+                                <div class="fs-match-stats__bar-fill fs-match-stats__bar-fill--dominant" style="width: 66.67%;"></div>
+                            </div>
+                            <div class="fs-match-stats__bar-away">
+                                <!-- Away: 9/(18+9) = 33.33% -->
+                                <div class="fs-match-stats__bar-fill fs-match-stats__bar-fill--neutral" style="width: 33.33%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Show more button -->
+                <div class="fs-widget-match-stats__button">
+                    <a href="#" class="fs-button-link fs-button-link--primary">
+                        <span class="fs-button-link__label">Show more</span>
+                        <img src="../Assets/Icons/Action/Navigation/Arrow/Right.svg" alt="" class="fs-button-link__icon">
+                    </a>
                 </div>
             </div>
 

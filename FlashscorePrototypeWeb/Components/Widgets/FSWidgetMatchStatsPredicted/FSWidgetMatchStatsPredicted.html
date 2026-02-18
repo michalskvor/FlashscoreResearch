@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSWidgetMatchStatsPredicted - Widget Component</title>
+    <link rel="stylesheet" href="../../Molecules/FSHeadersSection/FSHeadersSection.css">
+    <link rel="stylesheet" href="../../Molecules/FSMatchStats/FSMatchStats.css">
+    <link rel="stylesheet" href="../../Atoms/FSButtonLink/FSButtonLink.css">
+    <link rel="stylesheet" href="../../Molecules/FSInsight/FSInsight.css">
+    <link rel="stylesheet" href="FSWidgetMatchStatsPredicted.css">
+</head>
+<body style="padding: 16px; background: #FFFFFF; max-width: 639px;">
+
+    <!-- FSWidgetMatchStatsPredicted -->
+    <div class="fs-widget-match-stats-predicted">
+
+        <!-- Section Header: "Match prediction" left -->
+        <div class="fs-headers-section">
+            <div class="fs-headers-section__left">
+                <span class="fs-headers-section__text">Match prediction</span>
+            </div>
+            <div class="fs-headers-section__center"></div>
+            <div class="fs-headers-section__right"></div>
+        </div>
+
+        <!-- Predicted Stats -->
+        <div class="fs-widget-match-stats-predicted__stats">
+
+            <!-- Expected Goals (xG): Home (Liverpool) 1.8 vs Away (Man City) 2.4 — Away dominant -->
+            <div class="fs-match-stats fs-match-stats--predicted">
+                <div class="fs-match-stats__values">
+                    <div class="fs-match-stats__home">
+                        <img src="../../../Assets/TeamLogos/Premier league/Liverpool.png" alt="Liverpool" class="fs-match-stats__team-icon">
+                        <span class="fs-match-stats__home-value">1.8</span>
+                    </div>
+                    <span class="fs-match-stats__label">Predicted Goals</span>
+                    <div class="fs-match-stats__away">
+                        <span class="fs-match-stats__away-value">2.4</span>
+                        <img src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City" class="fs-match-stats__team-icon">
+                    </div>
+                </div>
+                <div class="fs-match-stats__bars">
+                    <div class="fs-match-stats__bar-home">
+                        <!-- Home: 1.8/(1.8+2.4) = 42.86% -->
+                        <div class="fs-match-stats__bar-fill fs-match-stats__bar-fill--predicted-neutral" style="width: 42.86%;"></div>
+                    </div>
+                    <div class="fs-match-stats__bar-away">
+                        <!-- Away: 2.4/(1.8+2.4) = 57.14% -->
+                        <div class="fs-match-stats__bar-fill fs-match-stats__bar-fill--predicted-dominant" style="width: 57.14%;"></div>
+                    </div>
+                </div>
+            </div>
+
+           
+
+        </div>
+
+        <!-- FSInsight with AI icon -->
+        <div class="fs-widget-match-stats-predicted__insight">
+            <div class="fs-insight">
+                <div class="fs-insight__rows">
+                    <div class="fs-insight__row">
+                        <div class="fs-insight__icon-container">
+                            <img src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="" class="fs-insight__icon">
+                        </div>
+                        <p class="fs-insight__text">Most likely outcomes 1:0 or 2:1 for Man City.</p>
+                        <img src="../../../Assets/Icons/Other/AI.svg" alt="AI insight" class="fs-insight__ai-icon">
+                    </div>
+                    <div class="fs-insight__row">
+                        <div class="fs-insight__icon-container">
+                            <img src="../../../Assets/TeamLogos/Premier league/Liverpool.png" alt="Liverpool" class="fs-insight__icon">
+                        </div>
+                        <p class="fs-insight__text">Liverpool's home press may disrupt Man City's build-up play.</p>
+                    </div>
+                    <div class="fs-insight__row">
+                        <div class="fs-insight__icon-container">
+                            <img src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City" class="fs-insight__icon">
+                        </div>
+                        <p class="fs-insight__text">Man City's xG advantage and finishing edge point to a narrow away win.</p>
+                    </div>
+                </div>
+                <div class="fs-insight__button">
+                    <a href="#" class="fs-button-link fs-button-link--primary">
+                        <span class="fs-button-link__label">Show more insights</span>
+                        <img src="../../../Assets/Icons/Action/Navigation/Arrow/Down.svg" alt="" class="fs-button-link__icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+/* FSWidgetMatchStatsPredicted - Widget Component */
+
+/* =========================================== */
+/* WIDGET CONTAINER                            */
+/* =========================================== */
+
+.fs-widget-match-stats-predicted {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* STATS CONTAINER                             */
+/* =========================================== */
+
+.fs-widget-match-stats-predicted__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* INSIGHT CONTAINER                           */
+/* =========================================== */
+
+.fs-widget-match-stats-predicted__insight {
+    padding: 0 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+- Header: FSHeadersSection — left "Match prediction"
+- Stats: FSMatchStats --predicted, flex-col, gap 16px, padding 0 12px
+- Insight: FSInsight with AI icon, padding 0 12px
+- Widget bottom padding: 20px (section/vertical/l)
+- All spacing follows 4/8px grid
+*/

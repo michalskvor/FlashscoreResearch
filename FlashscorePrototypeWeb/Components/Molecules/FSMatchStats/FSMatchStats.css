@@ -1,0 +1,238 @@
+/* FSMatchStats - Molecule Component */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================== */
+/* ROW CONTAINER                               */
+/* =========================================== */
+
+.fs-match-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* VALUES ROW                                  */
+/* =========================================== */
+
+.fs-match-stats__values {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+/* =========================================== */
+/* HOME VALUE (LEFT)                           */
+/* =========================================== */
+
+.fs-match-stats__home {
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+    min-width: 0;
+}
+
+.fs-match-stats__home-value {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #001E28;
+    white-space: nowrap;
+}
+
+/* =========================================== */
+/* LABEL (CENTER)                              */
+/* =========================================== */
+
+.fs-match-stats__label {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #001E28;
+    white-space: nowrap;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* =========================================== */
+/* AWAY VALUE (RIGHT)                          */
+/* =========================================== */
+
+.fs-match-stats__away {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    min-width: 0;
+}
+
+.fs-match-stats__away-value {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #001E28;
+    white-space: nowrap;
+}
+
+/* =========================================== */
+/* BARS ROW                                    */
+/* =========================================== */
+
+.fs-match-stats__bars {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    width: 100%;
+}
+
+/* =========================================== */
+/* BAR CONTAINERS                              */
+/* =========================================== */
+
+/* Home bar container — grows left from center */
+.fs-match-stats__bar-home {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 8px;
+    border-radius: 2px;
+    background: #EEEEEE;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Away bar container — grows right from center */
+.fs-match-stats__bar-away {
+    display: flex;
+    flex-direction: row;
+    height: 8px;
+    border-radius: 2px;
+    background: #EEEEEE;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* =========================================== */
+/* BAR FILLS                                   */
+/* =========================================== */
+
+.fs-match-stats__bar-fill {
+    height: 100%;
+    border-radius: 2px;
+}
+
+/* Dominant (higher value) — Brand color */
+.fs-match-stats__bar-fill--dominant {
+    background: #FF0046;
+}
+
+/* Non-dominant (lower value or equal) — Black */
+.fs-match-stats__bar-fill--neutral {
+    background: #001E28;
+}
+
+/* =========================================== */
+/* PREDICTED VARIANT                           */
+/* =========================================== */
+
+/* Team icon: 20px square */
+.fs-match-stats__team-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    display: block;
+    object-fit: contain;
+}
+
+/* Home side: icon left of value */
+.fs-match-stats--predicted .fs-match-stats__home {
+    gap: 4px;
+    align-items: center;
+}
+
+/* Away side: value left of icon */
+.fs-match-stats--predicted .fs-match-stats__away {
+    gap: 4px;
+    align-items: center;
+}
+
+/* Dominant (higher predicted value) — Blue */
+.fs-match-stats__bar-fill--predicted-dominant {
+    background: #0033FF;
+}
+
+/* Non-dominant (lower predicted value) — Light blue */
+.fs-match-stats__bar-fill--predicted-neutral {
+    background: #7790F7;
+}
+
+/* =========================================== */
+/* DEMO STYLES                                 */
+/* =========================================== */
+
+.demo-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 32px 16px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    background-color: #FFFFFF;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #001E28;
+    margin: 0 0 8px;
+}
+
+.demo-container > p {
+    font-size: 13px;
+    color: #555E61;
+    margin: 0 0 32px;
+}
+
+.demo-container h2 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999999;
+    margin: 24px 0 8px;
+}
+
+.demo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+- Container: flex column, gap 8px
+- Values row: flex row, gap 8px, align-items center
+- Home value: flex 1, justify-content flex-end (right-aligned)
+- Label: centered, flex-shrink 0
+- Away value: flex 1, justify-content flex-start (left-aligned)
+- Values: 13px Bold, line-height 16px, #001E28
+- Bars row: flex row, gap 2px
+- Bar containers: height 8px, border-radius 2px, background #EEEEEE, flex 1
+- Home bar: flex-direction row-reverse (grows left from center)
+- Away bar: flex-direction row (grows right from center)
+- Bar fill width: calculated as percentage of total
+- Dominant color (higher value): #FF0046
+- Neutral color (lower or equal): #001E28
+- All spacing follows 4/8px grid
+*/
