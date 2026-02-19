@@ -1,0 +1,96 @@
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =============================================================
+   FSBadgeLive — Atom Component
+   LIVE badge used in odds rows.
+   Variants: Live (red) | Scheduled (outlined gray)
+   Size: 26×22px, border-radius 4px
+   ============================================================= */
+
+.fs-badge-live {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 22px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #FF0046;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+/* ── Variant: Scheduled (outlined, gray) ────────────────────── */
+.fs-badge-live--scheduled {
+    background-color: #FFFFFF;
+    border: 1px solid #EEEEEE;
+}
+
+/* ── Text ────────────────────────────────────────────────────── */
+.fs-badge-live__text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+.fs-badge-live--scheduled .fs-badge-live__text {
+    color: #999999;
+}
+
+
+
+
+/* =============================================================
+   Demo styles (remove in production)
+   ============================================================= */
+.demo-container {
+    padding: 40px;
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #F5F5F5;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #001E28;
+}
+
+.demo-container h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 4px;
+    color: #001E28;
+}
+
+.demo-container p {
+    font-size: 13px;
+    margin-bottom: 16px;
+    color: #555E61;
+}
+
+.demo-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.demo-label {
+    font-size: 11px;
+    color: #555E61;
+    width: 80px;
+    flex-shrink: 0;
+}

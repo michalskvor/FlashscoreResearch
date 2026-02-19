@@ -1,0 +1,56 @@
+/* ============================================================
+   FSWidgetOddsTable — Widget
+   Depends on:
+     ../../Molecules/FSHeadersSection/FSHeadersSection.css
+     ../../Atoms/FSTabs/FSTabs.css
+     ../../Atoms/FSBadgeLive/FSBadgeLive.css
+     ../../Atoms/FSOddsCell/FSOddsCell.css
+     ../../Molecules/FSOddsRow/FSOddsRow.css
+     ../../Atoms/FSButtonLink/FSButtonLink.css
+   ============================================================ */
+
+/* ── Widget container ──────────────────────────────────────── */
+.fs-widget-odds-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 639px;
+    background-color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 8px;
+}
+
+/* ── Tabs area — allow horizontal scroll if labels overflow ── */
+.fs-widget-odds-table__tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ── Rows area ─────────────────────────────────────────────── */
+.fs-widget-odds-table__rows {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* ── Column-header alignment overrides ────────────────────── */
+/* Match the 67px FSOddsCell width and 8px gap used by FSOddsRow */
+.fs-widget-odds-table .fs-headers-section-odds__cells {
+    gap: 8px;
+}
+
+.fs-widget-odds-table .fs-headers-section-odds__cell {
+    width: 67px;
+    min-width: 67px;
+    max-width: 67px;
+}
+
+/* ── Footer — centered Show more link ─────────────────────── */
+.fs-widget-odds-table__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-top: 1px solid #EEEEEE;
+}

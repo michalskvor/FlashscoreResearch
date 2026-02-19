@@ -1,0 +1,262 @@
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =============================================================
+   FSButton — Atom Component
+   Intents:     Primary (#0F2D37) | Brand (#FF0046)
+   Appearances: Solid | Outlined | Minimal
+   Sizes:       Large (40px) | Medium (32px) | Small (28px)
+   Border radius: 8px
+   ============================================================= */
+
+/* ── Base ────────────────────────────────────────────────────── */
+.fs-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+/* ── Sizes ───────────────────────────────────────────────────── */
+.fs-button--large {
+    height: 40px;
+    min-width: 40px;
+    padding: 11px;
+    gap: 8px;
+}
+
+.fs-button--medium {
+    height: 32px;
+    min-width: 32px;
+    padding: 8px;
+    gap: 6px;
+}
+
+.fs-button--small {
+    height: 28px;
+    min-width: 28px;
+    padding: 7px;
+    gap: 4px;
+}
+
+/* ── Label ───────────────────────────────────────────────────── */
+.fs-button__label {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.fs-button--large .fs-button__label,
+.fs-button--medium .fs-button__label {
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.fs-button--small .fs-button__label {
+    font-size: 11px;
+    line-height: 14px;
+}
+
+/* ── Leading icon ────────────────────────────────────────────── */
+.fs-button__icon-lead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.fs-button--large .fs-button__icon-lead {
+    width: 18px;
+    height: 18px;
+}
+
+.fs-button--medium .fs-button__icon-lead {
+    width: 16px;
+    height: 16px;
+}
+
+.fs-button--small .fs-button__icon-lead {
+    width: 14px;
+    height: 14px;
+}
+
+/* ── Trailing icon ───────────────────────────────────────────── */
+.fs-button__icon-trail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.fs-button--large .fs-button__icon-trail {
+    width: 14px;
+    height: 14px;
+}
+
+.fs-button--medium .fs-button__icon-trail,
+.fs-button--small .fs-button__icon-trail {
+    width: 12px;
+    height: 12px;
+}
+
+/* ── Icon-only: enforce square width ────────────────────────── */
+.fs-button--icon-only.fs-button--large  { width: 40px; }
+.fs-button--icon-only.fs-button--medium { width: 32px; }
+.fs-button--icon-only.fs-button--small  { width: 28px; }
+
+/* ── Intent: Primary — Solid ─────────────────────────────────── */
+.fs-button--primary.fs-button--solid {
+    background-color: #0F2D37;
+}
+
+.fs-button--primary.fs-button--solid .fs-button__label {
+    color: #FFFFFF;
+}
+
+.fs-button--primary.fs-button--solid .fs-button__icon-lead svg path,
+.fs-button--primary.fs-button--solid .fs-button__icon-trail svg path {
+    fill: #FFFFFF;
+}
+
+/* ── Intent: Primary — Outlined ──────────────────────────────── */
+.fs-button--primary.fs-button--outlined {
+    background-color: #FFFFFF;
+    border: 1px solid #0F2D37;
+}
+
+.fs-button--primary.fs-button--outlined .fs-button__label {
+    color: #0F2D37;
+}
+
+.fs-button--primary.fs-button--outlined .fs-button__icon-lead svg path,
+.fs-button--primary.fs-button--outlined .fs-button__icon-trail svg path {
+    fill: #0F2D37;
+}
+
+/* ── Intent: Primary — Minimal ───────────────────────────────── */
+.fs-button--primary.fs-button--minimal .fs-button__label {
+    color: #0F2D37;
+}
+
+.fs-button--primary.fs-button--minimal .fs-button__icon-lead svg path,
+.fs-button--primary.fs-button--minimal .fs-button__icon-trail svg path {
+    fill: #0F2D37;
+}
+
+/* ── Intent: Brand — Solid ───────────────────────────────────── */
+.fs-button--brand.fs-button--solid {
+    background-color: #FF0046;
+}
+
+.fs-button--brand.fs-button--solid .fs-button__label {
+    color: #FFFFFF;
+}
+
+.fs-button--brand.fs-button--solid .fs-button__icon-lead svg path,
+.fs-button--brand.fs-button--solid .fs-button__icon-trail svg path {
+    fill: #FFFFFF;
+}
+
+/* ── Intent: Brand — Outlined ────────────────────────────────── */
+.fs-button--brand.fs-button--outlined {
+    background-color: #FFFFFF;
+    border: 1px solid #FF0046;
+}
+
+.fs-button--brand.fs-button--outlined .fs-button__label {
+    color: #FF0046;
+}
+
+.fs-button--brand.fs-button--outlined .fs-button__icon-lead svg path,
+.fs-button--brand.fs-button--outlined .fs-button__icon-trail svg path {
+    fill: #FF0046;
+}
+
+/* ── Intent: Brand — Minimal ─────────────────────────────────── */
+.fs-button--brand.fs-button--minimal .fs-button__label {
+    color: #FF0046;
+}
+
+.fs-button--brand.fs-button--minimal .fs-button__icon-lead svg path,
+.fs-button--brand.fs-button--minimal .fs-button__icon-trail svg path {
+    fill: #FF0046;
+}
+
+
+/* =============================================================
+   Demo styles (remove in production)
+   ============================================================= */
+.demo-container {
+    padding: 40px;
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #F5F5F5;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #001E28;
+}
+
+.demo-container h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    color: #001E28;
+}
+
+.demo-container p {
+    font-size: 13px;
+    margin-bottom: 16px;
+    color: #555E61;
+}
+
+.demo-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.demo-label {
+    font-size: 11px;
+    color: #555E61;
+    width: 80px;
+    flex-shrink: 0;
+}
+
+.demo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 24px;
+    background-color: #FFFFFF;
+    padding: 16px;
+    border-radius: 8px;
+}

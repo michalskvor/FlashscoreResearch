@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FSHeadersSection - Molecule Component</title>
+    <!-- Atom dependency for Odds variant tabs -->
+    <link rel="stylesheet" href="../../Atoms/FSTabs/FSTabs.css">
     <link rel="stylesheet" href="FSHeadersSection.css">
 </head>
 <body>
@@ -90,6 +92,161 @@
             </div>
             <div class="fs-headers-section__right"></div>
         </div>
+
+
+        <!-- ============================================================ -->
+        <!-- ODDS VARIANT (fs-headers-section--odds)                      -->
+        <!-- ============================================================ -->
+        <h2 style="margin-top: 48px; border-top: 2px solid #EEEEEE; padding-top: 24px;">Odds — Primary + Secondary tabs + Header (1X2)</h2>
+
+        <div class="fs-headers-section fs-headers-section--odds">
+
+            <!-- Primary Tabs row (FSTabs--tertiary atoms) -->
+            <div class="fs-headers-section-odds__tabs-row">
+                <div class="fs-tabs fs-tabs--tertiary fs-tabs--active">
+                    <span class="fs-tabs__text">Match</span>
+                </div>
+                <button class="fs-tabs fs-tabs--tertiary">
+                    <span class="fs-tabs__text">Odds</span>
+                </button>
+                <button class="fs-tabs fs-tabs--tertiary">
+                    <span class="fs-tabs__text">H2H</span>
+                </button>
+                <button class="fs-tabs fs-tabs--tertiary">
+                    <span class="fs-tabs__text">Standings</span>
+                </button>
+            </div>
+
+            <!-- Secondary Tabs row (FSTabs--tertiary atoms) -->
+            <div class="fs-headers-section-odds__tabs-row">
+                <div class="fs-tabs fs-tabs--tertiary fs-tabs--active">
+                    <span class="fs-tabs__text">1X2</span>
+                </div>
+                <button class="fs-tabs fs-tabs--tertiary">
+                    <span class="fs-tabs__text">Over/Under</span>
+                </button>
+                <button class="fs-tabs fs-tabs--tertiary">
+                    <span class="fs-tabs__text">Asian Handicap</span>
+                </button>
+                <button class="fs-tabs fs-tabs--tertiary">
+                    <span class="fs-tabs__text">Both Teams to Score</span>
+                </button>
+            </div>
+
+            <!-- Column-header row: label left + 3 sortable columns right -->
+            <div class="fs-headers-section-odds__header">
+
+                <div class="fs-headers-section-odds__bookmaker">
+                    <span class="fs-headers-section__text">Bookmaker</span>
+                </div>
+
+                <div class="fs-headers-section-odds__cells">
+
+                    <!-- 1 — sortable -->
+                    <div class="fs-headers-section-odds__cell">
+                        <span class="fs-headers-section__text">1</span>
+                        <div class="fs-headers-section-odds__sort-icon">
+                            <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2L9.99867 18L0 2L20 2Z" fill="#555E61"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- X — sortable -->
+                    <div class="fs-headers-section-odds__cell">
+                        <span class="fs-headers-section__text">X</span>
+                        <div class="fs-headers-section-odds__sort-icon">
+                            <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2L9.99867 18L0 2L20 2Z" fill="#555E61"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- 2 — sortable -->
+                    <div class="fs-headers-section-odds__cell">
+                        <span class="fs-headers-section__text">2</span>
+                        <div class="fs-headers-section-odds__sort-icon">
+                            <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2L9.99867 18L0 2L20 2Z" fill="#555E61"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div><!-- /.fs-headers-section-odds__cells -->
+            </div><!-- /.fs-headers-section-odds__header -->
+
+        </div><!-- /.fs-headers-section--odds -->
+
+
+        <h2 style="margin-top: 32px;">Odds — Secondary tabs only + Header (with Total)</h2>
+
+        <div class="fs-headers-section fs-headers-section--odds">
+
+            <!-- Secondary Tabs row only -->
+            <div class="fs-headers-section-odds__tabs-row">
+                <div class="fs-tabs fs-tabs--tertiary fs-tabs--active">
+                    <span class="fs-tabs__text">1X2</span>
+                </div>
+                <button class="fs-tabs fs-tabs--tertiary">
+                    <span class="fs-tabs__text">Over/Under</span>
+                </button>
+                <button class="fs-tabs fs-tabs--tertiary">
+                    <span class="fs-tabs__text">Asian Handicap</span>
+                </button>
+                <button class="fs-tabs fs-tabs--tertiary">
+                    <span class="fs-tabs__text">Both Teams to Score</span>
+                </button>
+            </div>
+
+            <!-- Header row with Total + 3 sortable columns -->
+            <div class="fs-headers-section-odds__header">
+
+                <div class="fs-headers-section-odds__bookmaker">
+                    <span class="fs-headers-section__text">Bookmaker</span>
+                </div>
+
+                <div class="fs-headers-section-odds__cells">
+
+                    <!-- Total — no sort icon -->
+                    <div class="fs-headers-section-odds__cell">
+                        <span class="fs-headers-section__text">Total</span>
+                    </div>
+
+                    <!-- 1 — sortable -->
+                    <div class="fs-headers-section-odds__cell">
+                        <span class="fs-headers-section__text">1</span>
+                        <div class="fs-headers-section-odds__sort-icon">
+                            <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2L9.99867 18L0 2L20 2Z" fill="#555E61"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- X — sortable -->
+                    <div class="fs-headers-section-odds__cell">
+                        <span class="fs-headers-section__text">X</span>
+                        <div class="fs-headers-section-odds__sort-icon">
+                            <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2L9.99867 18L0 2L20 2Z" fill="#555E61"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- 2 — sortable -->
+                    <div class="fs-headers-section-odds__cell">
+                        <span class="fs-headers-section__text">2</span>
+                        <div class="fs-headers-section-odds__sort-icon">
+                            <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2L9.99867 18L0 2L20 2Z" fill="#555E61"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div><!-- /.fs-headers-section-odds__cells -->
+            </div><!-- /.fs-headers-section-odds__header -->
+
+        </div><!-- /.fs-headers-section--odds -->
+
     </div>
 </body>
 </html>

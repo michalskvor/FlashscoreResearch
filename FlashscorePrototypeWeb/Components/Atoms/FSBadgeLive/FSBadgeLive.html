@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSBadgeLive Component</title>
+    <link rel="stylesheet" href="FSBadgeLive.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>FSBadgeLive Component</h1>
+        <p>Atom — LIVE badge used in odds rows. 26×22px, two variants.</p>
+
+        <!--
+            Icon: Assets/Icons/Action/Navigation/Dropdown.svg
+            Applied with CSS transform: rotate(-90deg) to point right (→)
+            Fill: #FFFFFF (live) / #999999 (scheduled)
+        -->
+
+        <h2>Live</h2>
+        <p>Red background, white text and arrow.</p>
+        <div class="demo-row">
+            <span class="demo-label">Live</span>
+            <div class="fs-badge-live">
+                <span class="fs-badge-live__text">LIVE</span>
+                <!-- Assets/Icons/Action/Navigation/Dropdown.svg, fill #FFFFFF -->
+
+            </div>
+        </div>
+
+        <h2>Scheduled</h2>
+        <p>White background, gray border, gray text and arrow.</p>
+        <div class="demo-row">
+            <span class="demo-label">Scheduled</span>
+            <div class="fs-badge-live fs-badge-live--scheduled">
+                <span class="fs-badge-live__text">LIVE</span>
+                <!-- Assets/Icons/Action/Navigation/Dropdown.svg, fill #999999 -->
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

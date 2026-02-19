@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSOddsCell Component</title>
+    <link rel="stylesheet" href="FSOddsCell.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>FSOddsCell Component</h1>
+        <p>Atom — Odds cell used in Match Detail large odds rows (Mobile). Five types, two states.</p>
+
+        <!-- ─────────────────────────────────────────────────────
+             Icons used:
+             • Indicator  → Assets/Icons/Incidents/Arrow up.svg   (12×12, fill #1AB546)
+             • Ext. link  → Assets/Icons/Action/External link.svg  (6×6,  fill #555E61)
+        ─────────────────────────────────────────────────────── -->
+
+        <!-- ─────────────────────────────────────────────────────
+             DEFAULT (not highlighted)
+        ─────────────────────────────────────────────────────── -->
+        <h2>Default state</h2>
+        <p>White background with border. Indicator and external-link icon visible on applicable types.</p>
+
+        <div class="demo-section">
+            <!-- Pre-match default -->
+            <div class="demo-row">
+                <span class="demo-label">Pre-match</span>
+                <div class="fs-odds-cell">
+                    <div class="fs-odds-cell__content">
+                        <span class="fs-odds-cell__value">1.11</span>
+                    </div>
+                    <!-- Indicator: Assets/Icons/Incidents/Arrow up.svg -->
+                    <div class="fs-odds-cell__indicator">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.132 0L1 9.133L1.957 10.092L9.454 2.594V20H10.809V2.593L18.307 10.092L19.264 9.133L10.132 0Z" fill="#1AB546"/>
+                        </svg>
+                    </div>
+                    <!-- External link: Assets/Icons/Action/External link.svg -->
+                    <div class="fs-odds-cell__external-link">
+                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live default -->
+            <div class="demo-row">
+                <span class="demo-label">Live</span>
+                <div class="fs-odds-cell fs-odds-cell--live">
+                    <div class="fs-odds-cell__content">
+                        <span class="fs-odds-cell__value">1.11</span>
+                    </div>
+                    <div class="fs-odds-cell__indicator">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.132 0L1 9.133L1.957 10.092L9.454 2.594V20H10.809V2.593L18.307 10.092L19.264 9.133L10.132 0Z" fill="#1AB546"/>
+                        </svg>
+                    </div>
+                    <div class="fs-odds-cell__external-link">
+                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pre-match with down arrow (negative) -->
+            <div class="demo-row">
+                <span class="demo-label">Pre-match ↓</span>
+                <div class="fs-odds-cell">
+                    <div class="fs-odds-cell__content">
+                        <span class="fs-odds-cell__value">1.11</span>
+                    </div>
+                    <!-- Indicator: Assets/Icons/Incidents/Arrow down.svg -->
+                    <div class="fs-odds-cell__indicator fs-odds-cell__indicator--down">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1319 20.0001L19.2639 10.8671L18.3069 9.90809L10.8099 17.4061L10.8099 9.15527e-05H9.45495L9.45495 17.4071L1.95695 9.90809L0.999947 10.8671L10.1319 20.0001Z" fill="#DC0000"/>
+                        </svg>
+                    </div>
+                    <div class="fs-odds-cell__external-link">
+                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live with down arrow (negative) -->
+            <div class="demo-row">
+                <span class="demo-label">Live ↓</span>
+                <div class="fs-odds-cell fs-odds-cell--live">
+                    <div class="fs-odds-cell__content">
+                        <span class="fs-odds-cell__value">1.11</span>
+                    </div>
+                    <div class="fs-odds-cell__indicator fs-odds-cell__indicator--down">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1319 20.0001L19.2639 10.8671L18.3069 9.90809L10.8099 17.4061L10.8099 9.15527e-05H9.45495L9.45495 17.4071L1.95695 9.90809L0.999947 10.8671L10.1319 20.0001Z" fill="#DC0000"/>
+                        </svg>
+                    </div>
+                    <div class="fs-odds-cell__external-link">
+                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post-match default (no indicator) -->
+            <div class="demo-row">
+                <span class="demo-label">Post-match</span>
+                <div class="fs-odds-cell fs-odds-cell--post-match">
+                    <div class="fs-odds-cell__content">
+                        <span class="fs-odds-cell__value">1.11</span>
+                    </div>
+                    <div class="fs-odds-cell__external-link">
+                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Number default -->
+            <div class="demo-row">
+                <span class="demo-label">Number</span>
+                <div class="fs-odds-cell fs-odds-cell--number">
+                    <div class="fs-odds-cell__content">
+                        <span class="fs-odds-cell__value">0.5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text default -->
+            <div class="demo-row">
+                <span class="demo-label">Text</span>
+                <div class="fs-odds-cell fs-odds-cell--text">
+                    <div class="fs-odds-cell__content">
+                        <span class="fs-odds-cell__value">Txt</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ─────────────────────────────────────────────────────
+             HIGHLIGHTED
+        ─────────────────────────────────────────────────────── -->
+        <h2>Highlighted state</h2>
+        <p>Pre-match → blue background. Live → white (unchanged). Post-match → gold background.</p>
+
+        <div class="demo-section">
+            <!-- Pre-match highlighted -->
+            <div class="demo-row">
+                <span class="demo-label">Pre-match</span>
+                <div class="fs-odds-cell fs-odds-cell--highlighted">
+                    <div class="fs-odds-cell__content">
+                        <span class="fs-odds-cell__value">1.11</span>
+                    </div>
+                    <div class="fs-odds-cell__indicator">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.132 0L1 9.133L1.957 10.092L9.454 2.594V20H10.809V2.593L18.307 10.092L19.264 9.133L10.132 0Z" fill="#1AB546"/>
+                        </svg>
+                    </div>
+                    <div class="fs-odds-cell__external-link">
+                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live highlighted -->
+            <div class="demo-row">
+                <span class="demo-label">Live</span>
+                <div class="fs-odds-cell fs-odds-cell--live fs-odds-cell--highlighted">
+                    <div class="fs-odds-cell__content">
+                        <span class="fs-odds-cell__value">1.11</span>
+                    </div>
+                    <div class="fs-odds-cell__indicator">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.132 0L1 9.133L1.957 10.092L9.454 2.594V20H10.809V2.593L18.307 10.092L19.264 9.133L10.132 0Z" fill="#1AB546"/>
+                        </svg>
+                    </div>
+                    <div class="fs-odds-cell__external-link">
+                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pre-match highlighted with down arrow -->
+            <div class="demo-row">
+                <span class="demo-label">Pre-match ↓</span>
+                <div class="fs-odds-cell fs-odds-cell--highlighted">
+                    <div class="fs-odds-cell__content">
+                        <span class="fs-odds-cell__value">1.11</span>
+                    </div>
+                    <div class="fs-odds-cell__indicator fs-odds-cell__indicator--down">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1319 20.0001L19.2639 10.8671L18.3069 9.90809L10.8099 17.4061L10.8099 9.15527e-05H9.45495L9.45495 17.4071L1.95695 9.90809L0.999947 10.8671L10.1319 20.0001Z" fill="#DC0000"/>
+                        </svg>
+                    </div>
+                    <div class="fs-odds-cell__external-link">
+                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live highlighted with down arrow -->
+            <div class="demo-row">
+                <span class="demo-label">Live ↓</span>
+                <div class="fs-odds-cell fs-odds-cell--live fs-odds-cell--highlighted">
+                    <div class="fs-odds-cell__content">
+                        <span class="fs-odds-cell__value">1.11</span>
+                    </div>
+                    <div class="fs-odds-cell__indicator fs-odds-cell__indicator--down">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1319 20.0001L19.2639 10.8671L18.3069 9.90809L10.8099 17.4061L10.8099 9.15527e-05H9.45495L9.45495 17.4071L1.95695 9.90809L0.999947 10.8671L10.1319 20.0001Z" fill="#DC0000"/>
+                        </svg>
+                    </div>
+                    <div class="fs-odds-cell__external-link">
+                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post-match highlighted (gold bg, indicator appears) -->
+            <div class="demo-row">
+                <span class="demo-label">Post-match</span>
+                <div class="fs-odds-cell fs-odds-cell--post-match fs-odds-cell--highlighted">
+                    <div class="fs-odds-cell__content">
+                        <span class="fs-odds-cell__value">1.11</span>
+                    </div>
+                    <div class="fs-odds-cell__indicator">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.132 0L1 9.133L1.957 10.092L9.454 2.594V20H10.809V2.593L18.307 10.092L19.264 9.133L10.132 0Z" fill="#1AB546"/>
+                        </svg>
+                    </div>
+                    <div class="fs-odds-cell__external-link">
+                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post-match highlighted with down arrow -->
+            <div class="demo-row">
+                <span class="demo-label">Post-match ↓</span>
+                <div class="fs-odds-cell fs-odds-cell--post-match fs-odds-cell--highlighted">
+                    <div class="fs-odds-cell__content">
+                        <span class="fs-odds-cell__value">1.11</span>
+                    </div>
+                    <div class="fs-odds-cell__indicator fs-odds-cell__indicator--down">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1319 20.0001L19.2639 10.8671L18.3069 9.90809L10.8099 17.4061L10.8099 9.15527e-05H9.45495L9.45495 17.4071L1.95695 9.90809L0.999947 10.8671L10.1319 20.0001Z" fill="#DC0000"/>
+                        </svg>
+                    </div>
+                    <div class="fs-odds-cell__external-link">
+                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Number highlighted (no visual change) -->
+            <div class="demo-row">
+                <span class="demo-label">Number</span>
+                <div class="fs-odds-cell fs-odds-cell--number">
+                    <div class="fs-odds-cell__content">
+                        <span class="fs-odds-cell__value">0.5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text highlighted (no visual change) -->
+            <div class="demo-row">
+                <span class="demo-label">Text</span>
+                <div class="fs-odds-cell fs-odds-cell--text">
+                    <div class="fs-odds-cell__content">
+                        <span class="fs-odds-cell__value">Txt</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

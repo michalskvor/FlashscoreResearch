@@ -107,6 +107,84 @@
 }
 
 /* =========================================== */
+/* ODDS VARIANT                                */
+/* =========================================== */
+
+/* Override outer container to column layout */
+.fs-headers-section--odds {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    min-height: auto;
+    gap: 1px;
+}
+
+/* ── Tabs rows (Primary / Secondary) ──────── */
+.fs-headers-section-odds__tabs-row {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    overflow: hidden;
+    background-color: #EEEEEE;
+    padding-left: 8px;
+    gap: 8px;
+    box-sizing: border-box;
+}
+
+/* ── Column-header row ─────────────────────── */
+.fs-headers-section-odds__header {
+    display: flex;
+    align-items: center;
+    background-color: #EEEEEE;
+    padding: 6px 12px;
+    box-sizing: border-box;
+}
+
+/* Bookmaker label — fixed 75px left slot */
+.fs-headers-section-odds__bookmaker {
+    display: flex;
+    align-items: center;
+    width: 75px;
+    min-width: 75px;
+    flex-shrink: 0;
+}
+
+/* Cells area — fills remaining space, right-aligned */
+.fs-headers-section-odds__cells {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    min-width: 0;
+    gap: 16px;
+}
+
+/* Individual column header cell — fixed 82px, centered */
+.fs-headers-section-odds__cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 82px;
+    min-width: 82px;
+    max-width: 82px;
+    height: 14px;
+    gap: 3px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+/* Sort icon — 6×6px dropdown arrow */
+.fs-headers-section-odds__sort-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6px;
+    height: 6px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+/* =========================================== */
 /* DESIGN SYSTEM COMPLIANCE NOTES              */
 /* =========================================== */
 /*

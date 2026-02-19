@@ -1,0 +1,149 @@
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =============================================================
+   FSOddsRow — Molecule Component
+   Composed of: bookmaker logo + LIVE badge + FSOddsCell atoms
+   States: Pre-match | Live | Post-match
+   ============================================================= */
+
+/* Row container */
+.fs-odds-row {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 12px 9px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Post-match: single horizontal row */
+.fs-odds-row--post-match {
+    flex-direction: row;
+    align-items: center;
+}
+
+/* ── Odds container ─────────────────────────────────────────── */
+.fs-odds-row__odds-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.fs-odds-row--post-match .fs-odds-row__odds-container {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+}
+
+/* ── Bookmaker logo ─────────────────────────────────────────── */
+.fs-odds-row__bookmaker {
+    width: 75px;
+    height: 32px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.fs-odds-row__bookmaker img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ── Cells area ─────────────────────────────────────────────── */
+.fs-odds-row__cells {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    min-width: 0;
+    padding: 1px 0;
+}
+
+/* ── Badge container ────────────────────────────────────────── */
+/* FSBadgeLive atom handles badge appearance; this wrapper centres it */
+.fs-odds-row__badge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    align-self: stretch;
+    flex-shrink: 0;
+}
+
+/* Post-match: empty spacer instead of badge */
+.fs-odds-row__badge-placeholder {
+    width: 26px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+/* ── Bottom divider ─────────────────────────────────────────── */
+.fs-odds-row__divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #EEEEEE;
+}
+
+
+/* =============================================================
+   Demo styles (remove in production)
+   ============================================================= */
+.demo-container {
+    padding: 40px;
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #F5F5F5;
+    max-width: 500px;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #001E28;
+}
+
+.demo-container h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 4px;
+    color: #001E28;
+}
+
+.demo-container p {
+    font-size: 13px;
+    margin-bottom: 16px;
+    color: #555E61;
+}
+
+.demo-rows {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+}

@@ -299,8 +299,7 @@ button.fs-tabs--tertiary:disabled:hover .fs-tabs__text {
 .fs-tabs-row--secondary {
     gap: 8px;
     align-items: center;
-    margin-top: 16px;
-    padding-left: 12px;
+    margin: 12px;
 }
 
 /* Tertiary variant row - 8px gap */

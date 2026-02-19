@@ -1,0 +1,206 @@
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =============================================================
+   FSOddsCell — Atom Component
+   Odds cell used in Match Detail large odds rows.
+   Variants: Pre-match | Live | Post-match | Number | Text
+   States:   Default | Highlighted
+   ============================================================= */
+
+/* Base cell — Pre-match default */
+.fs-odds-cell {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 67px;
+    height: 30px;
+    background-color: #FFFFFF;
+    border: 1px solid #C8CDCD;
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+/* Content wrapper — holds the odds value */
+.fs-odds-cell__content {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding-left: 12px; /* offset to account for indicator space */
+    min-width: 0;
+}
+
+/* Odds value text */
+.fs-odds-cell__value {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #001E28;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Arrow indicator — left side, vertically centred */
+.fs-odds-cell__indicator {
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+/* ── Indicator variant: Down (negative) ────────────────────── */
+.fs-odds-cell__indicator--down svg path {
+    fill: #DC0000;
+}
+
+/* External link icon — top-right corner */
+.fs-odds-cell__external-link {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    display: flex;
+    align-items: flex-start;
+    width: 6px;
+    height: 6px;
+    flex-shrink: 0;
+}
+
+/* ── Variant: Live ──────────────────────────────────────────── */
+.fs-odds-cell--live .fs-odds-cell__value {
+    color: #FF0046;
+}
+
+/* ── Variant: Post-match (default, non-highlighted) ─────────── */
+/* No indicator on post-match default; styles same as base cell  */
+
+/* ── State: Highlighted (Pre-match) ────────────────────────── */
+.fs-odds-cell--highlighted {
+    background-color: #EEF7FF;
+    border-color: #C8CDCD;
+}
+
+/* ── State: Highlighted (Live) — same appearance as default ── */
+.fs-odds-cell--live.fs-odds-cell--highlighted {
+    background-color: #FFFFFF;
+    border-color: #C8CDCD;
+}
+
+/* ── State: Highlighted (Post-match) ───────────────────────── */
+.fs-odds-cell--post-match.fs-odds-cell--highlighted {
+    background-color: #F5BA57;
+    border: none;
+}
+
+/* ── Variant: Number ────────────────────────────────────────── */
+.fs-odds-cell--number {
+    width: 67px;
+    height: 32px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.fs-odds-cell--number .fs-odds-cell__content {
+    padding-left: 0;
+}
+
+.fs-odds-cell--number .fs-odds-cell__value {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #001E28;
+}
+
+/* ── Variant: Text ──────────────────────────────────────────── */
+.fs-odds-cell--text {
+    min-width: 67px;
+    height: 32px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.fs-odds-cell--text .fs-odds-cell__content {
+    padding-left: 0;
+}
+
+.fs-odds-cell--text .fs-odds-cell__value {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #001E28;
+}
+
+
+/* =============================================================
+   Demo styles (remove in production)
+   ============================================================= */
+.demo-container {
+    padding: 40px;
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #F5F5F5;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #001E28;
+}
+
+.demo-container h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 4px;
+    color: #001E28;
+}
+
+.demo-container p {
+    font-size: 13px;
+    margin-bottom: 16px;
+    color: #555E61;
+}
+
+.demo-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.demo-label {
+    font-size: 11px;
+    color: #555E61;
+    width: 110px;
+    flex-shrink: 0;
+}
+
+.demo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 24px;
+}

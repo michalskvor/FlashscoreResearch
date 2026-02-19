@@ -23,6 +23,11 @@
     <link rel="stylesheet" href="../Components/Molecules/FSMatchStats/FSMatchStats.css">
     <link rel="stylesheet" href="../Components/Atoms/FSButtonLink/FSButtonLink.css">
     <link rel="stylesheet" href="../Components/Widgets/FSWidgetMatchStats/FSWidgetMatchStats.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSBadgeLive/FSBadgeLive.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSOddsCell/FSOddsCell.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSOddsRow/FSOddsRow.css">
+    <link rel="stylesheet" href="../Components/Widgets/FSWidgetOddsTable/FSWidgetOddsTable.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSBannerBookmaker/FSBannerBookmaker.css">
     <link rel="stylesheet" href="../Components/Widgets/FSWidgetTVchannels/FSWidgetTVchannels.css">
     <link rel="stylesheet" href="../Components/Widgets/FSWidgetMatchInformation/FSWidgetMatchInformation.css">
     <link rel="stylesheet" href="../Components/Molecules/FSArticlePreview/FSArticlePreview.css">
@@ -607,6 +612,318 @@
 
                 </div>
             </div>
+
+            <!-- FSWidgetOddsTable — Finished/Post-match state -->
+            <div class="fs-widget-odds-table">
+
+                <!-- Section header -->
+                <div class="fs-headers-section">
+                    <div class="fs-headers-section__left">
+                        <span class="fs-headers-section__text">Odds</span>
+                    </div>
+                    <div class="fs-headers-section__center"></div>
+                    <div class="fs-headers-section__right"></div>
+                </div>
+
+                <!-- Secondary tabs -->
+                <div class="fs-widget-odds-table__tabs">
+                    <div class="fs-tabs-row fs-tabs-row--secondary">
+
+                        <!-- 1X2 — active -->
+                        <div class="fs-tabs fs-tabs--secondary fs-tabs--active">
+                            <span class="fs-tabs__text">1X2</span>
+                        </div>
+
+                        <!-- Over/Under -->
+                        <button class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
+                            <span class="fs-tabs__text">Over/Under</span>
+                        </button>
+
+                        <!-- Asian Handicap -->
+                        <button class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
+                            <span class="fs-tabs__text">Asian Handicap</span>
+                        </button>
+
+                        <!-- Both Teams to Score -->
+                        <button class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
+                            <span class="fs-tabs__text">Both Teams to Score</span>
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- Column headers (FSHeadersSection--odds molecule) -->
+                <div class="fs-headers-section fs-headers-section--odds">
+                    <div class="fs-headers-section-odds__header">
+
+                        <div class="fs-headers-section-odds__bookmaker">
+                            <span class="fs-headers-section__text">Bookmaker</span>
+                        </div>
+
+                        <div class="fs-headers-section-odds__cells">
+
+                            <!-- 1 (Home) — sortable -->
+                            <div class="fs-headers-section-odds__cell">
+                                <span class="fs-headers-section__text">1</span>
+                                <div class="fs-headers-section-odds__sort-icon">
+                                    <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2L9.99867 18L0 2L20 2Z" fill="#555E61"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- X (Draw) — sortable -->
+                            <div class="fs-headers-section-odds__cell">
+                                <span class="fs-headers-section__text">X</span>
+                                <div class="fs-headers-section-odds__sort-icon">
+                                    <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2L9.99867 18L0 2L20 2Z" fill="#555E61"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- 2 (Away) — sortable -->
+                            <div class="fs-headers-section-odds__cell">
+                                <span class="fs-headers-section__text">2</span>
+                                <div class="fs-headers-section-odds__sort-icon">
+                                    <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2L9.99867 18L0 2L20 2Z" fill="#555E61"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                        </div><!-- /.fs-headers-section-odds__cells -->
+                    </div><!-- /.fs-headers-section-odds__header -->
+                </div><!-- /.fs-headers-section--odds -->
+
+                <!-- Odds rows (FSOddsRow molecule — POST-MATCH) -->
+                <div class="fs-widget-odds-table__rows">
+
+                    <!-- Row 1: Bet365 — Arsenal 2.50 / Draw 3.40 / Man City 2.80 -->
+                    <div class="fs-odds-row fs-odds-row--post-match">
+                        <div class="fs-odds-row__odds-container">
+
+                            <div class="fs-odds-row__bookmaker">
+                                <img src="../Assets/BookmakerLogos/Bet365.png" alt="Bet365">
+                            </div>
+
+                            <div class="fs-odds-row__cells">
+
+                                <!-- Empty spacer (no badge in post-match) -->
+                                <div class="fs-odds-row__badge-placeholder"></div>
+
+                                <!-- 1 (Arsenal) — 2.50 -->
+                                <div class="fs-odds-cell fs-odds-cell--post-match fs-odds-cell--highlighted">
+                                    <div class="fs-odds-cell__content">
+                                        <span class="fs-odds-cell__value">2.50</span>
+                                    </div>
+                                    <div class="fs-odds-cell__external-link">
+                                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- X (Draw) — 3.40 -->
+                                <div class="fs-odds-cell fs-odds-cell--post-match">
+                                    <div class="fs-odds-cell__content">
+                                        <span class="fs-odds-cell__value">3.40</span>
+                                    </div>
+                                    <div class="fs-odds-cell__external-link">
+                                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- 2 (Man City) — 2.80 -->
+                                <div class="fs-odds-cell fs-odds-cell--post-match">
+                                    <div class="fs-odds-cell__content">
+                                        <span class="fs-odds-cell__value">2.80</span>
+                                    </div>
+                                    <div class="fs-odds-cell__external-link">
+                                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                            </div><!-- /.fs-odds-row__cells -->
+                        </div><!-- /.fs-odds-row__odds-container -->
+                        <div class="fs-odds-row__divider"></div>
+                    </div><!-- /.fs-odds-row -->
+
+
+                    <!-- Row 2: Bwin — Arsenal 2.45 / Draw 3.50 / Man City 2.90 -->
+                    <div class="fs-odds-row fs-odds-row--post-match">
+                        <div class="fs-odds-row__odds-container">
+
+                            <div class="fs-odds-row__bookmaker">
+                                <img src="../Assets/BookmakerLogos/Bwin.png" alt="Bwin">
+                            </div>
+
+                            <div class="fs-odds-row__cells">
+
+                                <!-- Empty spacer (no badge in post-match) -->
+                                <div class="fs-odds-row__badge-placeholder"></div>
+
+                                <!-- 1 (Arsenal) — 2.45 -->
+                                <div class="fs-odds-cell fs-odds-cell--post-match fs-odds-cell--highlighted">
+                                    <div class="fs-odds-cell__content">
+                                        <span class="fs-odds-cell__value">2.45</span>
+                                    </div>
+                                    <div class="fs-odds-cell__external-link">
+                                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- X (Draw) — 3.50 -->
+                                <div class="fs-odds-cell fs-odds-cell--post-match">
+                                    <div class="fs-odds-cell__content">
+                                        <span class="fs-odds-cell__value">3.50</span>
+                                    </div>
+                                    <div class="fs-odds-cell__external-link">
+                                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- 2 (Man City) — 2.90 -->
+                                <div class="fs-odds-cell fs-odds-cell--post-match">
+                                    <div class="fs-odds-cell__content">
+                                        <span class="fs-odds-cell__value">2.90</span>
+                                    </div>
+                                    <div class="fs-odds-cell__external-link">
+                                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                            </div><!-- /.fs-odds-row__cells -->
+                        </div><!-- /.fs-odds-row__odds-container -->
+                        <div class="fs-odds-row__divider"></div>
+                    </div><!-- /.fs-odds-row -->
+
+
+                    <!-- Row 3: Unibet — Arsenal 2.55 / Draw 3.35 / Man City 2.75 -->
+                    <div class="fs-odds-row fs-odds-row--post-match">
+                        <div class="fs-odds-row__odds-container">
+
+                            <div class="fs-odds-row__bookmaker">
+                                <img src="../Assets/BookmakerLogos/Unibet.png" alt="Unibet">
+                            </div>
+
+                            <div class="fs-odds-row__cells">
+
+                                <!-- Empty spacer (no badge in post-match) -->
+                                <div class="fs-odds-row__badge-placeholder"></div>
+
+                                <!-- 1 (Arsenal) — 2.55 -->
+                                <div class="fs-odds-cell fs-odds-cell--post-match fs-odds-cell--highlighted">
+                                    <div class="fs-odds-cell__content">
+                                        <span class="fs-odds-cell__value">2.55</span>
+                                    </div>
+                                    <div class="fs-odds-cell__external-link">
+                                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- X (Draw) — 3.35 -->
+                                <div class="fs-odds-cell fs-odds-cell--post-match">
+                                    <div class="fs-odds-cell__content">
+                                        <span class="fs-odds-cell__value">3.35</span>
+                                    </div>
+                                    <div class="fs-odds-cell__external-link">
+                                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- 2 (Man City) — 2.75 -->
+                                <div class="fs-odds-cell fs-odds-cell--post-match">
+                                    <div class="fs-odds-cell__content">
+                                        <span class="fs-odds-cell__value">2.75</span>
+                                    </div>
+                                    <div class="fs-odds-cell__external-link">
+                                        <svg width="6" height="6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.27441 0V1.36621H3.03711L1.36719 3.03613V16.959L3.03711 18.6328H16.9629L18.6328 16.9619V11.7246H20V17.5293L17.5283 19.998H2.4707L0 17.5244V2.46973L2.4707 0H8.27441ZM20 0V8.27441H18.6328V2.33398L10.8281 10.1377L9.86133 9.16992L17.666 1.36621H11.7246V0H20Z" fill="#555E61"/>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                            </div><!-- /.fs-odds-row__cells -->
+                        </div><!-- /.fs-odds-row__odds-container -->
+                        <div class="fs-odds-row__divider"></div>
+                    </div><!-- /.fs-odds-row -->
+
+                </div><!-- /.fs-widget-odds-table__rows -->
+
+                <!-- Footer: Show more link -->
+                <div class="fs-widget-odds-table__footer">
+                    <a href="#" class="fs-button-link fs-button-link--primary">
+                        <span class="fs-button-link__label">Show more</span>
+                        <img src="../Assets/Icons/Action/Navigation/Arrow/Right.svg" alt="" class="fs-button-link__icon">
+                    </a>
+                </div>
+
+            </div><!-- /.fs-widget-odds-table -->
+
+            <!-- Bookmaker banners container -->
+            <div style="display: flex; flex-direction: column; gap: 4px; padding: 0 12px 12px;">
+
+                <!-- FSBannerBookmaker — Bet365 -->
+                <a href="#" class="fs-banner-bookmaker" style="background-color: #017B5B;">
+                    <div class="fs-banner-bookmaker__content">
+                        <div class="fs-banner-bookmaker__main">
+                            <span class="fs-banner-bookmaker__text" style="color: #FFFFFF;">BET365 - Bet £10 &amp; Get £30 in Free Bets</span>
+                            <div class="fs-banner-bookmaker__button" style="background-color: #FFDF1B;">
+                                <span class="fs-banner-bookmaker__button-label" style="color: #222222;">Claim bonus</span>
+                            </div>
+                        </div>
+                        <div class="fs-banner-bookmaker__additional">
+                            <span class="fs-banner-bookmaker__fine-print" style="color: #FFFFFF;">For new customers at bet365. Min deposit requirement. Free Bets are paid as Bet Credits and are available for use upon settlement of bets to value of qualifying deposit. Min odds, bet and payment method exclusions apply. Returns exclude Bet Credits stake. Time limits and T&amp;Cs apply. Registration required. 18+</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- FSBannerBookmaker — Bwin -->
+                <a href="#" class="fs-banner-bookmaker" style="background-color: #FFD100;">
+                    <div class="fs-banner-bookmaker__content">
+                        <div class="fs-banner-bookmaker__main">
+                            <span class="fs-banner-bookmaker__text" style="color: #000000;">BWIN - Get £20 in Free Bets when you stake £10</span>
+                            <div class="fs-banner-bookmaker__button" style="background-color: #000000;">
+                                <span class="fs-banner-bookmaker__button-label" style="color: #FFFFFF;">Sign Up</span>
+                            </div>
+                        </div>
+                        <div class="fs-banner-bookmaker__additional">
+                            <span class="fs-banner-bookmaker__fine-print" style="color: #000000;">New customers only. Min deposit £10. Place first bet of £10 at odds of Evens (2.0) or greater. Get £20 in Free Bets. Wager the qualifying amount once. Free Bets and bonus expire 7 days after credit. T&amp;Cs apply. 18+</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- FSBannerBookmaker — Unibet -->
+                <a href="#" class="fs-banner-bookmaker" style="background-color: #17B52D;">
+                    <div class="fs-banner-bookmaker__content">
+                        <div class="fs-banner-bookmaker__main">
+                            <span class="fs-banner-bookmaker__text" style="color: #FFFFFF;">UNIBET - Money Back as a Free Bet up to £40</span>
+                            <div class="fs-banner-bookmaker__button" style="background-color: #FFFFFF;">
+                                <span class="fs-banner-bookmaker__button-label" style="color: #222222;">Join Now</span>
+                            </div>
+                        </div>
+                        <div class="fs-banner-bookmaker__additional">
+                            <span class="fs-banner-bookmaker__fine-print" style="color: #FFFFFF;">New customers only. Place your first bet on any market at odds of min 2/5 (1.4) and if it loses we will refund your stake in CASH. Max refund is £40. Only deposits via cards and Apple Pay will qualify. T&amp;Cs apply. 18+</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div><!-- /bookmaker banners container -->
 
             <!-- FSWidgetMatchStats -->
             <div class="fs-widget-match-stats">

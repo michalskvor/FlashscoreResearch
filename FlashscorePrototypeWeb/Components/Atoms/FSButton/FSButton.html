@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSButton Component</title>
+    <link rel="stylesheet" href="FSButton.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>FSButton Component</h1>
+        <p>Atom — 2 intents × 3 appearances × 3 sizes × 4 icon configurations (full, no leading, no trailing, label only, icon only).</p>
+
+        <!-- ══════════════════════════════════════════════════
+             INTENT: PRIMARY (#0F2D37)
+        ══════════════════════════════════════════════════════ -->
+        <h2>Primary</h2>
+
+        <!-- Solid -->
+        <p>Solid</p>
+        <div class="demo-section">
+            <div class="demo-row">
+                <span class="demo-label">Large</span>
+                <button class="fs-button fs-button--primary fs-button--solid fs-button--large">
+                    <div class="fs-button__icon-lead">
+                        <!-- Assets/Icons/Action/Search.svg -->
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <!-- Assets/Icons/Action/Navigation/Arrow/Right.svg -->
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Medium</span>
+                <button class="fs-button fs-button--primary fs-button--solid fs-button--medium">
+                    <div class="fs-button__icon-lead">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Small</span>
+                <button class="fs-button fs-button--primary fs-button--solid fs-button--small">
+                    <div class="fs-button__icon-lead">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Outlined -->
+        <p>Outlined</p>
+        <div class="demo-section">
+            <div class="demo-row">
+                <span class="demo-label">Large</span>
+                <button class="fs-button fs-button--primary fs-button--outlined fs-button--large">
+                    <div class="fs-button__icon-lead">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Medium</span>
+                <button class="fs-button fs-button--primary fs-button--outlined fs-button--medium">
+                    <div class="fs-button__icon-lead">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Small</span>
+                <button class="fs-button fs-button--primary fs-button--outlined fs-button--small">
+                    <div class="fs-button__icon-lead">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Minimal -->
+        <p>Minimal</p>
+        <div class="demo-section">
+            <div class="demo-row">
+                <span class="demo-label">Large</span>
+                <button class="fs-button fs-button--primary fs-button--minimal fs-button--large">
+                    <div class="fs-button__icon-lead">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Medium</span>
+                <button class="fs-button fs-button--primary fs-button--minimal fs-button--medium">
+                    <div class="fs-button__icon-lead">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Small</span>
+                <button class="fs-button fs-button--primary fs-button--minimal fs-button--small">
+                    <div class="fs-button__icon-lead">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+
+        <!-- ══════════════════════════════════════════════════
+             INTENT: BRAND (#FF0046)
+        ══════════════════════════════════════════════════════ -->
+        <h2>Brand</h2>
+
+        <!-- Solid -->
+        <p>Solid</p>
+        <div class="demo-section">
+            <div class="demo-row">
+                <span class="demo-label">Large</span>
+                <button class="fs-button fs-button--brand fs-button--solid fs-button--large">
+                    <div class="fs-button__icon-lead">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Medium</span>
+                <button class="fs-button fs-button--brand fs-button--solid fs-button--medium">
+                    <div class="fs-button__icon-lead">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Small</span>
+                <button class="fs-button fs-button--brand fs-button--solid fs-button--small">
+                    <div class="fs-button__icon-lead">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Outlined -->
+        <p>Outlined</p>
+        <div class="demo-section">
+            <div class="demo-row">
+                <span class="demo-label">Large</span>
+                <button class="fs-button fs-button--brand fs-button--outlined fs-button--large">
+                    <div class="fs-button__icon-lead">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Medium</span>
+                <button class="fs-button fs-button--brand fs-button--outlined fs-button--medium">
+                    <div class="fs-button__icon-lead">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Small</span>
+                <button class="fs-button fs-button--brand fs-button--outlined fs-button--small">
+                    <div class="fs-button__icon-lead">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Minimal -->
+        <p>Minimal</p>
+        <div class="demo-section">
+            <div class="demo-row">
+                <span class="demo-label">Large</span>
+                <button class="fs-button fs-button--brand fs-button--minimal fs-button--large">
+                    <div class="fs-button__icon-lead">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Medium</span>
+                <button class="fs-button fs-button--brand fs-button--minimal fs-button--medium">
+                    <div class="fs-button__icon-lead">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Small</span>
+                <button class="fs-button fs-button--brand fs-button--minimal fs-button--small">
+                    <div class="fs-button__icon-lead">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+
+        <!-- ══════════════════════════════════════════════════
+             ICON CONFIGURATIONS
+             Shown with Primary + Brand, Solid appearance only.
+             Same icon logic applies to all intents/appearances.
+        ══════════════════════════════════════════════════════ -->
+
+        <!-- ── No leading icon ──────────────────────────────── -->
+        <h2>No leading icon — Label + Trailing</h2>
+        <p>Leading icon omitted. Label and trailing arrow only.</p>
+
+        <div class="demo-section">
+            <!-- Primary Solid -->
+            <div class="demo-row">
+                <span class="demo-label">Primary L</span>
+                <button class="fs-button fs-button--primary fs-button--solid fs-button--large">
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Primary M</span>
+                <button class="fs-button fs-button--primary fs-button--solid fs-button--medium">
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Primary S</span>
+                <button class="fs-button fs-button--primary fs-button--solid fs-button--small">
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <!-- Brand Solid -->
+            <div class="demo-row">
+                <span class="demo-label">Brand L</span>
+                <button class="fs-button fs-button--brand fs-button--solid fs-button--large">
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Brand M</span>
+                <button class="fs-button fs-button--brand fs-button--solid fs-button--medium">
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Brand S</span>
+                <button class="fs-button fs-button--brand fs-button--solid fs-button--small">
+                    <span class="fs-button__label">Title</span>
+                    <div class="fs-button__icon-trail">
+                        <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- ── No trailing icon ─────────────────────────────── -->
+        <h2>No trailing icon — Leading + Label</h2>
+        <p>Trailing icon omitted. Leading search icon and label only.</p>
+
+        <div class="demo-section">
+            <!-- Primary Solid -->
+            <div class="demo-row">
+                <span class="demo-label">Primary L</span>
+                <button class="fs-button fs-button--primary fs-button--solid fs-button--large">
+                    <div class="fs-button__icon-lead">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Primary M</span>
+                <button class="fs-button fs-button--primary fs-button--solid fs-button--medium">
+                    <div class="fs-button__icon-lead">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Primary S</span>
+                <button class="fs-button fs-button--primary fs-button--solid fs-button--small">
+                    <div class="fs-button__icon-lead">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                </button>
+            </div>
+            <!-- Brand Solid -->
+            <div class="demo-row">
+                <span class="demo-label">Brand L</span>
+                <button class="fs-button fs-button--brand fs-button--solid fs-button--large">
+                    <div class="fs-button__icon-lead">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Brand M</span>
+                <button class="fs-button fs-button--brand fs-button--solid fs-button--medium">
+                    <div class="fs-button__icon-lead">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Brand S</span>
+                <button class="fs-button fs-button--brand fs-button--solid fs-button--small">
+                    <div class="fs-button__icon-lead">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                    <span class="fs-button__label">Title</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- ── Label only ────────────────────────────────────── -->
+        <h2>Label only — No icons</h2>
+        <p>Both icons omitted. Label text only.</p>
+
+        <div class="demo-section">
+            <div class="demo-row">
+                <span class="demo-label">Primary L</span>
+                <button class="fs-button fs-button--primary fs-button--solid fs-button--large">
+                    <span class="fs-button__label">Title</span>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Primary M</span>
+                <button class="fs-button fs-button--primary fs-button--solid fs-button--medium">
+                    <span class="fs-button__label">Title</span>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Primary S</span>
+                <button class="fs-button fs-button--primary fs-button--solid fs-button--small">
+                    <span class="fs-button__label">Title</span>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Brand L</span>
+                <button class="fs-button fs-button--brand fs-button--solid fs-button--large">
+                    <span class="fs-button__label">Title</span>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Brand M</span>
+                <button class="fs-button fs-button--brand fs-button--solid fs-button--medium">
+                    <span class="fs-button__label">Title</span>
+                </button>
+            </div>
+            <div class="demo-row">
+                <span class="demo-label">Brand S</span>
+                <button class="fs-button fs-button--brand fs-button--solid fs-button--small">
+                    <span class="fs-button__label">Title</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- ── Icon only ─────────────────────────────────────── -->
+        <h2>Icon only — Square layout</h2>
+        <p>Leading icon only. Square: Large 40×40px, Medium 32×32px, Small 28×28px.</p>
+
+        <p>Solid</p>
+        <div class="demo-section">
+            <div class="demo-row">
+                <span class="demo-label">Primary L</span>
+                <button class="fs-button fs-button--primary fs-button--solid fs-button--large fs-button--icon-only">
+                    <div class="fs-button__icon-lead">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+                <button class="fs-button fs-button--primary fs-button--solid fs-button--medium fs-button--icon-only">
+                    <div class="fs-button__icon-lead">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+                <button class="fs-button fs-button--primary fs-button--solid fs-button--small fs-button--icon-only">
+                    <div class="fs-button__icon-lead">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+                <button class="fs-button fs-button--brand fs-button--solid fs-button--large fs-button--icon-only">
+                    <div class="fs-button__icon-lead">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+                <button class="fs-button fs-button--brand fs-button--solid fs-button--medium fs-button--icon-only">
+                    <div class="fs-button__icon-lead">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+                <button class="fs-button fs-button--brand fs-button--solid fs-button--small fs-button--icon-only">
+                    <div class="fs-button__icon-lead">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <p>Outlined</p>
+        <div class="demo-section">
+            <div class="demo-row">
+                <span class="demo-label">Primary L</span>
+                <button class="fs-button fs-button--primary fs-button--outlined fs-button--large fs-button--icon-only">
+                    <div class="fs-button__icon-lead">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+                <button class="fs-button fs-button--primary fs-button--outlined fs-button--medium fs-button--icon-only">
+                    <div class="fs-button__icon-lead">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+                <button class="fs-button fs-button--primary fs-button--outlined fs-button--small fs-button--icon-only">
+                    <div class="fs-button__icon-lead">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+                <button class="fs-button fs-button--brand fs-button--outlined fs-button--large fs-button--icon-only">
+                    <div class="fs-button__icon-lead">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+                <button class="fs-button fs-button--brand fs-button--outlined fs-button--medium fs-button--icon-only">
+                    <div class="fs-button__icon-lead">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+                <button class="fs-button fs-button--brand fs-button--outlined fs-button--small fs-button--icon-only">
+                    <div class="fs-button__icon-lead">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <p>Minimal</p>
+        <div class="demo-section">
+            <div class="demo-row">
+                <span class="demo-label">Primary L</span>
+                <button class="fs-button fs-button--primary fs-button--minimal fs-button--large fs-button--icon-only">
+                    <div class="fs-button__icon-lead">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+                <button class="fs-button fs-button--primary fs-button--minimal fs-button--medium fs-button--icon-only">
+                    <div class="fs-button__icon-lead">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+                <button class="fs-button fs-button--primary fs-button--minimal fs-button--small fs-button--icon-only">
+                    <div class="fs-button__icon-lead">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+                <button class="fs-button fs-button--brand fs-button--minimal fs-button--large fs-button--icon-only">
+                    <div class="fs-button__icon-lead">
+                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+                <button class="fs-button fs-button--brand fs-button--minimal fs-button--medium fs-button--icon-only">
+                    <div class="fs-button__icon-lead">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+                <button class="fs-button fs-button--brand fs-button--minimal fs-button--small fs-button--icon-only">
+                    <div class="fs-button__icon-lead">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.013 14.639C4.359 14.639 1.387 11.666 1.387 8.013C1.387 4.359 4.359 1.387 8.013 1.387C11.666 1.387 14.638 4.359 14.638 8.013C14.638 11.666 11.666 14.639 8.013 14.639ZM20 19.021L14.119 13.139C15.291 11.745 16.025 9.972 16.025 8.013C16.025 3.595 12.43 0 8.013 0C3.594 0 0 3.595 0 8.013C0 12.431 3.594 16.026 8.013 16.026C9.972 16.026 11.745 15.291 13.138 14.119L19.019 20L20 19.021Z" fill="#001E28"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
