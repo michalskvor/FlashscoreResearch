@@ -1,0 +1,70 @@
+/* ============================================================
+   FSBadgeInfo — Atom Component
+   Small informational badge for rankings, positions or labels.
+   Variants: Primary | Secondary | Tertiary
+   ============================================================ */
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ── Base ────────────────────────────────────────────────────── */
+.fs-badge-info {
+    position: relative;
+    border-radius: 4px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+/* ── Variant: Primary — 20×20px grey, position number ────────── */
+.fs-badge-info--primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background-color: #EEEEEE;
+    overflow: hidden;
+}
+
+.fs-badge-info--primary .fs-badge-info__text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #001E28;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* ── Variant: Secondary — 20×20px grey, no text ──────────────── */
+.fs-badge-info--secondary {
+    width: 20px;
+    height: 20px;
+    background-color: #EEEEEE;
+    overflow: hidden;
+}
+
+/* ── Variant: Tertiary — dark bg, short label ────────────────── */
+.fs-badge-info--tertiary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0F2D37;
+    padding: 0 2px;
+    min-width:12px;
+}
+
+.fs-badge-info--tertiary .fs-badge-info__text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 12px;
+    color: #FFFFFF;
+    text-align: center;
+    white-space: nowrap;
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSInfobox - Molecule Component</title>
+    <link rel="stylesheet" href="../../Atoms/FSButtonClose/FSButtonClose.css">
+    <link rel="stylesheet" href="FSInfobox.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>FSInfobox</h1>
+        <p>Information box with optional leading icon, optional heading, required text, optional textlink, and optional close button.</p>
+
+        <!-- ================================= -->
+        <!-- Text only (minimal)               -->
+        <!-- ================================= -->
+        <h2>Text only (minimal)</h2>
+        <div class="demo-list">
+
+            <!-- Official lineups expected -->
+            <div class="fs-infobox">
+                <div class="fs-infobox__content">
+                    <div class="fs-infobox__text-container">
+                        <p class="fs-infobox__text">Official lineups expected today around 18:30</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================================= -->
+        <!-- Icon + Text                       -->
+        <!-- ================================= -->
+        <h2>Icon + Text</h2>
+        <div class="demo-list">
+
+            <!-- Official lineups with icon -->
+            <div class="fs-infobox">
+                <div class="fs-infobox__content">
+                    <img src="../../../Assets/Icons/Settings/Info Rounded.svg" alt="" class="fs-infobox__icon">
+                    <div class="fs-infobox__text-container">
+                        <p class="fs-infobox__text">Official lineups expected today around 18:30</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================================= -->
+        <!-- Heading + Text                    -->
+        <!-- ================================= -->
+        <h2>Heading + Text</h2>
+        <div class="demo-list">
+
+            <!-- Average Player Rating -->
+            <div class="fs-infobox">
+                <div class="fs-infobox__content">
+                    <div class="fs-infobox__text-container">
+                        <p class="fs-infobox__heading">Average Player Rating</p>
+                        <p class="fs-infobox__text">the average rating of each player is based on their performance in their last 5 games.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================================= -->
+        <!-- Icon + Heading + Text + Close     -->
+        <!-- ================================= -->
+        <h2>Icon + Heading + Text + Close button</h2>
+        <div class="demo-list">
+
+            <!-- Importance by minutes played -->
+            <div class="fs-infobox fs-infobox--with-close">
+                <div class="fs-infobox__content">
+                    <img src="../../../Assets/Icons/Incidents/Stopwatch.svg" alt="" class="fs-infobox__icon">
+                    <div class="fs-infobox__text-container">
+                        <p class="fs-infobox__heading">Importance by minutes played</p>
+                        <p class="fs-infobox__text">See how each missing player is important for the team based on their time played in last 10 matches.</p>
+                    </div>
+                </div>
+                <div class="fs-infobox__close">
+                    <button class="fs-button-close fs-button-close--small" aria-label="Close">
+                        <img src="../../../Assets/Icons/Action/Navigation/Close.svg" alt="" class="fs-button-close__icon">
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================================= -->
+        <!-- Icon + Heading + Text + Textlink + Close -->
+        <!-- ================================= -->
+        <h2>Icon + Heading + Text + Textlink + Close</h2>
+        <div class="demo-list">
+
+            <!-- Look at our data-driven lineup prediction -->
+            <div class="fs-infobox fs-infobox--with-close">
+                <div class="fs-infobox__content">
+                    <img src="../../../Assets/Icons/Incidents/Lineup.svg" alt="" class="fs-infobox__icon">
+                    <div class="fs-infobox__text-container">
+                        <p class="fs-infobox__heading">Look at our data-driven lineup prediction</p>
+                        <p class="fs-infobox__text">Confirmed lineups will be available closer to kick-off.</p>
+                        <div class="fs-infobox__textlink-container">
+                            <p class="fs-infobox__textlink"><a href="#">More about predicted lineups</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-infobox__close">
+                    <button class="fs-button-close fs-button-close--small" aria-label="Close">
+                        <img src="../../../Assets/Icons/Action/Navigation/Close.svg" alt="" class="fs-button-close__icon">
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================================= -->
+        <!-- Icon + Heading + Text (info icon) -->
+        <!-- ================================= -->
+        <h2>Icon variant — info icon on right</h2>
+        <div class="demo-list">
+
+            <!-- Popular Bet: Draw with info icon -->
+            <div class="fs-infobox">
+                <div class="fs-infobox__content">
+                    <img src="../../../Assets/Icons/Incidents/Rating.svg" alt="" class="fs-infobox__icon">
+                    <div class="fs-infobox__text-container">
+                        <p class="fs-infobox__heading">Popular Bet: Draw</p>
+                        <p class="fs-infobox__text">There's a 134% increase of clicks on the X (Draw) odds in the past hour since lineups were announced</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================================= -->
+        <!-- All variants from preview         -->
+        <!-- ================================= -->
+        <h2>All variants from ComponentPreview.png</h2>
+        <div class="demo-list">
+
+            <!-- 1. Text only -->
+            <div class="fs-infobox">
+                <div class="fs-infobox__content">
+                    <div class="fs-infobox__text-container">
+                        <p class="fs-infobox__text">Official lineups expected today around 18:30</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Icon + Text -->
+            <div class="fs-infobox">
+                <div class="fs-infobox__content">
+                    <img src="../../../Assets/Icons/Settings/Info rounded.svg" alt="" class="fs-infobox__icon">
+                    <div class="fs-infobox__text-container">
+                        <p class="fs-infobox__text">Official lineups expected today around 18:30</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Heading + Text -->
+            <div class="fs-infobox">
+                <div class="fs-infobox__content">
+                    <div class="fs-infobox__text-container">
+                        <p class="fs-infobox__heading">Average Player Rating</p>
+                        <p class="fs-infobox__text">the average rating of each player is based on their performance in their last 5 games.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Icon + Heading + Text + Close -->
+            <div class="fs-infobox fs-infobox--with-close">
+                <div class="fs-infobox__content">
+                    <img src="../../../Assets/Icons/Incidents/Stopwatch.svg" alt="" class="fs-infobox__icon">
+                    <div class="fs-infobox__text-container">
+                        <p class="fs-infobox__heading">Importance by minutes played</p>
+                        <p class="fs-infobox__text">See how each missing player is important for the team based on their time played in last 10 matches.</p>
+                    </div>
+                </div>
+                <div class="fs-infobox__close">
+                    <button class="fs-button-close fs-button-close--small" aria-label="Close">
+                        <img src="../../../Assets/Icons/Action/Navigation/Close.svg" alt="" class="fs-button-close__icon">
+                    </button>
+                </div>
+            </div>
+
+            <!-- 5. Icon + Heading + Text + Textlink + Close -->
+            <div class="fs-infobox fs-infobox--with-close">
+                <div class="fs-infobox__content">
+                    <img src="../../../Assets/Icons/Incidents/Lineup.svg" alt="" class="fs-infobox__icon">
+                    <div class="fs-infobox__text-container">
+                        <p class="fs-infobox__heading">Look at our data-driven lineup prediction</p>
+                        <p class="fs-infobox__text">Confirmed lineups will be available closer to kick-off.</p>
+                        <div class="fs-infobox__textlink-container">
+                            <p class="fs-infobox__textlink"><a href="#">More about predicted lineups</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-infobox__close">
+                    <button class="fs-button-close fs-button-close--small" aria-label="Close">
+                        <img src="../../../Assets/Icons/Action/Navigation/Close.svg" alt="" class="fs-button-close__icon">
+                    </button>
+                </div>
+            </div>
+
+            <!-- 6. Icon + Heading + Text (right info icon, no close) -->
+            <div class="fs-infobox">
+                <div class="fs-infobox__content">
+                    <img src="../../../Assets/Icons/Incidents/Rating.svg" alt="" class="fs-infobox__icon">
+                    <div class="fs-infobox__text-container">
+                        <p class="fs-infobox__heading">Popular Bet: Draw</p>
+                        <p class="fs-infobox__text">There's a 134% increase of clicks on the X (Draw) odds in the past hour since lineups were announced</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

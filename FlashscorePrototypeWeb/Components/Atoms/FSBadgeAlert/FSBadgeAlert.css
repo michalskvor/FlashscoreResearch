@@ -1,0 +1,53 @@
+/* ============================================================
+   FSBadgeAlert — Atom Component
+   Alert badge with pink/magenta styling.
+   Variants: Default (label only) | Icon (icon + label)
+   ============================================================ */
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ── Base ────────────────────────────────────────────────────── */
+.fs-badge-alert {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: #FFE6F3;
+    padding: 1px 4px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* ── Variant: with icon ──────────────────────────────────────── */
+.fs-badge-alert--icon {
+    gap: 2px;
+}
+
+/* ── Icon ────────────────────────────────────────────────────── */
+.fs-badge-alert__icon {
+    display: block;
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+/* ── Label ───────────────────────────────────────────────────── */
+.fs-badge-alert__text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #FF0046;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

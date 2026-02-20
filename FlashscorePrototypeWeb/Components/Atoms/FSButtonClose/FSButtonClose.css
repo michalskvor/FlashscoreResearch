@@ -1,0 +1,111 @@
+/* FSButtonClose - Atom Component */
+
+/* =========================================== */
+/* BASE BUTTON                                 */
+/* =========================================== */
+
+.fs-button-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* =========================================== */
+/* ICON                                        */
+/* =========================================== */
+
+.fs-button-close__icon {
+    display: block;
+    object-fit: contain;
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) saturate(100%) invert(67%) sepia(0%) saturate(0%) hue-rotate(158deg) brightness(92%) contrast(85%);
+    /* Base color: #999999 */
+}
+
+/* =========================================== */
+/* SMALL VARIANT                               */
+/* =========================================== */
+
+.fs-button-close--small .fs-button-close__icon {
+    width: 12px;
+    height: 12px;
+}
+
+/* =========================================== */
+/* HOVER STATE                                 */
+/* =========================================== */
+
+.fs-button-close:hover .fs-button-close__icon {
+    filter: brightness(0) saturate(100%) invert(80%) sepia(0%) saturate(0%) hue-rotate(158deg) brightness(95%) contrast(90%);
+    /* Hover color: #BBBBBB */
+}
+
+/* =========================================== */
+/* DEMO STYLES                                 */
+/* =========================================== */
+
+.demo-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 32px 16px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    background-color: #FFFFFF;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #001E28;
+    margin: 0 0 8px;
+}
+
+.demo-container > p {
+    font-size: 13px;
+    color: #555E61;
+    margin: 0 0 32px;
+}
+
+.demo-container h2 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999999;
+    margin: 24px 0 8px;
+}
+
+.demo-list {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+}
+
+.demo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F5F5F5;
+    border: 1px solid #EEEEEE;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+- Button: transparent bg, no border, 8px padding
+- Icon (large): 16px × 16px, color #999999 (base), #BBBBBB (hover)
+- Icon (small): 12px × 12px, color #999999 (base), #BBBBBB (hover)
+- Cursor: pointer
+- Total clickable area (large): 32px × 32px (16px icon + 8px padding on all sides)
+- Total clickable area (small): 28px × 28px (12px icon + 8px padding on all sides)
+- Uses Close.svg icon from Assets/Icons/Action/Navigation/
+- SVG color applied via CSS filter
+*/

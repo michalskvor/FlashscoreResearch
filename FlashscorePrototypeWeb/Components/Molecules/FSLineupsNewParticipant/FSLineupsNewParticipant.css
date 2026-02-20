@@ -1,0 +1,193 @@
+/* ============================================================
+   FSLineupsNewParticipant — Molecule Component
+   Player row: avatar + incident overlay, name/subtext,
+   chart bar (progress), stats badge, optional alert badge.
+   Variants: Left | Right (mirrored)
+   Depends on:
+     ../../Atoms/FSAssetBoxed/FSAssetBoxed.css
+     ../../Atoms/FSIncidentBadgeField/FSIncidentBadgeField.css
+     ../../Atoms/FSLineupsNewIncident/FSLineupsNewIncident.css
+     ../../Atoms/FSBadgeAlert/FSBadgeAlert.css
+     ../FSIncidentBadgeFieldRow/FSIncidentBadgeFieldRow.css
+   ============================================================ */
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ── Base container ──────────────────────────────────────────── */
+.fs-lineups-new-participant {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 8px;
+    width: 300px;
+    max-width: 304px;
+    box-sizing: border-box;
+}
+
+/* ── Asset section (photo + incident badge overlay) ──────────── */
+.fs-lineups-new-participant__asset {
+    position: relative;
+    flex-shrink: 0;
+
+}
+
+/* Incident badge row — absolute over asset bottom-right corner */
+.fs-lineups-new-participant__asset-incident {
+    position: absolute;
+    bottom: -9px;
+    right: -4px;
+}
+
+/* ── Info column ─────────────────────────────────────────────── */
+.fs-lineups-new-participant__info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-height: 38px;
+    justify-content: center;
+}
+
+/* ── Text block ──────────────────────────────────────────────── */
+.fs-lineups-new-participant__text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.fs-lineups-new-participant__name {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #001E28;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.fs-lineups-new-participant__subtext {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #555E61;
+    display: block;
+}
+
+/* ── Chart row ───────────────────────────────────────────────── */
+.fs-lineups-new-participant__chart-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+/* Chart progress bar — grey track */
+.fs-lineups-new-participant__chart-bar {
+    flex: 1;
+    min-width: 0;
+    height: 8px;
+    background-color: #EEEEEE;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+/* Chart fill — dark, width set inline (e.g. style="width:80%") */
+.fs-lineups-new-participant__chart-fill {
+    height: 8px;
+    background-color: #001E28;
+}
+
+/* ── Badge / stats container ─────────────────────────────────── */
+/* Holds: FSLineupsNewIncident + FSIncidentBadgeFieldRow + percent */
+.fs-lineups-new-participant__badge-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    min-width: 57px;
+    flex-shrink: 0;
+}
+
+/* Percent text */
+.fs-lineups-new-participant__percent {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #555E61;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+    min-width: 0;
+}
+
+/* ── RIGHT ALIGNMENT ─────────────────────────────────────────── */
+
+/* Mirror the outer flex row */
+.fs-lineups-new-participant--right {
+    flex-direction: row-reverse;
+}
+
+/* Move incident badge to bottom-left corner of asset */
+.fs-lineups-new-participant--right .fs-lineups-new-participant__asset-incident {
+    bottom: -9px;
+    right: auto;
+    left: -4px;
+}
+
+/* Right-align the info column content */
+.fs-lineups-new-participant--right .fs-lineups-new-participant__info {
+    align-items: flex-end;
+}
+
+/* Left-align the info column content */
+.fs-lineups-new-participant--left .fs-lineups-new-participant__info {
+    align-items: flex-start;
+}
+
+.fs-lineups-new-participant--right .fs-lineups-new-participant__name,
+.fs-lineups-new-participant--right .fs-lineups-new-participant__subtext {
+    text-align: right;
+}
+
+/* Chart row: badge container before bar */
+.fs-lineups-new-participant--right .fs-lineups-new-participant__chart-row {
+    flex-direction: row-reverse;
+}
+
+/* Chart fill grows from right side */
+.fs-lineups-new-participant--right .fs-lineups-new-participant__chart-bar {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/* ── FLUID VARIANT (lineup table context) ────────────────────── */
+
+/* Participant row container — side-by-side layout */
+.fs-lineups-participant-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    width: 639px;
+    box-sizing: border-box;
+}
+
+/* Fluid participant — fills available space instead of fixed width */
+.fs-lineups-new-participant--fluid {
+    flex: 1;
+    width: auto;
+    max-width: none;
+}

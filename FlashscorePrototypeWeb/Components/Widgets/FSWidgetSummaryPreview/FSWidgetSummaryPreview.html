@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSWidgetSummaryPreview - Widget Component</title>
+    <!-- Molecule dependencies -->
+    <link rel="stylesheet" href="../../Molecules/FSHeadersSection/FSHeadersSection.css">
+    <!-- Atom dependencies -->
+    <link rel="stylesheet" href="../../Atoms/FSButtonLink/FSButtonLink.css">
+    <!-- Widget styles -->
+    <link rel="stylesheet" href="FSWidgetSummaryPreview.css">
+</head>
+<body>
+
+    <!-- ============================================================
+         FSWidgetSummaryPreview — Collapsed state (default)
+         ============================================================ -->
+    <h2 style="font-family: sans-serif; font-size: 13px; color: #999; padding: 24px 12px 8px;">Collapsed state (default)</h2>
+
+    <div class="fs-widget-summary-preview">
+
+        <!-- Header section -->
+        <div class="fs-headers-section">
+            <div class="fs-headers-section__left">
+                <span class="fs-headers-section__text">PREVIEW</span>
+            </div>
+            <div class="fs-headers-section__center"></div>
+            <div class="fs-headers-section__right"></div>
+        </div>
+
+        <!-- Text content — collapsed (max-height 80px) -->
+        <div class="fs-widget-summary-preview__content fs-widget-summary-preview__content--collapsed">
+            <!-- Headline -->
+            <h3 class="fs-widget-summary-preview__headline">This is headline of article</h3>
+
+            <!-- Text paragraphs -->
+            <p class="fs-widget-summary-preview__text">While two recent defeats against Nice and Angers had a damaging impact on their Ligue 1 title aspirations, second-placed Monaco did show a good response in their two outings since, following a UEFA Champions League win over Bologna with a 3-1 success at Strasbourg. Those two aforementioned defeats have seen Adi Hütter's men fall six points behind leaders PSG, but they could claw some of that back - at least temporarily - here against Brest.
+
+Monaco's win over Strasbourg came thanks to three quick-fire goals in the final 11 minutes of regular time. That's been a theme of their performances this season, as not only did they also score in this period against Bologna, but seven of their 18 league strikes this season have arrived in the final 15 minutes of matches - no side has scored more such goals in the division.</p>
+        </div>
+
+        <!-- Button container with gradient overlay -->
+        <div class="fs-widget-summary-preview__button-container">
+            <!-- Gradient overlay -->
+            <div class="fs-widget-summary-preview__overlay"></div>
+
+            <!-- Show full preview link button -->
+            <div class="fs-widget-summary-preview__link">
+                <a href="#" class="fs-button-link fs-button-link--primary">
+                    <span class="fs-button-link__label">Show full preview</span>
+                    <img src="../../../Assets/Icons/Action/Navigation/Arrow/Down.svg" alt="" class="fs-button-link__icon">
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- ============================================================
+         FSWidgetSummaryPreview — Expanded state
+         ============================================================ -->
+    <h2 style="font-family: sans-serif; font-size: 13px; color: #999; padding: 24px 12px 8px;">Expanded state</h2>
+
+    <div class="fs-widget-summary-preview">
+
+        <!-- Header section -->
+        <div class="fs-headers-section">
+            <div class="fs-headers-section__left">
+                <span class="fs-headers-section__text">PREVIEW</span>
+            </div>
+            <div class="fs-headers-section__center"></div>
+            <div class="fs-headers-section__right"></div>
+        </div>
+
+        <!-- Text content — expanded (no max-height) -->
+        <div class="fs-widget-summary-preview__content">
+            <!-- Headline -->
+            <h3 class="fs-widget-summary-preview__headline">This is headline of article</h3>
+
+            <!-- Text paragraphs -->
+            <p class="fs-widget-summary-preview__text">While two recent defeats against Nice and Angers had a damaging impact on their Ligue 1 title aspirations, second-placed Monaco did show a good response in their two outings since, following a UEFA Champions League win over Bologna with a 3-1 success at Strasbourg. Those two aforementioned defeats have seen Adi Hütter's men fall six points behind leaders PSG, but they could claw some of that back - at least temporarily - here against Brest.
+
+Monaco's win over Strasbourg came thanks to three quick-fire goals in the final 11 minutes of regular time. That's been a theme of their performances this season, as not only did they also score in this period against Bologna, but seven of their 18 league strikes this season have arrived in the final 15 minutes of matches - no side has scored more such goals in the division.</p>
+        </div>
+
+        <!-- No button container in expanded state -->
+
+    </div>
+
+</body>
+</html>

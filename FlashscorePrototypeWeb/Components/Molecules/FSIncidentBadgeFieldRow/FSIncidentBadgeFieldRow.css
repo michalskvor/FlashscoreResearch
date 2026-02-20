@@ -1,71 +1,93 @@
-/* FSIncidentBadgeFieldRow - Molecule Component */
+/* ============================================================
+   FSIncidentBadgeFieldRow — Molecule Component
+   Stacked row of up to 4 FSIncidentBadgeField atoms.
+   Badges overlap by 3px using negative margins.
+   Depends on:
+     ../../Atoms/FSIncidentBadgeField/FSIncidentBadgeField.css
+   ============================================================ */
 
+/* ── Base container ─────────────────────────────────────────── */
 .fs-incident-badge-field-row {
     display: flex;
+    position: relative;
+    isolation: isolate;
+    flex-shrink: 0;
 }
 
-/* Orientation variants */
+/* ── Direction: Vertical ────────────────────────────────────── */
+/* Badges stack top→bottom, centered horizontally */
 .fs-incident-badge-field-row--vertical {
     flex-direction: column;
+    align-items: center;
 }
 
+/* ── Direction: Horizontal ──────────────────────────────────── */
+/* Badges stack left→right */
 .fs-incident-badge-field-row--horizontal {
     flex-direction: row;
 }
 
-/* Size variants with negative margins for overlapping */
+/* ── Alignment: Top ─────────────────────────────────────────── */
+/* Vertical-top: badges pushed to bottom of container space, pad compensates last overlap */
+.fs-incident-badge-field-row--vertical.fs-incident-badge-field-row--top {
+    justify-content: flex-end;
+    padding-bottom: 5px;
+}
+
+/* Horizontal-top: badges align to bottom edge */
+.fs-incident-badge-field-row--horizontal.fs-incident-badge-field-row--top {
+    align-items: flex-end;
+    padding-right: 5px;
+}
+
+/* ── Alignment: Bottom ──────────────────────────────────────── */
+/* Vertical-bottom: badges pushed to top of container space */
+.fs-incident-badge-field-row--vertical.fs-incident-badge-field-row--bottom {
+    justify-content: flex-start;
+    padding-top: 5px;
+}
+
+/* Horizontal-bottom: badges align to top edge */
+.fs-incident-badge-field-row--horizontal.fs-incident-badge-field-row--bottom {
+    align-items: flex-start;
+    padding-left: 5px;
+}
+
+/* ── Overlap — Small (14px badges, -3px) ────────────────────── */
 .fs-incident-badge-field-row--vertical.fs-incident-badge-field-row--small .fs-incident-badge-field:not(:last-child) {
-    margin-bottom: -3px;
+    margin-bottom: -5px;
 }
 
 .fs-incident-badge-field-row--horizontal.fs-incident-badge-field-row--small .fs-incident-badge-field:not(:last-child) {
-    margin-right: -3px;
+    margin-right: -5px;
 }
 
+/* ── Overlap — Medium (16px badges, -3px) ───────────────────── */
 .fs-incident-badge-field-row--vertical.fs-incident-badge-field-row--medium .fs-incident-badge-field:not(:last-child) {
-    margin-bottom: -1px;
+    margin-bottom: -5px;
 }
 
 .fs-incident-badge-field-row--horizontal.fs-incident-badge-field-row--medium .fs-incident-badge-field:not(:last-child) {
-    margin-right: -1px;
+    margin-right: -5px;
 }
 
-/* Alignment variants */
-.fs-incident-badge-field-row--vertical.fs-incident-badge-field-row--top {
-    justify-content: flex-end;
-}
-
-.fs-incident-badge-field-row--vertical.fs-incident-badge-field-row--bottom {
-    justify-content: flex-start;
-    padding-bottom: 2px;
-}
-
-.fs-incident-badge-field-row--horizontal.fs-incident-badge-field-row--top {
-    justify-content: flex-start;
-    padding-right: 2px;
-}
-
-.fs-incident-badge-field-row--horizontal.fs-incident-badge-field-row--bottom {
-    justify-content: flex-end;
-}
-
-/* Z-index layering for top alignment variants */
-.fs-incident-badge-field-row--top .fs-incident-badge-field:nth-child(1) {
-    z-index: 4;
+/* ── Z-index: Top alignment — first child on top (z:4 → z:1) ── */
+/* First badge renders visually over the ones beneath/behind it */
+.fs-incident-badge-field-row--top .fs-incident-badge-field {
     position: relative;
 }
 
-.fs-incident-badge-field-row--top .fs-incident-badge-field:nth-child(2) {
-    z-index: 3;
+.fs-incident-badge-field-row--top .fs-incident-badge-field:nth-child(1) { z-index: 4; }
+.fs-incident-badge-field-row--top .fs-incident-badge-field:nth-child(2) { z-index: 3; }
+.fs-incident-badge-field-row--top .fs-incident-badge-field:nth-child(3) { z-index: 2; }
+.fs-incident-badge-field-row--top .fs-incident-badge-field:nth-child(4) { z-index: 1; }
+
+/* ── Z-index: Bottom alignment — last child on top (z:1 → z:4) ─ */
+.fs-incident-badge-field-row--bottom .fs-incident-badge-field {
     position: relative;
 }
 
-.fs-incident-badge-field-row--top .fs-incident-badge-field:nth-child(3) {
-    z-index: 2;
-    position: relative;
-}
-
-.fs-incident-badge-field-row--top .fs-incident-badge-field:nth-child(4) {
-    z-index: 1;
-    position: relative;
-}
+.fs-incident-badge-field-row--bottom .fs-incident-badge-field:nth-child(1) { z-index: 1; }
+.fs-incident-badge-field-row--bottom .fs-incident-badge-field:nth-child(2) { z-index: 2; }
+.fs-incident-badge-field-row--bottom .fs-incident-badge-field:nth-child(3) { z-index: 3; }
+.fs-incident-badge-field-row--bottom .fs-incident-badge-field:nth-child(4) { z-index: 4; }

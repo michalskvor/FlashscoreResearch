@@ -90,6 +90,7 @@
     border-radius: 4px;
     flex-shrink: 0;
     white-space: nowrap;
+    box-sizing: border-box;
 }
 
 /* 12px Bold, line-height 14px — color set inline per brand */

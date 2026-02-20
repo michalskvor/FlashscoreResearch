@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSLineupsNewIncident - Atom Component</title>
+    <link rel="stylesheet" href="FSLineupsNewIncident.css">
+    <style>
+        body { background: #F5F5F5; padding: 32px; font-family: sans-serif; }
+        h1 { font-size: 18px; color: #001E28; margin-bottom: 4px; }
+        h2 { font-size: 12px; color: #999; font-weight: 400; margin: 24px 0 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .demo-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .demo-label { font-size: 11px; color: #555E61; width: 160px; flex-shrink: 0; }
+    </style>
+</head>
+<body>
+
+    <h1>FSLineupsNewIncident</h1>
+
+    <!-- ── Both goals and assists ─────────────────────────────── -->
+    <h2>Both — goals + assists</h2>
+
+    <div class="demo-row">
+        <span class="demo-label">12 goals · 2 assists</span>
+        <div class="fs-lineups-new-incident">
+            <div class="fs-lineups-new-incident__goals">
+                <img class="fs-lineups-new-incident__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goals">
+                <span class="fs-lineups-new-incident__count">12</span>
+            </div>
+            <div class="fs-lineups-new-incident__assists">
+                <img class="fs-lineups-new-incident__icon" src="../../../Assets/Icons/Incidents/Assist ALT.svg" alt="Assists">
+                <span class="fs-lineups-new-incident__count">2</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-row">
+        <span class="demo-label">1 goal · 5 assists</span>
+        <div class="fs-lineups-new-incident">
+            <div class="fs-lineups-new-incident__goals">
+                <img class="fs-lineups-new-incident__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goals">
+                <span class="fs-lineups-new-incident__count">1</span>
+            </div>
+            <div class="fs-lineups-new-incident__assists">
+                <img class="fs-lineups-new-incident__icon" src="../../../Assets/Icons/Incidents/Assist ALT.svg" alt="Assists">
+                <span class="fs-lineups-new-incident__count">5</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Goals only ─────────────────────────────────────────── -->
+    <h2>Goals only</h2>
+
+    <div class="demo-row">
+        <span class="demo-label">7 goals</span>
+        <div class="fs-lineups-new-incident fs-lineups-new-incident--goals-only">
+            <div class="fs-lineups-new-incident__goals">
+                <img class="fs-lineups-new-incident__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goals">
+                <span class="fs-lineups-new-incident__count">7</span>
+            </div>
+            <div class="fs-lineups-new-incident__assists">
+                <img class="fs-lineups-new-incident__icon" src="../../../Assets/Icons/Incidents/Assist ALT.svg" alt="Assists">
+                <span class="fs-lineups-new-incident__count">0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Assists only ───────────────────────────────────────── -->
+    <h2>Assists only</h2>
+
+    <div class="demo-row">
+        <span class="demo-label">3 assists</span>
+        <div class="fs-lineups-new-incident fs-lineups-new-incident--assists-only">
+            <div class="fs-lineups-new-incident__goals">
+                <img class="fs-lineups-new-incident__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goals">
+                <span class="fs-lineups-new-incident__count">0</span>
+            </div>
+            <div class="fs-lineups-new-incident__assists">
+                <img class="fs-lineups-new-incident__icon" src="../../../Assets/Icons/Incidents/Assist ALT.svg" alt="Assists">
+                <span class="fs-lineups-new-incident__count">3</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

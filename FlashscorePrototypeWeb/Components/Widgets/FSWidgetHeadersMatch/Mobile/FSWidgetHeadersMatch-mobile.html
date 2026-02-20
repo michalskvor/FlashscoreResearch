@@ -6,6 +6,7 @@
     <title>FSWidgetHeadersMatch - Mobile</title>
     <link rel="stylesheet" href="../../../Atoms/FSAssetBoxed/FSAssetBoxed.css">
     <link rel="stylesheet" href="../../../Atoms/FSActionsFavorite/FSActionsFavorite.css">
+    <link rel="stylesheet" href="../../../Atoms/FSBadgeStream/FSBadgeStream.css">
     <link rel="stylesheet" href="FSWidgetHeadersMatch-mobile.css">
 </head>
 <body style="padding: 24px; background: #EEEEEE; max-width: 639px;">
@@ -135,13 +136,11 @@
                         </div>
                     </div>
                 </div>
-                <!-- Live Stream Button -->
-                <button class="fs-widget-headers-match-mobile__live-stream-button">
-                    <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 0V12L10 6L0 0Z" fill="#FF0046"/>
-                    </svg>
-                    <span class="fs-widget-headers-match-mobile__live-stream-text">LIVE STREAM</span>
-                </button>
+                <!-- Live Stream Badge -->
+                <div class="fs-badge-stream fs-badge-stream--live">
+                    <img src="../../../../Assets/Icons/Action/Video/Play ALT.svg" alt="" class="fs-badge-stream__icon">
+                    <span class="fs-badge-stream__text">Live Stream</span>
+                </div>
             </div>
 
             <!-- Away Participant -->
@@ -208,10 +207,15 @@
                 </div>
             </div>
 
-            <!-- Score Container (no score yet) -->
+            <!-- Score Container (Pre-match) -->
             <div class="fs-widget-headers-match-mobile__score-container">
-                <div class="fs-widget-headers-match-mobile__score-content">
-                    <div class="fs-widget-headers-match-mobile__score-separator">-</div>
+                <div class="fs-widget-headers-match-mobile__pre-match-time">
+                    <p class="fs-widget-headers-match-mobile__pre-match-text">Starts in 2 hours</p>
+                </div>
+                <!-- Stream Badge -->
+                <div class="fs-badge-stream">
+                    <img src="../../../../Assets/Icons/Action/Video/Play ALT.svg" alt="" class="fs-badge-stream__icon">
+                    <span class="fs-badge-stream__text">Stream</span>
                 </div>
             </div>
 

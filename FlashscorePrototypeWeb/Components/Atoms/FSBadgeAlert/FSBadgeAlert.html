@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSBadgeAlert - Atom Component</title>
+    <link rel="stylesheet" href="FSBadgeAlert.css">
+    <style>
+        body { background: #F5F5F5; padding: 32px; font-family: sans-serif; }
+        h1 { font-size: 18px; color: #001E28; margin-bottom: 4px; }
+        h2 { font-size: 12px; color: #999; font-weight: 400; margin: 24px 0 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .demo-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .demo-label { font-size: 11px; color: #555E61; width: 160px; flex-shrink: 0; }
+    </style>
+</head>
+<body>
+
+    <h1>FSBadgeAlert</h1>
+
+    <!-- ── Default variant (label only) ──────────────────────────── -->
+    <h2>Default — label only</h2>
+
+    <div class="demo-row">
+        <span class="demo-label">Label</span>
+        <div class="fs-badge-alert">
+            <span class="fs-badge-alert__text">label</span>
+        </div>
+    </div>
+
+    <div class="demo-row">
+        <span class="demo-label">New</span>
+        <div class="fs-badge-alert">
+            <span class="fs-badge-alert__text">New</span>
+        </div>
+    </div>
+
+    <div class="demo-row">
+        <span class="demo-label">Live</span>
+        <div class="fs-badge-alert">
+            <span class="fs-badge-alert__text">Live</span>
+        </div>
+    </div>
+
+    <!-- ── Icon variant (icon + label) ───────────────────────────── -->
+    <h2>Icon — notification icon + label</h2>
+
+    <div class="demo-row">
+        <span class="demo-label">Label</span>
+        <div class="fs-badge-alert fs-badge-alert--icon">
+            <svg class="fs-badge-alert__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.0799 0V1.37402H10.6619V3.51758C11.9839 3.62858 13.2149 4.03431 14.2879 4.69531L15.8211 2.67871L16.9139 3.50879L15.3904 5.5166C17.1283 7.03452 18.2507 9.23979 18.2508 11.7246C18.2508 16.2865 14.5382 19.9998 9.9754 20C5.4134 20 1.70001 16.2866 1.70001 11.7246C1.70021 7.39681 5.05106 3.8736 9.2879 3.51758V1.37402H6.87091V0H13.0799ZM9.9754 4.82227C6.17053 4.82227 3.07522 7.91979 3.07501 11.7246C3.07501 15.5296 6.1704 18.626 9.9754 18.626C13.7802 18.6258 16.8758 15.5295 16.8758 11.7246C16.8756 7.91992 13.7801 4.82248 9.9754 4.82227ZM9.9754 6.54883C11.4841 6.50043 11.9894 6.98978 11.9998 7L9.9754 11.7246V6.54883Z" fill="#FF0046"/>
+            </svg>
+            <span class="fs-badge-alert__text">label</span>
+        </div>
+    </div>
+
+    <div class="demo-row">
+        <span class="demo-label">New</span>
+        <div class="fs-badge-alert fs-badge-alert--icon">
+            <svg class="fs-badge-alert__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.0799 0V1.37402H10.6619V3.51758C11.9839 3.62858 13.2149 4.03431 14.2879 4.69531L15.8211 2.67871L16.9139 3.50879L15.3904 5.5166C17.1283 7.03452 18.2507 9.23979 18.2508 11.7246C18.2508 16.2865 14.5382 19.9998 9.9754 20C5.4134 20 1.70001 16.2866 1.70001 11.7246C1.70021 7.39681 5.05106 3.8736 9.2879 3.51758V1.37402H6.87091V0H13.0799ZM9.9754 4.82227C6.17053 4.82227 3.07522 7.91979 3.07501 11.7246C3.07501 15.5296 6.1704 18.626 9.9754 18.626C13.7802 18.6258 16.8758 15.5295 16.8758 11.7246C16.8756 7.91992 13.7801 4.82248 9.9754 4.82227ZM9.9754 6.54883C11.4841 6.50043 11.9894 6.98978 11.9998 7L9.9754 11.7246V6.54883Z" fill="#FF0046"/>
+            </svg>
+            <span class="fs-badge-alert__text">New</span>
+        </div>
+    </div>
+
+    <div class="demo-row">
+        <span class="demo-label">Live</span>
+        <div class="fs-badge-alert fs-badge-alert--icon">
+            <svg class="fs-badge-alert__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.0799 0V1.37402H10.6619V3.51758C11.9839 3.62858 13.2149 4.03431 14.2879 4.69531L15.8211 2.67871L16.9139 3.50879L15.3904 5.5166C17.1283 7.03452 18.2507 9.23979 18.2508 11.7246C18.2508 16.2865 14.5382 19.9998 9.9754 20C5.4134 20 1.70001 16.2866 1.70001 11.7246C1.70021 7.39681 5.05106 3.8736 9.2879 3.51758V1.37402H6.87091V0H13.0799ZM9.9754 4.82227C6.17053 4.82227 3.07522 7.91979 3.07501 11.7246C3.07501 15.5296 6.1704 18.626 9.9754 18.626C13.7802 18.6258 16.8758 15.5295 16.8758 11.7246C16.8756 7.91992 13.7801 4.82248 9.9754 4.82227ZM9.9754 6.54883C11.4841 6.50043 11.9894 6.98978 11.9998 7L9.9754 11.7246V6.54883Z" fill="#FF0046"/>
+            </svg>
+            <span class="fs-badge-alert__text">Live</span>
+        </div>
+    </div>
+
+</body>
+</html>

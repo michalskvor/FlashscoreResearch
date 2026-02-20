@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSBadgeStream - Atom Component</title>
+    <link rel="stylesheet" href="FSBadgeStream.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>FSBadgeStream</h1>
+        <p>Stream badge with two states: Prematch (gray) and Live (red/pink). Includes play icon and uppercase text.</p>
+
+        <!-- ================================= -->
+        <!-- Prematch state                    -->
+        <!-- ================================= -->
+        <h2>Prematch state (default)</h2>
+        <div class="demo-list">
+            <div class="fs-badge-stream">
+                <img src="../../../Assets/Icons/Action/Video/Play ALT.svg" alt="" class="fs-badge-stream__icon">
+                <span class="fs-badge-stream__text">Stream</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Live state                        -->
+        <!-- ================================= -->
+        <h2>Live state</h2>
+        <div class="demo-list">
+            <div class="fs-badge-stream fs-badge-stream--live">
+                <img src="../../../Assets/Icons/Action/Video/Play ALT.svg" alt="" class="fs-badge-stream__icon">
+                <span class="fs-badge-stream__text">Live Stream</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Both states comparison            -->
+        <!-- ================================= -->
+        <h2>Both states</h2>
+        <div class="demo-list">
+            <div class="fs-badge-stream">
+                <img src="../../../Assets/Icons/Action/Video/Play ALT.svg" alt="" class="fs-badge-stream__icon">
+                <span class="fs-badge-stream__text">Stream</span>
+            </div>
+
+            <div class="fs-badge-stream fs-badge-stream--live">
+                <img src="../../../Assets/Icons/Action/Video/Play ALT.svg" alt="" class="fs-badge-stream__icon">
+                <span class="fs-badge-stream__text">Live Stream</span>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

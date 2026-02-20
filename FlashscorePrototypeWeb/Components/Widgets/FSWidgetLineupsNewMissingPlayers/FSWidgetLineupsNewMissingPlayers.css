@@ -1,0 +1,55 @@
+/* FSWidgetLineupsNewMissingPlayers - Widget Component */
+
+/* =========================================== */
+/* WIDGET CONTAINER                            */
+/* =========================================== */
+
+.fs-widget-lineups-new-missing-players {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+}
+
+/* =========================================== */
+/* PARTICIPANT ROWS SECTION                    */
+/* =========================================== */
+
+.fs-widget-lineups-new-missing-players__rows {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+/* Override participant row to fill container instead of fixed 639px */
+.fs-widget-lineups-new-missing-players .fs-lineups-participant-row {
+    width: 100%;
+}
+
+/* Cap fluid participant width so a lone player on one side never stretches
+   wider than a player in a full two-player row. Formula: (100% - gap) / 2 */
+.fs-widget-lineups-new-missing-players .fs-lineups-new-participant--fluid {
+    max-width: calc(50% - 10px);
+}
+
+/* =========================================== */
+/* INFOBOX SECTION                             */
+/* =========================================== */
+
+.fs-widget-lineups-new-missing-players .fs-infobox {
+    margin: 0 12px;
+    width: auto;
+}
+
+/* =========================================== */
+/* INSIGHT SECTION                             */
+/* =========================================== */
+
+.fs-widget-lineups-new-missing-players__insight {
+    padding: 0 12px;
+    box-sizing: border-box;
+}

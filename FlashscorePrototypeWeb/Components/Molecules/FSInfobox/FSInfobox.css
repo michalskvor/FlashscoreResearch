@@ -1,0 +1,202 @@
+/* FSInfobox - Molecule Component */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================== */
+/* CONTAINER                                   */
+/* =========================================== */
+
+.fs-infobox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    border-radius: 8px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+}
+
+/* When close button exists, add right padding for close button space */
+.fs-infobox--with-close {
+    padding-right: 36px;
+}
+
+/* =========================================== */
+/* TEXT CONTAINER                              */
+/* =========================================== */
+
+.fs-infobox__content {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+}
+
+/* =========================================== */
+/* LEADING ICON (optional)                     */
+/* =========================================== */
+
+.fs-infobox__icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    display: block;
+    object-fit: contain;
+}
+
+/* =========================================== */
+/* TEXT COLUMN                                 */
+/* =========================================== */
+
+.fs-infobox__text-container {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* =========================================== */
+/* HEADING (optional, bold)                    */
+/* =========================================== */
+
+.fs-infobox__heading {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #001E28;
+    margin: 0;
+}
+
+/* =========================================== */
+/* TEXT (required)                             */
+/* =========================================== */
+
+.fs-infobox__text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #001E28;
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+/* =========================================== */
+/* TEXTLINK CONTAINER (optional)               */
+/* =========================================== */
+
+.fs-infobox__textlink-container {
+    display: flex;
+    align-items: center;
+    padding-top: 4px;
+}
+
+/* =========================================== */
+/* TEXTLINK (optional, underlined)             */
+/* =========================================== */
+
+.fs-infobox__textlink {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #555E61;
+    text-decoration: underline;
+    text-decoration-color: #555E61;
+    margin: 0;
+}
+
+.fs-infobox__textlink a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.fs-infobox__textlink a:hover {
+    color: #001E28;
+}
+
+/* =========================================== */
+/* CLOSE BUTTON (optional, top-right)          */
+/* Uses FSButtonClose atom (small variant)     */
+/* =========================================== */
+
+.fs-infobox__close {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}
+
+/* =========================================== */
+/* DEMO STYLES                                 */
+/* =========================================== */
+
+.demo-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 32px 16px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    background-color: #FFFFFF;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #001E28;
+    margin: 0 0 8px;
+}
+
+.demo-container > p {
+    font-size: 13px;
+    color: #555E61;
+    margin: 0 0 32px;
+}
+
+.demo-container h2 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999999;
+    margin: 24px 0 8px;
+}
+
+.demo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+- Container: white bg, 1px solid #EEEEEE border, 8px radius
+- Padding: 8px vertical, 12px horizontal (36px right when close button exists)
+- Content: flex row, align-items flex-start, gap 8px
+- Icon: 16px × 16px (info/warning icon), flex-shrink 0
+- Text container: flex column, gap 4px
+- Heading (optional): 13px Bold #001E28, line-height 16px
+- Text (required): 12px Regular #001E28, line-height 14px
+- Textlink (optional): 12px Regular #555E61, underlined, padding-top 4px
+- Close button: FSButtonClose atom (small variant), absolute top-right, 12px icon, #999999 (base), #BBBBBB (hover)
+- All spacing follows 4/8px grid
+*/

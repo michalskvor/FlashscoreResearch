@@ -1,0 +1,40 @@
+/* FSWidgetLineupsNewTopScorers - Widget Component */
+
+/* =========================================== */
+/* WIDGET CONTAINER                            */
+/* =========================================== */
+
+.fs-widget-lineups-new-top-scorers {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+}
+
+/* =========================================== */
+/* PARTICIPANT ROWS SECTION                    */
+/* =========================================== */
+
+.fs-widget-lineups-new-top-scorers__rows {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+/* Override participant row to fill container instead of fixed 639px */
+.fs-widget-lineups-new-top-scorers .fs-lineups-participant-row {
+    width: 100%;
+}
+
+/* =========================================== */
+/* INSIGHT SECTION                             */
+/* =========================================== */
+
+.fs-widget-lineups-new-top-scorers__insight {
+    padding: 0 12px;
+    box-sizing: border-box;
+}

@@ -1,0 +1,67 @@
+/* ============================================================
+   FSLineupsNewIncident — Atom Component
+   Compact badge showing goals and/or assists count with icons.
+   Variants: Both | Goals only | Assists only
+   ============================================================ */
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ── Base container ──────────────────────────────────────────── */
+.fs-lineups-new-incident {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 0 4px;
+    background-color: #FFFFFF;
+    border: 1px solid #C8CDCD;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+/* ── Goals / Assists sections ────────────────────────────────── */
+.fs-lineups-new-incident__goals,
+.fs-lineups-new-incident__assists {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+/* ── Icon ────────────────────────────────────────────────────── */
+.fs-lineups-new-incident__icon {
+    display: block;
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+}
+
+/* ── Count text ──────────────────────────────────────────────── */
+.fs-lineups-new-incident__count {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #555E61;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ── Modifier: goals only — hide assists ─────────────────────── */
+.fs-lineups-new-incident--goals-only .fs-lineups-new-incident__assists {
+    display: none;
+}
+
+/* ── Modifier: assists only — hide goals ─────────────────────── */
+.fs-lineups-new-incident--assists-only .fs-lineups-new-incident__goals {
+    display: none;
+}

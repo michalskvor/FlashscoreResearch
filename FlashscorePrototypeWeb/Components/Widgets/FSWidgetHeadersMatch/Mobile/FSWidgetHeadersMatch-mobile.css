@@ -147,9 +147,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 8px;
     min-width: 90px;
     max-width: 180px;
     align-self: stretch;
+    padding-top: 8px;
 }
 
 /* Score row */
@@ -207,6 +209,24 @@
     line-height: 24px;
     color: #001E28;
     white-space: nowrap;
+}
+
+/* Pre-match time */
+.fs-widget-headers-match-mobile__pre-match-time {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.fs-widget-headers-match-mobile__pre-match-text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #555E61;
+    text-align: center;
+    width: 100%;
+    margin: 0;
 }
 
 /* Match state (FINISHED / LIVE info) */

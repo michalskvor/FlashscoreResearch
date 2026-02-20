@@ -47,7 +47,42 @@ Shows current status with a small corner triangle indicating previous status:
 - **Unknown (Grey)**: #C8CDCD
 - **Informative (White)**: #FFFFFF
 
-## Usage
+## Badge Row Variant
+
+**NEW:** Container class for displaying a row of 5 badges with consistent 4px gap.
+
+### Usage
+
+```html
+<!-- Badge row with 5 badges (4px gap) -->
+<div class="fs-badge-form-row">
+    <div class="fs-badge-form fs-badge-form--win">
+        <span class="fs-badge-form__text">W</span>
+    </div>
+    <div class="fs-badge-form fs-badge-form--win">
+        <span class="fs-badge-form__text">W</span>
+    </div>
+    <div class="fs-badge-form fs-badge-form--draw">
+        <span class="fs-badge-form__text">D</span>
+    </div>
+    <div class="fs-badge-form fs-badge-form--lose">
+        <span class="fs-badge-form__text">L</span>
+    </div>
+    <div class="fs-badge-form fs-badge-form--win">
+        <span class="fs-badge-form__text">W</span>
+    </div>
+</div>
+```
+
+### Specifications
+
+- **Container**: `.fs-badge-form-row`
+- **Display**: `flex`, `flex-direction: row`
+- **Gap**: 4px
+- **Alignment**: `align-items: center`
+- **Typical usage**: Shows last 5 match results in a horizontal row
+
+## Individual Badge Usage
 
 ```html
 <!-- Basic win badge -->

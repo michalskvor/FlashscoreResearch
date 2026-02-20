@@ -57,6 +57,7 @@ All UI elements must inherit properties exclusively from the following source fi
 To keep the prototype code lean and directly map to visual specs, follow these CSS rules:
 - **Colors:** Use HEX codes only (e.g., #FF5733).
 - **No Variables:** Do not create or use CSS variables ($--color-primary$, etc.). Hardcode the HEX values directly into the styles as defined in the Colors file.
+- **No inline svg (unless specified):** Always use path to folder with Icons to use icon from library. Never write new path into html and map there the most adequate icon. You may use inline svg path **ONLY** if designer allow you to do that.
 - **Contextual Awareness:** Always analyze the provided file "Screen previews" before coding. The visual context of a component (spacing, shadow, opacity) supersedes generic assumptions.
 
 ##Typography Rules
@@ -131,7 +132,7 @@ This structure is default state. If designer wants to change position of widgets
 
 **In case of no-existing widget, don't create new one and just skip this content.**
 
-a)**Pre-match structure**###
+a)**Pre-match structure**
 1) Navigation widget
     ↓ NavigationMain
     ↓ NavigationSub
@@ -155,7 +156,7 @@ a)**Pre-match structure**###
 4) SEO container
 5) Footer
 
-b)**Live structure**###
+b)**Live structure**
 1) Navigation widget
     ↓ NavigationMain
     ↓ NavigationSub
@@ -176,7 +177,7 @@ b)**Live structure**###
 4) SEO container
 5) Footer
 
-c)**Post-match/Finished structure**###
+c)**Post-match/Finished structure**
 1) Navigation widget
     ↓ NavigationMain
     ↓ NavigationSub
