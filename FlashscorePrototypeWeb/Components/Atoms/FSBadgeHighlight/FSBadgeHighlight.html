@@ -3,65 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FSBadgeHighlight Component</title>
+    <title>FSBadgeHighlight - Atom Component</title>
     <link rel="stylesheet" href="FSBadgeHighlight.css">
 </head>
 <body>
-    <!-- Demo container -->
     <div class="demo-container">
-        <h1>FSBadgeHighlight Component</h1>
+        <h1>FSBadgeHighlight</h1>
+        <p>Live highlight badge with optional icon. Used to indicate live/active states.</p>
 
-        <h2>Base Variant (without icon)</h2>
-        <p>Use for highlighting important status labels like "live", "new", or urgent notifications</p>
-
-        <div class="fs-badge-highlight">
-            <span class="fs-badge-highlight__text">LIVE</span>
-        </div>
-
-        <div class="fs-badge-highlight">
-            <span class="fs-badge-highlight__text">NEW</span>
-        </div>
-
-        <div class="fs-badge-highlight">
-            <span class="fs-badge-highlight__text">HOT</span>
-        </div>
-
-        <h2>With Icon Variant</h2>
-        <p>Use when visual emphasis with an icon is needed</p>
-
-        <div class="fs-badge-highlight fs-badge-highlight--with-icon">
-            <svg class="fs-badge-highlight__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 0L5.09 2.71L8 3.18L6 5.09L6.54 8L4 6.71L1.46 8L2 5.09L0 3.18L2.91 2.71L4 0Z" fill="white"/>
-            </svg>
-            <span class="fs-badge-highlight__text">LIVE</span>
-        </div>
-
-        <div class="fs-badge-highlight fs-badge-highlight--with-icon">
-            <svg class="fs-badge-highlight__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 0L5.09 2.71L8 3.18L6 5.09L6.54 8L4 6.71L1.46 8L2 5.09L0 3.18L2.91 2.71L4 0Z" fill="white"/>
-            </svg>
-            <span class="fs-badge-highlight__text">NEW</span>
-        </div>
-
-        <h2>Usage Examples</h2>
-        <p>Typical use cases in context</p>
-
-        <div class="example-row">
+        <!-- ================================= -->
+        <!-- Text only variant                 -->
+        <!-- ================================= -->
+        <h2>Text only (default)</h2>
+        <div class="demo-list">
             <div class="fs-badge-highlight">
-                <span class="fs-badge-highlight__text">LIVE</span>
+                <span class="fs-badge-highlight__text">Live</span>
             </div>
-            <span style="margin-left: 8px; color: #001E28;">Match in progress</span>
         </div>
 
-        <div class="example-row">
-            <div class="fs-badge-highlight fs-badge-highlight--with-icon">
-                <svg class="fs-badge-highlight__icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 0L5.09 2.71L8 3.18L6 5.09L6.54 8L4 6.71L1.46 8L2 5.09L0 3.18L2.91 2.71L4 0Z" fill="white"/>
-                </svg>
-                <span class="fs-badge-highlight__text">FEATURED</span>
+        <!-- ================================= -->
+        <!-- With icon variant                 -->
+        <!-- ================================= -->
+        <h2>With icon</h2>
+        <div class="demo-list">
+            <div class="fs-badge-highlight">
+                <img src="../../../Assets/Icons/Action/Video/Play ALT.svg" alt="" class="fs-badge-highlight__icon">
+                <span class="fs-badge-highlight__text">Live</span>
             </div>
-            <span style="margin-left: 8px; color: #001E28;">Highlighted content</span>
         </div>
+
+        <!-- ================================= -->
+        <!-- Different text examples           -->
+        <!-- ================================= -->
+        <h2>Different text examples</h2>
+        <div class="demo-list">
+            <div class="fs-badge-highlight">
+                <span class="fs-badge-highlight__text">New</span>
+            </div>
+
+            <div class="fs-badge-highlight">
+                <span class="fs-badge-highlight__text">Hot</span>
+            </div>
+
+            <div class="fs-badge-highlight">
+                <span class="fs-badge-highlight__text">Trending</span>
+            </div>
+        </div>
+
     </div>
 </body>
 </html>

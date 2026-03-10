@@ -1,0 +1,249 @@
+/* FSPlayerStatsPlayerCell - Molecule Component */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================== */
+/* BASE COMPONENT (SMALL - DEFAULT)            */
+/* =========================================== */
+
+.fs-player-stats-player-cell {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+}
+
+/* =========================================== */
+/* PLAYER ASSET CONTAINER                      */
+/* =========================================== */
+
+.fs-player-stats-player-cell__player-container {
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* =========================================== */
+/* TEAM ASSET CONTAINER                        */
+/* =========================================== */
+
+.fs-player-stats-player-cell__team-container {
+    position: absolute;
+    bottom: -3px;
+    left: 26px;
+}
+
+/* =========================================== */
+/* TEXT CONTAINER                              */
+/* =========================================== */
+
+.fs-player-stats-player-cell__text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* =========================================== */
+/* NAME & NAME ROW                             */
+/* =========================================== */
+
+.fs-player-stats-player-cell__name-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.fs-player-stats-player-cell__name {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18px;
+    color: #001E28;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+/* =========================================== */
+/* POSITION & POSITION ROW                     */
+/* =========================================== */
+
+.fs-player-stats-player-cell__position-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fs-player-stats-player-cell__position {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #001E28;
+    white-space: pre-wrap;
+}
+
+/* =========================================== */
+/* FLAG ICON                                   */
+/* =========================================== */
+
+.fs-player-stats-player-cell__flag {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+/* =========================================== */
+/* LARGE VARIANT                               */
+/* =========================================== */
+
+.fs-player-stats-player-cell--large {
+    gap: 16px;
+}
+
+.fs-player-stats-player-cell--large .fs-player-stats-player-cell__team-container {
+    bottom: -4px;
+    left: 52px;
+}
+
+.fs-player-stats-player-cell--large .fs-player-stats-player-cell__name {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.fs-player-stats-player-cell--large .fs-player-stats-player-cell__position {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18px;
+    color: #555E61;
+}
+
+/* =========================================== */
+/* DEMO STYLES                                 */
+/* =========================================== */
+
+.demo-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    background-color: #FFFFFF;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #001E28;
+    margin: 0 0 8px;
+}
+
+.demo-container > p {
+    font-size: 13px;
+    color: #555E61;
+    margin: 0 0 32px;
+}
+
+.demo-container h2 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999999;
+    margin: 24px 0 8px;
+}
+
+.demo-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.demo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.demo-label {
+    font-size: 11px;
+    color: #999999;
+    text-align: center;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+SMALL VARIANT (DEFAULT):
+Structure:
+- Player asset: 32px FSAssetBoxed (player type, with border)
+- Team asset: 18px FSAssetBoxed (asset type, with border)
+- Team positioned: bottom -3px, left 26px (relative to player)
+- Gap: 16px between player and text
+
+Typography:
+Name:
+- Font: Livesport Finder LCGJK Bold
+- Size: 13px
+- Line height: 18px
+- Color: #001E28
+
+Position:
+- Font: Livesport Finder LCGJK Regular
+- Size: 12px
+- Line height: 14px
+- Color: #001E28
+
+Components Used:
+- FSAssetBoxed 32px (Player type, border)
+- FSAssetBoxed 18px (Asset type, border)
+
+LARGE VARIANT:
+Structure:
+- Player asset: 68px FSAssetBoxed (player type, with border)
+- Team asset: 26px FSAssetBoxed (asset type, with border)
+- Team positioned: bottom -4px, left 52px (relative to player)
+- Gap: 16px between player and text
+- FSActionsFavorite: Medium size, positioned next to name
+- Country Flag: 18px, positioned next to position
+
+Typography:
+Name:
+- Font: Livesport Finder LCGJK Bold
+- Size: 20px
+- Line height: 24px
+- Color: #001E28
+
+Position:
+- Font: Livesport Finder LCGJK Regular
+- Size: 13px
+- Line height: 18px
+- Color: #001E28
+
+Components Used:
+- FSAssetBoxed 68px (Player type, border)
+- FSAssetBoxed 26px (Asset type, border)
+- FSActionsFavorite Medium (base/active states)
+- Flag icon 18px × 18px (rounded 2px)
+*/

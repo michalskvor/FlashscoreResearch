@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSLineupsParticipantPitch - Molecule Component</title>
+    <link rel="stylesheet" href="../../Atoms/FSBadgeRating/FSBadgeRating.css">
+    <link rel="stylesheet" href="../../Atoms/FSIncidentBadgeField/FSIncidentBadgeField.css">
+    <link rel="stylesheet" href="../FSIncidentBadgeFieldRow/FSIncidentBadgeFieldRow.css">
+    <link rel="stylesheet" href="FSLineupsParticipantPitch.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>FSLineupsParticipantPitch</h1>
+        <p>Player representation on pitch lineup with photo, name badge, rating, and incidents.</p>
+
+        <!-- ================================= -->
+        <!-- Size M (Default)                  -->
+        <!-- ================================= -->
+        <h2>Size M (Default) - 36px photo</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="demo-pitch">
+                    <div class="fs-lineups-participant-pitch">
+                        <!-- Player Image -->
+                        <div class="fs-lineups-participant-pitch__image">
+                            <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Haaland Erling Braut.jpg" alt="Haaland">
+                        </div>
+
+                        <!-- Name Badge -->
+                        <div class="fs-lineups-participant-pitch__name">
+                            <span class="fs-lineups-participant-pitch__number">9</span>
+                            <span class="fs-lineups-participant-pitch__player-name">Haaland</span>
+                        </div>
+
+                        <!-- Rating Badge (Small Average) -->
+                        <div class="fs-lineups-participant-pitch__rating">
+                            <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--a">
+                                <div class="fs-badge-rating__icon-container">
+                                    <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                                </div>
+                                <div class="fs-badge-rating__text-container">
+                                    <span class="fs-badge-rating__text">9.5</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Incidents (Left) -->
+                        <div class="fs-lineups-participant-pitch__incidents">
+                            <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                                <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                    <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                                </div>
+                                <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                    <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="demo-label">2 goals, rating 9.5</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="demo-pitch">
+                    <div class="fs-lineups-participant-pitch">
+                        <!-- Player Image -->
+                        <div class="fs-lineups-participant-pitch__image">
+                            <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Foden Phil.jpg" alt="Foden">
+                        </div>
+
+                        <!-- Name Badge -->
+                        <div class="fs-lineups-participant-pitch__name">
+                            <span class="fs-lineups-participant-pitch__number">47</span>
+                            <span class="fs-lineups-participant-pitch__player-name">Foden</span>
+                        </div>
+
+                        <!-- Rating Badge (Small Average) -->
+                        <div class="fs-lineups-participant-pitch__rating">
+                            <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--b">
+                                <div class="fs-badge-rating__icon-container">
+                                    <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                                </div>
+                                <div class="fs-badge-rating__text-container">
+                                    <span class="fs-badge-rating__text">7.8</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Incidents (Left) -->
+                        <div class="fs-lineups-participant-pitch__incidents">
+                            <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                                <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                    <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Assist.svg" alt="Assist">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="demo-label">1 assist, rating 7.8</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="demo-pitch">
+                    <div class="fs-lineups-participant-pitch">
+                        <!-- Player Image -->
+                        <div class="fs-lineups-participant-pitch__image">
+                            <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Rodri.jpg" alt="Rodri">
+                        </div>
+
+                        <!-- Name Badge -->
+                        <div class="fs-lineups-participant-pitch__name">
+                            <span class="fs-lineups-participant-pitch__number">16</span>
+                            <span class="fs-lineups-participant-pitch__player-name">Rodri</span>
+                        </div>
+
+                        <!-- Rating Badge (Small Average) -->
+                        <div class="fs-lineups-participant-pitch__rating">
+                            <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--c">
+                                <div class="fs-badge-rating__icon-container">
+                                    <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                                </div>
+                                <div class="fs-badge-rating__text-container">
+                                    <span class="fs-badge-rating__text">6.5</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Incidents (Left) - Empty -->
+                        <div class="fs-lineups-participant-pitch__incidents">
+                            <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                                <!-- No incidents -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="demo-label">No incidents, rating 6.5</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Size L (Large)                    -->
+        <!-- ================================= -->
+        <h2>Size L (Large) - 42px photo</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="demo-pitch">
+                    <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large">
+                        <!-- Player Image -->
+                        <div class="fs-lineups-participant-pitch__image">
+                            <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Haaland Erling Braut.jpg" alt="Haaland">
+                        </div>
+
+                        <!-- Name Badge -->
+                        <div class="fs-lineups-participant-pitch__name">
+                            <span class="fs-lineups-participant-pitch__number">9</span>
+                            <span class="fs-lineups-participant-pitch__player-name">Haaland</span>
+                        </div>
+
+                        <!-- Rating Badge (Small Average) -->
+                        <div class="fs-lineups-participant-pitch__rating">
+                            <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--best">
+                                <div class="fs-badge-rating__icon-container">
+                                    <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                                </div>
+                                <div class="fs-badge-rating__text-container">
+                                    <span class="fs-badge-rating__text">9.8</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Incidents (Left) -->
+                        <div class="fs-lineups-participant-pitch__incidents">
+                            <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                                <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                    <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                                </div>
+                                <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                    <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                                </div>
+                                <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                    <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="demo-label">3 goals, rating 9.8 (Best)</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="demo-pitch">
+                    <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large">
+                        <!-- Player Image -->
+                        <div class="fs-lineups-participant-pitch__image">
+                            <img src="../../../Assets/PlayerPhotos/Football/Fulham/Rodrigo Muniz.jpg" alt="Muniz">
+                        </div>
+
+                        <!-- Name Badge -->
+                        <div class="fs-lineups-participant-pitch__name">
+                            <span class="fs-lineups-participant-pitch__number">11</span>
+                            <span class="fs-lineups-participant-pitch__player-name">Muniz</span>
+                        </div>
+
+                        <!-- Rating Badge (Small Average) -->
+                        <div class="fs-lineups-participant-pitch__rating">
+                            <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--d">
+                                <div class="fs-badge-rating__icon-container">
+                                    <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                                </div>
+                                <div class="fs-badge-rating__text-container">
+                                    <span class="fs-badge-rating__text">5.2</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Incidents (Left) -->
+                        <div class="fs-lineups-participant-pitch__incidents">
+                            <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                                <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                    <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Yellow card.svg" alt="Yellow card">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="demo-label">Yellow card, rating 5.2</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Different Ratings                 -->
+        <!-- ================================= -->
+        <h2>Different Rating Types (Size M)</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="demo-pitch">
+                    <div class="fs-lineups-participant-pitch">
+                        <div class="fs-lineups-participant-pitch__image">
+                            <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/De Bruyne Kevin.jpg" alt="De Bruyne">
+                        </div>
+                        <div class="fs-lineups-participant-pitch__name">
+                            <span class="fs-lineups-participant-pitch__number">17</span>
+                            <span class="fs-lineups-participant-pitch__player-name">De Bruyne</span>
+                        </div>
+                        <div class="fs-lineups-participant-pitch__rating">
+                            <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--f">
+                                <div class="fs-badge-rating__icon-container">
+                                    <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                                </div>
+                                <div class="fs-badge-rating__text-container">
+                                    <span class="fs-badge-rating__text">4.5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-lineups-participant-pitch__incidents">
+                            <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                                <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                    <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Red card.svg" alt="Red card">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="demo-label">F rating (4.5)</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Row Layouts (Formation Preview)   -->
+        <!-- ================================= -->
+        <h2>Row Layouts - Formation Preview</h2>
+
+        <!-- 1 Player Row (space-around) -->
+        <h3 style="font-size: 11px; font-weight: 700; color: #999999; margin: 16px 0 8px;">1 Player (space-around)</h3>
+        <div class="demo-pitch" style="width: 360px; padding: 16px;">
+            <div style="display: flex; justify-content: space-evenly;">
+                <div class="fs-lineups-participant-pitch">
+                    <div class="fs-lineups-participant-pitch__image">
+                        <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Haaland Erling Braut.jpg" alt="Haaland">
+                    </div>
+                    <div class="fs-lineups-participant-pitch__name">
+                        <span class="fs-lineups-participant-pitch__number">9</span>
+                        <span class="fs-lineups-participant-pitch__player-name">Haaland</span>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--a">
+                            <div class="fs-badge-rating__icon-container">
+                                <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                            </div>
+                            <div class="fs-badge-rating__text-container">
+                                <span class="fs-badge-rating__text">9.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2 Players Row (space-around) -->
+        <h3 style="font-size: 11px; font-weight: 700; color: #999999; margin: 16px 0 8px;">2 Players (space-around)</h3>
+        <div class="demo-pitch" style="width: 360px; padding: 16px;">
+            <div style="display: flex; justify-content: space-evenly;">
+                <div class="fs-lineups-participant-pitch">
+                    <div class="fs-lineups-participant-pitch__image">
+                        <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Haaland Erling Braut.jpg" alt="Haaland">
+                    </div>
+                    <div class="fs-lineups-participant-pitch__name">
+                        <span class="fs-lineups-participant-pitch__number">9</span>
+                        <span class="fs-lineups-participant-pitch__player-name">Haaland</span>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--a">
+                            <div class="fs-badge-rating__icon-container">
+                                <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                            </div>
+                            <div class="fs-badge-rating__text-container">
+                                <span class="fs-badge-rating__text">9.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant-pitch">
+                    <div class="fs-lineups-participant-pitch__image">
+                        <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Foden Phil.jpg" alt="Foden">
+                    </div>
+                    <div class="fs-lineups-participant-pitch__name">
+                        <span class="fs-lineups-participant-pitch__number">47</span>
+                        <span class="fs-lineups-participant-pitch__player-name">Foden</span>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--b">
+                            <div class="fs-badge-rating__icon-container">
+                                <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                            </div>
+                            <div class="fs-badge-rating__text-container">
+                                <span class="fs-badge-rating__text">7.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Assist.svg" alt="Assist">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Players Row (space-around) -->
+        <h3 style="font-size: 11px; font-weight: 700; color: #999999; margin: 16px 0 8px;">3 Players (space-around)</h3>
+        <div class="demo-pitch" style="width: 360px; padding: 16px;">
+            <div style="display: flex; justify-content: space-evenly;">
+                <div class="fs-lineups-participant-pitch">
+                    <div class="fs-lineups-participant-pitch__image">
+                        <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Grealish Jack.jpg" alt="Grealish">
+                    </div>
+                    <div class="fs-lineups-participant-pitch__name">
+                        <span class="fs-lineups-participant-pitch__number">10</span>
+                        <span class="fs-lineups-participant-pitch__player-name">Grealish</span>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--b">
+                            <div class="fs-badge-rating__icon-container">
+                                <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                            </div>
+                            <div class="fs-badge-rating__text-container">
+                                <span class="fs-badge-rating__text">7.2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant-pitch">
+                    <div class="fs-lineups-participant-pitch__image">
+                        <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Haaland Erling Braut.jpg" alt="Haaland">
+                    </div>
+                    <div class="fs-lineups-participant-pitch__name">
+                        <span class="fs-lineups-participant-pitch__number">9</span>
+                        <span class="fs-lineups-participant-pitch__player-name">Haaland</span>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--a">
+                            <div class="fs-badge-rating__icon-container">
+                                <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                            </div>
+                            <div class="fs-badge-rating__text-container">
+                                <span class="fs-badge-rating__text">9.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                            </div>
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant-pitch">
+                    <div class="fs-lineups-participant-pitch__image">
+                        <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Foden Phil.jpg" alt="Foden">
+                    </div>
+                    <div class="fs-lineups-participant-pitch__name">
+                        <span class="fs-lineups-participant-pitch__number">47</span>
+                        <span class="fs-lineups-participant-pitch__player-name">Foden</span>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--b">
+                            <div class="fs-badge-rating__icon-container">
+                                <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                            </div>
+                            <div class="fs-badge-rating__text-container">
+                                <span class="fs-badge-rating__text">7.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Assist.svg" alt="Assist">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4 Players Row (space-around) -->
+        <h3 style="font-size: 11px; font-weight: 700; color: #999999; margin: 16px 0 8px;">4 Players (space-around)</h3>
+        <div class="demo-pitch" style="width: 360px; padding: 16px;">
+            <div style="display: flex; justify-content: space-evenly;">
+                <div class="fs-lineups-participant-pitch">
+                    <div class="fs-lineups-participant-pitch__image">
+                        <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Walker Kyle.jpg" alt="Walker">
+                    </div>
+                    <div class="fs-lineups-participant-pitch__name">
+                        <span class="fs-lineups-participant-pitch__number">2</span>
+                        <span class="fs-lineups-participant-pitch__player-name">Walker</span>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--c">
+                            <div class="fs-badge-rating__icon-container">
+                                <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                            </div>
+                            <div class="fs-badge-rating__text-container">
+                                <span class="fs-badge-rating__text">6.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant-pitch">
+                    <div class="fs-lineups-participant-pitch__image">
+                        <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Dias Ruben.jpg" alt="Dias">
+                    </div>
+                    <div class="fs-lineups-participant-pitch__name">
+                        <span class="fs-lineups-participant-pitch__number">3</span>
+                        <span class="fs-lineups-participant-pitch__player-name">Dias</span>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--b">
+                            <div class="fs-badge-rating__icon-container">
+                                <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                            </div>
+                            <div class="fs-badge-rating__text-container">
+                                <span class="fs-badge-rating__text">7.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant-pitch">
+                    <div class="fs-lineups-participant-pitch__image">
+                        <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Akanji Manuel.jpg" alt="Akanji">
+                    </div>
+                    <div class="fs-lineups-participant-pitch__name">
+                        <span class="fs-lineups-participant-pitch__number">25</span>
+                        <span class="fs-lineups-participant-pitch__player-name">Akanji</span>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--b">
+                            <div class="fs-badge-rating__icon-container">
+                                <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                            </div>
+                            <div class="fs-badge-rating__text-container">
+                                <span class="fs-badge-rating__text">7.2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant-pitch">
+                    <div class="fs-lineups-participant-pitch__image">
+                        <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Gvardiol Josko.jpg" alt="Gvardiol">
+                    </div>
+                    <div class="fs-lineups-participant-pitch__name">
+                        <span class="fs-lineups-participant-pitch__number">24</span>
+                        <span class="fs-lineups-participant-pitch__player-name">Gvardiol</span>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--c">
+                            <div class="fs-badge-rating__icon-container">
+                                <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                            </div>
+                            <div class="fs-badge-rating__text-container">
+                                <span class="fs-badge-rating__text">6.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Yellow card.svg" alt="Yellow card">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5 Players Row (space-between) -->
+        <h3 style="font-size: 11px; font-weight: 700; color: #999999; margin: 16px 0 8px;">5 Players (space-between)</h3>
+        <div class="demo-pitch" style="width: 360px; padding: 16px;">
+            <div style="display: flex; justify-content: space-between;">
+                <div class="fs-lineups-participant-pitch">
+                    <div class="fs-lineups-participant-pitch__image">
+                        <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Walker Kyle.jpg" alt="Walker">
+                    </div>
+                    <div class="fs-lineups-participant-pitch__name">
+                        <span class="fs-lineups-participant-pitch__number">2</span>
+                        <span class="fs-lineups-participant-pitch__player-name">Walker</span>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--c">
+                            <div class="fs-badge-rating__icon-container">
+                                <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                            </div>
+                            <div class="fs-badge-rating__text-container">
+                                <span class="fs-badge-rating__text">6.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant-pitch">
+                    <div class="fs-lineups-participant-pitch__image">
+                        <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Dias Ruben.jpg" alt="Dias">
+                    </div>
+                    <div class="fs-lineups-participant-pitch__name">
+                        <span class="fs-lineups-participant-pitch__number">3</span>
+                        <span class="fs-lineups-participant-pitch__player-name">Dias</span>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--b">
+                            <div class="fs-badge-rating__icon-container">
+                                <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                            </div>
+                            <div class="fs-badge-rating__text-container">
+                                <span class="fs-badge-rating__text">7.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant-pitch">
+                    <div class="fs-lineups-participant-pitch__image">
+                        <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Rodri.jpg" alt="Rodri">
+                    </div>
+                    <div class="fs-lineups-participant-pitch__name">
+                        <span class="fs-lineups-participant-pitch__number">16</span>
+                        <span class="fs-lineups-participant-pitch__player-name">Rodri</span>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--a">
+                            <div class="fs-badge-rating__icon-container">
+                                <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                            </div>
+                            <div class="fs-badge-rating__text-container">
+                                <span class="fs-badge-rating__text">8.2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant-pitch">
+                    <div class="fs-lineups-participant-pitch__image">
+                        <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Akanji Manuel.jpg" alt="Akanji">
+                    </div>
+                    <div class="fs-lineups-participant-pitch__name">
+                        <span class="fs-lineups-participant-pitch__number">25</span>
+                        <span class="fs-lineups-participant-pitch__player-name">Akanji</span>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--b">
+                            <div class="fs-badge-rating__icon-container">
+                                <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                            </div>
+                            <div class="fs-badge-rating__text-container">
+                                <span class="fs-badge-rating__text">7.2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant-pitch">
+                    <div class="fs-lineups-participant-pitch__image">
+                        <img src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Gvardiol Josko.jpg" alt="Gvardiol">
+                    </div>
+                    <div class="fs-lineups-participant-pitch__name">
+                        <span class="fs-lineups-participant-pitch__number">24</span>
+                        <span class="fs-lineups-participant-pitch__player-name">Gvardiol</span>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--c">
+                            <div class="fs-badge-rating__icon-container">
+                                <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                            </div>
+                            <div class="fs-badge-rating__text-container">
+                                <span class="fs-badge-rating__text">6.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant-pitch__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Yellow card.svg" alt="Yellow card">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

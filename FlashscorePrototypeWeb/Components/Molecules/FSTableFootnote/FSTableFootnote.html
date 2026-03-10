@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSTableFootnote - Molecule Component</title>
+    <link rel="stylesheet" href="../../Atoms/FSTableSharedValue/FSTableSharedValue.css">
+    <link rel="stylesheet" href="FSTableFootnote.css">
+    <style>
+        /* Player Statistics Table Styles */
+        .player-stats-table {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            width: 100%;
+            background-color: #FFFFFF;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .player-stats-table__headline {
+            display: flex;
+            align-items: center;
+            min-height: 24px;
+            width: 100%;
+            margin-bottom: 4px;
+        }
+
+        .player-stats-table__headline-text {
+            font-family: 'Livesport Finder LCGJK', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 18px;
+            color: #001E28;
+            flex: 1 0 0;
+        }
+
+        .player-stats-table__rows {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            width: 100%;
+        }
+
+        .player-stats-table__row {
+            display: flex;
+            height: 24px;
+            min-height: 24px;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .player-stats-table__label-container {
+            display: flex;
+            height: 16px;
+            align-items: center;
+            padding-right: 8px;
+            flex-shrink: 0;
+        }
+
+        .player-stats-table__value {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 2px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>FSTableFootnote</h1>
+        <p>Table footnote component for displaying additional information and descriptions at the bottom of tables.</p>
+
+        <!-- ================================= -->
+        <!-- Example: With Stats Table         -->
+        <!-- ================================= -->
+        <h2>Usage with Player Stats Table</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <!-- Stats Table -->
+                <div class="player-stats-table">
+                    <div class="player-stats-table__headline">
+                        <span class="player-stats-table__headline-text">Shots</span>
+                    </div>
+                    <div class="player-stats-table__rows">
+                        <!-- Row 1 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Total shots</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">8</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 2 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Expected goals (xG)</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--background fs-table-shared-value--blue">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1.85</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 3 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Shots on target</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 4 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Big chances missed</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--background fs-table-shared-value--red">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table Footnote -->
+                    <div class="fs-table-footnote" style="margin-top: 12px;">
+                        <div class="fs-table-footnote__item">
+                            <img class="fs-table-footnote__icon" src="../../../Assets/Icons/Settings/Info rounded.svg" alt="">
+                            <span class="fs-table-footnote__text">Expected goals (xG) is a metric that measures the quality of a shot based on several variables such as distance, angle, and type of assist.</span>
+                        </div>
+                    </div>
+                </div>
+                <span class="demo-label">Table with footnote explaining xG</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Example 1: Text only              -->
+        <!-- ================================= -->
+        <h2>Text Only</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="demo-table">
+                    <div class="fs-table-footnote">
+                        <div class="fs-table-footnote__item">
+                            <span class="fs-table-footnote__text"><span class="fs-table-footnote__text--bold">xG:</span> Expected goals is a metric that measures the quality of a shot based on several variables.</span>
+                        </div>
+                        <div class="fs-table-footnote__item">
+                            <span class="fs-table-footnote__text"><span class="fs-table-footnote__text--bold">xGOT:</span> Expected goals on target is the likelihood that a shot will result in a goal based on where it ends up.</span>
+                        </div>
+                    </div>
+                </div>
+                <span class="demo-label">Multiple text lines</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Example 2: With icons             -->
+        <!-- ================================= -->
+        <h2>With Icons</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="demo-table">
+                    <div class="fs-table-footnote">
+                        <div class="fs-table-footnote__item">
+                            <img class="fs-table-footnote__icon" src="../../../Assets/Icons/Settings/Info rounded.svg" alt="">
+                            <span class="fs-table-footnote__text">Statistics are updated in real-time during live matches.</span>
+                        </div>
+                        <div class="fs-table-footnote__item">
+                            <img class="fs-table-footnote__icon" src="../../../Assets/Icons/Settings/Info rounded.svg" alt="">
+                            <span class="fs-table-footnote__text">Final statistics may differ slightly from live data after official confirmation.</span>
+                        </div>
+                    </div>
+                </div>
+                <span class="demo-label">With info icons</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Example 3: Mixed                  -->
+        <!-- ================================= -->
+        <h2>Mixed (Some with icons, some without)</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="demo-table">
+                    <div class="fs-table-footnote">
+                        <div class="fs-table-footnote__item">
+                            <img class="fs-table-footnote__icon" src="../../../Assets/Icons/Settings/Info rounded.svg" alt="">
+                            <span class="fs-table-footnote__text">xG values are calculated using advanced statistical models based on historical data.</span>
+                        </div>
+                        <div class="fs-table-footnote__item">
+                            <span class="fs-table-footnote__text">Pass accuracy is calculated as successful passes divided by total passes attempted.</span>
+                        </div>
+                        <div class="fs-table-footnote__item">
+                            <img class="fs-table-footnote__icon" src="../../../Assets/Icons/Settings/Info rounded.svg" alt="">
+                            <span class="fs-table-footnote__text">Duels include both aerial and ground duels won by the player.</span>
+                        </div>
+                    </div>
+                </div>
+                <span class="demo-label">Mixed format</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Example 4: Single line            -->
+        <!-- ================================= -->
+        <h2>Single Line</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="demo-table">
+                    <div class="fs-table-footnote">
+                        <div class="fs-table-footnote__item">
+                            <span class="fs-table-footnote__text">All statistics are provided by Opta Sports Data.</span>
+                        </div>
+                    </div>
+                </div>
+                <span class="demo-label">Single footnote</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Example 5: Long text              -->
+        <!-- ================================= -->
+        <h2>Long Text (Wrapping)</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="demo-table">
+                    <div class="fs-table-footnote">
+                        <div class="fs-table-footnote__item">
+                            <img class="fs-table-footnote__icon" src="../../../Assets/Icons/Settings/Info rounded.svg" alt="">
+                            <span class="fs-table-footnote__text"><span class="fs-table-footnote__text--bold">Expected goals (xG):</span> is a statistical measure of the quality of chances created and chances conceded. It is calculated based on several variables such as shot angle, distance from goal, body part used, type of pass and type of attack. The xG of a single shot ranges from 0 to 1 with 1 being the highest chance of scoring.</span>
+                        </div>
+                    </div>
+                </div>
+                <span class="demo-label">Long wrapping text</span>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

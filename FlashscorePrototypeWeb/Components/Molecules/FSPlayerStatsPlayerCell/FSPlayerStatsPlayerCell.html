@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSPlayerStatsPlayerCell - Molecule Component</title>
+    <link rel="stylesheet" href="../../Atoms/FSAssetBoxed/FSAssetBoxed.css">
+    <link rel="stylesheet" href="../../Atoms/FSActionsFavorite/FSActionsFavorite.css">
+    <link rel="stylesheet" href="FSPlayerStatsPlayerCell.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>FSPlayerStatsPlayerCell</h1>
+        <p>Player cell component for statistics tables, combining player photo, team logo, name, and position.</p>
+
+        <!-- ================================= -->
+        <!-- Small variant (Default)           -->
+        <!-- ================================= -->
+        <h2>Small variant (Default)</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="fs-player-stats-player-cell">
+                    <div class="fs-player-stats-player-cell__player-container">
+                        <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                            <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                 src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Ake Nathan.jpg" alt="Nathan">
+                        </div>
+                        <div class="fs-player-stats-player-cell__team-container">
+                            <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                                <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                     src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-player-stats-player-cell__text-container">
+                        <span class="fs-player-stats-player-cell__name">Ake N.</span>
+                        <span class="fs-player-stats-player-cell__position">Defender</span>
+                    </div>
+                </div>
+                <span class="demo-label">Player Stats Cell</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Different Players                 -->
+        <!-- ================================= -->
+        <h2>Different Players</h2>
+        <div class="demo-row">
+            <div class="fs-player-stats-player-cell">
+                <div class="fs-player-stats-player-cell__player-container">
+                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                             src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Haaland Erling Braut.jpg" alt="Haaland">
+                    </div>
+                    <div class="fs-player-stats-player-cell__team-container">
+                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                 src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City">
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-player-stats-player-cell__text-container">
+                    <span class="fs-player-stats-player-cell__name">Haaland E.</span>
+                    <span class="fs-player-stats-player-cell__position">Forward</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-row">
+            <div class="fs-player-stats-player-cell">
+                <div class="fs-player-stats-player-cell__player-container">
+                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                             src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Foden Phil.jpg" alt="Foden">
+                    </div>
+                    <div class="fs-player-stats-player-cell__team-container">
+                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                 src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City">
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-player-stats-player-cell__text-container">
+                    <span class="fs-player-stats-player-cell__name">Foden P.</span>
+                    <span class="fs-player-stats-player-cell__position">Midfielder</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-row">
+            <div class="fs-player-stats-player-cell">
+                <div class="fs-player-stats-player-cell__player-container">
+                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                             src="../../../Assets/PlayerPhotos/Football/Fulham/Rodrigo Muniz.jpg" alt="Muniz">
+                    </div>
+                    <div class="fs-player-stats-player-cell__team-container">
+                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                 src="../../../Assets/TeamLogos/Premier league/Fulham.png" alt="Fulham">
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-player-stats-player-cell__text-container">
+                    <span class="fs-player-stats-player-cell__name">Muniz R.</span>
+                    <span class="fs-player-stats-player-cell__position">Forward</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Different Positions               -->
+        <!-- ================================= -->
+        <h2>Different Positions</h2>
+        <div class="demo-row">
+            <div class="fs-player-stats-player-cell">
+                <div class="fs-player-stats-player-cell__player-container">
+                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                             src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Dias Ruben.jpg" alt="Dias">
+                    </div>
+                    <div class="fs-player-stats-player-cell__team-container">
+                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                 src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City">
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-player-stats-player-cell__text-container">
+                    <span class="fs-player-stats-player-cell__name">Dias R.</span>
+                    <span class="fs-player-stats-player-cell__position">Defender</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-row">
+            <div class="fs-player-stats-player-cell">
+                <div class="fs-player-stats-player-cell__player-container">
+                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                             src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Donnarumma Gianluigi.jpg" alt="Donnarumma">
+                    </div>
+                    <div class="fs-player-stats-player-cell__team-container">
+                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                 src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City">
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-player-stats-player-cell__text-container">
+                    <span class="fs-player-stats-player-cell__name">Donnarumma G.</span>
+                    <span class="fs-player-stats-player-cell__position">Goalkeeper</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Large variant                     -->
+        <!-- ================================= -->
+        <h2>Large variant</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="fs-player-stats-player-cell fs-player-stats-player-cell--large">
+                    <div class="fs-player-stats-player-cell__player-container">
+                        <div class="fs-asset-boxed fs-asset-boxed--68px fs-asset-boxed--player">
+                            <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                 src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Haaland Erling Braut.jpg" alt="Haaland">
+                        </div>
+                        <div class="fs-player-stats-player-cell__team-container">
+                            <div class="fs-asset-boxed fs-asset-boxed--26px fs-asset-boxed--asset">
+                                <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                     src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-player-stats-player-cell__text-container">
+                        <div class="fs-player-stats-player-cell__name-row">
+                            <span class="fs-player-stats-player-cell__name">Erling Haaland</span>
+                            <div class="fs-actions-favorite fs-actions-favorite--medium fs-actions-favorite--base">
+                                <svg class="fs-actions-favorite__icon" width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.346 0L7.245 6.847L0.404 6.832L0 8.141L5.544 12.354L3.415 19.191L4.473 20L9.999 15.758L15.526 20L16.584 19.191L14.455 12.354L19.999 8.141L19.596 6.832L12.753 6.847L10.654 0H9.346ZM8.399 7.793L9.999 2.575L11.6 7.793L12.256 8.293L17.468 8.282L13.245 11.493L12.994 12.302L14.616 17.511L10.404 14.281H9.594L5.384 17.511L7.005 12.302L6.754 11.493L2.53 8.282L7.744 8.293L8.399 7.793Z" fill="#999999"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="fs-player-stats-player-cell__position-row">
+                            <span class="fs-player-stats-player-cell__position">Forward</span>
+                            <img src="../../../Assets/Flags/Norway.imageset/Norway.svg" alt="Norway" class="fs-player-stats-player-cell__flag">
+                        </div>
+                    </div>
+                </div>
+                <span class="demo-label">Large with Favorite & Flag</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Large variant - Different Players -->
+        <!-- ================================= -->
+        <h2>Large variant - Different Players</h2>
+        <div class="demo-row">
+            <div class="fs-player-stats-player-cell fs-player-stats-player-cell--large">
+                <div class="fs-player-stats-player-cell__player-container">
+                    <div class="fs-asset-boxed fs-asset-boxed--68px fs-asset-boxed--player">
+                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                             src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Foden Phil.jpg" alt="Foden">
+                    </div>
+                    <div class="fs-player-stats-player-cell__team-container">
+                        <div class="fs-asset-boxed fs-asset-boxed--26px fs-asset-boxed--asset">
+                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                 src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City">
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-player-stats-player-cell__text-container">
+                    <div class="fs-player-stats-player-cell__name-row">
+                        <span class="fs-player-stats-player-cell__name">Phil Foden</span>
+                        <div class="fs-actions-favorite fs-actions-favorite--medium fs-actions-favorite--active">
+                            <svg class="fs-actions-favorite__icon" width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.346 0L7.245 6.847L0.404 6.832L0 8.141L5.544 12.354L3.415 19.191L4.473 20L9.999 15.758L15.526 20L16.584 19.191L14.455 12.354L19.999 8.141L19.596 6.832L12.753 6.847L10.654 0H9.346Z" fill="#FFCD00"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="fs-player-stats-player-cell__position-row">
+                        <span class="fs-player-stats-player-cell__position">Midfielder</span>
+                        <img src="../../../Assets/Flags/England.imageset/England.svg" alt="England" class="fs-player-stats-player-cell__flag">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-row">
+            <div class="fs-player-stats-player-cell fs-player-stats-player-cell--large">
+                <div class="fs-player-stats-player-cell__player-container">
+                    <div class="fs-asset-boxed fs-asset-boxed--68px fs-asset-boxed--player">
+                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                             src="../../../Assets/PlayerPhotos/Football/Fulham/Rodrigo Muniz.jpg" alt="Muniz">
+                    </div>
+                    <div class="fs-player-stats-player-cell__team-container">
+                        <div class="fs-asset-boxed fs-asset-boxed--26px fs-asset-boxed--asset">
+                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                 src="../../../Assets/TeamLogos/Premier league/Fulham.png" alt="Fulham">
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-player-stats-player-cell__text-container">
+                    <div class="fs-player-stats-player-cell__name-row">
+                        <span class="fs-player-stats-player-cell__name">Rodrigo Muniz</span>
+                        <div class="fs-actions-favorite fs-actions-favorite--medium fs-actions-favorite--base">
+                            <svg class="fs-actions-favorite__icon" width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.346 0L7.245 6.847L0.404 6.832L0 8.141L5.544 12.354L3.415 19.191L4.473 20L9.999 15.758L15.526 20L16.584 19.191L14.455 12.354L19.999 8.141L19.596 6.832L12.753 6.847L10.654 0H9.346ZM8.399 7.793L9.999 2.575L11.6 7.793L12.256 8.293L17.468 8.282L13.245 11.493L12.994 12.302L14.616 17.511L10.404 14.281H9.594L5.384 17.511L7.005 12.302L6.754 11.493L2.53 8.282L7.744 8.293L8.399 7.793Z" fill="#999999"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="fs-player-stats-player-cell__position-row">
+                        <span class="fs-player-stats-player-cell__position">Forward</span>
+                        <img src="../../../Assets/Flags/Brazil.imageset/Brazil.svg" alt="Brazil" class="fs-player-stats-player-cell__flag">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Usage Context                     -->
+        <!-- ================================= -->
+        <h2>Usage Context</h2>
+        <p style="font-size: 13px; color: #555E61; margin: 0 0 16px;">
+            <strong>Small variant:</strong> Used in player statistics tables to display player information with photo, team logo, name, and position.
+        </p>
+        <p style="font-size: 13px; color: #555E61; margin: 0 0 16px;">
+            <strong>Large variant:</strong> Used in player detail pages or prominent player cards. Includes favorite action button next to name and country flag next to position.
+        </p>
+
+    </div>
+</body>
+</html>

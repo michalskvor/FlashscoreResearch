@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bottom-Sheet Dialog - Mobile Layout Template</title>
+    <link rel="stylesheet" href="LayoutDialog.css">
+    <link rel="stylesheet" href="../../Atoms/FSButtonClose/FSButtonClose.css">
+    <link rel="stylesheet" href="../../Atoms/FSButton/FSButton.css">
+</head>
+<body>
+    <!-- Viewport Container (639px max width, 852px height) -->
+    <div class="layout-dialog-viewport">
+
+        <!-- Backdrop (Dims underlying content) -->
+        <div class="layout-dialog-backdrop"></div>
+
+        <!-- Bottom-Sheet Dialog -->
+        <div class="layout-dialog-bottom-sheet">
+
+            <!-- Close Button (Top-Right Corner) -->
+            <button class="fs-button-close layout-dialog-close" aria-label="Close">
+                <img src="../../../Assets/Icons/Action/Navigation/Close.svg" alt="" class="fs-button-close__icon">
+            </button>
+
+            <!-- Scrollable Body Content -->
+            <div class="layout-dialog-body">
+                <!--
+                    CONTENT INJECTION ZONE
+                    Add your dialog content here (Title, Text, Forms, Widgets, etc.)
+                -->
+                <h1 class="layout-dialog-title">Dialog Title</h1>
+                <p class="layout-dialog-text">
+                    This is a bottom-sheet dialog template for mobile layouts. The dialog has a minimum height of 230px and expands based on content.
+                </p>
+                <p class="layout-dialog-text">
+                    If content exceeds the available height, the body will scroll vertically while the footer remains sticky at the bottom.
+                </p>
+
+                <!-- Example: Additional content to demonstrate scrolling -->
+                <div class="layout-dialog-section">
+                    <h2 class="layout-dialog-subtitle">Section 1</h2>
+                    <p class="layout-dialog-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+
+                <div class="layout-dialog-section">
+                    <h2 class="layout-dialog-subtitle">Section 2</h2>
+                    <p class="layout-dialog-text">
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+
+                <div class="layout-dialog-section">
+                    <h2 class="layout-dialog-subtitle">Section 3</h2>
+                    <p class="layout-dialog-text">
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </p>
+                </div>
+                <div class="layout-dialog-section">
+                    <h2 class="layout-dialog-subtitle">Section 4</h2>
+                    <p class="layout-dialog-text">
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sticky Footer (Action Area) -->
+            <div class="layout-dialog-footer">
+                <button class="fs-button fs-button--primary fs-button--solid fs-button--medium layout-dialog-action-button">
+                    <span class="fs-button__label">Button</span>
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

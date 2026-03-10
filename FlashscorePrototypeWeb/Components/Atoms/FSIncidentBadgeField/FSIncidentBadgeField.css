@@ -1,5 +1,22 @@
 /* FSIncidentBadgeField Component Styles */
 
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Base badge container */
 .fs-incident-badge-field {
     display: flex;
@@ -9,7 +26,7 @@
     background-color: #FFFFFF; /* white */
     border: 1px solid #C8CDCD; /* grey-a/500 */
     border-radius: 4px;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
     flex-shrink: 0;
 }
@@ -23,6 +40,35 @@
 .fs-incident-badge-field--medium {
     width: 16px;
     height: 16px;
+}
+
+.fs-incident-badge-field--large {
+    width: 22px;
+    height: 22px;
+    box-sizing: border-box;
+}
+
+/* Large variant: Icon only */
+.fs-incident-badge-field--large.fs-incident-badge-field--icon-only {
+    width: 22px;
+    height: 22px;
+    box-sizing: border-box;
+}
+
+/* Large variant: Text only */
+.fs-incident-badge-field--large.fs-incident-badge-field--text-only {
+    min-width: 22px;
+    height: 22px;
+    padding: 0 2px;
+}
+
+/* Large variant: Icon + Text */
+.fs-incident-badge-field--large.fs-incident-badge-field--icon-text {
+    width: auto;
+    height: 22px;
+    flex-direction: row;
+    gap: 4px;
+    padding: 0 6px;
 }
 
 /* Icon styling */
@@ -39,6 +85,53 @@
 .fs-incident-badge-field--medium .fs-incident-badge-field__icon {
     width: 12px;
     height: 12px;
+}
+
+.fs-incident-badge-field--large .fs-incident-badge-field__icon {
+    width: 12px;
+    height: 12px;
+}
+
+.fs-incident-badge-field--large.fs-incident-badge-field--icon-text .fs-incident-badge-field__icon {
+    width: 14px;
+    height: 14px;
+}
+
+/* Text styling */
+.fs-incident-badge-field__text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #001E28;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.fs-incident-badge-field--large.fs-incident-badge-field--icon-text .fs-incident-badge-field__text {
+    font-weight: 700;
+}
+
+/* Badge counter (for icon-only variant) */
+.fs-incident-badge-field__badge {
+    position: absolute;
+    top: -7px;
+    left: 15px;
+    background-color: #0F2D37;
+    border-radius: 4px;
+    padding: 0 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fs-incident-badge-field__badge-text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 12px;
+    color: #FFFFFF;
+    text-align: center;
 }
 
 /* Demo container styles */

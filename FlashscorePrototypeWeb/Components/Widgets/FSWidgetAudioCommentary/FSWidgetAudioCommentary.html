@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSWidgetAudioCommentary - Widget Component</title>
+    <link rel="stylesheet" href="../../Molecules/FSHeadersSection/FSHeadersSection.css">
+    <link rel="stylesheet" href="../../Atoms/FSAudioButton/FSAudioButton.css">
+    <link rel="stylesheet" href="FSWidgetAudioCommentary.css">
+</head>
+<body style="padding: 16px; background: #FFFFFF; max-width: 639px;">
+
+    <!-- FSWidgetAudioCommentary Widget -->
+    <div class="fs-widget-audio-commentary">
+
+        <!-- Section Header -->
+        <div class="fs-headers-section">
+            <div class="fs-headers-section__left">
+                <span class="fs-headers-section__text">Audio commentary</span>
+            </div>
+            <div class="fs-headers-section__center"></div>
+            <div class="fs-headers-section__right"></div>
+        </div>
+
+        <!-- Body -->
+        <div class="fs-widget-audio-commentary__body">
+
+            <!-- Row with author and audio button -->
+            <div class="fs-widget-audio-commentary__row">
+                <!-- Left side: Icon + Author name -->
+                <div class="fs-widget-audio-commentary__left">
+                    <img src="../../../Assets/Icons/Incidents/Commentator.svg" alt="" class="fs-widget-audio-commentary__icon">
+                    <span class="fs-widget-audio-commentary__author">John Smith</span>
+                </div>
+                <!-- Right side: Audio button -->
+                <a href="#" class="fs-audio-button">
+                    <img src="../../../Assets/Icons/Incidents/Audio.svg" alt="" class="fs-audio-button__icon">
+                    <span class="fs-audio-button__label">Play live</span>
+                </a>
+            </div>
+
+            <!-- Additional note text -->
+            <p class="fs-widget-audio-commentary__note">4 688 listening now. Live broadcast BBC Sport.</p>
+
+        </div>
+    </div>
+
+</body>
+</html>

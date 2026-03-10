@@ -1,0 +1,132 @@
+/* FSTableFootnote - Molecule Component */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================== */
+/* BASE COMPONENT                              */
+/* =========================================== */
+
+.fs-table-footnote {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+/* =========================================== */
+/* FOOTNOTE ITEM                               */
+/* =========================================== */
+
+.fs-table-footnote__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+}
+
+/* =========================================== */
+/* ICON                                        */
+/* =========================================== */
+
+.fs-table-footnote__icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    color: #555E61;
+}
+
+/* =========================================== */
+/* TEXT                                        */
+/* =========================================== */
+
+.fs-table-footnote__text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #555E61;
+    flex: 1;
+}
+
+.fs-table-footnote__text--bold {
+    font-weight: 700;
+}
+
+/* =========================================== */
+/* DEMO STYLES                                 */
+/* =========================================== */
+
+.demo-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    background-color: #FFFFFF;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #001E28;
+    margin: 0 0 8px;
+}
+
+.demo-container > p {
+    font-size: 13px;
+    color: #555E61;
+    margin: 0 0 32px;
+}
+
+.demo-container h2 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999999;
+    margin: 24px 0 8px;
+}
+
+.demo-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.demo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.demo-label {
+    font-size: 11px;
+    color: #999999;
+    text-align: center;
+}
+
+/* Demo table wrapper */
+.demo-table {
+    width: 100%;
+    padding: 16px;
+    background-color: #F5F5F5;
+    border-radius: 8px;
+}

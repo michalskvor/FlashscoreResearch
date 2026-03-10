@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSWidgetPlayerStatsTable - Widget Component</title>
+    <link rel="stylesheet" href="../../Atoms/FSTabs/FSTabs.css">
+    <link rel="stylesheet" href="../../Atoms/FSSelect/FSSelect.css">
+    <link rel="stylesheet" href="../../Atoms/FSAssetBoxed/FSAssetBoxed.css">
+    <link rel="stylesheet" href="../../Molecules/FSPlayerStatsPlayerCell/FSPlayerStatsPlayerCell.css">
+    <link rel="stylesheet" href="../../Atoms/FSBadgeRating/FSBadgeRating.css">
+    <link rel="stylesheet" href="../../Atoms/FSTableSharedValue/FSTableSharedValue.css">
+    <link rel="stylesheet" href="../../Atoms/FSDivider/FSDivider.css">
+    <link rel="stylesheet" href="FSWidgetPlayerStatsTable.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>FSWidgetPlayerStatsTable</h1>
+        <p>Complex player statistics table with sticky columns, synchronized scrolling, and multiple tabs.</p>
+
+        <!-- ================================= -->
+        <!-- WIDGET CONTAINER                  -->
+        <!-- ================================= -->
+        <div class="fs-widget-player-stats-table" id="playerStatsTable">
+
+            <!-- Layer 1: Navigation Tabs -->
+            <div class="fs-widget-player-stats-table__tabs">
+                <button class="fs-tabs fs-tabs--tertiary fs-tabs--active" data-tab="top-stats">
+                    <span class="fs-tabs__text">Top Stats</span>
+                </button>
+                <button class="fs-tabs fs-tabs--tertiary" data-tab="shots">
+                    <span class="fs-tabs__text">Shots</span>
+                </button>
+                <button class="fs-tabs fs-tabs--tertiary" data-tab="attack">
+                    <span class="fs-tabs__text">Attack</span>
+                </button>
+                <button class="fs-tabs fs-tabs--tertiary" data-tab="passes">
+                    <span class="fs-tabs__text">Passes</span>
+                </button>
+                <button class="fs-tabs fs-tabs--tertiary" data-tab="defense">
+                    <span class="fs-tabs__text">Defense</span>
+                </button>
+                <button class="fs-tabs fs-tabs--tertiary" data-tab="goalkeeping">
+                    <span class="fs-tabs__text">Goalkeeping</span>
+                </button>
+                <button class="fs-tabs fs-tabs--tertiary" data-tab="general">
+                    <span class="fs-tabs__text">General</span>
+                </button>
+            </div>
+
+            <!-- ======================================= -->
+            <!-- TAB CONTENT: TOP STATS                  -->
+            <!-- ======================================= -->
+            <div class="fs-widget-player-stats-table__tab-content fs-widget-player-stats-table__tab-content--active" data-tab-content="top-stats">
+
+                <!-- Layer 2: Column Headers -->
+                <div class="fs-widget-player-stats-table__header">
+                    <div class="fs-widget-player-stats-table__header-sticky">
+                        <div class="fs-select fs-select--placeholder" style="width: 100%;">
+                            <span class="fs-select__text fs-select__text--placeholder">All</span>
+                            <img src="../../../Assets/Icons/Action/Navigation/Arrow/Down.svg" alt="" class="fs-select__chevron">
+                        </div>
+                    </div>
+                    <div class="fs-widget-player-stats-table__header-scroll-container" id="headerScroll">
+                        <div class="fs-widget-player-stats-table__header-row">
+                            <div class="fs-widget-player-stats-table__header-cell fs-widget-player-stats-table__header-cell--sorted">
+                                <span class="fs-widget-player-stats-table__header-cell-text">Player Rating</span>
+                                <img src="../../../Assets/Icons/Action/Navigation/Dropdown.svg" alt="" class="fs-widget-player-stats-table__header-cell-icon">
+                            </div>
+                            <div class="fs-widget-player-stats-table__header-cell">
+                                <span class="fs-widget-player-stats-table__header-cell-text">Total shots</span>
+                            </div>
+                            <div class="fs-widget-player-stats-table__header-cell">
+                                <span class="fs-widget-player-stats-table__header-cell-text">Expected Goals (xG)</span>
+                            </div>
+                            <div class="fs-widget-player-stats-table__header-cell">
+                                <span class="fs-widget-player-stats-table__header-cell-text">Accurate Passes</span>
+                            </div>
+                            <div class="fs-widget-player-stats-table__header-cell">
+                                <span class="fs-widget-player-stats-table__header-cell-text">Touches</span>
+                            </div>
+                            <div class="fs-widget-player-stats-table__header-cell">
+                                <span class="fs-widget-player-stats-table__header-cell-text">Touches in opposition box</span>
+                            </div>
+                            <div class="fs-widget-player-stats-table__header-cell">
+                                <span class="fs-widget-player-stats-table__header-cell-text">Successful dribbles</span>
+                            </div>
+                            <div class="fs-widget-player-stats-table__header-cell">
+                                <span class="fs-widget-player-stats-table__header-cell-text">Duels</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Layer 3: Data Rows -->
+                <div class="fs-widget-player-stats-table__body">
+                    <!-- Row 1 -->
+                    <div class="fs-widget-player-stats-table__row">
+                        <div class="fs-widget-player-stats-table__row-sticky">
+                            <div class="fs-player-stats-player-cell">
+                                <div class="fs-player-stats-player-cell__player-container">
+                                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                             src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Haaland Erling Braut.jpg" alt="Haaland">
+                                    </div>
+                                    <div class="fs-player-stats-player-cell__team-container">
+                                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                                 src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-player-stats-player-cell__text-container">
+                                    <span class="fs-player-stats-player-cell__name">Haaland E.</span>
+                                    <span class="fs-player-stats-player-cell__position">Forward</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-widget-player-stats-table__row-scroll-container" class="bodyScroll">
+                            <div class="fs-widget-player-stats-table__row-data">
+                                <div class="fs-widget-player-stats-table__data-cell fs-widget-player-stats-table__data-cell--sorted">
+                                    <div class="fs-badge-rating fs-badge-rating--best">
+                                        <span class="fs-badge-rating__text">7.7</span>
+                                        <img src="../../../Assets/Icons/Other/Rating Star.svg" alt="" class="fs-badge-rating__icon">
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">4</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">0.20</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">46/49 (94%)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">64</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">3</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">1/4 (25%)</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">3</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-divider fs-divider--horizontal fs-divider--primary"></div>
+
+                    <!-- Row 2 -->
+                    <div class="fs-widget-player-stats-table__row">
+                        <div class="fs-widget-player-stats-table__row-sticky">
+                            <div class="fs-player-stats-player-cell">
+                                <div class="fs-player-stats-player-cell__player-container">
+                                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                             src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Foden Phil.jpg" alt="Foden">
+                                    </div>
+                                    <div class="fs-player-stats-player-cell__team-container">
+                                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                                 src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-player-stats-player-cell__text-container">
+                                    <span class="fs-player-stats-player-cell__name">Foden P.</span>
+                                    <span class="fs-player-stats-player-cell__position">Midfielder</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-widget-player-stats-table__row-scroll-container" class="bodyScroll">
+                            <div class="fs-widget-player-stats-table__row-data">
+                                <div class="fs-widget-player-stats-table__data-cell fs-widget-player-stats-table__data-cell--sorted">
+                                    <div class="fs-badge-rating fs-badge-rating--b">
+                                        <span class="fs-badge-rating__text">7.6</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">-</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">-</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">81/86 (94%)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">99</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">-</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">-</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">7</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-divider fs-divider--horizontal fs-divider--primary"></div>
+
+                    <!-- Row 3 -->
+                    <div class="fs-widget-player-stats-table__row">
+                        <div class="fs-widget-player-stats-table__row-sticky">
+                            <div class="fs-player-stats-player-cell">
+                                <div class="fs-player-stats-player-cell__player-container">
+                                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                             src="../../../Assets/PlayerPhotos/Football/Fulham/Rodrigo Muniz.jpg" alt="Muniz">
+                                    </div>
+                                    <div class="fs-player-stats-player-cell__team-container">
+                                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                                 src="../../../Assets/TeamLogos/Premier league/Fulham.png" alt="Fulham">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-player-stats-player-cell__text-container">
+                                    <span class="fs-player-stats-player-cell__name">Muniz R.</span>
+                                    <span class="fs-player-stats-player-cell__position">Forward</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-widget-player-stats-table__row-scroll-container" class="bodyScroll">
+                            <div class="fs-widget-player-stats-table__row-data">
+                                <div class="fs-widget-player-stats-table__data-cell fs-widget-player-stats-table__data-cell--sorted">
+                                    <div class="fs-badge-rating fs-badge-rating--b">
+                                        <span class="fs-badge-rating__text">7.6</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">2</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">0.12</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                           
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">5/6 (83%)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">9</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">-</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">-</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-divider fs-divider--horizontal fs-divider--primary"></div>
+
+                     <!-- Row 4 -->
+                    <div class="fs-widget-player-stats-table__row">
+                        <div class="fs-widget-player-stats-table__row-sticky">
+                            <div class="fs-player-stats-player-cell">
+                                <div class="fs-player-stats-player-cell__player-container">
+                                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                             src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Silva Bernardo.jpg" alt="Silva">
+                                    </div>
+                                    <div class="fs-player-stats-player-cell__team-container">
+                                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                                 src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-player-stats-player-cell__text-container">
+                                    <span class="fs-player-stats-player-cell__name">Silva B.</span>
+                                    <span class="fs-player-stats-player-cell__position">Midfielder</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-widget-player-stats-table__row-scroll-container" class="bodyScroll">
+                            <div class="fs-widget-player-stats-table__row-data">
+                                <div class="fs-widget-player-stats-table__data-cell fs-widget-player-stats-table__data-cell--sorted">
+                                    <div class="fs-badge-rating fs-badge-rating--b">
+                                        <span class="fs-badge-rating__text">7.5</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">3</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">0.27</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1</span>
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">/3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">73</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">9</span>
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">/11</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">1/4 (25%)</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">3</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-divider fs-divider--horizontal fs-divider--primary"></div>
+
+                     <!-- Row 5 -->
+                    <div class="fs-widget-player-stats-table__row">
+                        <div class="fs-widget-player-stats-table__row-sticky">
+                            <div class="fs-player-stats-player-cell">
+                                <div class="fs-player-stats-player-cell__player-container">
+                                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                             src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Dias Ruben.jpg" alt="Dias">
+                                    </div>
+                                    <div class="fs-player-stats-player-cell__team-container">
+                                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                                 src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-player-stats-player-cell__text-container">
+                                    <span class="fs-player-stats-player-cell__name">Dias R.</span>
+                                    <span class="fs-player-stats-player-cell__position">Defender</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-widget-player-stats-table__row-scroll-container" class="bodyScroll">
+                            <div class="fs-widget-player-stats-table__row-data">
+                                <div class="fs-widget-player-stats-table__data-cell fs-widget-player-stats-table__data-cell--sorted">
+                                    <div class="fs-badge-rating fs-badge-rating--b">
+                                        <span class="fs-badge-rating__text">7.5</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">3</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">0.20</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1</span>
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">/4</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">69</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">8</span>
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">/12</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">1/4 (25%)</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">3</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-divider fs-divider--horizontal fs-divider--primary"></div>
+
+                    <!-- Row 6 -->
+                    <div class="fs-widget-player-stats-table__row">
+                        <div class="fs-widget-player-stats-table__row-sticky">
+                            <div class="fs-player-stats-player-cell">
+                                <div class="fs-player-stats-player-cell__player-container">
+                                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                             src="../../../Assets/PlayerPhotos/Football/Fulham/Leno Bernd.jpg" alt="Leno">
+                                    </div>
+                                    <div class="fs-player-stats-player-cell__team-container">
+                                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                                 src="../../../Assets/TeamLogos/Premier league/Fulham.png" alt="Fulham">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-player-stats-player-cell__text-container">
+                                    <span class="fs-player-stats-player-cell__name">Leno B.</span>
+                                    <span class="fs-player-stats-player-cell__position">Goalkeeper</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-widget-player-stats-table__row-scroll-container" class="bodyScroll">
+                            <div class="fs-widget-player-stats-table__row-data">
+                                <div class="fs-widget-player-stats-table__data-cell fs-widget-player-stats-table__data-cell--sorted">
+                                    <div class="fs-badge-rating fs-badge-rating--b">
+                                        <span class="fs-badge-rating__text">7.4</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">–</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">–</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">–</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">58</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">7</span>
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">/9</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">1/4 (25%)</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">3</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-divider fs-divider--horizontal fs-divider--primary"></div>
+
+                    <!-- Row 7 -->
+                    <div class="fs-widget-player-stats-table__row">
+                        <div class="fs-widget-player-stats-table__row-sticky">
+                            <div class="fs-player-stats-player-cell">
+                                <div class="fs-player-stats-player-cell__player-container">
+                                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                             src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Rodri.jpg" alt="Rodri">
+                                    </div>
+                                    <div class="fs-player-stats-player-cell__team-container">
+                                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                                 src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-player-stats-player-cell__text-container">
+                                    <span class="fs-player-stats-player-cell__name">Rodri</span>
+                                    <span class="fs-player-stats-player-cell__position">Midfielder</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-widget-player-stats-table__row-scroll-container" class="bodyScroll">
+                            <div class="fs-widget-player-stats-table__row-data">
+                                <div class="fs-widget-player-stats-table__data-cell fs-widget-player-stats-table__data-cell--sorted">
+                                    <div class="fs-badge-rating fs-badge-rating--b">
+                                        <span class="fs-badge-rating__text">7.4</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">2</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">0.12</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">0</span>
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">/1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">56</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">6</span>
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">/6</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">1/4 (25%)</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">3</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-divider fs-divider--horizontal fs-divider--primary"></div>
+
+                    <!-- Row 8 -->
+                    <div class="fs-widget-player-stats-table__row">
+                        <div class="fs-widget-player-stats-table__row-sticky">
+                            <div class="fs-player-stats-player-cell">
+                                <div class="fs-player-stats-player-cell__player-container">
+                                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                             src="../../../Assets/PlayerPhotos/Football/Fulham/Andersen Joachim.jpg" alt="Andersen">
+                                    </div>
+                                    <div class="fs-player-stats-player-cell__team-container">
+                                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                                 src="../../../Assets/TeamLogos/Premier league/Fulham.png" alt="Fulham">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-player-stats-player-cell__text-container">
+                                    <span class="fs-player-stats-player-cell__name">Andersen J.</span>
+                                    <span class="fs-player-stats-player-cell__position">Defender</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-widget-player-stats-table__row-scroll-container" class="bodyScroll">
+                            <div class="fs-widget-player-stats-table__row-data">
+                                <div class="fs-widget-player-stats-table__data-cell fs-widget-player-stats-table__data-cell--sorted">
+                                    <div class="fs-badge-rating fs-badge-rating--b">
+                                        <span class="fs-badge-rating__text">7.2</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">10</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1.8</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">5</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">38</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">78%</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">1/4 (25%)</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">3</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-divider fs-divider--horizontal fs-divider--primary"></div>
+
+                    <!-- Row 9 -->
+                    <div class="fs-widget-player-stats-table__row">
+                        <div class="fs-widget-player-stats-table__row-sticky">
+                            <div class="fs-player-stats-player-cell">
+                                <div class="fs-player-stats-player-cell__player-container">
+                                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                             src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Marmoush Omar.jpg" alt="Marmoush">
+                                    </div>
+                                    <div class="fs-player-stats-player-cell__team-container">
+                                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                                 src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-player-stats-player-cell__text-container">
+                                    <span class="fs-player-stats-player-cell__name">Marmoush O.</span>
+                                    <span class="fs-player-stats-player-cell__position">Forward</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-widget-player-stats-table__row-scroll-container" class="bodyScroll">
+                            <div class="fs-widget-player-stats-table__row-data">
+                                <div class="fs-widget-player-stats-table__data-cell fs-widget-player-stats-table__data-cell--sorted">
+                                    <div class="fs-badge-rating fs-badge-rating--b">
+                                        <span class="fs-badge-rating__text">7.2</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">10</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1.8</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">5</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">38</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">78%</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">1/4 (25%)</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">3</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-divider fs-divider--horizontal fs-divider--primary"></div>
+
+                    <!-- Row 10 -->
+                    <div class="fs-widget-player-stats-table__row">
+                        <div class="fs-widget-player-stats-table__row-sticky">
+                            <div class="fs-player-stats-player-cell">
+                                <div class="fs-player-stats-player-cell__player-container">
+                                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                             src="../../../Assets/PlayerPhotos/Football/Fulham/Bassey Calvin.jpg" alt="Bassey">
+                                    </div>
+                                    <div class="fs-player-stats-player-cell__team-container">
+                                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                                 src="../../../Assets/TeamLogos/Premier league/Fulham.png" alt="Fulham">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-player-stats-player-cell__text-container">
+                                    <span class="fs-player-stats-player-cell__name">Bassey C.</span>
+                                    <span class="fs-player-stats-player-cell__position">Defender</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-widget-player-stats-table__row-scroll-container" class="bodyScroll">
+                            <div class="fs-widget-player-stats-table__row-data">
+                                <div class="fs-widget-player-stats-table__data-cell fs-widget-player-stats-table__data-cell--sorted">
+                                    <div class="fs-badge-rating fs-badge-rating--c">
+                                        <span class="fs-badge-rating__text">6.9</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">10</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1.8</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">5</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">38</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">78%</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">1/4 (25%)</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">3</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-divider fs-divider--horizontal fs-divider--primary"></div>
+
+                    <!-- Row 11 -->
+                    <div class="fs-widget-player-stats-table__row">
+                        <div class="fs-widget-player-stats-table__row-sticky">
+                            <div class="fs-player-stats-player-cell">
+                                <div class="fs-player-stats-player-cell__player-container">
+                                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                             src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Stones John.jpg" alt="Stones">
+                                    </div>
+                                    <div class="fs-player-stats-player-cell__team-container">
+                                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                                 src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-player-stats-player-cell__text-container">
+                                    <span class="fs-player-stats-player-cell__name">Stones J.</span>
+                                    <span class="fs-player-stats-player-cell__position">Defender</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-widget-player-stats-table__row-scroll-container" class="bodyScroll">
+                            <div class="fs-widget-player-stats-table__row-data">
+                                <div class="fs-widget-player-stats-table__data-cell fs-widget-player-stats-table__data-cell--sorted">
+                                    <div class="fs-badge-rating fs-badge-rating--c">
+                                        <span class="fs-badge-rating__text">6.9</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">10</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1.8</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">5</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">38</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">78%</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">1/4 (25%)</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">3</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-divider fs-divider--horizontal fs-divider--primary"></div>
+
+                    <!-- Row 12 -->
+                    <div class="fs-widget-player-stats-table__row">
+                        <div class="fs-widget-player-stats-table__row-sticky">
+                            <div class="fs-player-stats-player-cell">
+                                <div class="fs-player-stats-player-cell__player-container">
+                                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                             src="../../../Assets/PlayerPhotos/Football/Fulham/Smith Rowe Emile.jpg" alt="Smith Rowe">
+                                    </div>
+                                    <div class="fs-player-stats-player-cell__team-container">
+                                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                                 src="../../../Assets/TeamLogos/Premier league/Fulham.png" alt="Fulham">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-player-stats-player-cell__text-container">
+                                    <span class="fs-player-stats-player-cell__name">Smith Rowe E.</span>
+                                    <span class="fs-player-stats-player-cell__position">Midfielder</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-widget-player-stats-table__row-scroll-container" class="bodyScroll">
+                            <div class="fs-widget-player-stats-table__row-data">
+                                <div class="fs-widget-player-stats-table__data-cell fs-widget-player-stats-table__data-cell--sorted">
+                                    <div class="fs-badge-rating fs-badge-rating--c">
+                                        <span class="fs-badge-rating__text">6.8</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">10</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1.8</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">5</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">38</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">78%</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">1/4 (25%)</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">3</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-divider fs-divider--horizontal fs-divider--primary"></div>
+
+                    <!-- Row 13 -->
+                    <div class="fs-widget-player-stats-table__row">
+                        <div class="fs-widget-player-stats-table__row-sticky">
+                            <div class="fs-player-stats-player-cell">
+                                <div class="fs-player-stats-player-cell__player-container">
+                                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                             src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Kovacic Mateo.jpg" alt="Kovacic">
+                                    </div>
+                                    <div class="fs-player-stats-player-cell__team-container">
+                                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                                 src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-player-stats-player-cell__text-container">
+                                    <span class="fs-player-stats-player-cell__name">Kovacic M.</span>
+                                    <span class="fs-player-stats-player-cell__position">Midfielder</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-widget-player-stats-table__row-scroll-container" class="bodyScroll">
+                            <div class="fs-widget-player-stats-table__row-data">
+                                <div class="fs-widget-player-stats-table__data-cell fs-widget-player-stats-table__data-cell--sorted">
+                                    <div class="fs-badge-rating fs-badge-rating--c">
+                                        <span class="fs-badge-rating__text">6.6</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">10</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1.8</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">5</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">38</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">78%</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">1/4 (25%)</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">3</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-divider fs-divider--horizontal fs-divider--primary"></div>
+
+                    <!-- Row 14 -->
+                    <div class="fs-widget-player-stats-table__row">
+                        <div class="fs-widget-player-stats-table__row-sticky">
+                            <div class="fs-player-stats-player-cell">
+                                <div class="fs-player-stats-player-cell__player-container">
+                                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                             src="../../../Assets/PlayerPhotos/Football/Fulham/Jimenez Raul.jpg" alt="Jimenez">
+                                    </div>
+                                    <div class="fs-player-stats-player-cell__team-container">
+                                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                                 src="../../../Assets/TeamLogos/Premier league/Fulham.png" alt="Fulham">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-player-stats-player-cell__text-container">
+                                    <span class="fs-player-stats-player-cell__name">Jiménez R.</span>
+                                    <span class="fs-player-stats-player-cell__position">Forward</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-widget-player-stats-table__row-scroll-container" class="bodyScroll">
+                            <div class="fs-widget-player-stats-table__row-data">
+                                <div class="fs-widget-player-stats-table__data-cell fs-widget-player-stats-table__data-cell--sorted">
+                                    <div class="fs-badge-rating fs-badge-rating--c">
+                                        <span class="fs-badge-rating__text">6.6</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">10</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1.8</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">5</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">38</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">78%</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">1/4 (25%)</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">3</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-divider fs-divider--horizontal fs-divider--primary"></div>
+
+                    <!-- Row 15 -->
+                    <div class="fs-widget-player-stats-table__row">
+                        <div class="fs-widget-player-stats-table__row-sticky">
+                            <div class="fs-player-stats-player-cell">
+                                <div class="fs-player-stats-player-cell__player-container">
+                                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                             src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Gvardiol Josko.jpg" alt="Gvardiol">
+                                    </div>
+                                    <div class="fs-player-stats-player-cell__team-container">
+                                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                                 src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-player-stats-player-cell__text-container">
+                                    <span class="fs-player-stats-player-cell__name">Gvardiol J.</span>
+                                    <span class="fs-player-stats-player-cell__position">Defender</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-widget-player-stats-table__row-scroll-container" class="bodyScroll">
+                            <div class="fs-widget-player-stats-table__row-data">
+                                <div class="fs-widget-player-stats-table__data-cell fs-widget-player-stats-table__data-cell--sorted">
+                                    <div class="fs-badge-rating fs-badge-rating--d">
+                                        <span class="fs-badge-rating__text">6.4</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">10</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1.8</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">5</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">38</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">78%</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">1/4 (25%)</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">3</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-divider fs-divider--horizontal fs-divider--primary"></div>
+
+                    <!-- Row 16 -->
+                    <div class="fs-widget-player-stats-table__row">
+                        <div class="fs-widget-player-stats-table__row-sticky">
+                            <div class="fs-player-stats-player-cell">
+                                <div class="fs-player-stats-player-cell__player-container">
+                                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                             src="../../../Assets/PlayerPhotos/Football/Fulham/Berge Sander.jpg" alt="Berge">
+                                    </div>
+                                    <div class="fs-player-stats-player-cell__team-container">
+                                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                                 src="../../../Assets/TeamLogos/Premier league/Fulham.png" alt="Fulham">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-player-stats-player-cell__text-container">
+                                    <span class="fs-player-stats-player-cell__name">Berge S.</span>
+                                    <span class="fs-player-stats-player-cell__position">Midfielder</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-widget-player-stats-table__row-scroll-container" class="bodyScroll">
+                            <div class="fs-widget-player-stats-table__row-data">
+                                <div class="fs-widget-player-stats-table__data-cell fs-widget-player-stats-table__data-cell--sorted">
+                                    <div class="fs-badge-rating fs-badge-rating--d">
+                                        <span class="fs-badge-rating__text">6.4</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">10</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1.8</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">5</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">38</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">78%</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">1/4 (25%)</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <div class="fs-table-shared-value__text-container">
+                                            <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">3</span>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-divider fs-divider--horizontal fs-divider--primary"></div>
+
+                </div>
+            </div>
+
+            <!-- ======================================= -->
+            <!-- TAB CONTENT: SHOTS                      -->
+            <!-- ======================================= -->
+            <div class="fs-widget-player-stats-table__tab-content" data-tab-content="shots">
+
+                <!-- Layer 2: Column Headers -->
+                <div class="fs-widget-player-stats-table__header">
+                    <div class="fs-widget-player-stats-table__header-sticky">
+                        <div class="fs-select fs-select--placeholder" style="width: 100%;">
+                            <span class="fs-select__text fs-select__text--placeholder">All</span>
+                            <img src="../../../Assets/Icons/Action/Navigation/Arrow/Down.svg" alt="" class="fs-select__chevron">
+                        </div>
+                    </div>
+                    <div class="fs-widget-player-stats-table__header-scroll-container">
+                        <div class="fs-widget-player-stats-table__header-row">
+                            <div class="fs-widget-player-stats-table__header-cell fs-widget-player-stats-table__header-cell--sorted">
+                                <span class="fs-widget-player-stats-table__header-cell-text">Total Shots</span>
+                                <img src="../../../Assets/Icons/Action/Navigation/Arrow/Down.svg" alt="" class="fs-widget-player-stats-table__header-cell-icon">
+                            </div>
+                            <div class="fs-widget-player-stats-table__header-cell">
+                                <span class="fs-widget-player-stats-table__header-cell-text">Goals</span>
+                            </div>
+                            <div class="fs-widget-player-stats-table__header-cell">
+                                <span class="fs-widget-player-stats-table__header-cell-text">Expected Goals (xG)</span>
+                            </div>
+                            <div class="fs-widget-player-stats-table__header-cell">
+                                <span class="fs-widget-player-stats-table__header-cell-text">xG on target (xGOT)</span>
+                            </div>
+                            <div class="fs-widget-player-stats-table__header-cell">
+                                <span class="fs-widget-player-stats-table__header-cell-text">Shots on target</span>
+                            </div>
+                            <div class="fs-widget-player-stats-table__header-cell">
+                                <span class="fs-widget-player-stats-table__header-cell-text">Shots off target</span>
+                            </div>
+                            <div class="fs-widget-player-stats-table__header-cell">
+                                <span class="fs-widget-player-stats-table__header-cell-text">Blocked shots</span>
+                            </div>
+                            <div class="fs-widget-player-stats-table__header-cell">
+                                <span class="fs-widget-player-stats-table__header-cell-text">Shots inside the box</span>
+                            </div>
+                            <div class="fs-widget-player-stats-table__header-cell">
+                                <span class="fs-widget-player-stats-table__header-cell-text">Shots outside the box</span>
+                            </div>
+                            <div class="fs-widget-player-stats-table__header-cell">
+                                <span class="fs-widget-player-stats-table__header-cell-text">Headed shots</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Layer 3: Data Rows -->
+                <div class="fs-widget-player-stats-table__body">
+                    <!-- Row 1 -->
+                    <div class="fs-widget-player-stats-table__row">
+                        <div class="fs-widget-player-stats-table__row-sticky">
+                            <div class="fs-player-stats-player-cell">
+                                <div class="fs-player-stats-player-cell__player-container">
+                                    <div class="fs-asset-boxed fs-asset-boxed--32px fs-asset-boxed--player">
+                                        <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                             src="../../../Assets/PlayerPhotos/Football/ManchesterCity2/Haaland Erling Braut.jpg" alt="Haaland">
+                                    </div>
+                                    <div class="fs-player-stats-player-cell__team-container">
+                                        <div class="fs-asset-boxed fs-asset-boxed--18px fs-asset-boxed--asset">
+                                            <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                                 src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Man City">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-player-stats-player-cell__text-container">
+                                    <span class="fs-player-stats-player-cell__name">Haaland E.</span>
+                                    <span class="fs-player-stats-player-cell__position">Forward</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-widget-player-stats-table__row-scroll-container">
+                            <div class="fs-widget-player-stats-table__row-data">
+                                <div class="fs-widget-player-stats-table__data-cell fs-widget-player-stats-table__data-cell--sorted">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">52</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">18</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">15.2</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">12.8</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">28</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">16</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">8</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">38</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">14</span>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-player-stats-table__data-cell">
+                                    <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">6</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-divider"></div>
+                </div>
+            </div>
+
+            <!-- Additional tabs (Attack, Passes, Defense, Goalkeeping, General) would follow the same pattern -->
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript for tab switching and synchronized scrolling -->
+    <script>
+        // Tab switching
+        const tabs = document.querySelectorAll('.fs-tabs[data-tab]');
+        const tabContents = document.querySelectorAll('.fs-widget-player-stats-table__tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabName = tab.getAttribute('data-tab');
+
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('fs-tabs--active'));
+
+                // Add active class to clicked tab
+                tab.classList.add('fs-tabs--active');
+
+                // Hide all tab contents
+                tabContents.forEach(content => {
+                    content.classList.remove('fs-widget-player-stats-table__tab-content--active');
+                });
+
+                // Show selected tab content
+                const selectedContent = document.querySelector(`[data-tab-content="${tabName}"]`);
+                if (selectedContent) {
+                    selectedContent.classList.add('fs-widget-player-stats-table__tab-content--active');
+                }
+            });
+        });
+
+        // Synchronized scrolling
+        const headerScrolls = document.querySelectorAll('.fs-widget-player-stats-table__header-scroll-container');
+        const bodyScrolls = document.querySelectorAll('.fs-widget-player-stats-table__row-scroll-container');
+        const table = document.getElementById('playerStatsTable');
+
+        // Sync header scroll with body scroll
+        headerScrolls.forEach(headerScroll => {
+            headerScroll.addEventListener('scroll', () => {
+                const scrollLeft = headerScroll.scrollLeft;
+                bodyScrolls.forEach(bodyScroll => {
+                    bodyScroll.scrollLeft = scrollLeft;
+                });
+
+                // Add shadow to sticky column when scrolling
+                if (scrollLeft > 0) {
+                    table.classList.add('fs-widget-player-stats-table--scrolled');
+                } else {
+                    table.classList.remove('fs-widget-player-stats-table--scrolled');
+                }
+            });
+        });
+
+        // Sync body scroll with header scroll
+        bodyScrolls.forEach(bodyScroll => {
+            bodyScroll.addEventListener('scroll', () => {
+                const scrollLeft = bodyScroll.scrollLeft;
+                headerScrolls.forEach(headerScroll => {
+                    headerScroll.scrollLeft = scrollLeft;
+                });
+                bodyScrolls.forEach(bs => {
+                    if (bs !== bodyScroll) {
+                        bs.scrollLeft = scrollLeft;
+                    }
+                });
+
+                // Add shadow to sticky column when scrolling
+                if (scrollLeft > 0) {
+                    table.classList.add('fs-widget-player-stats-table--scrolled');
+                } else {
+                    table.classList.remove('fs-widget-player-stats-table--scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

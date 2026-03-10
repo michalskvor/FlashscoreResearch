@@ -1,0 +1,217 @@
+/* FSLineupsParticipantPitch - Molecule Component */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================== */
+/* BASE COMPONENT                              */
+/* =========================================== */
+
+.fs-lineups-participant-pitch {
+    position: relative;
+    width: 64px;
+    height: 50px;
+}
+
+/* =========================================== */
+/* PLAYER IMAGE                                */
+/* =========================================== */
+
+.fs-lineups-participant-pitch__image {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    max-width: 36px;
+    max-height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fs-lineups-participant-pitch__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================== */
+/* PLAYER NAME BADGE                           */
+/* =========================================== */
+
+.fs-lineups-participant-pitch__name {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    height: 14px;
+    max-width: 70px;
+    padding: 0 2px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    text-align: center;
+}
+
+.fs-lineups-participant-pitch__number {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    color: #999999;
+    flex-shrink: 0;
+}
+
+.fs-lineups-participant-pitch__player-name {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 12px;
+    color: #001E28;
+    flex: 1 0 0;
+    min-width: 1px;
+    min-height: 1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* =========================================== */
+/* RATING BADGE                                */
+/* =========================================== */
+
+.fs-lineups-participant-pitch__rating {
+    position: absolute;
+    bottom: 12px;
+    right: 0;
+}
+
+/* =========================================== */
+/* INCIDENTS                                   */
+/* =========================================== */
+
+.fs-lineups-participant-pitch__incidents {
+    position: absolute;
+    bottom: 12px;
+    left: 0px;
+}
+
+/* =========================================== */
+/* SIZE VARIANT - LARGE                        */
+/* =========================================== */
+
+.fs-lineups-participant-pitch--large .fs-lineups-participant-pitch__image {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    max-width: 42px;
+    max-height: 42px;
+}
+
+.fs-lineups-participant-pitch--large .fs-lineups-participant-pitch__name {
+    height: 16px;
+}
+
+.fs-lineups-participant-pitch--large .fs-lineups-participant-pitch__number {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.fs-lineups-participant-pitch--large .fs-lineups-participant-pitch__player-name {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.fs-lineups-participant-pitch--large .fs-lineups-participant-pitch__rating {
+    bottom: 14px;
+}
+
+.fs-lineups-participant-pitch--large .fs-lineups-participant-pitch__incidents {
+    bottom: 14px;
+}
+
+/* =========================================== */
+/* DEMO STYLES                                 */
+/* =========================================== */
+
+.demo-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    background-color: #FFFFFF;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #001E28;
+    margin: 0 0 8px;
+}
+
+.demo-container > p {
+    font-size: 13px;
+    color: #555E61;
+    margin: 0 0 32px;
+}
+
+.demo-container h2 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999999;
+    margin: 24px 0 8px;
+}
+
+.demo-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: 16px;
+}
+
+.demo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.demo-label {
+    font-size: 11px;
+    color: #999999;
+    text-align: center;
+}
+
+.demo-pitch {
+    background-color: #4CAF50;
+    padding: 32px;
+    display: inline-block;
+    border-radius: 8px;
+}

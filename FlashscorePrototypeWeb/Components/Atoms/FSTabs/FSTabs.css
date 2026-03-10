@@ -198,6 +198,9 @@ button.fs-tabs--secondary.fs-tabs--grey-base:hover .fs-tabs__text {
 button.fs-tabs--secondary.fs-tabs--grey-base.fs-tabs--active:hover {
     background-color: #FF0046;
 }
+button.fs-tabs--secondary.fs-tabs--grey-base.fs-tabs--active:hover .fs-tabs__text {
+    color: #ffffff;
+}
 
 /* ========================================== */
 /* TERTIARY VARIANT (Grey Background Style)  */

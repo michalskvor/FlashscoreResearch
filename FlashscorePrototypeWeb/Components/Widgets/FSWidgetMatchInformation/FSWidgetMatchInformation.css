@@ -35,7 +35,7 @@
 .fs-widget-match-information__rows {
     display: flex;
     flex-direction: column;
-    padding: 12px 12px 16px;
+    padding: 12px 12px 20px;
     gap: 16px;
 }
 

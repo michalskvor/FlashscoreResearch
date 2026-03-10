@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSBadgeRating - Atom Component</title>
+    <link rel="stylesheet" href="FSBadgeRating.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>FSBadgeRating</h1>
+        <p>Player rating badge with color-coded scale from F (worst) to Best (9.5+ with star).</p>
+
+        <!-- ================================= -->
+        <!-- All Rating Types                  -->
+        <!-- ================================= -->
+        <h2>Rating Scale</h2>
+        <div class="demo-row">
+            <!-- Best -->
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--best">
+                    <span class="fs-badge-rating__text">9.5</span>
+                    <img src="../../../Assets/Icons/Other/Rating Star.svg" alt="" class="fs-badge-rating__icon">
+                </div>
+                <span class="demo-label">Best (9.5+)</span>
+            </div>
+
+            <!-- A -->
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--a">
+                    <span class="fs-badge-rating__text">8.8</span>
+                </div>
+                <span class="demo-label">A (8.0-9.4)</span>
+            </div>
+
+            <!-- B -->
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--b">
+                    <span class="fs-badge-rating__text">7.1</span>
+                </div>
+                <span class="demo-label">B (7.0-7.9)</span>
+            </div>
+
+            <!-- C -->
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--c">
+                    <span class="fs-badge-rating__text">6.6</span>
+                </div>
+                <span class="demo-label">C (6.5-6.9)</span>
+            </div>
+
+            <!-- D -->
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--d">
+                    <span class="fs-badge-rating__text">6.1</span>
+                </div>
+                <span class="demo-label">D (6.0-6.4)</span>
+            </div>
+
+            <!-- F -->
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--f">
+                    <span class="fs-badge-rating__text">5.0</span>
+                </div>
+                <span class="demo-label">F (below 6.0)</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Different Values                  -->
+        <!-- ================================= -->
+        <h2>Different Rating Values</h2>
+        <div class="demo-row">
+            <div class="fs-badge-rating fs-badge-rating--best">
+                <span class="fs-badge-rating__text">10</span>
+                <img src="../../../Assets/Icons/Other/Rating Star.svg" alt="" class="fs-badge-rating__icon">
+            </div>
+
+            <div class="fs-badge-rating fs-badge-rating--a">
+                <span class="fs-badge-rating__text">9.2</span>
+            </div>
+
+            <div class="fs-badge-rating fs-badge-rating--b">
+                <span class="fs-badge-rating__text">8.5</span>
+            </div>
+
+            <div class="fs-badge-rating fs-badge-rating--c">
+                <span class="fs-badge-rating__text">6.7</span>
+            </div>
+
+            <div class="fs-badge-rating fs-badge-rating--d">
+                <span class="fs-badge-rating__text">5.5</span>
+            </div>
+
+            <div class="fs-badge-rating fs-badge-rating--f">
+                <span class="fs-badge-rating__text">4.2</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Large Variant                     -->
+        <!-- ================================= -->
+        <h2>Large Variant</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--large fs-badge-rating--best">
+                    <span class="fs-badge-rating__text">9.5</span>
+                    <img src="../../../Assets/Icons/Other/Rating Star.svg" alt="" class="fs-badge-rating__icon">
+                </div>
+                <span class="demo-label">Best Large</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--large fs-badge-rating--a">
+                    <span class="fs-badge-rating__text">8.8</span>
+                </div>
+                <span class="demo-label">A Large</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--large fs-badge-rating--b">
+                    <span class="fs-badge-rating__text">7.5</span>
+                </div>
+                <span class="demo-label">B Large</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--large fs-badge-rating--c">
+                    <span class="fs-badge-rating__text">6.6</span>
+                </div>
+                <span class="demo-label">C Large</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--large fs-badge-rating--d">
+                    <span class="fs-badge-rating__text">5.5</span>
+                </div>
+                <span class="demo-label">D Large</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--large fs-badge-rating--f">
+                    <span class="fs-badge-rating__text">4.5</span>
+                </div>
+                <span class="demo-label">F Large</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Small Variant                     -->
+        <!-- ================================= -->
+        <h2>Small Variant</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--best">
+                    <span class="fs-badge-rating__text">9.5</span>
+                    <img src="../../../Assets/Icons/Other/Rating Star.svg" alt="" class="fs-badge-rating__icon">
+                </div>
+                <span class="demo-label">Best Small</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--a">
+                    <span class="fs-badge-rating__text">8.8</span>
+                </div>
+                <span class="demo-label">A Small</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--b">
+                    <span class="fs-badge-rating__text">7.5</span>
+                </div>
+                <span class="demo-label">B Small</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--c">
+                    <span class="fs-badge-rating__text">6.6</span>
+                </div>
+                <span class="demo-label">C Small</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--d">
+                    <span class="fs-badge-rating__text">5.5</span>
+                </div>
+                <span class="demo-label">D Small</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--f">
+                    <span class="fs-badge-rating__text">4.5</span>
+                </div>
+                <span class="demo-label">F Small</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Small Average Variant             -->
+        <!-- ================================= -->
+        <h2>Small Average Variant</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--best">
+                    <div class="fs-badge-rating__icon-container">
+                        <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                    </div>
+                    <div class="fs-badge-rating__text-container">
+                        <span class="fs-badge-rating__text">9.5</span>
+                    </div>
+                </div>
+                <span class="demo-label">Best Small Avg</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--a">
+                    <div class="fs-badge-rating__icon-container">
+                        <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                    </div>
+                    <div class="fs-badge-rating__text-container">
+                        <span class="fs-badge-rating__text">8.8</span>
+                    </div>
+                </div>
+                <span class="demo-label">A Small Avg</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--b">
+                    <div class="fs-badge-rating__icon-container">
+                        <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                    </div>
+                    <div class="fs-badge-rating__text-container">
+                        <span class="fs-badge-rating__text">7.5</span>
+                    </div>
+                </div>
+                <span class="demo-label">B Small Avg</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--c">
+                    <div class="fs-badge-rating__icon-container">
+                        <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                    </div>
+                    <div class="fs-badge-rating__text-container">
+                        <span class="fs-badge-rating__text">6.6</span>
+                    </div>
+                </div>
+                <span class="demo-label">C Small Avg</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--d">
+                    <div class="fs-badge-rating__icon-container">
+                        <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                    </div>
+                    <div class="fs-badge-rating__text-container">
+                        <span class="fs-badge-rating__text">5.5</span>
+                    </div>
+                </div>
+                <span class="demo-label">D Small Avg</span>
+            </div>
+
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--average fs-badge-rating--f">
+                    <div class="fs-badge-rating__icon-container">
+                        <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                    </div>
+                    <div class="fs-badge-rating__text-container">
+                        <span class="fs-badge-rating__text">4.2</span>
+                    </div>
+                </div>
+                <span class="demo-label">F Small Avg</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Average Variant                   -->
+        <!-- ================================= -->
+        <h2>Average Variant (with icon)</h2>
+        <div class="demo-row">
+            <!-- Best -->
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--average fs-badge-rating--best">
+                    <div class="fs-badge-rating__icon-container">
+                        <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                    </div>
+                    <div class="fs-badge-rating__text-container">
+                        <span class="fs-badge-rating__text">9.5</span>
+                    </div>
+                </div>
+                <span class="demo-label">Best Average</span>
+            </div>
+
+            <!-- A -->
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--average fs-badge-rating--a">
+                    <div class="fs-badge-rating__icon-container">
+                        <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                    </div>
+                    <div class="fs-badge-rating__text-container">
+                        <span class="fs-badge-rating__text">8.8</span>
+                    </div>
+                </div>
+                <span class="demo-label">A Average</span>
+            </div>
+
+            <!-- B -->
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--average fs-badge-rating--b">
+                    <div class="fs-badge-rating__icon-container">
+                        <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                    </div>
+                    <div class="fs-badge-rating__text-container">
+                        <span class="fs-badge-rating__text">7.5</span>
+                    </div>
+                </div>
+                <span class="demo-label">B Average</span>
+            </div>
+
+            <!-- C -->
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--average fs-badge-rating--c">
+                    <div class="fs-badge-rating__icon-container">
+                        <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                    </div>
+                    <div class="fs-badge-rating__text-container">
+                        <span class="fs-badge-rating__text">6.6</span>
+                    </div>
+                </div>
+                <span class="demo-label">C Average</span>
+            </div>
+
+            <!-- D -->
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--average fs-badge-rating--d">
+                    <div class="fs-badge-rating__icon-container">
+                        <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                    </div>
+                    <div class="fs-badge-rating__text-container">
+                        <span class="fs-badge-rating__text">5.5</span>
+                    </div>
+                </div>
+                <span class="demo-label">D Average</span>
+            </div>
+
+            <!-- F -->
+            <div class="demo-item">
+                <div class="fs-badge-rating fs-badge-rating--average fs-badge-rating--f">
+                    <div class="fs-badge-rating__icon-container">
+                        <img src="../../../Assets/Icons/Incidents/Rating Average.svg" alt="" class="fs-badge-rating__icon-average">
+                    </div>
+                    <div class="fs-badge-rating__text-container">
+                        <span class="fs-badge-rating__text">4.2</span>
+                    </div>
+                </div>
+                <span class="demo-label">F Average</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- Usage Context                     -->
+        <!-- ================================= -->
+        <h2>Usage Examples</h2>
+        <p style="font-size: 13px; color: #555E61; margin: 0 0 16px;">Used in player statistics tables, match ratings, and performance data.</p>
+        <div class="demo-row">
+            <div class="fs-badge-rating fs-badge-rating--best">
+                <span class="fs-badge-rating__text">9.8</span>
+                <img src="../../../Assets/Icons/Other/Rating Star.svg" alt="" class="fs-badge-rating__icon">
+            </div>
+            <span style="font-size: 13px; color: #001E28;">Messi - Man of the Match</span>
+        </div>
+
+    </div>
+</body>
+</html>

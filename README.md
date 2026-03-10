@@ -39,6 +39,7 @@ You must strictly adhere to the following file structure. Do not create director
 │   ├── /News           <-- News content - article listing, detail of article
 │── /ScreenPreviews     <-- Images of content for understanding hierarchy and rhythm of a page
 │── /Prototypes         <-- Folder for creating new prototypes by designer
+│── /Utilities          <-- Mocking data for Teams, Players and News information
 
 
 ## Source material & Inheritance

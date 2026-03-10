@@ -1,12 +1,6 @@
-/* Font Face Declarations */
-@font-face {
-    font-family: 'Livesport Finder LCGJK';
-    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
+/* FSBadgeHighlight - Atom Component */
 
+/* Font Face Declarations */
 @font-face {
     font-family: 'Livesport Finder LCGJK';
     src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
@@ -15,97 +9,95 @@
     font-display: swap;
 }
 
-/* Design System Tokens */
-:root {
-    /* Colors from primitives.json */
-    --badge-highlight-background: #FF0046; /* brand-red/500 */
-    --badge-highlight-text: #FFFFFF; /* white */
-    --badge-highlight-icon-color: #001E28; /* brand-slate-black/500 */
+/* =========================================== */
+/* BASE BADGE                                  */
+/* =========================================== */
 
-    /* Typography tokens - overline style */
-    --badge-highlight-font-family: 'Livesport Finder LCGJK', sans-serif;
-    --badge-highlight-font-size: 10px;
-    --badge-highlight-font-weight: 700; /* Bold */
-    --badge-highlight-line-height: 12px;
-    --badge-highlight-letter-spacing: 0;
-
-    /* Component spacing */
-    --badge-highlight-border-radius: 4px;
-    --badge-highlight-padding-vertical: 2px;
-    --badge-highlight-padding-horizontal: 4px;
-    --badge-highlight-icon-size: 8px;
-    --badge-highlight-gap: 2px;
-}
-
-/* FSBadgeHighlight Component - Base Styles */
 .fs-badge-highlight {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--badge-highlight-gap);
-    padding: var(--badge-highlight-padding-vertical) var(--badge-highlight-padding-horizontal);
-    background-color: var(--badge-highlight-background);
-    border-radius: var(--badge-highlight-border-radius);
-    overflow: hidden;
+    gap: 2px;
+    padding: 2px 4px;
+    background: #FF0046;
+    border-radius: 4px;
 }
+
+/* =========================================== */
+/* TEXT                                        */
+/* =========================================== */
 
 .fs-badge-highlight__text {
-    font-family: var(--badge-highlight-font-family);
-    font-size: var(--badge-highlight-font-size);
-    font-weight: var(--badge-highlight-font-weight);
-    line-height: var(--badge-highlight-line-height);
-    letter-spacing: var(--badge-highlight-letter-spacing);
-    color: var(--badge-highlight-text);
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 12px;
     text-transform: uppercase;
-    white-space: nowrap;
+    color: #FFFFFF;
 }
 
-/* Icon Styles */
+/* =========================================== */
+/* ICON (OPTIONAL)                             */
+/* =========================================== */
+
 .fs-badge-highlight__icon {
-    width: var(--badge-highlight-icon-size);
-    height: var(--badge-highlight-icon-size);
+    width: 8px;
+    height: 8px;
     flex-shrink: 0;
+    display: block;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(7%) sepia(17%) saturate(1808%) hue-rotate(154deg) brightness(98%) contrast(102%);
+    /* Icon color: #001E28 */
 }
 
-/* With Icon Variant */
-.fs-badge-highlight--with-icon {
-    /* Additional styles for when icon is present */
-    /* Gap is already handled by base styles */
-}
+/* =========================================== */
+/* DEMO STYLES                                 */
+/* =========================================== */
 
-/* Demo styling (remove in production) */
 .demo-container {
-    padding: 40px;
-    font-family: system-ui, -apple-system, sans-serif;
-    background-color: #F5F5F5;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 32px 16px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    background-color: #FFFFFF;
 }
 
 .demo-container h1 {
     font-size: 24px;
-    margin-bottom: 24px;
+    font-weight: 700;
     color: #001E28;
+    margin: 0 0 8px;
+}
+
+.demo-container > p {
+    font-size: 13px;
+    color: #555E61;
+    margin: 0 0 32px;
 }
 
 .demo-container h2 {
-    font-size: 18px;
-    margin-top: 32px;
-    margin-bottom: 8px;
-    color: #001E28;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999999;
+    margin: 24px 0 8px;
 }
 
-.demo-container p {
-    font-size: 14px;
-    margin-bottom: 16px;
-    color: #555E61;
-}
-
-.demo-container .fs-badge-highlight {
-    margin-right: 12px;
-    margin-bottom: 12px;
-}
-
-.example-row {
+.demo-list {
     display: flex;
+    flex-direction: row;
+    gap: 16px;
     align-items: center;
-    margin-bottom: 16px;
 }
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+- Background: #FF0046 (badge/new/background/base)
+- Text: 10px Bold, uppercase, line-height 12px, color #FFFFFF
+- Padding: 2px 4px
+- Border radius: 4px
+- Gap: 2px between icon and text
+- Icon: 8px × 8px, Play icon, color #001E28
+*/

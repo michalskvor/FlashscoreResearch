@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSPlayerStatisticsRatingCard - Widget Component</title>
+    <link rel="stylesheet" href="../../Atoms/FSBadgeRating/FSBadgeRating.css">
+    <link rel="stylesheet" href="../../Atoms/FSBadgeForm/FSBadgeForm.css">
+    <link rel="stylesheet" href="../../Atoms/FSIncidentBadgeField/FSIncidentBadgeField.css">
+    <link rel="stylesheet" href="../../Molecules/FSIncidentBadgeFieldRow/FSIncidentBadgeFieldRow.css">
+    <link rel="stylesheet" href="FSPlayerStatisticsRatingCard.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>FSPlayerStatisticsRatingCard</h1>
+        <p>Player statistics rating card showing minutes, incidents, rating, and performance bonuses.</p>
+
+        <!-- ================================= -->
+        <!-- Live state             -->
+        <!-- ================================= -->
+        <h2>Live state</h2>
+        
+                <div class="fs-player-statistics-rating-card">
+                    <!-- Stats Section -->
+                    <div class="fs-player-statistics-rating-card__stats">
+                        <!-- Minutes -->
+                        <div class="fs-player-statistics-rating-card__value-box">
+                            <div class="fs-player-statistics-rating-card__value-container">
+                                <span class="fs-player-statistics-rating-card__value_live">5'</span>
+                            </div>
+                            <div class="fs-player-statistics-rating-card__text-container">
+                                <span class="fs-player-statistics-rating-card__label">Min.</span>
+                            </div>
+                        </div>
+
+                        <!-- Incidents -->
+                        <div class="fs-player-statistics-rating-card__value-box">
+                            <div class="fs-player-statistics-rating-card__value-container">
+                                <div class="fs-player-statistics-rating-card_empty-value">
+                                   –⁠⁠⁠⁠⁠⁠
+                                </div>
+                            </div>
+                            <div class="fs-player-statistics-rating-card__text-container">
+                                <span class="fs-player-statistics-rating-card__label">Top Events</span>
+                            </div>
+                        </div>
+
+                        <!-- Rating -->
+                        <div class="fs-player-statistics-rating-card__value-box">
+                            <div class="fs-player-statistics-rating-card__value-container">
+                                <div class="fs-badge-rating fs-badge-rating--large fs-badge-rating--a">
+                                    <span class="fs-badge-rating__text">8.8</span>
+                                </div>
+                            </div>
+                            <div class="fs-player-statistics-rating-card__text-container">
+                                <span class="fs-player-statistics-rating-card__label">Rating</span>
+                            </div>
+                        </div>
+                    </div>
+
+                 
+                    
+                </div>
+      
+
+        <!-- ================================= -->
+        <!-- Finished state     -->
+        <!-- ================================= -->
+        <h2>Finished state</h2>
+        
+                <div class="fs-player-statistics-rating-card">
+                    <!-- Stats Section -->
+                    <div class="fs-player-statistics-rating-card__stats">
+                        <!-- Minutes -->
+                        <div class="fs-player-statistics-rating-card__value-box">
+                            <div class="fs-player-statistics-rating-card__value-container">
+                                <span class="fs-player-statistics-rating-card__value">78'</span>
+                            </div>
+                            <div class="fs-player-statistics-rating-card__text-container">
+                                <span class="fs-player-statistics-rating-card__label">Min.</span>
+                            </div>
+                        </div>
+
+                        <!-- Incidents -->
+                        <div class="fs-player-statistics-rating-card__value-box">
+                            <div class="fs-player-statistics-rating-card__value-container">
+                                <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--large fs-incident-badge-field-row--top">
+                                    <div class="fs-incident-badge-field fs-incident-badge-field--large fs-incident-badge-field--icon-only">
+                                        <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                                    </div>
+                                    <div class="fs-incident-badge-field fs-incident-badge-field--large fs-incident-badge-field--icon-only">
+                                        <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Substitution.svg" alt="Substitution">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fs-player-statistics-rating-card__text-container">
+                                <span class="fs-player-statistics-rating-card__label">Top Events</span>
+                            </div>
+                        </div>
+
+                        <!-- Rating -->
+                        <div class="fs-player-statistics-rating-card__value-box">
+                            <div class="fs-player-statistics-rating-card__value-container">
+                                <div class="fs-badge-rating fs-badge-rating--large fs-badge-rating--best">
+                                    <span class="fs-badge-rating__text">9.5</span>
+                                    <img src="../../../Assets/Icons/Other/Rating Star.svg" alt="" class="fs-badge-rating__icon">
+                                </div>
+                            </div>
+                            <div class="fs-player-statistics-rating-card__text-container">
+                                <span class="fs-player-statistics-rating-card__label">Rating</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <hr class="fs-player-statistics-rating-card__divider">
+
+                    <!-- Bonuses Section -->
+                    <div class="fs-player-statistics-rating-card__bonuses">
+                        <div class="fs-player-statistics-rating-card__rows">
+                            <!-- Row 1 -->
+                            <div class="fs-player-statistics-rating-card__row">
+                                <div class="fs-badge-form fs-badge-form--plus">
+                                    <svg class="fs-badge-form__icon" width="9.3" height="9.3" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 5L8.5 5M5 1.5L5 8.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="fs-player-statistics-rating-card__row-text">
+                                    <span class="fs-player-statistics-rating-card__row-text-primary">Big chances created</span>
+                                    <span class="fs-player-statistics-rating-card__row-text-secondary">(2)</span>
+                                </div>
+                            </div>
+
+                            <!-- Row 2 -->
+                            <div class="fs-player-statistics-rating-card__row">
+                                <div class="fs-badge-form fs-badge-form--plus">
+                                    <svg class="fs-badge-form__icon" width="9.3" height="9.3" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 5L8.5 5M5 1.5L5 8.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="fs-player-statistics-rating-card__row-text">
+                                    <span class="fs-player-statistics-rating-card__row-text-primary">Winning goal</span>
+                                    <span class="fs-player-statistics-rating-card__row-text-secondary">(0)</span>
+                                </div>
+                            </div>
+
+                            <!-- Row 3 -->
+                            <div class="fs-player-statistics-rating-card__row">
+                                <div class="fs-badge-form fs-badge-form--plus">
+                                    <svg class="fs-badge-form__icon" width="9.3" height="9.3" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 5L8.5 5M5 1.5L5 8.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="fs-player-statistics-rating-card__row-text">
+                                    <span class="fs-player-statistics-rating-card__row-text-primary">Finishing (non-penalty) xGOT 2.1 · xG 0.9</span>
+                                    <span class="fs-player-statistics-rating-card__row-text-secondary"></span>
+                                </div>
+                            </div>
+
+
+                            <!-- Row 4 -->
+                            <div class="fs-player-statistics-rating-card__row">
+                                <div class="fs-badge-form fs-badge-form--minus">
+                                    <svg class="fs-badge-form__icon" width="9.3" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L9 1" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="fs-player-statistics-rating-card__row-text">
+                                    <span class="fs-player-statistics-rating-card__row-text-primary">Big chances missed</span>
+                                    <span class="fs-player-statistics-rating-card__row-text-secondary">(2)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+    </div>
+</body>
+</html>

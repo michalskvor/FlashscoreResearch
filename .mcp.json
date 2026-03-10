@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "football-api-mcp": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "http://football-api-mcp-cds-football-dev.okubeapi1.kube.lsoffice.cz/mcp",
+        "--allow-http"
+      ]
+    }
+  }
+}

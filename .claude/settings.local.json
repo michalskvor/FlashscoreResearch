@@ -11,5 +11,8 @@
       "Bash(curl:*)",
       "Bash(mkdir:*)"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "football-api"
+  ]
 }

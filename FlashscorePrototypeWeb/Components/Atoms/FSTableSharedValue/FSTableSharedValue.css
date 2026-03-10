@@ -1,0 +1,240 @@
+/* FSTableSharedValue - Atom Component */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================== */
+/* BASE COMPONENT                              */
+/* =========================================== */
+
+.fs-table-shared-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 0;
+}
+
+/* =========================================== */
+/* TEXT STYLES                                 */
+/* =========================================== */
+
+.fs-table-shared-value__text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+/* Regular text */
+.fs-table-shared-value__text--regular {
+    font-weight: 400;
+}
+
+/* Bold text */
+.fs-table-shared-value__text--bold {
+    font-weight: 700;
+}
+
+/* =========================================== */
+/* VARIANT: DEFAULT (no background)            */
+/* =========================================== */
+
+/* Type: Primary */
+.fs-table-shared-value--default.fs-table-shared-value--primary .fs-table-shared-value__text {
+    color: #001E28;
+}
+
+/* Type: Live */
+.fs-table-shared-value--default.fs-table-shared-value--live .fs-table-shared-value__text {
+    color: #FF0046;
+}
+
+/* =========================================== */
+/* VARIANT: HIGHLIGHT (bold text, no bg)       */
+/* =========================================== */
+
+.fs-table-shared-value--highlight {
+    gap: 2px;
+}
+
+/* Type: Primary */
+.fs-table-shared-value--highlight.fs-table-shared-value--primary .fs-table-shared-value__text {
+    color: #001E28;
+}
+
+/* Type: Live */
+.fs-table-shared-value--highlight.fs-table-shared-value--live .fs-table-shared-value__text {
+    color: #FF0046;
+}
+
+/* =========================================== */
+/* VARIANT: BACKGROUND (colored background)    */
+/* =========================================== */
+
+.fs-table-shared-value--background {
+    min-width: 20px;
+    max-height: 22px;
+    padding: 3px 2px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Type: Primary (dark grey) */
+.fs-table-shared-value--background.fs-table-shared-value--primary {
+    background-color: #555E61;
+}
+
+.fs-table-shared-value--background.fs-table-shared-value--primary .fs-table-shared-value__text {
+    color: #FFFFFF;
+}
+
+/* Type: Live (pink) */
+.fs-table-shared-value--background.fs-table-shared-value--live {
+    background-color: #FFE6F3;
+}
+
+.fs-table-shared-value--background.fs-table-shared-value--live .fs-table-shared-value__text {
+    color: #FF0046;
+}
+
+/* Type: Blue (light blue) */
+.fs-table-shared-value--background.fs-table-shared-value--blue {
+    background-color: #EEF7FF;
+}
+
+.fs-table-shared-value--background.fs-table-shared-value--blue .fs-table-shared-value__text {
+    color: #001E28;
+}
+
+/* Type: Red (light red) */
+.fs-table-shared-value--background.fs-table-shared-value--red {
+    background-color: #FBE5E5;
+}
+
+.fs-table-shared-value--background.fs-table-shared-value--red .fs-table-shared-value__text {
+    color: #001E28;
+}
+
+/* Type: Yellow (light yellow) */
+.fs-table-shared-value--background.fs-table-shared-value--yellow {
+    background-color: rgba(255, 205, 0, 0.15);
+}
+
+.fs-table-shared-value--background.fs-table-shared-value--yellow .fs-table-shared-value__text {
+    color: #001E28;
+}
+
+/* =========================================== */
+/* VARIANT: BACKGROUND+ICON                    */
+/* =========================================== */
+
+.fs-table-shared-value--background-icon {
+    position: relative;
+    min-width: 20px;
+    padding: 3px 2px;
+    border-radius: 4px;
+    gap: 4px;
+}
+
+/* Type: Blue */
+.fs-table-shared-value--background-icon.fs-table-shared-value--blue {
+    background-color: #EEF7FF;
+}
+
+.fs-table-shared-value--background-icon.fs-table-shared-value--blue .fs-table-shared-value__text {
+    color: #001E28;
+}
+
+/* Type: Red */
+.fs-table-shared-value--background-icon.fs-table-shared-value--red {
+    background-color: #FBE5E5;
+}
+
+.fs-table-shared-value--background-icon.fs-table-shared-value--red .fs-table-shared-value__text {
+    color: #001E28;
+}
+
+/* Type: Yellow */
+.fs-table-shared-value--background-icon.fs-table-shared-value--yellow {
+    background-color: rgba(255, 205, 0, 0.15);
+}
+
+.fs-table-shared-value--background-icon.fs-table-shared-value--yellow .fs-table-shared-value__text {
+    color: #001E28;
+}
+
+/* =========================================== */
+/* ICON CONTAINER                              */
+/* =========================================== */
+
+.fs-table-shared-value__icon-container {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+.fs-table-shared-value__icon {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* =========================================== */
+/* TEXT CONTAINER (for value + subvalue)       */
+/* =========================================== */
+
+.fs-table-shared-value__text-container {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    line-height: 0;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+VARIANTS:
+- Default: Regular text, no background
+- Highlight: Bold text, no background, optional subvalue
+- Background: Colored background, bold text
+- Background+Icon: Colored background, bold text, star icon
+
+TYPES:
+- Primary: #001E28 text (or white on dark bg)
+- Live: #FF0046 text
+- Blue: #EEF7FF background
+- Red: #FBE5E5 background
+- Yellow: rgba(255, 205, 0, 0.15) background
+
+SPACING:
+- Gap between value and subvalue: 2px
+- Padding (background variants): 3px 2px
+- Icon position: -8px from top and right
+- Border radius: 4px
+
+TYPOGRAPHY:
+- Font: Livesport Finder LCGJK
+- Size: 13px
+- Line height: 16px
+- Weight: Regular (400) or Bold (700)
+*/

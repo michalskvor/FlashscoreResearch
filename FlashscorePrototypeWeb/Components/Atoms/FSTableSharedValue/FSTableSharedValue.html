@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSTableSharedValue - Atom Component</title>
+    <link rel="stylesheet" href="FSTableSharedValue.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>FSTableSharedValue</h1>
+        <p>Table value display component with multiple variants and types for statistics and match data.</p>
+
+        <!-- ================================= -->
+        <!-- VARIANT: Default                  -->
+        <!-- ================================= -->
+        <h2>Variant: Default (Regular text, no background)</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">0</span>
+                </div>
+                <span class="demo-label">Primary Default</span>
+            </div>
+            <div class="demo-item">
+                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--live">
+                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">0</span>
+                </div>
+                <span class="demo-label">Live Default</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- VARIANT: Highlight                -->
+        <!-- ================================= -->
+        <h2>Variant: Highlight (Bold text, no background)</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">0</span>
+                </div>
+                <span class="demo-label">Primary Highlight</span>
+            </div>
+            <div class="demo-item">
+                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                    <div class="fs-table-shared-value__text-container">
+                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">5</span>
+                        <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">0</span>
+                    </div>
+                </div>
+                <span class="demo-label">With Subvalue</span>
+            </div>
+            <div class="demo-item">
+                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--live">
+                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">0</span>
+                </div>
+                <span class="demo-label">Live Highlight</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- VARIANT: Background               -->
+        <!-- ================================= -->
+        <h2>Variant: Background</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="fs-table-shared-value fs-table-shared-value--background fs-table-shared-value--primary">
+                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">0</span>
+                </div>
+                <span class="demo-label">Primary (Grey)</span>
+            </div>
+            <div class="demo-item">
+                <div class="fs-table-shared-value fs-table-shared-value--background fs-table-shared-value--live">
+                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">0</span>
+                </div>
+                <span class="demo-label">Live (Pink)</span>
+            </div>
+            <div class="demo-item">
+                <div class="fs-table-shared-value fs-table-shared-value--background fs-table-shared-value--blue">
+                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">0</span>
+                </div>
+                <span class="demo-label">Blue</span>
+            </div>
+            <div class="demo-item">
+                <div class="fs-table-shared-value fs-table-shared-value--background fs-table-shared-value--red">
+                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">0</span>
+                </div>
+                <span class="demo-label">Red</span>
+            </div>
+            <div class="demo-item">
+                <div class="fs-table-shared-value fs-table-shared-value--background fs-table-shared-value--yellow">
+                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">0</span>
+                </div>
+                <span class="demo-label">Yellow</span>
+            </div>
+        </div>
+
+        <!-- ================================= -->
+        <!-- VARIANT: Background + Icon        -->
+        <!-- ================================= -->
+        <h2>Variant: Background + Icon</h2>
+        <div class="demo-row">
+            <div class="demo-item">
+                <div class="fs-table-shared-value fs-table-shared-value--background-icon fs-table-shared-value--blue">
+                    <div class="fs-table-shared-value__text-container">
+                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">0</span>
+                    </div>
+                    <div class="fs-table-shared-value__icon-container">
+                        <img src="../../../Assets/Icons/Other/Rating Star.svg" alt="" class="fs-table-shared-value__icon">
+                    </div>
+                </div>
+                <span class="demo-label">Blue + Icon</span>
+            </div>
+            <div class="demo-item">
+                <div class="fs-table-shared-value fs-table-shared-value--background-icon fs-table-shared-value--blue">
+                    <div class="fs-table-shared-value__text-container">
+                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">5</span>
+                        <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">0</span>
+                    </div>
+                    <div class="fs-table-shared-value__icon-container">
+                        <img src="../../../Assets/Icons/Other/Rating Star.svg" alt="" class="fs-table-shared-value__icon">
+                    </div>
+                </div>
+                <span class="demo-label">Blue + Icon + Subvalue</span>
+            </div>
+            <div class="demo-item">
+                <div class="fs-table-shared-value fs-table-shared-value--background-icon fs-table-shared-value--red">
+                    <div class="fs-table-shared-value__text-container">
+                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">0</span>
+                    </div>
+                    <div class="fs-table-shared-value__icon-container">
+                        <img src="../../../Assets/Icons/Other/Rating Star.svg" alt="" class="fs-table-shared-value__icon">
+                    </div>
+                </div>
+                <span class="demo-label">Red + Icon</span>
+            </div>
+            <div class="demo-item">
+                <div class="fs-table-shared-value fs-table-shared-value--background-icon fs-table-shared-value--yellow">
+                    <div class="fs-table-shared-value__text-container">
+                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">0</span>
+                    </div>
+                    <div class="fs-table-shared-value__icon-container">
+                        <img src="../../../Assets/Icons/Other/Rating Star.svg" alt="" class="fs-table-shared-value__icon">
+                    </div>
+                </div>
+                <span class="demo-label">Yellow + Icon</span>
+            </div>
+        </div>
+
+    </div>
+
+    <style>
+        body {
+            background: #F5F5F5;
+            padding: 32px;
+            font-family: sans-serif;
+        }
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            padding: 32px;
+            border-radius: 8px;
+        }
+        h1 {
+            font-size: 24px;
+            color: #001E28;
+            margin: 0 0 8px;
+        }
+        .demo-container > p {
+            font-size: 13px;
+            color: #555E61;
+            margin: 0 0 32px;
+        }
+        h2 {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #999999;
+            margin: 32px 0 12px;
+        }
+        .demo-row {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .demo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        .demo-label {
+            font-size: 11px;
+            color: #999999;
+            text-align: center;
+        }
+    </style>
+</body>
+</html>

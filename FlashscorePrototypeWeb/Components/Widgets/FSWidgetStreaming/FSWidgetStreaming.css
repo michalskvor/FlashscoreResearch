@@ -1,0 +1,46 @@
+/* FSWidgetStreaming - Widget Component */
+
+/* =========================================== */
+/* WIDGET CONTAINER                            */
+/* =========================================== */
+
+.fs-widget-streaming {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* BODY                                        */
+/* =========================================== */
+
+.fs-widget-streaming__body {
+    padding: 16px 12px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* SOURCES WRAP                                */
+/* =========================================== */
+
+.fs-widget-streaming__sources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    width: 100%;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+- Header: FSHeadersSection molecule, "Streaming" left-only
+- Sources: flex-wrap, gap 8px, each source is FSButtonStream atom (Textlink Boxed variant)
+- Body padding: 16px top, 12px horizontal, 0 bottom
+- Widget bottom padding: 20px (section/vertical/l)
+- All spacing follows 4/8px grid
+*/

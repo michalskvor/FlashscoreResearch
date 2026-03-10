@@ -1,0 +1,176 @@
+/* LayoutDialog - Mobile Bottom-Sheet Template */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================== */
+/* VIEWPORT CONTAINER                          */
+/* =========================================== */
+
+.layout-dialog-viewport {
+    max-width: 639px;
+    height: 852px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: #F5F5F5; /* Simulated page background */
+}
+
+/* =========================================== */
+/* BACKDROP (BACKGROUND LAYER)                */
+/* =========================================== */
+
+.layout-dialog-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(1, 10, 15, 0.6);
+    z-index: 100;
+}
+
+/* =========================================== */
+/* BOTTOM-SHEET DIALOG CONTAINER              */
+/* =========================================== */
+
+.layout-dialog-bottom-sheet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 230px;
+    max-height: 600px;
+    max-height: calc(100% - 60px); /* Leave space at top */
+    background: #FFFFFF;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 101;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================== */
+/* CLOSE BUTTON (TOP-RIGHT CORNER)            */
+/* =========================================== */
+
+.layout-dialog-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 103;
+}
+
+/* =========================================== */
+/* SCROLLABLE BODY CONTENT                    */
+/* =========================================== */
+
+.layout-dialog-body {
+    padding: 0 24px 24px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-grow: 1;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    border-radius: 12px 12px 0 0;
+}
+
+.layout-dialog-body::-webkit-scrollbar {
+    width: 4px;
+}
+
+.layout-dialog-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.layout-dialog-body::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+}
+
+/* =========================================== */
+/* BODY CONTENT TYPOGRAPHY                    */
+/* =========================================== */
+
+.layout-dialog-title {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #001E28;
+    margin: 0 0 16px 0;
+    padding-right: 40px; /* Space for close button */
+}
+
+.layout-dialog-subtitle {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #001E28;
+    margin: 0 0 8px 0;
+}
+
+.layout-dialog-text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #555E61;
+    margin: 0 0 16px 0;
+}
+
+.layout-dialog-section {
+    margin-bottom: 24px;
+}
+
+.layout-dialog-section:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================================== */
+/* STICKY FOOTER (ACTION AREA)                */
+/* =========================================== */
+
+.layout-dialog-footer {
+    padding: 16px 24px 24px 24px;
+    background: #FFFFFF;
+    flex-shrink: 0;
+    z-index: 102;
+}
+
+.layout-dialog-action-button {
+    width: 100%;
+}
+
+/* =========================================== */
+/* RESPONSIVE ADJUSTMENTS                     */
+/* =========================================== */
+
+/* For smaller mobile devices */
+@media (max-width: 393px) {
+    .layout-dialog-viewport {
+        max-width: 393px;
+        height: 852px;
+    }
+}
+
+/* For larger mobile devices */
+@media (min-width: 640px) {
+    .layout-dialog-viewport {
+        max-width: 639px;
+    }
+}
+

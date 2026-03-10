@@ -1,0 +1,126 @@
+/* FSAudioButton - Atom Component */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================== */
+/* BUTTON                                      */
+/* =========================================== */
+
+.fs-audio-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid #FF0046;
+    border-radius: 4px;
+    background-color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* ICON                                        */
+/* =========================================== */
+
+.fs-audio-button__icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    display: block;
+    /* Color: #FF0046 */
+    filter: brightness(0) saturate(100%) invert(13%) sepia(95%) saturate(7466%) hue-rotate(336deg) brightness(102%) contrast(108%);
+}
+
+/* =========================================== */
+/* LABEL                                       */
+/* =========================================== */
+
+.fs-audio-button__label {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #FF0046;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* =========================================== */
+/* HOVER STATE                                 */
+/* =========================================== */
+
+.fs-audio-button:hover {
+    background-color: #FFF5F8;
+}
+
+/* =========================================== */
+/* ACTIVE STATE                                */
+/* =========================================== */
+
+.fs-audio-button:active {
+    background-color: #FFEBF0;
+}
+
+/* =========================================== */
+/* DEMO STYLES                                 */
+/* =========================================== */
+
+.demo-container {
+    max-width: 639px;
+    margin: 0 auto;
+    padding: 32px 16px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    background-color: #FFFFFF;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #001E28;
+    margin: 0 0 8px;
+}
+
+.demo-container > p {
+    font-size: 13px;
+    color: #555E61;
+    margin: 0 0 32px;
+}
+
+.demo-container h2 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999999;
+    margin: 24px 0 8px;
+}
+
+.demo-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+- Border: 1px solid #FF0046 (button/brand/background/base)
+- Border-radius: 4px (general/small)
+- Padding: 8px 12px
+- Gap: 8px
+- Icon: 16px × 16px, color #FF0046
+- Label: Livesport Finder LCGJK Regular, 13px, 16px line-height, #FF0046
+- Hover: background #FFF5F8 (light tint)
+- Active: background #FFEBF0 (lighter tint)
+- All spacing follows 4/8px grid
+*/

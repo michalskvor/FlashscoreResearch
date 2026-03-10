@@ -1,0 +1,288 @@
+/* FSWidgetPlayerStatsTable - Widget Component */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================== */
+/* CSS VARIABLES (DIMENSIONS)                  */
+/* =========================================== */
+
+:root {
+    --row-height: 45px;
+    --header-tab-height: 44px;
+    --header-label-height: 60px;
+    --sticky-col-width: 178px;
+    --data-cell-width: 72px;
+}
+
+/* =========================================== */
+/* BASE WIDGET CONTAINER                       */
+/* =========================================== */
+
+.fs-widget-player-stats-table {
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* =========================================== */
+/* LAYER 1: NAVIGATION TABS (TOP HEADER)       */
+/* =========================================== */
+
+.fs-widget-player-stats-table__tabs {
+    background-color: #EEEEEE;
+    padding: 8px 12px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    height: var(--header-tab-height);
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* LAYER 2: COLUMN HEADERS (SUB-HEADER)        */
+/* =========================================== */
+
+.fs-widget-player-stats-table__header {
+    background-color: #EEEEEE;
+    border-top: 1px solid #FFFFFF;
+    position: relative;
+    display: flex;
+    height: var(--header-label-height);
+    box-sizing: border-box;
+}
+
+.fs-widget-player-stats-table__header-sticky {
+    width: var(--sticky-col-width);
+    flex-shrink: 0;
+    background-color: #EEEEEE;
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+.fs-widget-player-stats-table__header-scroll-container {
+    flex: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.fs-widget-player-stats-table__header-scroll-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.fs-widget-player-stats-table__header-row {
+    display: flex;
+    height: 100%;
+    background-color: #EEEEEE;
+}
+
+.fs-widget-player-stats-table__header-cell {
+    width: var(--data-cell-width);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2px;
+    gap: 4px;
+    box-sizing: border-box;
+}
+
+.fs-widget-player-stats-table__header-cell-text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #555E61;
+    text-align: center;
+}
+
+.fs-widget-player-stats-table__header-cell-icon {
+    width: 6px;
+    height: 6px;
+    flex-shrink: 0;
+    filter: brightness(0) saturate(100%) invert(39%) sepia(8%) saturate(667%) hue-rotate(157deg) brightness(92%) contrast(90%);
+}
+
+/* Sorted column header */
+.fs-widget-player-stats-table__header-cell--sorted {
+    background-color: rgba(238, 238, 238, 0.4);
+}
+
+/* =========================================== */
+/* LAYER 3: DATA GRID (TABLE BODY)            */
+/* =========================================== */
+
+.fs-widget-player-stats-table__body {
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+.fs-widget-player-stats-table__row {
+    display: flex;
+    height: var(--row-height);
+    position: relative;
+}
+
+.fs-widget-player-stats-table__row-sticky {
+    width: var(--sticky-col-width);
+    flex-shrink: 0;
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    padding: 6px 2px 6px 12px;
+    box-sizing: border-box;
+}
+
+.fs-widget-player-stats-table__row-scroll-container {
+    flex: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.fs-widget-player-stats-table__row-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.fs-widget-player-stats-table__row-data {
+    display: flex;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+
+.fs-widget-player-stats-table__data-cell {
+    width: var(--data-cell-width);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2px;
+    box-sizing: border-box;
+}
+
+/* First data cell (sorted column) */
+.fs-widget-player-stats-table__data-cell--sorted {
+    background-color: rgba(238, 238, 238, 0.4);
+}
+
+/* =========================================== */
+/* STICKY COLUMN SHADOW (ON SCROLL)           */
+/* =========================================== */
+
+/* Shadow on header sticky column */
+.fs-widget-player-stats-table--scrolled .fs-widget-player-stats-table__header-sticky {
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Continuous shadow for body using pseudo-element */
+.fs-widget-player-stats-table--scrolled .fs-widget-player-stats-table__body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--sticky-col-width);
+    width: 4px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1), transparent);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* =========================================== */
+/* TAB CONTENT VISIBILITY                      */
+/* =========================================== */
+
+.fs-widget-player-stats-table__tab-content {
+    display: none;
+}
+
+.fs-widget-player-stats-table__tab-content--active {
+    display: block;
+}
+
+/* =========================================== */
+/* DEMO STYLES                                 */
+/* =========================================== */
+
+.demo-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 32px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    background-color: #F5F5F5;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #001E28;
+    margin: 0 0 8px;
+}
+
+.demo-container > p {
+    font-size: 13px;
+    color: #555E61;
+    margin: 0 0 32px;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+LAYER STRUCTURE:
+1. Navigation Tabs (FSTabs Tertiary) - 44px height
+2. Column Headers (Sticky + Scrollable) - 60px height
+3. Data Rows (Sticky + Scrollable) - 45px per row
+
+DIMENSIONS:
+- Row height: 45px
+- Header tab height: 44px
+- Header label height: 60px
+- Sticky column width: 178px
+- Data cell width: 72px
+
+COLORS:
+- Header background: #EEEEEE
+- Body background: #FFFFFF
+- Sorted column: rgba(238, 238, 238, 0.4)
+- Sticky shadow: rgba(0, 0, 0, 0.1)
+
+ALIGNMENT:
+- Header sticky cell: left, padding 0 8px
+- Header data cells: center, padding 0 2px
+- Row sticky cell: left, padding 6px 2px 6px 12px
+- Row data cells: center, padding 0 2px
+
+COMPONENTS USED:
+- FSTabs (Tertiary variant)
+- FSSelect
+- FSPlayerStatsPlayerCell
+- FSBadgeRating
+- FSTableSharedValue
+- FSDivider
+*/

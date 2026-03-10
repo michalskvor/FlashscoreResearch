@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Stats Dialog - Finished Match - Mobile</title>
+    <link rel="stylesheet" href="../Components/LayoutTemplate/Mobile/LayoutDialog.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSButtonClose/FSButtonClose.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSButton/FSButton.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSAssetBoxed/FSAssetBoxed.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSActionsFavorite/FSActionsFavorite.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSPlayerStatsPlayerCell/FSPlayerStatsPlayerCell.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSTableSharedValue/FSTableSharedValue.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSBadgeRating/FSBadgeRating.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSBadgeForm/FSBadgeForm.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSIncidentBadgeField/FSIncidentBadgeField.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSIncidentBadgeFieldRow/FSIncidentBadgeFieldRow.css">
+    <link rel="stylesheet" href="../Components/Widgets/FSPlayerStatisticsRatingCard/FSPlayerStatisticsRatingCard.css">
+    <style>
+        /* Sticky Player Header */
+        .player-stats-header {
+            position: sticky;
+            top: 0;
+            background-color: #FFFFFF;
+            z-index: 10;
+            margin-left: -24px;
+            margin-right: -24px;
+            margin-top: -24px;
+            padding: 24px 24px 16px 24px;
+        }
+
+        /* Player Statistics Table Styles */
+        .player-stats-table {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            width: 100%;
+            margin-top: 24px;
+        }
+
+        .player-stats-table:first-of-type {
+            margin-top: 0;
+        }
+
+        .player-stats-table__headline {
+            display: flex;
+            align-items: center;
+            min-height: 24px;
+            width: 100%;
+        }
+
+        .player-stats-table__headline-text {
+            font-family: 'Livesport Finder LCGJK', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 18px;
+            color: #001E28;
+            flex: 1 0 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .player-stats-table__rows {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            width: 100%;
+        }
+
+        .player-stats-table__row {
+            display: flex;
+            height: 24px;
+            min-height: 24px;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .player-stats-table__label-container {
+            display: flex;
+            height: 16px;
+            align-items: center;
+            padding-right: 8px;
+            flex-shrink: 0;
+        }
+
+        .player-stats-table__value {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 2px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Viewport Container (639px max width, 852px height) -->
+    <div class="layout-dialog-viewport">
+
+        <!-- Backdrop (Dims underlying content) -->
+        <div class="layout-dialog-backdrop"></div>
+
+        <!-- Bottom-Sheet Dialog -->
+        <div class="layout-dialog-bottom-sheet">
+
+            <!-- Close Button (Top-Right Corner) -->
+            <button class="fs-button-close layout-dialog-close" aria-label="Close">
+                <img src="../Assets/Icons/Action/Navigation/Close.svg" alt="" class="fs-button-close__icon">
+            </button>
+
+            <!-- Scrollable Body Content -->
+            <div class="layout-dialog-body">
+
+                <!-- Sticky Player Header -->
+                <div class="player-stats-header">
+                    <!-- Player Information - Large Variant -->
+                    <div class="fs-player-stats-player-cell fs-player-stats-player-cell--large">
+                        <div class="fs-player-stats-player-cell__player-container">
+                            <div class="fs-asset-boxed fs-asset-boxed--68px fs-asset-boxed--player">
+                                <img class="fs-asset-boxed__image fs-asset-boxed__image--player"
+                                     src="../Assets/PlayerPhotos/Football/ManchesterCity2/Haaland Erling Braut.jpg" alt="Haaland">
+                            </div>
+                            <div class="fs-player-stats-player-cell__team-container">
+                                <div class="fs-asset-boxed fs-asset-boxed--26px fs-asset-boxed--asset">
+                                    <img class="fs-asset-boxed__image fs-asset-boxed__image--asset"
+                                         src="../Assets/TeamLogos/Premier league/Man city.png" alt="Man City">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-player-stats-player-cell__text-container">
+                            <div class="fs-player-stats-player-cell__name-row">
+                                <span class="fs-player-stats-player-cell__name">Erling Haaland</span>
+                                <div class="fs-actions-favorite fs-actions-favorite--medium fs-actions-favorite--base">
+                                    <svg class="fs-actions-favorite__icon" width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.346 0L7.245 6.847L0.404 6.832L0 8.141L5.544 12.354L3.415 19.191L4.473 20L9.999 15.758L15.526 20L16.584 19.191L14.455 12.354L19.999 8.141L19.596 6.832L12.753 6.847L10.654 0H9.346ZM8.399 7.793L9.999 2.575L11.6 7.793L12.256 8.293L17.468 8.282L13.245 11.493L12.994 12.302L14.616 17.511L10.404 14.281H9.594L5.384 17.511L7.005 12.302L6.754 11.493L2.53 8.282L7.744 8.293L8.399 7.793Z" fill="#999999"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="fs-player-stats-player-cell__position-row">
+                                <span class="fs-player-stats-player-cell__position">Forward</span>
+                                <img src="../Assets/Flags/Norway.imageset/Norway.svg" alt="Norway" class="fs-player-stats-player-cell__flag">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Player Statistics Rating Card -->
+                    <div class="fs-player-statistics-rating-card" style="margin-top: 16px;">
+                        <!-- Stats Section -->
+                        <div class="fs-player-statistics-rating-card__stats">
+                            <!-- Minutes -->
+                            <div class="fs-player-statistics-rating-card__value-box">
+                                <div class="fs-player-statistics-rating-card__value-container">
+                                    <span class="fs-player-statistics-rating-card__value">90'</span>
+                                </div>
+                                <div class="fs-player-statistics-rating-card__text-container">
+                                    <span class="fs-player-statistics-rating-card__label">Min.</span>
+                                </div>
+                            </div>
+
+                            <!-- Incidents -->
+                            <div class="fs-player-statistics-rating-card__value-box">
+                                <div class="fs-player-statistics-rating-card__value-container">
+                                    <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--large fs-incident-badge-field-row--top">
+                                        <div class="fs-incident-badge-field fs-incident-badge-field--large fs-incident-badge-field--icon-only">
+                                            <img class="fs-incident-badge-field__icon" src="../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                                            <div class="fs-incident-badge-field__badge">
+                                                <span class="fs-incident-badge-field__badge-text">2</span>
+                                            </div>
+                                        </div>
+                                        <div class="fs-incident-badge-field fs-incident-badge-field--large fs-incident-badge-field--icon-only">
+                                            <img class="fs-incident-badge-field__icon" src="../Assets/Icons/Incidents/Yellow card.svg" alt="Yellow card">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-player-statistics-rating-card__text-container">
+                                    <span class="fs-player-statistics-rating-card__label">Top Events</span>
+                                </div>
+                            </div>
+
+                            <!-- Rating -->
+                            <div class="fs-player-statistics-rating-card__value-box">
+                                <div class="fs-player-statistics-rating-card__value-container">
+                                    <div class="fs-badge-rating fs-badge-rating--large fs-badge-rating--a">
+                                        <span class="fs-badge-rating__text">8.8</span>
+                                    </div>
+                                </div>
+                                <div class="fs-player-statistics-rating-card__text-container">
+                                    <span class="fs-player-statistics-rating-card__label">Rating</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <hr class="fs-player-statistics-rating-card__divider">
+
+                        <!-- Bonuses Section -->
+                        <div class="fs-player-statistics-rating-card__bonuses">
+                            <div class="fs-player-statistics-rating-card__rows">
+                                <!-- Row 1 -->
+                                <div class="fs-player-statistics-rating-card__row">
+                                    <div class="fs-badge-form fs-badge-form--plus">
+                                        <svg class="fs-badge-form__icon" width="9.3" height="9.3" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 5L8.5 5M5 1.5L5 8.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="fs-player-statistics-rating-card__row-text">
+                                        <span class="fs-player-statistics-rating-card__row-text-primary">Big chances created</span>
+                                        <span class="fs-player-statistics-rating-card__row-text-secondary">(2)</span>
+                                    </div>
+                                </div>
+
+                                <!-- Row 2 -->
+                                <div class="fs-player-statistics-rating-card__row">
+                                    <div class="fs-badge-form fs-badge-form--plus">
+                                        <svg class="fs-badge-form__icon" width="9.3" height="9.3" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.5 5L8.5 5M5 1.5L5 8.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="fs-player-statistics-rating-card__row-text">
+                                        <span class="fs-player-statistics-rating-card__row-text-primary">Winning goal</span>
+                                        <span class="fs-player-statistics-rating-card__row-text-secondary">(0)</span>
+                                    </div>
+                                </div>
+
+                                <!-- Row 3 -->
+                                <div class="fs-player-statistics-rating-card__row">
+                                    <div class="fs-badge-form fs-badge-form--informative">
+                                        <svg class="fs-badge-form__icon-info" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 2L12 12M12 2L2 12" stroke="#555E61" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="fs-player-statistics-rating-card__row-text">
+                                        <span class="fs-player-statistics-rating-card__row-text-primary">Hit the woodwork 3 times</span>
+                                        <span class="fs-player-statistics-rating-card__row-text-secondary">(0)</span>
+                                    </div>
+                                </div>
+
+                                <!-- Row 4 -->
+                                <div class="fs-player-statistics-rating-card__row">
+                                    <div class="fs-badge-form fs-badge-form--minus">
+                                        <svg class="fs-badge-form__icon" width="9.3" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1L9 1" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="fs-player-statistics-rating-card__row-text">
+                                        <span class="fs-player-statistics-rating-card__row-text-primary">Big chances missed</span>
+                                        <span class="fs-player-statistics-rating-card__row-text-secondary">(2)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--
+                    PLAYER STATISTICS TABLE
+                -->
+                <!-- Shots Section -->
+                <div class="player-stats-table">
+                    <div class="player-stats-table__headline">
+                        <span class="player-stats-table__headline-text">Shots</span>
+                    </div>
+                    <div class="player-stats-table__rows">
+                        <!-- Row 1 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Total shots</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">2</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 2 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Expected goals (xG)</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--background fs-table-shared-value--blue">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">0.55</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 3 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">xG on target (xGOT)</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">0.54</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 4 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Shots on target</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 5 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Shots off target</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">–</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 6 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Blocked shots</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 7 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Shots inside the box</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">–</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 8 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Shots outside the box</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">2</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 9 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Headed shots</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">–</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attack Section -->
+                <div class="player-stats-table">
+                    <div class="player-stats-table__headline">
+                        <span class="player-stats-table__headline-text">Attack</span>
+                    </div>
+                    <div class="player-stats-table__rows">
+                        <!-- Row 1 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Touches in opposition box
+</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <div class="fs-table-shared-value__text-container">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 2 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Big chances missed
+</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--background fs-table-shared-value--red">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 3 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Successful dribbles
+</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1/4 (25%)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 4 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Touches</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">9</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 5 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Fouls suffered
+</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">–</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 6 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Offsides</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">–</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passes Section -->
+                <div class="player-stats-table">
+                    <div class="player-stats-table__headline">
+                        <span class="player-stats-table__headline-text">Passes</span>
+                    </div>
+                    <div class="player-stats-table__rows">
+                        <!-- Row 1 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Accurate passes</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <div class="fs-table-shared-value__text-container">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">5/6 (83%)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 2 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Big chances created</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">–</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 3 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Expected assists (xA)</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">–</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 4 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Accurate passes in final third</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1/2 (50%)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 5 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Accurate long passes</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1/1 (100%)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 6 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Accurate crosses</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1/3 (33%)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Defense Section -->
+                <div class="player-stats-table">
+                    <div class="player-stats-table__headline">
+                        <span class="player-stats-table__headline-text">Defense</span>
+                    </div>
+                    <div class="player-stats-table__rows">
+                        <!-- Row 1 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Duels</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <div class="fs-table-shared-value__text-container">
+                                        <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">8</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 2 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Aerial duels won</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">–</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 3 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Ground duels won</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">3/8 (38%)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 4 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Tackles won</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">0/2 (0%)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 5 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Fouls committed</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 6 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Errors leading to goal</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">–</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 7 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Errors leading to shot</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">–</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 8 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Interceptions</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">–</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row 9 -->
+                        <div class="player-stats-table__row">
+                            <div class="player-stats-table__label-container">
+                                <div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--regular">Clearances</span>
+                                </div>
+                            </div>
+                            <div class="player-stats-table__value">
+                                <div class="fs-table-shared-value fs-table-shared-value--highlight fs-table-shared-value--primary">
+                                    <span class="fs-table-shared-value__text fs-table-shared-value__text--bold">1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sticky Footer (Action Area) -->
+            <div class="layout-dialog-footer">
+                <button class="fs-button fs-button--primary fs-button--solid fs-button--medium layout-dialog-action-button">
+                    <span class="fs-button__label">View Full Profile</span>
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

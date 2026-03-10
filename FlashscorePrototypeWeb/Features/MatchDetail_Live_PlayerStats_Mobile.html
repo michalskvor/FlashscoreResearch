@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Detail - Live Summary - Mobile</title>
+    <link rel="stylesheet" href="../Components/LayoutTemplate/Mobile/LayoutTemplate.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSBadgeNotification/FSBadgeNotification.css">
+    <link rel="stylesheet" href="../Components/Widgets/FSWidgetNavigation/Mobile/NavigationMain-mobile.css">
+    <link rel="stylesheet" href="../Components/Widgets/FSWidgetNavigation/Mobile/NavigationSub-mobile.css">
+    <link rel="stylesheet" href="../Components/Widgets/FSWidgetFooter/Mobile/Footer-mobile.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSAssetBoxed/FSAssetBoxed.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSActionsFavorite/FSActionsFavorite.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSBadgeStream/FSBadgeStream.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSBadgeHighlight/FSBadgeHighlight.css">
+    <link rel="stylesheet" href="../Components/Widgets/FSWidgetHeadersMatch/Mobile/FSWidgetHeadersMatch-mobile.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSBreadcrumb/FSBreadcrumb.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSTabs/FSTabs.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSDivider/FSDivider.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSHeadersSection/FSHeadersSection.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSButtonStream/FSButtonStream.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSButtonLink/FSButtonLink.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSBadgeLive/FSBadgeLive.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSOddsCell/FSOddsCell.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSOddsRow/FSOddsRow.css">
+    <link rel="stylesheet" href="../Components/Widgets/FSWidgetOddsTable/FSWidgetOddsTable.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSBannerBookmaker/FSBannerBookmaker.css">
+    <link rel="stylesheet" href="../Components/Widgets/FSWidgetBannerBookmaker/FSWidgetBannerBookmaker.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSSummaryIncidentRow/FSSummaryIncidentRow.css">
+    <link rel="stylesheet" href="../Components/Widgets/FSWidgetSummaryIncident/FSWidgetSummaryIncident.css">
+    <link rel="stylesheet" href="../Components/Widgets/FSWidgetTVchannels/FSWidgetTVchannels.css">
+    <link rel="stylesheet" href="../Components/Widgets/FSWidgetStreaming/FSWidgetStreaming.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSAudioButton/FSAudioButton.css">
+    <link rel="stylesheet" href="../Components/Widgets/FSWidgetAudioCommentary/FSWidgetAudioCommentary.css">
+    <link rel="stylesheet" href="../Components/Widgets/FSWidgetMatchInformation/FSWidgetMatchInformation.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSArticlePreview/FSArticlePreview.css">
+    <link rel="stylesheet" href="../Components/Widgets/FSWidgetNewsVerticalList/FSWidgetNewsVerticalList.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSIncidentBadgeField/FSIncidentBadgeField.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSLineupsNewIncident/FSLineupsNewIncident.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSBadgeAlert/FSBadgeAlert.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSIncidentBadgeFieldRow/FSIncidentBadgeFieldRow.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSLineupsNewParticipant/FSLineupsNewParticipant.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSInsight/FSInsight.css">
+</head>
+<body>
+    <!-- NavigationMain - Mobile -->
+    <div class="nav-main-mobile">
+        <!-- Headline Section (Logo + Action Buttons) -->
+        <div class="nav-main-mobile__headline">
+            <!-- Logo -->
+            <div class="nav-main-mobile__logo">
+                <img src="../Assets/FlashscoreLogos/flashscore-default-negative.imageset/flashscore-default-negative.svg" alt="FlashScore">
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="nav-main-mobile__buttons">
+                <!-- Gift Button with Pulse -->
+                <button class="nav-main-mobile__button">
+                    <img src="../Assets/Icons/Action/State/Gift.svg" alt="Gift">
+                    <div class="nav-main-mobile__button-pulse"></div>
+                </button>
+
+                <!-- Search Button -->
+                <button class="nav-main-mobile__button">
+                    <img src="../Assets/Icons/Action/Search.svg" alt="Search">
+                </button>
+
+                <!-- Burger Menu Button -->
+                <button class="nav-main-mobile__button">
+                    <img src="../Assets/Icons/Action/Navigation/Burger menu.svg" alt="Menu">
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation Items (SCORES / NEWS) -->
+        <div class="nav-main-mobile__items">
+            <!-- SCORES - Active -->
+            <div class="nav-main-mobile__item nav-main-mobile__item--active">
+                <div class="nav-main-mobile__item-container">
+                    <div class="nav-main-mobile__item-icon">
+                        <img src="../Assets/Icons/Notification/Result.svg" alt="Scores">
+                    </div>
+                    <span class="nav-main-mobile__item-text">SCORES</span>
+                </div>
+                <div class="nav-main-mobile__item-underline"></div>
+            </div>
+
+            <!-- NEWS - Inactive -->
+            <button class="nav-main-mobile__item">
+                <div class="nav-main-mobile__item-container">
+                    <div class="nav-main-mobile__item-icon">
+                        <img src="../Assets/Icons/Action/Navigation/News.svg" alt="News">
+                    </div>
+                    <span class="nav-main-mobile__item-text">NEWS</span>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <!-- NavigationSub - Mobile -->
+    <div class="nav-sub-mobile">
+        <!-- Favorites Icon Button -->
+        <button class="nav-sub-mobile__favorites">
+            <div class="nav-sub-mobile__favorites-icon">
+                <img src="../Assets/Icons/Action/State/Favorite.svg" alt="Favorites">
+                <div class="badge badge-primary nav-sub-mobile__favorites-badge">1</div>
+            </div>
+        </button>
+
+        <!-- Sports Menu Items -->
+        <div class="nav-sub-mobile__items">
+            <!-- FOOTBALL - Active -->
+            <div class="nav-sub-mobile__item nav-sub-mobile__item--active">
+                <span class="nav-sub-mobile__item-text">FOOTBALL</span>
+                <div class="nav-sub-mobile__item-underline"></div>
+            </div>
+
+            <!-- TENNIS - Inactive -->
+            <button class="nav-sub-mobile__item">
+                <span class="nav-sub-mobile__item-text">TENNIS</span>
+            </button>
+
+            <!-- BASKETBALL - Inactive -->
+            <button class="nav-sub-mobile__item">
+                <span class="nav-sub-mobile__item-text">BASKETBALL</span>
+            </button>
+
+            <!-- HOCKEY - Inactive -->
+            <button class="nav-sub-mobile__item">
+                <span class="nav-sub-mobile__item-text">HOCKEY</span>
+            </button>
+
+            <!-- GOLF - Inactive -->
+            <button class="nav-sub-mobile__item">
+                <span class="nav-sub-mobile__item-text">GOLF</span>
+            </button>
+        </div>
+
+        <!-- More Button -->
+        <button class="nav-sub-mobile__more">
+            <img src="../Assets/Icons/Action/Navigation/Arrow/Down.svg" alt="More">
+        </button>
+    </div>
+
+    <!-- Divider -->
+    <div class="nav-sub-mobile__divider"></div>
+
+    <!-- Main Content Wrapper -->
+    <main class="layouttemplate-wrapper">
+        <!-- Main Container - Full Width, Fills Screen -->
+        <div class="layouttemplate-main">
+            <!-- Breadcrumb / Sub-navigation area -->
+            <div class="layouttemplate-main__breadcrumb">
+                <!-- FSBreadcrumb Component -->
+                <div class="fs-breadcrumb">
+                    <div class="fs-breadcrumb__items">
+                        <div class="fs-breadcrumb__item fs-breadcrumb__item--sport">
+                            <div class="fs-breadcrumb__item-icon">
+                                <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.0064 2.93437C13.1159 -0.956071 6.80828 -0.956071 2.91783 2.93437C-0.972611 6.82482 -0.972611 13.1325 2.91783 17.0229C5.43451 19.5396 9.10265 20.5225 12.5405 19.6013C15.9783 18.6801 18.6636 15.9949 19.5848 12.557C20.5059 9.11919 19.5231 5.45105 17.0064 2.93437ZM17.4117 5.69926C18.0188 6.75267 18.3929 7.92406 18.5087 9.13438L16.6652 8.0985L17.4117 5.69926ZM16.0377 3.90613C16.1667 4.03514 16.2904 4.16796 16.4102 4.30308L15.2995 7.86949L13.9697 8.26796L10.6491 5.85651V4.50384L13.8094 2.29697C14.6325 2.71078 15.3838 3.25408 16.0346 3.90613H16.0377ZM9.96211 1.39086C10.7392 1.38999 11.5129 1.49424 12.2621 1.70079L9.96211 3.30384L7.66211 1.70079C8.41129 1.49424 9.18497 1.38999 9.96211 1.39086ZM3.89341 3.90613C4.543 3.25414 5.29299 2.71059 6.11478 2.29621L9.27509 4.50384V5.85651L5.95448 8.26949L4.62852 7.86949L3.51707 4.30308C3.63692 4.16796 3.76058 4.03514 3.89341 3.90613ZM2.51936 5.69926L3.26593 8.09544L1.41554 9.13132C1.53173 7.92206 1.90579 6.75175 2.51249 5.69926H2.51936ZM3.89341 16.0512C3.81707 15.9748 3.74684 15.8985 3.67509 15.8222H5.68883L6.34073 17.768C5.43101 17.3429 4.60272 16.7619 3.89341 16.0512ZM5.90257 14.4481H2.62699C1.93296 13.314 1.51464 12.0328 1.40562 10.7077L4.16135 9.15957L5.5728 9.5901L6.84532 13.5038L5.90257 14.4481ZM11.9484 18.3351C10.6444 18.6405 9.28748 18.6405 7.98348 18.3351L6.96974 15.3222L8.06516 14.2267H11.8591L12.9545 15.3222L11.9484 18.3351ZM11.8789 12.9008H8.04532L6.86058 9.2527L9.96211 6.99926L13.0636 9.2527L11.8789 12.9008ZM16.0346 16.0535C15.3244 16.7654 14.4947 17.3472 13.5835 17.7725L14.2354 15.8267H16.2529C16.1835 15.9008 16.1071 15.9771 16.0346 16.0512V16.0535ZM14.0255 14.4504L13.0789 13.5038L14.3514 9.58781L15.7621 9.16415L18.5186 10.7122C18.4096 12.0374 17.9913 13.3185 17.2972 14.4527L14.0255 14.4504Z" fill="#555E61"/>
+                                </svg>
+                            </div>
+                            <span class="fs-breadcrumb__text">Football</span>
+                        </div>
+                        <div class="fs-breadcrumb__separator">
+                            <svg width="10" height="10" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#999999"/>
+                            </svg>
+                        </div>
+                        <div class="fs-breadcrumb__item fs-breadcrumb__item--country">
+                            <div class="fs-breadcrumb__item-flag">
+                                <svg width="14" height="10" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 16H24V1.90735e-06H0V16Z" fill="#F9F9F9"/>
+                                    <path d="M10.392 16H13.608V1.90735e-06H10.392V16Z" fill="#CE1124"/>
+                                    <path d="M0 9.60098H24V6.39999H0V9.60098Z" fill="#CE1124"/>
+                                </svg>
+                            </div>
+                            <span class="fs-breadcrumb__text">England</span>
+                        </div>
+                        <div class="fs-breadcrumb__separator">
+                            <svg width="10" height="10" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19.022L14.025 9.999L5.002 0.977L5.98 0L15.98 9.999L5.978 19.999L5 19.024V19.022Z" fill="#999999"/>
+                            </svg>
+                        </div>
+                        <div class="fs-breadcrumb__item fs-breadcrumb__item--tournament">
+                            
+                            <span class="fs-breadcrumb__text">Premier League</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="layouttemplate-main__content">
+                <!-- FSWidgetHeadersMatch - Live -->
+                <div class="fs-widget-headers-match-mobile fs-widget-headers-match-mobile--live">
+                    <div class="fs-widget-headers-match-mobile__date-container">
+                        <p class="fs-widget-headers-match-mobile__date">28.12.2023 12:30</p>
+                    </div>
+                    <div class="fs-widget-headers-match-mobile__content">
+
+                        <!-- Home Participant -->
+                        <div class="fs-widget-headers-match-mobile__participant fs-widget-headers-match-mobile__participant--home">
+                            <div class="fs-widget-headers-match-mobile__participant-icons">
+                                <div class="fs-widget-headers-match-mobile__empty-cell"></div>
+                                <div class="fs-widget-headers-match-mobile__participant-icons-center">
+                                    <div class="fs-widget-headers-match-mobile__favorite">
+                                        <div class="fs-actions-favorite fs-actions-favorite--large fs-actions-favorite--base">
+                                            <svg class="fs-actions-favorite__icon" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.346 0L7.245 6.847L0.404 6.832L0 8.141L5.544 12.354L3.415 19.191L4.473 20L9.999 15.758L15.526 20L16.584 19.191L14.455 12.354L19.999 8.141L19.596 6.832L12.753 6.847L10.654 0H9.346ZM8.399 7.793L9.999 2.575L11.6 7.793L12.256 8.293L17.468 8.282L13.245 11.493L12.994 12.302L14.616 17.511L10.404 14.281H9.594L5.384 17.511L7.005 12.302L6.754 11.493L2.53 8.282L7.744 8.293L8.399 7.793Z" fill="#999999"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="fs-asset-boxed fs-asset-boxed--52px fs-asset-boxed--asset">
+                                        <img src="../Assets/TeamLogos/Premier league/Man city.png" alt="Manchester City" class="fs-asset-boxed__image fs-asset-boxed__image--asset">
+                                    </div>
+                                    <div class="fs-widget-headers-match-mobile__serve"></div>
+                                </div>
+                                <div class="fs-widget-headers-match-mobile__empty-cell"></div>
+                            </div>
+                            <div class="fs-widget-headers-match-mobile__participant-info">
+                                <div class="fs-widget-headers-match-mobile__participant-name">
+                                    <p class="fs-widget-headers-match-mobile__participant-text">Manchester City</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Score Container — Live -->
+                        <div class="fs-widget-headers-match-mobile__score-container">
+                            <div class="fs-widget-headers-match-mobile__score-content">
+                                <div class="fs-widget-headers-match-mobile__score-home">2</div>
+                                <div class="fs-widget-headers-match-mobile__score-separator">-</div>
+                                <div class="fs-widget-headers-match-mobile__score-away">0</div>
+                            </div>
+                            <div class="fs-widget-headers-match-mobile__state">
+                                <div class="fs-widget-headers-match-mobile__live-info">
+                                    <p class="fs-widget-headers-match-mobile__live-period">1ST HALF</p>
+                                    <div class="fs-widget-headers-match-mobile__live-time">
+                                        <span class="fs-widget-headers-match-mobile__live-minutes">43'</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Live Stream Badge -->
+                            <div class="fs-badge-stream fs-badge-stream--live">
+                                <img src="../Assets/Icons/Action/Video/Play ALT.svg" alt="" class="fs-badge-stream__icon">
+                                <span class="fs-badge-stream__text">Live Stream</span>
+                            </div>
+                        </div>
+
+                        <!-- Away Participant -->
+                        <div class="fs-widget-headers-match-mobile__participant fs-widget-headers-match-mobile__participant--away">
+                            <div class="fs-widget-headers-match-mobile__participant-icons">
+                                <div class="fs-widget-headers-match-mobile__empty-cell"></div>
+                                <div class="fs-widget-headers-match-mobile__participant-icons-center">
+                                    <div class="fs-widget-headers-match-mobile__serve"></div>
+                                    <div class="fs-asset-boxed fs-asset-boxed--52px fs-asset-boxed--asset">
+                                        <img src="../Assets/TeamLogos/Premier league/Fulham.png" alt="Fulham" class="fs-asset-boxed__image fs-asset-boxed__image--asset">
+                                    </div>
+                                    <div class="fs-widget-headers-match-mobile__favorite">
+                                        <div class="fs-actions-favorite fs-actions-favorite--large fs-actions-favorite--base">
+                                            <svg class="fs-actions-favorite__icon" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.346 0L7.245 6.847L0.404 6.832L0 8.141L5.544 12.354L3.415 19.191L4.473 20L9.999 15.758L15.526 20L16.584 19.191L14.455 12.354L19.999 8.141L19.596 6.832L12.753 6.847L10.654 0H9.346ZM8.399 7.793L9.999 2.575L11.6 7.793L12.256 8.293L17.468 8.282L13.245 11.493L12.994 12.302L14.616 17.511L10.404 14.281H9.594L5.384 17.511L7.005 12.302L6.754 11.493L2.53 8.282L7.744 8.293L8.399 7.793Z" fill="#999999"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fs-widget-headers-match-mobile__empty-cell"></div>
+                            </div>
+                            <div class="fs-widget-headers-match-mobile__participant-info">
+                                <div class="fs-widget-headers-match-mobile__participant-name">
+                                    <p class="fs-widget-headers-match-mobile__participant-text">Fulham</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs Primary - Match Detail Sections (FSTabs Component) -->
+            <div class="fs-tabs-row fs-tabs-row--primary">
+                <div class="fs-tabs fs-tabs--active">
+                    <span class="fs-tabs__text">Match</span>
+                    <div class="fs-tabs__underline"></div>
+                </div>
+
+                <button class="fs-tabs">
+                    <span class="fs-tabs__text">Odds</span>
+                </button>
+
+                <button class="fs-tabs">
+                    <span class="fs-tabs__text">H2H</span>
+                </button>
+
+                <button class="fs-tabs">
+                    <span class="fs-tabs__text">Standings</span>
+                </button>
+
+                <button class="fs-tabs">
+                    <span class="fs-tabs__text">News</span>
+                </button>
+            </div>
+
+            <!-- Divider Primary -->
+            <div class="fs-divider fs-divider--horizontal fs-divider--primary"></div>
+
+            <!-- Tabs Secondary - Match Content Sections (FSTabs Component) -->
+            <div class="fs-tabs-row fs-tabs-row--secondary">
+                <button class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
+                    <span class="fs-tabs__text">Summary</span>
+                </button>
+
+                <button class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
+                    <span class="fs-tabs__text">Stats</span>
+                </button>
+
+                <button class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
+                    <span class="fs-tabs__text">Lineups</span>
+                </button>
+
+                <button class="fs-tabs fs-tabs--secondary fs-tabs--grey-base fs-tabs--active">
+                    <span class="fs-tabs__text">Player stats</span>
+                </button>
+            </div>
+
+
+        </div>
+    </main>
+
+    <!-- Footer Widget - Mobile -->
+    <footer class="footer-mobile">
+        <!-- SEO Sections Grid (2 columns) -->
+        <div class="footer-mobile__seo-grid">
+            <!-- Football Section -->
+            <div class="footer-mobile__section">
+                <h3 class="footer-mobile__headline">FOOTBALL</h3>
+                <div class="footer-mobile__links">
+                    <a href="#" class="footer-mobile__link">Football News</a>
+                    <a href="#" class="footer-mobile__link">Premier League Scores</a>
+                    <a href="#" class="footer-mobile__link">Premier League Fixtures</a>
+                    <a href="#" class="footer-mobile__link">Premier League Standings</a>
+                    <a href="#" class="footer-mobile__link">Championship Scores</a>
+                    <a href="#" class="footer-mobile__link">EFL League One</a>
+                </div>
+            </div>
+
+            <!-- Tennis Section -->
+            <div class="footer-mobile__section">
+                <h3 class="footer-mobile__headline">TENNIS</h3>
+                <div class="footer-mobile__links">
+                    <a href="#" class="footer-mobile__link">ATP Australian Open 2025</a>
+                    <a href="#" class="footer-mobile__link">WTA Australian Open 2025</a>
+                    <a href="#" class="footer-mobile__link">Australian Open News</a>
+                    <a href="#" class="footer-mobile__link">Jack Draper</a>
+                    <a href="#" class="footer-mobile__link">Cameron Norrie</a>
+                    <a href="#" class="footer-mobile__link">Katie Boulter</a>
+                </div>
+            </div>
+
+            <!-- Other Sports Section -->
+            <div class="footer-mobile__section">
+                <h3 class="footer-mobile__headline">OTHER SPORTS</h3>
+                <div class="footer-mobile__links">
+                    <a href="#" class="footer-mobile__link">Draper v Vukic</a>
+                    <a href="#" class="footer-mobile__link">Humphries v Aspinall</a>
+                    <a href="#" class="footer-mobile__link">Littler v Price</a>
+                    <a href="#" class="footer-mobile__link">Nebrida v Wright</a>
+                    <a href="#" class="footer-mobile__link">Cricket Scores</a>
+                    <a href="#" class="footer-mobile__link">Rangers v Fraserburgh</a>
+                </div>
+            </div>
+
+            <!-- Trending Section -->
+            <div class="footer-mobile__section">
+                <h3 class="footer-mobile__headline">TRENDING</h3>
+                <div class="footer-mobile__links">
+                    <a href="#" class="footer-mobile__link">Premiership Rugby</a>
+                    <a href="#" class="footer-mobile__link">Snooker The Masters 2025</a>
+                    <a href="#" class="footer-mobile__link">Snooker World Grand Prix 2025</a>
+                    <a href="#" class="footer-mobile__link">NBA Scores</a>
+                    <a href="#" class="footer-mobile__link">Cricket Scores</a>
+                    <a href="#" class="footer-mobile__link">Cricket Test Series 2025</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Football Live Scores Section -->
+        <div class="footer-mobile__section">
+            <h3 class="footer-mobile__headline">FOOTBALL LIVE SCORES</h3>
+            <div class="footer-mobile__links">
+                <a href="#" class="footer-mobile__link">Brentford v Liverpool</a>
+                <a href="#" class="footer-mobile__link">Arsenal v Aston Villa</a>
+                <a href="#" class="footer-mobile__link">Man Utd v Brighton</a>
+                <a href="#" class="footer-mobile__link">Everton v Tottenham</a>
+                <a href="#" class="footer-mobile__link">Ipswich v Man City</a>
+                <a href="#" class="footer-mobile__link">Monaco v Aston Villa</a>
+            </div>
+        </div>
+
+        <!-- Flashscore.co.uk Section -->
+        <div class="footer-mobile__section">
+            <h3 class="footer-mobile__headline footer-mobile__headline--grey">FLASHSCORE.CO.UK</h3>
+            <div class="footer-mobile__links-grid">
+                <div class="footer-mobile__links">
+                    <a href="#" class="footer-mobile__link">Terms of Use</a>
+                    <a href="#" class="footer-mobile__link">Privacy Policy</a>
+                    <a href="#" class="footer-mobile__link">GDPR and Journalism</a>
+                    <a href="#" class="footer-mobile__link">Advertise</a>
+                    <a href="#" class="footer-mobile__link">Contact</a>
+                    <a href="#" class="footer-mobile__link">Mobile</a>
+                </div>
+                <div class="footer-mobile__links">
+                    <a href="#" class="footer-mobile__link">Livescore</a>
+                    <a href="#" class="footer-mobile__link">Recommended Sites</a>
+                    <a href="#" class="footer-mobile__link">FAQ</a>
+                    <a href="#" class="footer-mobile__link">Audio</a>
+                    <a href="#" class="footer-mobile__link">Betting offers</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Follow Us Section -->
+        <div class="footer-mobile__section">
+            <h3 class="footer-mobile__headline footer-mobile__headline--grey">FOLLOW US</h3>
+            <div class="footer-mobile__links">
+                <a href="#" class="footer-mobile__link footer-mobile__link--with-icon">
+                    <img src="../Assets/Icons/Other/Social/Facebook.svg" alt="Facebook" class="footer-mobile__social-icon">
+                    <span>Facebook</span>
+                </a>
+                <a href="#" class="footer-mobile__link footer-mobile__link--with-icon">
+                    <img src="../Assets/Icons/Other/Social/X.svg" alt="X" class="footer-mobile__social-icon">
+                    <span>X</span>
+                </a>
+                <a href="#" class="footer-mobile__link footer-mobile__link--with-icon">
+                    <img src="../Assets/Icons/Other/Social/Instagram.svg" alt="Instagram" class="footer-mobile__social-icon">
+                    <span>Instagram</span>
+                </a>
+                <a href="#" class="footer-mobile__link footer-mobile__link--with-icon">
+                    <img src="../Assets/Icons/Other/Social/TikTok.svg" alt="TikTok" class="footer-mobile__social-icon">
+                    <span>Tik Tol</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile Applications Section -->
+        <div class="footer-mobile__section">
+            <h3 class="footer-mobile__headline footer-mobile__headline--grey">MOBILE APPLICATIONS</h3>
+            <p class="footer-mobile__apps-text">Our mobile app is optimized for your phone. Download is for free!</p>
+            <div class="footer-mobile__app-badges">
+                <a href="#" class="footer-mobile__app-badge">
+                    <img src="../Assets/SocialButtons/AppStore.png" alt="Download on App Store">
+                </a>
+                <a href="#" class="footer-mobile__app-badge">
+                    <img src="../Assets/SocialButtons/GooglePlay.png" alt="Get it on Google Play">
+                </a>
+                <a href="#" class="footer-mobile__app-badge">
+                    <img src="../Assets/SocialButtons/Huawei.png" alt="Explore it on AppGallery">
+                </a>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="footer-mobile__bottom">
+            <!-- Lite Version Link -->
+            <a href="#" class="footer-mobile__lite-link">
+                <span>Lite version</span>
+                <img src="../Assets/Icons/Action/Navigation/Arrow/Right.svg" alt="" class="footer-mobile__arrow">
+            </a>
+
+            <!-- Legal Text -->
+            <p class="footer-mobile__legal">Gamble Responsibly. Gambling Therapy. 18+</p>
+            <p class="footer-mobile__legal">From 1.4.2023, Livesport s.r.o. became the operator of this service.</p>
+            <p class="footer-mobile__legal">Copyright © 2006-23 Flashscore.com</p>
+
+            <!-- Privacy Link -->
+            <a href="#" class="footer-mobile__privacy-link">
+                <img src="../Assets/Icons/Settings/Privacy.svg" alt="Privacy" class="footer-mobile__privacy-icon">
+                <span>Set privacy</span>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

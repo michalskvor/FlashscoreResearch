@@ -1,0 +1,324 @@
+/* FSBadgeRating - Atom Component */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================== */
+/* BASE BADGE                                  */
+/* =========================================== */
+
+.fs-badge-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    min-width: 25px;
+    height: 20px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* TEXT                                        */
+/* =========================================== */
+
+.fs-badge-rating__text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* =========================================== */
+/* ICON (for Best type)                        */
+/* =========================================== */
+
+.fs-badge-rating__icon {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+/* =========================================== */
+/* TYPE VARIANTS                               */
+/* =========================================== */
+
+/* Type: Best (9.5+) - Blue with star */
+.fs-badge-rating--best {
+    background-color: #0033FF;
+}
+
+/* Type: A (9.0-9.4) - Dark Green */
+.fs-badge-rating--a {
+    background-color: #0B7929;
+}
+
+/* Type: B (7.0-8.9) - Green */
+.fs-badge-rating--b {
+    background-color: #76B100;
+}
+
+/* Type: C (6.0-6.9) - Orange */
+.fs-badge-rating--c {
+    background-color: #F3A000;
+}
+
+/* Type: D (5.0-5.9) - Dark Orange/Red */
+.fs-badge-rating--d {
+    background-color: #EC6B07;
+}
+
+/* Type: F (below 5.0) - Red */
+.fs-badge-rating--f {
+    background-color: #DC0000;
+}
+
+/* =========================================== */
+/* SIZE VARIANT - LARGE                        */
+/* =========================================== */
+
+.fs-badge-rating--large {
+    min-width: 25px;
+    height: 20px;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.fs-badge-rating--large .fs-badge-rating__text {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+/* =========================================== */
+/* SIZE VARIANT - SMALL                        */
+/* =========================================== */
+
+.fs-badge-rating--small {
+    min-width: 18px;
+    height: 14px;
+    padding: 1px 3px;
+    border-radius: 3px;
+}
+
+.fs-badge-rating--small .fs-badge-rating__text {
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.fs-badge-rating--small .fs-badge-rating__icon {
+    top: -6px;
+    right: -6px;
+    width: 10px;
+    height: 10px;
+}
+
+/* Small variant for average */
+.fs-badge-rating--small.fs-badge-rating--average {
+    min-width: 14px;
+}
+
+.fs-badge-rating--small .fs-badge-rating__icon-container {
+    padding: 0 2px;
+}
+
+.fs-badge-rating--small .fs-badge-rating__icon-average {
+    width: 10px;
+    height: 10px;
+}
+
+.fs-badge-rating--small .fs-badge-rating__text-container {
+    width: auto;
+    padding: 0 2px 0 2px;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* AVERAGE VARIANT                             */
+/* =========================================== */
+
+/* Base structure for average variant */
+.fs-badge-rating--average {
+    padding: 0;
+    gap: 0;
+    min-width: 18px;
+    background-color: #FFFFFF;
+    border: 1px solid;
+    box-sizing: border-box;
+}
+
+/* Left section with icon */
+.fs-badge-rating__icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 4px;
+    flex-shrink: 0;
+}
+
+.fs-badge-rating__icon-average {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    filter: brightness(0) invert(1);
+}
+
+/* Right section with text */
+.fs-badge-rating__text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: auto;
+    padding: 0 4px;
+    flex-shrink: 0;
+}
+
+.fs-badge-rating--average .fs-badge-rating__text {
+    color: #001E28;
+}
+
+/* Type colors for average variant */
+.fs-badge-rating--average.fs-badge-rating--best {
+    border-color: #0033FF;
+}
+
+.fs-badge-rating--average.fs-badge-rating--best .fs-badge-rating__icon-container {
+    background-color: #0033FF;
+}
+
+.fs-badge-rating--average.fs-badge-rating--a {
+    border-color: #0B7929;
+}
+
+.fs-badge-rating--average.fs-badge-rating--a .fs-badge-rating__icon-container {
+    background-color: #0B7929;
+}
+
+.fs-badge-rating--average.fs-badge-rating--b {
+    border-color: #76B100;
+}
+
+.fs-badge-rating--average.fs-badge-rating--b .fs-badge-rating__icon-container {
+    background-color: #76B100;
+}
+
+.fs-badge-rating--average.fs-badge-rating--c {
+    border-color: #F3A000;
+}
+
+.fs-badge-rating--average.fs-badge-rating--c .fs-badge-rating__icon-container {
+    background-color: #F3A000;
+}
+
+.fs-badge-rating--average.fs-badge-rating--d {
+    border-color: #EC6B07;
+}
+
+.fs-badge-rating--average.fs-badge-rating--d .fs-badge-rating__icon-container {
+    background-color: #EC6B07;
+}
+
+.fs-badge-rating--average.fs-badge-rating--f {
+    border-color: #DC0000;
+}
+
+.fs-badge-rating--average.fs-badge-rating--f .fs-badge-rating__icon-container {
+    background-color: #DC0000;
+}
+
+/* =========================================== */
+/* DEMO STYLES                                 */
+/* =========================================== */
+
+.demo-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    background-color: #FFFFFF;
+}
+
+.demo-container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #001E28;
+    margin: 0 0 8px;
+}
+
+.demo-container > p {
+    font-size: 13px;
+    color: #555E61;
+    margin: 0 0 32px;
+}
+
+.demo-container h2 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999999;
+    margin: 24px 0 8px;
+}
+
+.demo-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.demo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.demo-label {
+    font-size: 11px;
+    color: #999999;
+    text-align: center;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+RATING SCALE:
+- Best (9.5+): Blue #0033FF with star icon
+- A (9.0-9.4): Dark Green #0B7929
+- B (7.0-8.9): Green #76B100
+- C (6.0-6.9): Orange #F3A000
+- D (5.0-5.9): Dark Orange #EC6B07
+- F (below 5.0): Red #DC0000
+
+SPECIFICATIONS:
+- Min-width: 25px
+- Height: 20px
+- Padding: 2px 4px
+- Border-radius: 4px
+- Text: 12px Bold, white, line-height 14px
+- Star icon: 12×12px, positioned -8px from top and right
+- Gap: 1px (internal spacing)
+
+TYPOGRAPHY:
+- Font: Livesport Finder LCGJK Bold
+- Size: 12px
+- Line height: 14px
+- Color: White (#FFFFFF)
+*/

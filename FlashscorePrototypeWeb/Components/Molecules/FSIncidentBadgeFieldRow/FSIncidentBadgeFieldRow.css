@@ -37,7 +37,7 @@
 /* Horizontal-top: badges align to bottom edge */
 .fs-incident-badge-field-row--horizontal.fs-incident-badge-field-row--top {
     align-items: flex-end;
-    padding-right: 5px;
+    
 }
 
 /* ── Alignment: Bottom ──────────────────────────────────────── */
@@ -69,6 +69,15 @@
 
 .fs-incident-badge-field-row--horizontal.fs-incident-badge-field-row--medium .fs-incident-badge-field:not(:last-child) {
     margin-right: -5px;
+}
+
+/* ── Overlap — Large (22px badges, -5px) ────────────────────── */
+.fs-incident-badge-field-row--vertical.fs-incident-badge-field-row--large .fs-incident-badge-field:not(:last-child) {
+    margin-bottom: -6px;
+}
+
+.fs-incident-badge-field-row--horizontal.fs-incident-badge-field-row--large .fs-incident-badge-field:not(:last-child) {
+    margin-right: -6px;
 }
 
 /* ── Z-index: Top alignment — first child on top (z:4 → z:1) ── */

@@ -1,0 +1,166 @@
+/* FSWidgetForm - Widget Component */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================== */
+/* WIDGET CONTAINER                            */
+/* =========================================== */
+
+.fs-widget-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* BODY                                        */
+/* =========================================== */
+
+.fs-widget-form__body {
+    padding: 12px 12px 0;
+    position: relative;
+}
+
+/* =========================================== */
+/* TEAMS CONTAINER                             */
+/* =========================================== */
+
+.fs-widget-form__teams {
+    display: flex;
+    gap: 8px;
+    position: relative;
+}
+
+/* =========================================== */
+/* TEAM BOX                                    */
+/* =========================================== */
+
+.fs-widget-form__team {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid #EEEEEE;
+    border-radius: 4px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* =========================================== */
+/* POSITION BADGE                              */
+/* =========================================== */
+
+.fs-widget-form__team .fs-badge-info {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+/* Right team - position badge on right */
+.fs-widget-form__team--right .fs-badge-info {
+    left: auto;
+    right: 8px;
+}
+
+/* =========================================== */
+/* ASSET CONTAINER                             */
+/* =========================================== */
+
+.fs-widget-form__asset {
+    flex-shrink: 0;
+}
+
+/* =========================================== */
+/* TEAM NAME                                   */
+/* =========================================== */
+
+.fs-widget-form__team-name {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    color: #001E28;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* =========================================== */
+/* FORM BADGES ROW                             */
+/* =========================================== */
+
+.fs-widget-form__form-row {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* =========================================== */
+/* VS ICON                                     */
+/* =========================================== */
+
+.fs-widget-form__vs {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 36px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.fs-widget-form__vs-bg {
+    position: absolute;
+    inset: 0 3.21%;
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    border-radius: 4px;
+}
+
+.fs-widget-form__vs-text {
+    position: relative;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #001E28;
+    text-align: center;
+}
+
+/* =========================================== */
+/* DESIGN SYSTEM COMPLIANCE NOTES              */
+/* =========================================== */
+/*
+- Header: FSHeadersSection molecule, "Form" left-only
+- Body padding: 12px horizontal, 12px top, 0 bottom
+- Teams gap: 8px
+- Team container: border 1px #EEEEEE, radius 4px, padding 8px
+- Position badge: FSBadgeInfo Primary variant, 20×20px, top corner
+- Asset: 42×42px (FSAssetBoxed --asset size-42px)
+- Team name: 14px Bold, centered, #001E28
+- Form row: gap 4px, centered
+- Form badges: 20×20px (FSBadgeForm)
+- VS: 36×28px, white bg, border, centered text 13px Bold
+- Widget bottom padding: 20px
+- Teams have different position numbers (e.g., "2." and "1.")
+- All spacing follows 4/8px grid
+*/
