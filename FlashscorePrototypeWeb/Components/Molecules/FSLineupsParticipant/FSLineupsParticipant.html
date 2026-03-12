@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSLineupsParticipant - Molecule Component</title>
+    <link rel="stylesheet" href="../../Atoms/FSIncidentBadgeField/FSIncidentBadgeField.css">
+    <link rel="stylesheet" href="../FSIncidentBadgeFieldRow/FSIncidentBadgeFieldRow.css">
+    <link rel="stylesheet" href="../../Atoms/FSBadgeRating/FSBadgeRating.css">
+    <link rel="stylesheet" href="FSLineupsParticipant.css">
+    <style>
+        body { background: #F5F5F5; padding: 32px; font-family: sans-serif; }
+        h1 { font-size: 18px; color: #001E28; margin-bottom: 4px; }
+        h2 { font-size: 12px; color: #999; font-weight: 400; margin: 32px 0 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .demo-group { display: flex; flex-direction: column; gap: 20px; }
+        .demo-label { font-size: 11px; color: #999; margin-bottom: 4px; }
+    </style>
+</head>
+<body>
+
+    <h1>FSLineupsParticipant</h1>
+
+    <!-- ══════════════════════════════════════════════════════════
+         LEFT ALIGNMENT
+    ══════════════════════════════════════════════════════════ -->
+    <h2>Left Alignment</h2>
+    <div class="demo-group">
+
+        <!-- 1. Full version: Jersey + Flag + Name + Incidents + Rating -->
+        <div>
+            <div class="demo-label">Full version with jersey & description</div>
+            <div class="fs-lineups-participant fs-lineups-participant--left">
+                <div class="fs-lineups-participant__main">
+                    <div class="fs-lineups-participant__jersey">
+                        <span class="fs-lineups-participant__jersey-text">1</span>
+                    </div>
+                    <div class="fs-lineups-participant__asset">
+                        <img src="../../../Assets/Flags/Italy.imageset/Italy.svg" alt="Italy" class="fs-lineups-participant__asset-image">
+                    </div>
+                    <div class="fs-lineups-participant__info">
+                        <span class="fs-lineups-participant__name">Donnarumma G.</span>
+                    </div>
+                    <div class="fs-lineups-participant__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small">
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--a">
+                            <span class="fs-badge-rating__text">8.2</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant__description">Goalkeeper</div>
+            </div>
+        </div>
+
+        <!-- 2. Without jersey number -->
+        <div>
+            <div class="demo-label">Without jersey number</div>
+            <div class="fs-lineups-participant fs-lineups-participant--left">
+                <div class="fs-lineups-participant__main">
+                    <div class="fs-lineups-participant__asset">
+                        <img src="../../../Assets/Flags/Norway.imageset/Norway.svg" alt="Norway" class="fs-lineups-participant__asset-image">
+                    </div>
+                    <div class="fs-lineups-participant__info">
+                        <span class="fs-lineups-participant__name">Haaland E.</span>
+                    </div>
+                    <div class="fs-lineups-participant__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small">
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                            </div>
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--best">
+                            <span class="fs-badge-rating__text">9.2</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant__description">Forward</div>
+            </div>
+        </div>
+
+        <!-- 3. Without description -->
+        <div>
+            <div class="demo-label">Without description</div>
+            <div class="fs-lineups-participant fs-lineups-participant--left">
+                <div class="fs-lineups-participant__main">
+                    <div class="fs-lineups-participant__jersey">
+                        <span class="fs-lineups-participant__jersey-text">20</span>
+                    </div>
+                    <div class="fs-lineups-participant__asset">
+                        <img src="../../../Assets/Flags/Portugal.imageset/Portugal.svg" alt="Portugal" class="fs-lineups-participant__asset-image">
+                    </div>
+                    <div class="fs-lineups-participant__info">
+                        <span class="fs-lineups-participant__name">Silva B.</span>
+                    </div>
+                    <div class="fs-lineups-participant__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small">
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Assist ALT.svg" alt="Assist">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--a">
+                            <span class="fs-badge-rating__text">8.5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         RIGHT ALIGNMENT
+    ══════════════════════════════════════════════════════════ -->
+    <h2>Right Alignment</h2>
+    <div class="demo-group">
+
+        <!-- 4. Full version right aligned -->
+        <div>
+            <div class="demo-label">Full version with jersey & description (right)</div>
+            <div class="fs-lineups-participant fs-lineups-participant--right">
+                <div class="fs-lineups-participant__main">
+                    <div class="fs-lineups-participant__jersey">
+                        <span class="fs-lineups-participant__jersey-text">9</span>
+                    </div>
+                    <div class="fs-lineups-participant__asset">
+                        <img src="../../../Assets/Flags/Brazil.imageset/Brazil.svg" alt="Brazil" class="fs-lineups-participant__asset-image">
+                    </div>
+                    <div class="fs-lineups-participant__info">
+                        <span class="fs-lineups-participant__name">Rodrigo Muniz</span>
+                    </div>
+                    <div class="fs-lineups-participant__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small">
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--b">
+                            <span class="fs-badge-rating__text">7.5</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant__description">Forward</div>
+            </div>
+        </div>
+
+        <!-- 5. Without jersey right aligned -->
+        <div>
+            <div class="demo-label">Without jersey (right)</div>
+            <div class="fs-lineups-participant fs-lineups-participant--right">
+                <div class="fs-lineups-participant__main">
+                    <div class="fs-lineups-participant__asset">
+                        <img src="../../../Assets/Flags/England.imageset/England.svg" alt="England" class="fs-lineups-participant__asset-image">
+                    </div>
+                    <div class="fs-lineups-participant__info">
+                        <span class="fs-lineups-participant__name">Reed H.</span>
+                    </div>
+                    <div class="fs-lineups-participant__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small">
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Yellow card.svg" alt="Yellow card">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--c">
+                            <span class="fs-badge-rating__text">6.8</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant__description">Midfielder</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SIDE BY SIDE — Lineup table context
+    ══════════════════════════════════════════════════════════ -->
+    <h2>Side by Side — Lineup table context</h2>
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+
+        <!-- Row 1: Home vs Away -->
+        <div class="fs-lineups-participant-row">
+            <div class="fs-lineups-participant fs-lineups-participant--left fs-lineups-participant--fluid">
+                <div class="fs-lineups-participant__main">
+                    <div class="fs-lineups-participant__jersey">
+                        <span class="fs-lineups-participant__jersey-text">22</span>
+                    </div>
+                    <div class="fs-lineups-participant__asset">
+                        <img src="../../../Assets/Flags/England.imageset/England.svg" alt="England" class="fs-lineups-participant__asset-image">
+                    </div>
+                    <div class="fs-lineups-participant__info">
+                        <span class="fs-lineups-participant__name">Palmer C.</span>
+                    </div>
+                    <div class="fs-lineups-participant__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small">
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--a">
+                            <span class="fs-badge-rating__text">9.5</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant__description">Goalkeeper</div>
+            </div>
+
+            <div class="fs-lineups-participant fs-lineups-participant--right fs-lineups-participant--fluid">
+                <div class="fs-lineups-participant__main">
+                    <div class="fs-lineups-participant__jersey">
+                        <span class="fs-lineups-participant__jersey-text">9</span>
+                    </div>
+                    <div class="fs-lineups-participant__asset">
+                        <img src="../../../Assets/Flags/Brazil.imageset/Brazil.svg" alt="Brazil" class="fs-lineups-participant__asset-image">
+                    </div>
+                    <div class="fs-lineups-participant__info">
+                        <span class="fs-lineups-participant__name">Muniz R.</span>
+                    </div>
+                    <div class="fs-lineups-participant__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small">
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Yellow card.svg" alt="Yellow card">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--c">
+                            <span class="fs-badge-rating__text">6.7</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant__description">Forward</div>
+            </div>
+        </div>
+
+        <!-- Row 2: Home vs Away Grey background-->
+        <div class="fs-lineups-participant-row fs-lineups-participant-row--grey-bg">
+            <div class="fs-lineups-participant fs-lineups-participant--left fs-lineups-participant--fluid">
+                <div class="fs-lineups-participant__main">
+                    <div class="fs-lineups-participant__jersey">
+                        <span class="fs-lineups-participant__jersey-text">22</span>
+                    </div>
+                    <div class="fs-lineups-participant__asset">
+                        <img src="../../../Assets/Flags/England.imageset/England.svg" alt="England" class="fs-lineups-participant__asset-image">
+                    </div>
+                    <div class="fs-lineups-participant__info">
+                        <span class="fs-lineups-participant__name">Palmer C.</span>
+                    </div>
+                    <div class="fs-lineups-participant__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small">
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--a">
+                            <span class="fs-badge-rating__text">9.5</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant__description">Goalkeeper</div>
+            </div>
+
+            <div class="fs-lineups-participant fs-lineups-participant--right fs-lineups-participant--fluid">
+                <div class="fs-lineups-participant__main">
+                    <div class="fs-lineups-participant__jersey">
+                        <span class="fs-lineups-participant__jersey-text">9</span>
+                    </div>
+                    <div class="fs-lineups-participant__asset">
+                        <img src="../../../Assets/Flags/Brazil.imageset/Brazil.svg" alt="Brazil" class="fs-lineups-participant__asset-image">
+                    </div>
+                    <div class="fs-lineups-participant__info">
+                        <span class="fs-lineups-participant__name">Muniz R.</span>
+                    </div>
+                    <div class="fs-lineups-participant__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small">
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Yellow card.svg" alt="Yellow card">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--c">
+                            <span class="fs-badge-rating__text">6.7</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant__description">Forward</div>
+            </div>
+        </div>
+
+        <!-- Row 3: Another pairing -->
+        <div class="fs-lineups-participant-row">
+            <div class="fs-lineups-participant fs-lineups-participant--left fs-lineups-participant--fluid">
+                <div class="fs-lineups-participant__main">
+                    <div class="fs-lineups-participant__asset">
+                        <img src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Manchester City" class="fs-lineups-participant__asset-image">
+                    </div>
+                    <div class="fs-lineups-participant__info">
+                        <span class="fs-lineups-participant__name">Haaland E.</span>
+                    </div>
+                    <div class="fs-lineups-participant__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small">
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                            </div>
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--b">
+                            <span class="fs-badge-rating__text">7.8</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant__description">Forward</div>
+            </div>
+
+            <div class="fs-lineups-participant fs-lineups-participant--right fs-lineups-participant--fluid">
+                <div class="fs-lineups-participant__main">
+                    <div class="fs-lineups-participant__asset">
+                        <img src="../../../Assets/TeamLogos/Premier league/Fulham.png" alt="Fulham" class="fs-lineups-participant__asset-image">
+                    </div>
+                    <div class="fs-lineups-participant__info">
+                        <span class="fs-lineups-participant__name">Reed H.</span>
+                    </div>
+                    <div class="fs-lineups-participant__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small"></div>
+                    </div>
+                    <div class="fs-lineups-participant__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--d">
+                            <span class="fs-badge-rating__text">6.2</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant__description">Midfielder</div>
+            </div>
+        </div>
+
+        <!-- Row 4: Another pairing Grey background-->
+        <div class="fs-lineups-participant-row fs-lineups-participant-row--grey-bg">
+            <div class="fs-lineups-participant fs-lineups-participant--left fs-lineups-participant--fluid">
+                <div class="fs-lineups-participant__main">
+                    <div class="fs-lineups-participant__asset">
+                        <img src="../../../Assets/TeamLogos/Premier league/Man city.png" alt="Manchester City" class="fs-lineups-participant__asset-image">
+                    </div>
+                    <div class="fs-lineups-participant__info">
+                        <span class="fs-lineups-participant__name">Haaland E.</span>
+                    </div>
+                    <div class="fs-lineups-participant__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small">
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                            </div>
+                            <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fs-lineups-participant__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--b">
+                            <span class="fs-badge-rating__text">7.8</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant__description">Forward</div>
+            </div>
+
+            <div class="fs-lineups-participant fs-lineups-participant--right fs-lineups-participant--fluid">
+                <div class="fs-lineups-participant__main">
+                    <div class="fs-lineups-participant__asset">
+                        <img src="../../../Assets/TeamLogos/Premier league/Fulham.png" alt="Fulham" class="fs-lineups-participant__asset-image">
+                    </div>
+                    <div class="fs-lineups-participant__info">
+                        <span class="fs-lineups-participant__name">Reed H.</span>
+                    </div>
+                    <div class="fs-lineups-participant__incidents">
+                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small"></div>
+                    </div>
+                    <div class="fs-lineups-participant__rating">
+                        <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--d">
+                            <span class="fs-badge-rating__text">6.2</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-lineups-participant__description">Midfielder</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

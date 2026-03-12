@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Card (Prototype) - Mobile</title>
+    <script>
+        if (window.self !== window.top) document.documentElement.classList.add('player-card-embedded');
+    </script>
+    <link rel="stylesheet" href="../Components/LayoutTemplate/Mobile/LayoutDialog.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSButtonClose/FSButtonClose.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSButton/FSButton.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSAssetBoxed/FSAssetBoxed.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSActionsFavorite/FSActionsFavorite.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSPlayerStatsPlayerCell/FSPlayerStatsPlayerCell.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSTableSharedValue/FSTableSharedValue.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSBadgeRating/FSBadgeRating.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSBadgeForm/FSBadgeForm.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSIncidentBadgeField/FSIncidentBadgeField.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSIncidentBadgeFieldRow/FSIncidentBadgeFieldRow.css">
+    <link rel="stylesheet" href="../Components/Widgets/FSPlayerStatisticsRatingCard/FSPlayerStatisticsRatingCard.css">
+    <style>
+        .player-stats-header {
+            position: sticky;
+            top: 0;
+            background-color: #FFFFFF;
+            z-index: 10;
+            margin-left: -24px;
+            margin-right: -24px;
+            padding: 24px 24px 12px 24px; /* pb-12px dle Figma StickyHeader */
+            flex-shrink: 0;
+        }
+        .player-stats-table { display: flex; flex-direction: column; gap: 4px; width: 100%; margin-top: 24px; }
+        .player-stats-table__headline { display: flex; align-items: center; min-height: 24px; width: 100%; }
+        .player-stats-table__headline-text { font-family: 'Livesport Finder LCGJK', sans-serif; font-size: 14px; font-weight: 700; line-height: 18px; color: #001E28; }
+        .player-stats-table__rows { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+        .player-stats-table__row { display: flex; height: 24px; min-height: 24px; align-items: center; justify-content: space-between; width: 100%; }
+        .player-stats-table__label-container { display: flex; height: 16px; align-items: center; padding-right: 8px; flex-shrink: 0; }
+        .player-stats-table__value { display: flex; align-items: center; justify-content: center; padding: 0 2px; border-radius: 4px; flex-shrink: 0; }
+        .player-card-not-found { padding: 24px; text-align: center; color: #555E61; }
+        body { max-width: 393px; margin: 0 auto; min-height: 100vh; box-shadow: 0 0 0 1px rgba(0,0,0,0.06); }
+        .layout-dialog-viewport { background: #FFFFFF; }
+        /* V iframe (z lineups): vyplnit celou výšku kontejneru 686px, aby se propsala sticky hlavička/patička a scroll */
+        html.player-card-embedded,
+        html.player-card-embedded body {
+            height: 100%;
+            min-height: 100%;
+            overflow: hidden;
+        }
+        html.player-card-embedded .layout-dialog-viewport--player-card {
+            height: 100%;
+            min-height: 100%;
+        }
+        html.player-card-embedded .layout-dialog-bottom-sheet--player-card {
+            height: 100%;
+            min-height: 100%;
+            max-height: 100%;
+        }
+        /* Scroll area: pt-4px dle Figma Tables */
+        .player-card-scroll-area {
+            flex: 1;
+            min-height: 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-top: 4px;
+            padding-bottom: 24px;
+            scrollbar-width: thin;
+        }
+        .player-card-scroll-area::-webkit-scrollbar { width: 4px; }
+        /* Jeden blok: rating (Min/Top events/Rating) + 1px linka + bonusy */
+        .player-card-rating-and-bonuses {
+            width: 100%;
+        }
+        .player-card-scroll-area::-webkit-scrollbar-track { background: transparent; }
+        .player-card-scroll-area::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 2px; }
+        /* 1px oddělovač pod šedým boxem (Min / Top events / Rating) */
+        .player-card-scroll-area .fs-player-statistics-rating-card__divider {
+            border: none;
+            border-top: 1px solid #FFFFFF;
+            margin: 0;
+            flex-shrink: 0;
+        }
+        .player-card-scroll-area #player-card-stats-tables {
+            flex: none;
+            overflow: visible;
+        }
+        /* Bonusy a řádky bez ořezu – ikony (plus/minus) nesmí být useknuté */
+        #player-card-bonuses,
+        #player-card-bonuses .fs-player-statistics-rating-card__row {
+            overflow: visible;
+        }
+        /* Řádek bonusu s podtextem (např. Finishing) */
+        .fs-player-statistics-rating-card__row--subtext {
+            align-items: flex-start;
+        }
+        .fs-player-statistics-rating-card__row-text--column {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+        }
+        .fs-player-statistics-rating-card__row-text-sub {
+            font-size: 12px;
+            line-height: 14px;
+            color: #555E61;
+        }
+        /* Goalkeeper saves badge in Top events (dle Figma 20638-84076) */
+        .fs-player-statistics-rating-card__saves-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            height: 22px;
+            padding: 0 6px;
+            background: #FFFFFF;
+            border: 1px solid #C8CDCD;
+            border-radius: 4px;
+        }
+        .fs-player-statistics-rating-card__saves-badge-icon {
+            width: 14px;
+            height: 14px;
+            display: block;
+            flex-shrink: 0;
+        }
+        .fs-player-statistics-rating-card__saves-badge-text {
+            font-family: 'Livesport Finder LCGJK', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 14px;
+            color: #001E28;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout-dialog-viewport layout-dialog-viewport--player-card">
+        <div class="layout-dialog-backdrop"></div>
+        <div class="layout-dialog-bottom-sheet layout-dialog-bottom-sheet--player-card">
+
+            <a href="match_finished_mobile_lineups_playerCard.html" class="fs-button-close layout-dialog-close" aria-label="Close" style="text-decoration: none;">
+                <img src="../Assets/Icons/Action/Navigation/Close.svg" alt="" class="fs-button-close__icon">
+            </a>
+
+            <div class="layout-dialog-body layout-dialog-body--player-card">
+
+                <div class="player-stats-header" id="player-card-header">
+                    <div class="fs-player-stats-player-cell fs-player-stats-player-cell--large">
+                        <div class="fs-player-stats-player-cell__player-container">
+                            <div class="fs-asset-boxed fs-asset-boxed--68px fs-asset-boxed--player">
+                                <img id="player-card-photo" class="fs-asset-boxed__image fs-asset-boxed__image--player" src="../Assets/PlayerPhotos/Football/ManchesterCity2/Haaland Erling Braut.jpg" alt="">
+                            </div>
+                            <div class="fs-player-stats-player-cell__team-container">
+                                <div class="fs-asset-boxed fs-asset-boxed--26px fs-asset-boxed--asset">
+                                    <img id="player-card-team" class="fs-asset-boxed__image fs-asset-boxed__image--asset" src="../Assets/TeamLogos/Premier league/Man city.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-player-stats-player-cell__text-container">
+                            <div class="fs-player-stats-player-cell__name-row">
+                                <span id="player-card-name" class="fs-player-stats-player-cell__name">Erling Haaland</span>
+                                <div class="fs-actions-favorite fs-actions-favorite--medium fs-actions-favorite--base">
+                                    <svg class="fs-actions-favorite__icon" width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.346 0L7.245 6.847L0.404 6.832L0 8.141L5.544 12.354L3.415 19.191L4.473 20L9.999 15.758L15.526 20L16.584 19.191L14.455 12.354L19.999 8.141L19.596 6.832L12.753 6.847L10.654 0H9.346ZM8.399 7.793L9.999 2.575L11.6 7.793L12.256 8.293L17.468 8.282L13.245 11.493L12.994 12.302L14.616 17.511L10.404 14.281H9.594L5.384 17.511L7.005 12.302L6.754 11.493L2.53 8.282L7.744 8.293L8.399 7.793Z" fill="#999999"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="fs-player-stats-player-cell__position-row">
+                                <span id="player-card-position" class="fs-player-stats-player-cell__position">Forward</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="player-card-scroll-area" id="player-card-scroll-area">
+                    <div class="player-card-rating-and-bonuses" id="player-card-rating-and-bonuses">
+                        <div class="fs-player-statistics-rating-card fs-player-statistics-rating-card--bonuses-below">
+                            <div class="fs-player-statistics-rating-card__stats">
+                                <div class="fs-player-statistics-rating-card__value-box">
+                                    <div class="fs-player-statistics-rating-card__value-container">
+                                        <span id="player-card-min" class="fs-player-statistics-rating-card__value">90'</span>
+                                    </div>
+                                    <div class="fs-player-statistics-rating-card__text-container">
+                                        <span class="fs-player-statistics-rating-card__label">Min.</span>
+                                    </div>
+                                </div>
+                                <div class="fs-player-statistics-rating-card__value-box">
+                                    <div class="fs-player-statistics-rating-card__value-container" id="player-card-top-events">
+                                        <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--large fs-incident-badge-field-row--top">
+                                            <div class="fs-incident-badge-field fs-incident-badge-field--large fs-incident-badge-field--icon-only">
+                                                <img class="fs-incident-badge-field__icon" src="../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                                                <div class="fs-incident-badge-field__badge">
+                                                    <span class="fs-incident-badge-field__badge-text">0</span>
+                                                </div>
+                                            </div>
+                                            <div class="fs-incident-badge-field fs-incident-badge-field--large fs-incident-badge-field--icon-only">
+                                                <img class="fs-incident-badge-field__icon" src="../Assets/Icons/Incidents/Assist.svg" alt="Assist">
+                                                <div class="fs-incident-badge-field__badge">
+                                                    <span class="fs-incident-badge-field__badge-text">0</span>
+                                                </div>
+                                            </div>
+                                            <div class="fs-incident-badge-field fs-incident-badge-field--large fs-incident-badge-field--icon-only">
+                                                <img class="fs-incident-badge-field__icon" src="../Assets/Icons/Incidents/Yellow card.svg" alt="Yellow card">
+                                            </div>
+                                            <div class="fs-incident-badge-field fs-incident-badge-field--large fs-incident-badge-field--icon-only">
+                                                <img class="fs-incident-badge-field__icon" src="../Assets/Icons/Incidents/Red card.svg" alt="Red card">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="fs-player-statistics-rating-card__text-container">
+                                        <span class="fs-player-statistics-rating-card__label">Top events</span>
+                                    </div>
+                                </div>
+                                <div class="fs-player-statistics-rating-card__value-box">
+                                    <div class="fs-player-statistics-rating-card__value-container">
+                                        <div id="player-card-rating" class="fs-badge-rating fs-badge-rating--large fs-badge-rating--b">
+                                            <span class="fs-badge-rating__text">7.2</span>
+                                        </div>
+                                    </div>
+                                    <div class="fs-player-statistics-rating-card__text-container">
+                                        <span class="fs-player-statistics-rating-card__label">Rating</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="fs-player-statistics-rating-card__divider">
+                        <div class="fs-player-statistics-rating-card__bonuses" id="player-card-bonuses">
+                            <div class="fs-player-statistics-rating-card__rows">
+                                <div class="fs-player-statistics-rating-card__row">
+                                    <div class="fs-badge-form fs-badge-form--plus">
+                                        <svg class="fs-badge-form__icon" width="9.3" height="9.3" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5L8.5 5M5 1.5L5 8.5" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+                                    </div>
+                                    <div class="fs-player-statistics-rating-card__row-text">
+                                        <span class="fs-player-statistics-rating-card__row-text-primary">Goal</span>
+                                        <span class="fs-player-statistics-rating-card__row-text-secondary"></span>
+                                    </div>
+                                </div>
+                                <div class="fs-player-statistics-rating-card__row">
+                                    <div class="fs-badge-form fs-badge-form--minus">
+                                        <svg class="fs-badge-form__icon" width="9.3" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L9 1" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+                                    </div>
+                                    <div class="fs-player-statistics-rating-card__row-text">
+                                        <span class="fs-player-statistics-rating-card__row-text-primary">Poor duelling</span>
+                                        <span class="fs-player-statistics-rating-card__row-text-secondary"></span>
+                                    </div>
+                                </div>
+                                <div class="fs-player-statistics-rating-card__row">
+                                    <div class="fs-badge-form fs-badge-form--informative">
+                                        <svg class="fs-badge-form__icon-info" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9976 2.52698H10.1404V12.0674H13.9976V2.52698ZM13.0412 11.1111H11.0968V3.48346H13.0412V11.1111Z" fill="#555E61"/><path d="M8.92845 0H5.07159V12.0674H8.92845V0ZM7.97211 11.1111H6.02793V0.95634H7.97211V11.1111Z" fill="#555E61"/><path d="M3.85952 5.797H0.00238037V12.0675H3.85952V5.797ZM2.90318 11.1111H0.95872V6.75348H2.90318V11.1111Z" fill="#555E61"/><path d="M14 13.0436H0V14H14V13.0436Z" fill="#555E61"/></svg>
+                                    </div>
+                                    <div class="fs-player-statistics-rating-card__row-text">
+                                        <span class="fs-player-statistics-rating-card__row-text-primary">Hit the woodwork</span>
+                                        <span class="fs-player-statistics-rating-card__row-text-secondary"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="player-card-stats-tables"></div>
+                </div>
+                <div id="player-card-not-found" class="player-card-not-found" style="display: none;">
+                    Player not found. <a href="match_finished_mobile_lineups_playerCard.html">Back to Lineups</a>
+                </div>
+            </div>
+
+            <div class="layout-dialog-footer">
+                <a href="match_finished_mobile_lineups_playerCard.html" class="fs-button fs-button--primary fs-button--solid fs-button--medium layout-dialog-action-button" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center; justify-content: center;">
+                    <span class="fs-button__label">Go to player profile</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+/* ═══════════════════════════════════════════════════════
+   PLAYER DATA — Study 3 / Variant A (Current)
+   Přesně dle Figma node 20638-79455
+   ═══════════════════════════════════════════════════════ */
+var PLAYER_DATA = {
+    name: "Foden P.",
+    fullName: "Foden Phil",
+    position: "Midfielder",
+    team: "Manchester City",
+    teamLogo: "../Assets/TeamLogos/Premier league/Man city.png",
+    playerPhoto: "../Assets/PlayerPhotos/Football/ManchesterCity2/Foden Phil.jpg",
+    stats: {
+        rating: 8.5,
+        minute: "84'",
+        goals: 2,
+        penaltyGoals: 0,
+        assists: 0,
+        yellowCard: 0,
+        redCard: 0,
+        shotsTotal: 2,
+        expectedGoals: 0.05,
+        xGOT: 0.04,
+        shotsOnTarget: 1,
+        shotsOffTarget: 1,
+        shotsBlocked: 0
+    },
+    bonuses: [
+        { type: 'plus',  primary: 'Goals',              secondary: '(2)' },
+        { type: 'minus', primary: 'Big chances missed', secondary: '(2)' },
+        { type: 'minus', primary: 'Duels success',      secondary: '30% (3/9)' }
+    ]
+};
+    </script>
+    <script>
+(function () {
+    function formatVal(v) { return (v !== null && v !== undefined && v !== '') ? v : '–'; }
+    function getRatingClass(r) {
+        if (r == null) return 'fs-badge-rating--c';
+        if (r >= 8) return 'fs-badge-rating--a';
+        if (r >= 7) return 'fs-badge-rating--b';
+        if (r >= 6.5) return 'fs-badge-rating--c';
+        if (r >= 6) return 'fs-badge-rating--d';
+        return 'fs-badge-rating--f';
+    }
+    function ensurePath(path) {
+        if (!path || path.startsWith('http')) return path;
+        if (path.indexOf('../') === 0) return path;
+        return '../' + path;
+    }
+    function row(label, value, valueClass) {
+        valueClass = valueClass || 'fs-table-shared-value--highlight fs-table-shared-value--primary';
+        return '<div class="player-stats-table__row">' +
+            '<div class="player-stats-table__label-container">' +
+            '<div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary">' +
+            '<span class="fs-table-shared-value__text fs-table-shared-value__text--regular">' + label + '</span></div></div>' +
+            '<div class="player-stats-table__value">' +
+            '<div class="fs-table-shared-value ' + valueClass + '">' +
+            '<span class="fs-table-shared-value__text fs-table-shared-value__text--bold">' + formatVal(value) + '</span></div></div></div>';
+    }
+    function renderTables(player) {
+        var s = player.stats || {};
+        var html = '';
+
+        /* Attacker (dle Figma 20564-135880) */
+        html += '<div class="player-stats-table"><div class="player-stats-table__headline"><span class="player-stats-table__headline-text">Attacker</span></div><div class="player-stats-table__rows">';
+        html += row('Total shots', s.shotsTotal);
+        html += row('Expected goals (xG)', s.expectedGoals != null ? Number(s.expectedGoals).toFixed(2) : null);
+        html += row('xG on target (xGOT)', s.xGOT != null ? Number(s.xGOT).toFixed(2) : null);
+        html += row('Shots on target', s.shotsOnTarget);
+        html += row('Shots off target', s.shotsOffTarget);
+        html += row('Blocked shots', s.shotsBlocked);
+        html += row('Shots inside the box', s.shotsBoxIn);
+        html += row('Shots outside the box', s.shotsBoxOut);
+        html += row('Headed shots', s.shotsHead);
+        html += row('Touches in opposition box', s.touchesBoxOpposite);
+        html += row('Successful dribbles', s.dribblesWon != null && s.dribblesTotal != null ? s.dribblesWon + '/' + s.dribblesTotal + ' (' + s.dribblesSuccess + ')' : s.dribblesSuccess);
+        html += row('Fouls suffered', s.foulsSuffered);
+        html += row('Offsides', s.offsides);
+        html += '</div></div>';
+
+        /* Playmaker (dle Figma 20645-84409) */
+        html += '<div class="player-stats-table"><div class="player-stats-table__headline"><span class="player-stats-table__headline-text">Playmaker</span></div><div class="player-stats-table__rows">';
+        html += row('Key passes', s.keyPasses);
+        html += row('Expected assists (xA)', s.expectedAssists != null ? Number(s.expectedAssists).toFixed(2) : null, 'fs-table-shared-value--background fs-table-shared-value--blue');
+        html += row('Box entries', s.boxEntries);
+        html += row('Accurate crosses', s.accurateCrosses);
+        html += row('Accurate layoffs', s.accurateLayoffs);
+        html += row('Through balls', s.throughBalls);
+        html += '</div></div>';
+
+        /* Progressor (dle Figma 20645-84632) */
+        html += '<div class="player-stats-table"><div class="player-stats-table__headline"><span class="player-stats-table__headline-text">Progressor</span></div><div class="player-stats-table__rows">';
+        html += row('Accurate passes', s.passesAccurate != null && s.passesTotal != null ? s.passesAccurate + '/' + s.passesTotal + ' (' + s.passesAccuracy + ')' : s.passesAccuracy);
+        html += row('Final third entries', s.finalThirdEntries);
+        html += row('Successful final third passes', s.successfulFinalThirdPasses);
+        html += row('Accurate long passes', s.accurateLongPasses != null && s.longPassesTotal != null ? s.accurateLongPasses + '/' + s.longPassesTotal + ' (' + (s.longPassesAccuracy || '–') + ')' : s.longPassesAccuracy);
+        html += row('Touches', s.touchesTotal);
+        html += '</div></div>';
+
+        /* Defender (dle Figma 20645-84836) */
+        html += '<div class="player-stats-table"><div class="player-stats-table__headline"><span class="player-stats-table__headline-text">Defender</span></div><div class="player-stats-table__rows">';
+        html += row('Duels won', s.duelsWon != null && s.duelsTotal != null ? s.duelsWon + '/' + s.duelsTotal + ' (' + (s.duelsSuccess || '–') + ')' : (s.duelsWon != null && s.duelsTotal != null ? s.duelsWon + '/' + s.duelsTotal : null));
+        html += row('Aerial duels won', s.aerialDuelsWon != null && s.aerialDuelsTotal != null ? s.aerialDuelsWon + '/' + s.aerialDuelsTotal + ' (' + (s.aerialDuelsSuccess || '–') + ')' : null);
+        html += row('Ground duels won', s.groundDuelsWon != null && s.groundDuelsTotal != null ? s.groundDuelsWon + '/' + s.groundDuelsTotal + ' (' + (s.groundDuelsSuccess || '–') + ')' : null);
+        html += row('Tackles won', s.tacklesWon != null && s.tacklesTotal != null ? s.tacklesWon + '/' + s.tacklesTotal + ' (' + (s.tacklesSuccess || '–') + ')' : null);
+        html += row('Dribbled past', s.dribbledPast);
+        html += row('Fouls committed', s.foulsCommitted);
+        html += row('Interceptions', s.interceptions);
+        html += row('Clearances', s.clearances);
+        html += row('Recovery', s.recovery);
+        html += row('Outfielder blocks', s.outfielderBlocks);
+        html += '</div></div>';
+
+        document.getElementById('player-card-stats-tables').innerHTML = html;
+    }
+    function run() {
+        var player = (typeof PLAYER_DATA !== 'undefined') ? PLAYER_DATA : null;
+        if (!player) {
+            document.getElementById('player-card-header').style.display = 'none';
+            document.getElementById('player-card-scroll-area').style.display = 'none';
+            document.getElementById('player-card-not-found').style.display = 'block';
+            return;
+        }
+        var photo = document.getElementById('player-card-photo');
+        var team = document.getElementById('player-card-team');
+        var name = document.getElementById('player-card-name');
+        var position = document.getElementById('player-card-position');
+        var min = document.getElementById('player-card-min');
+        var ratingEl = document.getElementById('player-card-rating');
+        if (photo) { photo.src = ensurePath(player.playerPhoto); photo.alt = player.fullName || player.name; }
+        if (team) { team.src = ensurePath(player.teamLogo); team.alt = player.team; }
+        if (name) name.textContent = player.fullName || player.name;
+        if (position) position.textContent = player.position || '–';
+        if (min) min.textContent = (player.stats && player.stats.minute) ? player.stats.minute : '90\'';
+        if (ratingEl && player.stats && player.stats.rating != null) {
+            ratingEl.className = 'fs-badge-rating fs-badge-rating--large ' + getRatingClass(player.stats.rating);
+            var t = ratingEl.querySelector('.fs-badge-rating__text');
+            if (t) t.textContent = Number(player.stats.rating).toFixed(1);
+        }
+        renderTopEvents(player);
+        renderBonuses(player);
+        renderTables(player);
+    }
+    function bonusRow(type, primaryText, secondaryText) {
+        var secondary = (secondaryText !== undefined && secondaryText !== '') ? '<span class="fs-player-statistics-rating-card__row-text-secondary">(' + secondaryText + ')</span>' : '';
+        if (type === 'plus') {
+            return '<div class="fs-player-statistics-rating-card__row">' +
+                '<div class="fs-badge-form fs-badge-form--plus"><svg class="fs-badge-form__icon" width="9.3" height="9.3" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5L8.5 5M5 1.5L5 8.5" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>' +
+                '<div class="fs-player-statistics-rating-card__row-text"><span class="fs-player-statistics-rating-card__row-text-primary">' + primaryText + '</span>' + secondary + '</div></div>';
+        }
+        if (type === 'minus') {
+            return '<div class="fs-player-statistics-rating-card__row">' +
+                '<div class="fs-badge-form fs-badge-form--minus"><svg class="fs-badge-form__icon" width="9.3" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L9 1" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>' +
+                '<div class="fs-player-statistics-rating-card__row-text"><span class="fs-player-statistics-rating-card__row-text-primary">' + primaryText + '</span>' + secondary + '</div></div>';
+        }
+        if (type === 'stat') {
+            return '<div class="fs-player-statistics-rating-card__row">' +
+                '<div class="fs-badge-form fs-badge-form--informative"><svg class="fs-badge-form__icon-info" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9976 2.52698H10.1404V12.0674H13.9976V2.52698ZM13.0412 11.1111H11.0968V3.48346H13.0412V11.1111Z" fill="#555E61"/><path d="M8.92845 0H5.07159V12.0674H8.92845V0ZM7.97211 11.1111H6.02793V0.95634H7.97211V11.1111Z" fill="#555E61"/><path d="M3.85952 5.797H0.00238037V12.0675H3.85952V5.797ZM2.90318 11.1111H0.95872V6.75348H2.90318V11.1111Z" fill="#555E61"/><path d="M14 13.0436H0V14H14V13.0436Z" fill="#555E61"/></svg></div>' +
+                '<div class="fs-player-statistics-rating-card__row-text"><span class="fs-player-statistics-rating-card__row-text-primary">' + primaryText + '</span>' + secondary + '</div></div>';
+        }
+        if (type === 'plus-subtext') {
+            return '<div class="fs-player-statistics-rating-card__row fs-player-statistics-rating-card__row--subtext">' +
+                '<div class="fs-badge-form fs-badge-form--plus"><svg class="fs-badge-form__icon" width="9.3" height="9.3" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5L8.5 5M5 1.5L5 8.5" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div>' +
+                '<div class="fs-player-statistics-rating-card__row-text fs-player-statistics-rating-card__row-text--column">' +
+                '<span class="fs-player-statistics-rating-card__row-text-primary">' + primaryText + '</span>' +
+                (secondary ? '<span class="fs-player-statistics-rating-card__row-text-sub">' + secondary + '</span>' : '') +
+                '</div></div>';
+        }
+        return '';
+    }
+    /* Direct bonus renderer — secondary text shown as-is (no auto-parens) */
+    function bonusRowDirect(type, primaryText, secondaryText) {
+        var PLUS_ICON = '<svg class="fs-badge-form__icon" width="9.3" height="9.3" viewBox="0 0 10 10" fill="none"><path d="M1.5 5L8.5 5M5 1.5L5 8.5" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>';
+        var MINUS_ICON = '<svg class="fs-badge-form__icon" width="9.3" height="2" viewBox="0 0 10 2" fill="none"><path d="M1 1L9 1" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>';
+        var STAT_ICON = '<svg class="fs-badge-form__icon-info" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M13.9976 2.52698H10.1404V12.0674H13.9976V2.52698ZM13.0412 11.1111H11.0968V3.48346H13.0412V11.1111Z" fill="#555E61"/><path d="M8.92845 0H5.07159V12.0674H8.92845V0ZM7.97211 11.1111H6.02793V0.95634H7.97211V11.1111Z" fill="#555E61"/><path d="M3.85952 5.797H0.00238037V12.0675H3.85952V5.797ZM2.90318 11.1111H0.95872V6.75348H2.90318V11.1111Z" fill="#555E61"/><path d="M14 13.0436H0V14H14V13.0436Z" fill="#555E61"/></svg>';
+        var badgeClass = type === 'plus' ? 'fs-badge-form--plus' : (type === 'minus' ? 'fs-badge-form--minus' : 'fs-badge-form--informative');
+        var icon = type === 'plus' ? PLUS_ICON : (type === 'minus' ? MINUS_ICON : STAT_ICON);
+        var secondary = secondaryText ? '<span class="fs-player-statistics-rating-card__row-text-secondary"> ' + secondaryText + '</span>' : '';
+        return '<div class="fs-player-statistics-rating-card__row">' +
+            '<div class="fs-badge-form ' + badgeClass + '">' + icon + '</div>' +
+            '<div class="fs-player-statistics-rating-card__row-text"><span class="fs-player-statistics-rating-card__row-text-primary">' + primaryText + '</span>' + secondary + '</div></div>';
+    }
+
+    function renderBonuses(player) {
+        var container = document.getElementById('player-card-bonuses');
+        if (!container) return;
+        var rowsEl = container.querySelector('.fs-player-statistics-rating-card__rows');
+        if (!rowsEl) return;
+
+        /* If PLAYER_DATA.bonuses array is set, use it directly */
+        if (player.bonuses && player.bonuses.length) {
+            rowsEl.innerHTML = player.bonuses.map(function(b) {
+                return bonusRowDirect(b.type, b.primary, b.secondary || '');
+            }).join('');
+            return;
+        }
+
+        var s = player.stats || {};
+        var id = player.id;
+        var isSilva = (String(id) === '1897732563787841539');
+        var html = '';
+        if (isSilva) {
+            html += bonusRow('plus', 'Goal', '');
+            html += bonusRow('plus', 'Assist', '');
+            html += bonusRow('plus', 'Big chances created', '');
+            html += bonusRow('plus-subtext', 'Finishing (non-penalty)', 'xGOT 0.92 - xG 0.2');
+            html += bonusRow('minus', 'Poor duelling', '');
+            html += bonusRow('minus', 'Frequent possession lost', '5');
+            html += bonusRow('stat', 'Hit the woodwork', '');
+        } else {
+            html += bonusRow('plus', 'Goal', (s.goals > 0 ? String(s.goals) : ''));
+            html += bonusRow('minus', 'Poor duelling', '');
+            html += bonusRow('stat', 'Hit the woodwork', '');
+        }
+        rowsEl.innerHTML = html;
+    }
+    function renderTopEvents(player) {
+        var container = document.getElementById('player-card-top-events');
+        if (!container) return;
+        var s = player.stats || {};
+
+        /* Goalkeeper variant: show saves badge instead of incident icons */
+        if (player.position === 'Goalkeeper') {
+            var saves = s.saves != null ? s.saves : 0;
+            var shotsAgainst = s.shotsOnTargetAgainst != null ? s.shotsOnTargetAgainst : 0;
+            if (shotsAgainst > 0) {
+                container.innerHTML =
+                    '<div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--large fs-incident-badge-field-row--top">' +
+                    '<div class="fs-player-statistics-rating-card__saves-badge">' +
+                    '<img class="fs-player-statistics-rating-card__saves-badge-icon" src="../Assets/Icons/Incidents/Goal/Goalkeeper.svg" alt="Saves">' +
+                    '<span class="fs-player-statistics-rating-card__saves-badge-text">' + saves + '/' + shotsAgainst + '</span>' +
+                    '</div>' +
+                    '</div>';
+            } else {
+                container.innerHTML = '<div class="fs-player-statistics-rating-card_empty-value">–</div>';
+            }
+            return;
+        }
+
+        var goals = s.goals != null ? Number(s.goals) : 0;
+        var assists = s.assists != null ? Number(s.assists) : 0;
+        var yellowCard = s.yellowCard != null ? Number(s.yellowCard) : 0;
+        var redCard = s.redCard != null ? Number(s.redCard) : 0;
+        var parts = [];
+        if (goals > 0) {
+            parts.push('<div class="fs-incident-badge-field fs-incident-badge-field--large fs-incident-badge-field--icon-only">' +
+                '<img class="fs-incident-badge-field__icon" src="../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">' +
+                (goals > 1 ? '<div class="fs-incident-badge-field__badge"><span class="fs-incident-badge-field__badge-text">' + goals + '</span></div>' : '') + '</div>');
+        }
+        if (assists > 0) {
+            parts.push('<div class="fs-incident-badge-field fs-incident-badge-field--large fs-incident-badge-field--icon-only">' +
+                '<img class="fs-incident-badge-field__icon" src="../Assets/Icons/Incidents/Assist.svg" alt="Assist">' +
+                (assists > 1 ? '<div class="fs-incident-badge-field__badge"><span class="fs-incident-badge-field__badge-text">' + assists + '</span></div>' : '') + '</div>');
+        }
+        if (yellowCard > 0) {
+            parts.push('<div class="fs-incident-badge-field fs-incident-badge-field--large fs-incident-badge-field--icon-only">' +
+                '<img class="fs-incident-badge-field__icon" src="../Assets/Icons/Incidents/Yellow card.svg" alt="Yellow card"></div>');
+        }
+        if (redCard > 0) {
+            parts.push('<div class="fs-incident-badge-field fs-incident-badge-field--large fs-incident-badge-field--icon-only">' +
+                '<img class="fs-incident-badge-field__icon" src="../Assets/Icons/Incidents/Red card.svg" alt="Red card"></div>');
+        }
+        if (parts.length === 0) {
+            container.innerHTML = '<div class="fs-player-statistics-rating-card_empty-value">–</div>';
+        } else {
+            container.innerHTML = '<div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--large fs-incident-badge-field-row--top">' + parts.join('') + '</div>';
+        }
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+    else run();
+
+    // V iframe: jeden backdrop je v rodiči; Zavřít / Back to Lineups zavře overlay (postMessage)
+    if (window !== window.top) {
+        function notifyClose() {
+            try { window.parent.postMessage('closePlayerCard', '*'); } catch (e) {}
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            var innerBackdrop = document.querySelector('.layout-dialog-backdrop');
+            if (innerBackdrop) innerBackdrop.style.display = 'none';
+            var closeSelectors = 'a.layout-dialog-close, a[href*="match_finished_mobile_lineups_playerCard"], .layout-dialog-action-button, #player-card-not-found a';
+            document.querySelectorAll(closeSelectors).forEach(function (el) {
+                el.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    notifyClose();
+                });
+            });
+        });
+    }
+})();
+    </script>
+</body>
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashscore Research</title>
+    <link rel="stylesheet" href="research.css">
+</head>
+<body>
+<div class="rl-shell">
+
+    <!-- ── Body ── -->
+    <div class="rl-body">
+
+        <!-- ── Left sidebar ── -->
+        <nav class="rl-sidebar">
+            <!-- Logo -->
+            <a class="rl-sidebar__logo" href="index.html">
+                <img src="Assets/Flashscore.svg" alt="Flashscore" class="rl-sidebar__logo-img">
+                <span class="rl-sidebar__logo-subtitle">Research</span>
+            </a>
+
+            <!-- Search -->
+            <div class="rl-sidebar__search">
+                <svg class="rl-sidebar__search-icon" viewBox="0 0 24 24" fill="none">
+                    <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                    <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <input type="text" class="rl-sidebar__search-input" placeholder="Search…" id="sidebar-search">
+            </div>
+
+            <!-- Nav -->
+            <div class="rl-sidebar__nav">
+                <div class="rl-sidebar__group">
+                    <span class="rl-sidebar__group-label">Overview</span>
+                    <div class="rl-sidebar__item" data-section="s0">
+                        Research Background
+                    </div>
+                </div>
+                <div class="rl-sidebar__group">
+                    <span class="rl-sidebar__group-label">Player Card 2.0</span>
+                    <div class="rl-sidebar__item is-active" data-section="s1">
+                        1. Advanced Bonuses
+                    </div>
+                    <div class="rl-sidebar__item rl-sidebar__item--wip" data-section="s2">
+                        2. Top Stats &amp; Shot Map
+                        <span class="rl-sidebar__item-badge rl-sidebar__item-badge--wip">WIP</span>
+                    </div>
+                    <div class="rl-sidebar__item" data-section="s3">
+                        3. Goal &amp; Penalty Integration
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ── Main content ── -->
+        <main class="rl-main">
+
+            <!-- ════════════════════════════════════
+                 SECTION 0 — Research Background
+                 ════════════════════════════════════ -->
+            <div class="rl-section" id="s0">
+                <header class="rl-page-header">
+                <p class="rl-breadcrumb">Player Card 2.0</p>
+                <h1 class="rl-title">Research Background</h1>
+                <p class="rl-description">
+                    The new player card aims to fix key shortcomings of the current design.
+                    This document provides context for the three moderated research sessions.
+                </p>
+                </header>
+
+                <div class="rl-content-section" id="s0-goals">
+                    <h2 class="rl-content-section__title">Goals of the New Player Card</h2>
+                    <div class="rl-content-section__body">
+                        <ul class="rl-tasks">
+                            <li class="rl-task"><div class="rl-task__num">·</div><span>The card doesn't provide a simple answer to how the player performed.</span></li>
+                            <li class="rl-task"><div class="rl-task__num">·</div><span>The card should be more adapted to the player's position.</span></li>
+                            <li class="rl-task"><div class="rl-task__num">·</div><span>Transparency of the rating and interpretation of statistics.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rl-content-section" id="s0-questions">
+                    <h2 class="rl-content-section__title">Basic Research Questions</h2>
+                    <div class="rl-content-section__body">
+                        <ul class="rl-tasks">
+                            <li class="rl-task"><div class="rl-task__num">Q</div><span>When do users use the player card — post-match or live?</span></li>
+                            <li class="rl-task"><div class="rl-task__num">Q</div><span>When do they check statistics on the player card and when do they go to the player stats table?</span></li>
+                            <li class="rl-task"><div class="rl-task__num">Q</div><span>Is the new division of metrics into categories clear? Do users understand the category names?</span></li>
+                            <li class="rl-task"><div class="rl-task__num">Q</div><span>Would users be interested in a simple evaluation of different aspects of a player's performance based on metrics?</span></li>
+                            <li class="rl-task"><div class="rl-task__num">Q</div><span>Is it important for users to know which role the player was evaluated in and from which the rating was calculated?</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rl-content-section" id="s0-studies">
+                    <h2 class="rl-content-section__title">Three Focus Areas</h2>
+                    <div class="rl-content-section__body">
+                        <p><strong>1. Comprehension of Advanced Bonuses</strong> — Do users understand the more advanced bonus rows such as Finishing and Shot stopping? Do they perceive the explanations as helpful even if they don't grasp the analytics?</p>
+                        <p><strong>2. Top Stats &amp; Interactive Shot Map</strong> — Does contextualising key stats (with visual cues) help users understand performance better? Does the shot map provide added value?</p>
+                        <p><strong>3. Integration of Goals &amp; Penalties into Bonuses</strong> — Is it clear to users how goals and scored penalties are reflected in the bonuses? How would users expect to see these events represented?</p>
+                    </div>
+                </div>
+
+                <div class="rl-content-section" id="s0-prior">
+                    <h2 class="rl-content-section__title">Prior Research</h2>
+                    <div class="rl-content-section__body">
+                        <p><a href="https://docs.google.com/presentation/d/1VM7mGW7TZ7iqqsRffTLllxVtu7hyv8CJA9-M2V3ioDo/edit" target="_blank" style="color:#001E28;text-decoration:underline;">Unmoderated testing on Player Card 2.0 ↗</a></p>
+                        <p><a href="https://docs.google.com/presentation/d/1RKZjsSIvL5m4ATi7IsxqANQi4bq_vzNq9K43eL7gYz0/edit" target="_blank" style="color:#001E28;text-decoration:underline;">CSAT — Player stats (incl. player card) ↗</a></p>
+                        <p><a href="https://docs.google.com/presentation/d/15V93YI2WCxZvrDdSJGtL7_lJE7mx8pzh0JOqnI0Jw7c/edit" target="_blank" style="color:#001E28;text-decoration:underline;">CSAT — Player card opening from lineups ↗</a></p>
+                    </div>
+                </div>
+
+            </div><!-- /#s0 -->
+
+
+            <!-- ════════════════════════════════════
+                 STUDY 1 — Comprehension of Advanced Bonuses
+                 ════════════════════════════════════ -->
+            <div class="rl-section is-active" id="s1">
+                <header class="rl-page-header">
+                <p class="rl-breadcrumb">Player Card 2.0 · Study 1 of 3</p>
+                <h1 class="rl-title">Comprehension of Advanced Bonuses</h1>
+                <p class="rl-description">
+                    Users open the match lineups and tap any player card. The focus is on the two
+                    more advanced bonus rows — <strong>Finishing</strong> and <strong>Shot stopping</strong> —
+                    which combine a human-readable label with an analytical second line.
+                    Do users understand them without any external explanation?
+                </p>
+                </header>
+
+                <div class="rl-actions">
+                    <a class="rl-btn rl-btn--figma" href="https://www.figma.com/design/veXPGT7XbRs9WH8FfLYXVM/" target="_blank">
+                        <img src="Assets/figma-logo.svg" alt="" class="rl-btn__icon">
+                        Open in Figma
+                    </a>
+                    <button class="rl-btn rl-btn--copy" onclick="copyLink('s1')">
+                        <svg class="rl-btn__icon" viewBox="0 0 16 16" fill="none"><rect x="5.5" y="5.5" width="8" height="9" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M10.5 5.5V3.5A1.5 1.5 0 0 0 9 2H3A1.5 1.5 0 0 0 1.5 3.5v7A1.5 1.5 0 0 0 3 12H5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Copy link
+                    </button>
+                </div>
+
+                <!-- Prototype preview -->
+                <div class="rl-preview-area">
+                    <div class="rl-device">
+                        <div class="rl-device__screen">
+                            <iframe
+                                id="iframe-s1"
+                                src="Prototypes/match_finished_mobile_lineups_playerCard.html"
+                                title="Study 1 — Lineups prototype"
+                                scrolling="yes">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Overview -->
+                <div class="rl-content-section" id="s1-overview">
+                    <h2 class="rl-content-section__title">Overview</h2>
+                    <div class="rl-content-section__body">
+                        <div class="rl-goal-tag">Hypothesis</div>
+                        <p>
+                            Users do not fully understand the two more advanced bonuses —
+                            <strong>Finishing</strong> and <strong>Shot stopping</strong> — even though the first line
+                            provides a simple, human-readable explanation and the second line is more analytical
+                            (e.g. "xGOT 0.92 − xG 0.2").
+                        </p>
+                        <p>
+                            Entry point: finished match lineup screen. Users tap any player on the pitch
+                            to reveal their player card, then scroll to the bonus section.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="rl-content-section" id="s1-focus">
+                    <h2 class="rl-content-section__title">Focus Areas</h2>
+                    <div class="rl-content-section__body">
+                        <ul class="rl-tasks">
+                            <li class="rl-task"><div class="rl-task__num">·</div><span>Do users find value in explanations of <em>why</em> the player was rated this way for these actions?</span></li>
+                            <li class="rl-task"><div class="rl-task__num">·</div><span>Do users perceive the explanation as helping them understand the evaluation, even if they don't get the analytics?</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tasks -->
+                <div class="rl-content-section" id="s1-tasks">
+                    <h2 class="rl-content-section__title">Research Tasks</h2>
+                    <ul class="rl-tasks">
+                        <li class="rl-task">
+                            <div class="rl-task__num">1</div>
+                            <span>Open the lineup and tap on Bernardo Silva (the player with the most bonus rows). Describe what you see in the bonuses section.</span>
+                        </li>
+                        <li class="rl-task">
+                            <div class="rl-task__num">2</div>
+                            <span>Look at the row "Finishing (non-penalty)" with the sub-label "xGOT 0.92 − xG 0.2". What do you think this tells you about the player?</span>
+                        </li>
+                        <li class="rl-task">
+                            <div class="rl-task__num">3</div>
+                            <span>Does the two-line format (short label + analytical detail) help you understand the bonus better, or is it confusing?</span>
+                        </li>
+                        <li class="rl-task">
+                            <div class="rl-task__num">4</div>
+                            <span>What do the green (+), red (−) and grey (bar chart) icons in front of each row communicate to you?</span>
+                        </li>
+                        <li class="rl-task">
+                            <div class="rl-task__num">5</div>
+                            <span>Now open the goalkeeper card (Trafford or Lecomte). How is their "Top events" different from outfield players? Is it clear what it shows?</span>
+                        </li>
+                        <li class="rl-task">
+                            <div class="rl-task__num">6</div>
+                            <span>Looking at the overall card — do the bonuses help you understand why the player received this rating?</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div><!-- /#s1 -->
+
+
+            <!-- ════════════════════════════════════
+                 STUDY 2 — Top Stats & Interactive Shot Map
+                 ════════════════════════════════════ -->
+            <div class="rl-section" id="s2">
+                <header class="rl-page-header">
+                <p class="rl-breadcrumb">Player Card 2.0 · Study 2 of 3</p>
+                <h1 class="rl-title">Top Stats &amp; Interactive Shot Map</h1>
+                <p class="rl-description">
+                    A variant of the player card with two additions: a <strong>Top Stats bar</strong> surfacing
+                    key numbers (Shots, xG, xGOT, On target) right below the rating card,
+                    and a <strong>Shot Map</strong> showing where shots were taken on the pitch.
+                    This study explores whether contextualising stats improves understanding
+                    for both casual and analytical users.
+                </p>
+                </header>
+
+                <div class="rl-actions">
+                    <a class="rl-btn rl-btn--figma" href="https://www.figma.com/design/veXPGT7XbRs9WH8FfLYXVM/" target="_blank">
+                        <img src="Assets/figma-logo.svg" alt="" class="rl-btn__icon">
+                        Open in Figma
+                    </a>
+                    <button class="rl-btn rl-btn--copy" onclick="copyLink('s2')">
+                        <svg class="rl-btn__icon" viewBox="0 0 16 16" fill="none"><rect x="5.5" y="5.5" width="8" height="9" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M10.5 5.5V3.5A1.5 1.5 0 0 0 9 2H3A1.5 1.5 0 0 0 1.5 3.5v7A1.5 1.5 0 0 0 3 12H5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Copy link
+                    </button>
+                </div>
+
+                <!-- Prototype preview -->
+                <div class="rl-preview-area">
+                    <div class="rl-device">
+                        <div class="rl-device__screen">
+                            <iframe
+                                id="iframe-s2"
+                                src=""
+                                data-src="Prototypes/Dialog_PlayerCard_TopStats_Prototype.html"
+                                title="Study 2 — Top Stats prototype"
+                                scrolling="yes">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Overview -->
+                <div class="rl-content-section" id="s2-overview">
+                    <h2 class="rl-content-section__title">Overview</h2>
+                    <div class="rl-content-section__body">
+                        <div class="rl-goal-tag">Hypothesis</div>
+                        <p>
+                            <strong>Top Stats:</strong> Presenting context for key numbers helps users understand
+                            player stats better. The card is divided into two parts for different audiences —
+                            Bonuses/Headlines for casual users, Categories for advanced/analytical users.
+                            The "Top Stats" section should serve both.
+                        </p>
+                        <p>
+                            <strong>Shot Map:</strong> An interactive shot map will provide added value;
+                            users will find it useful to inspect individual shots and gain spatial context
+                            that raw numbers cannot convey.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="rl-content-section" id="s2-focus">
+                    <h2 class="rl-content-section__title">Focus Areas</h2>
+                    <div class="rl-content-section__body">
+                        <ul class="rl-tasks">
+                            <li class="rl-task"><div class="rl-task__num">·</div><span>Does presenting context for numbers help users understand the stats better?</span></li>
+                            <li class="rl-task"><div class="rl-task__num">·</div><span>Do casual users find the Top Stats section helpful for quick understanding?</span></li>
+                            <li class="rl-task"><div class="rl-task__num">·</div><span>Do advanced users use the Categories for deeper analysis?</span></li>
+                            <li class="rl-task"><div class="rl-task__num">·</div><span>Do users find the interactive shot map helpful for understanding player performance?</span></li>
+                            <li class="rl-task"><div class="rl-task__num">·</div><span>Which aspects of the shot map are most / least useful?</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tasks -->
+                <div class="rl-content-section" id="s2-tasks">
+                    <h2 class="rl-content-section__title">Research Tasks</h2>
+                    <ul class="rl-tasks">
+                        <li class="rl-task">
+                            <div class="rl-task__num">1</div>
+                            <span>Below the rating card you can see a row of four numbers. What do you think each of them represents? Are these the stats you'd want to see first?</span>
+                        </li>
+                        <li class="rl-task">
+                            <div class="rl-task__num">2</div>
+                            <span>Look at the shot map below. What does it show? Can you tell which shots were on target and which weren't?</span>
+                        </li>
+                        <li class="rl-task">
+                            <div class="rl-task__num">3</div>
+                            <span>Does seeing where the shots were taken on the pitch change how you perceive the player's performance compared to just seeing the numbers?</span>
+                        </li>
+                        <li class="rl-task">
+                            <div class="rl-task__num">4</div>
+                            <span>Imagine you follow football casually. Does this card give you a quick enough summary, or is there still too much information?</span>
+                        </li>
+                        <li class="rl-task">
+                            <div class="rl-task__num">5</div>
+                            <span>Now imagine you are an analytical fan. Would you use the detailed stat tables below? What is missing?</span>
+                        </li>
+                        <li class="rl-task">
+                            <div class="rl-task__num">6</div>
+                            <span>What would you add, remove or change on this card?</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div><!-- /#s2 -->
+
+
+            <!-- ════════════════════════════════════
+                 STUDY 3 — Goal & Penalty Integration into Bonuses
+                 ════════════════════════════════════ -->
+            <div class="rl-section" id="s3">
+                <header class="rl-page-header">
+                <p class="rl-breadcrumb">Player Card 2.0 · Study 3 of 3</p>
+                <h1 class="rl-title">Integration of Goals &amp; Penalties into Bonuses</h1>
+                <p class="rl-description">
+                    An A/B/C comparison testing three approaches to surfacing goals and penalties.
+                    <strong>Variant A (current):</strong> goals appear as icons in Top events and also as a single "Goals" bonus row.
+                    <strong>Variant B:</strong> goals appear only in Top events — the bonus section shows other performance metrics only.
+                    <strong>Variant C:</strong> goals appear in Top events and the bonus section explicitly splits them into "Goals" and a named "Penalty goal" row.
+                    Switch between the tabs to compare.
+                </p>
+                </header>
+
+                <div class="rl-actions">
+                    <a class="rl-btn rl-btn--figma" href="https://www.figma.com/design/veXPGT7XbRs9WH8FfLYXVM/" target="_blank">
+                        <img src="Assets/figma-logo.svg" alt="" class="rl-btn__icon">
+                        Open in Figma
+                    </a>
+                    <button class="rl-btn rl-btn--copy" onclick="copyLink('s3')">
+                        <svg class="rl-btn__icon" viewBox="0 0 16 16" fill="none"><rect x="5.5" y="5.5" width="8" height="9" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M10.5 5.5V3.5A1.5 1.5 0 0 0 9 2H3A1.5 1.5 0 0 0 1.5 3.5v7A1.5 1.5 0 0 0 3 12H5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Copy link
+                    </button>
+                </div>
+
+                <!-- Prototype preview with A/B tabs -->
+                <div class="rl-preview-area">
+                    <div class="rl-preview-tabs">
+                        <button class="rl-preview-tab is-active" data-ab="a" onclick="switchAB(this,'s3','a')">Variant A — Current</button>
+                        <button class="rl-preview-tab" data-ab="b" onclick="switchAB(this,'s3','b')">Variant B — Goals in events only</button>
+                        <button class="rl-preview-tab" data-ab="c" onclick="switchAB(this,'s3','c')">Variant C — Penalty in bonuses</button>
+                    </div>
+                    <div class="rl-device">
+                        <div class="rl-device__screen">
+                            <iframe
+                                id="iframe-s3"
+                                src=""
+                                data-src-a="Prototypes/Dialog_PlayerCard_S3A_Prototype.html"
+                                data-src-b="Prototypes/Dialog_PlayerCard_S3B_Prototype.html"
+                                data-src-c="Prototypes/Dialog_PlayerCard_PenaltyBonus_Prototype.html"
+                                title="Study 3 — A/B/C comparison"
+                                scrolling="yes">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Overview -->
+                <div class="rl-content-section" id="s3-overview">
+                    <h2 class="rl-content-section__title">Overview</h2>
+                    <div class="rl-content-section__body">
+                        <div class="rl-goal-tag">Hypothesis</div>
+                        <p>
+                            It is unclear to users how goals and scored penalties are reflected in the bonuses section.
+                            Including events like goals in Bonuses (which are already present in Top Events) may be
+                            confusing — but leaving them out may cause users to not understand how the final rating
+                            was determined.
+                        </p>
+                        <p>
+                            Both variants use <strong>Foden Phil's card</strong> from the Man City vs Fulham match
+                            (1 goal scored, yellow card).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="rl-content-section" id="s3-focus">
+                    <h2 class="rl-content-section__title">Focus Areas</h2>
+                    <div class="rl-content-section__body">
+                        <ul class="rl-tasks">
+                            <li class="rl-task"><div class="rl-task__num">·</div><span>Does the current implementation (Variant A) effectively communicate the impact of goals and scored penalties in bonuses?</span></li>
+                            <li class="rl-task"><div class="rl-task__num">·</div><span>How would users expect to see goals and scored penalties represented?</span></li>
+                            <li class="rl-task"><div class="rl-task__num">·</div><span>Do users expect critical events (goals, assists, red cards) to be repeated under Bonuses?</span></li>
+                            <li class="rl-task"><div class="rl-task__num">·</div><span>Would omitting these events from Bonuses reduce transparency or increase confusion?</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tasks -->
+                <div class="rl-content-section" id="s3-tasks">
+                    <h2 class="rl-content-section__title">Research Tasks</h2>
+                    <ul class="rl-tasks">
+                        <li class="rl-task">
+                            <div class="rl-task__num">1</div>
+                            <span>Look at <strong>Variant A</strong>. The player scored a goal — where on this card can you find that information?</span>
+                        </li>
+                        <li class="rl-task">
+                            <div class="rl-task__num">2</div>
+                            <span>In Variant A, the bonus section doesn't mention the goal. Does that feel like something is missing, or is it fine?</span>
+                        </li>
+                        <li class="rl-task">
+                            <div class="rl-task__num">3</div>
+                            <span>Now switch to <strong>Variant B</strong>. The goal now appears in the bonus list as "Goal (open play)". Does this feel more complete or more cluttered?</span>
+                        </li>
+                        <li class="rl-task">
+                            <div class="rl-task__num">4</div>
+                            <span>Variant B distinguishes between "open play goal" and "penalty scored". Is that level of detail useful or unnecessary?</span>
+                        </li>
+                        <li class="rl-task">
+                            <div class="rl-task__num">5</div>
+                            <span>Do the bonuses help you understand <em>why</em> the player got this rating in both variants? Which one is clearer?</span>
+                        </li>
+                        <li class="rl-task">
+                            <div class="rl-task__num">6</div>
+                            <span>Which variant would you prefer to see in the app and why?</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div><!-- /#s3 -->
+
+        </main><!-- /.rl-main -->
+
+        <!-- ── Right "On This Page" panel ── -->
+        <aside class="rl-onpage">
+            <span class="rl-onpage__label">On This Page</span>
+            <ul class="rl-onpage__list" id="onpage-list">
+                <!-- populated by JS -->
+            </ul>
+        </aside>
+
+    </div><!-- /.rl-body -->
+</div><!-- /.rl-shell -->
+
+<script>
+(function () {
+
+    /* ── Navigation between studies ── */
+    var navItems = document.querySelectorAll('.rl-sidebar__item[data-section]');
+    var sections = document.querySelectorAll('.rl-section');
+
+    function activateSection(id) {
+        navItems.forEach(function (el) {
+            el.classList.toggle('is-active', el.dataset.section === id);
+        });
+        sections.forEach(function (el) {
+            var active = el.id === id;
+            el.classList.toggle('is-active', active);
+            if (active) {
+                lazyLoadIframe(el);
+                buildOnPage(el);
+                /* A/B: load default tab when switching to study 3 */
+                if (id === 's3') {
+                    var iframe = document.getElementById('iframe-s3');
+                    if (!iframe.src || iframe.src === window.location.href) {
+                        iframe.src = iframe.dataset.srcA;
+                    }
+                }
+            }
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    navItems.forEach(function (el) {
+        el.addEventListener('click', function () {
+            activateSection(el.dataset.section);
+        });
+    });
+
+    /* ── Lazy-load iframes (only when section becomes active) ── */
+    function lazyLoadIframe(section) {
+        var iframe = section.querySelector('iframe[data-src]');
+        if (iframe && !iframe.src) {
+            iframe.src = iframe.dataset.src;
+        }
+    }
+
+    /* ── A/B/C tab switcher ── */
+    window.switchAB = function (btn, sectionId, variant) {
+        var section = document.getElementById(sectionId);
+        section.querySelectorAll('.rl-preview-tab').forEach(function (t) {
+            t.classList.toggle('is-active', t.dataset.ab === variant);
+        });
+        var iframe = document.getElementById('iframe-' + sectionId);
+        var src = variant === 'b' ? iframe.dataset.srcB
+                : variant === 'c' ? iframe.dataset.srcC
+                : iframe.dataset.srcA;
+        iframe.src = src;
+    };
+
+    /* ── "Copy link" ── */
+    window.copyLink = function (sectionId) {
+        var url = window.location.origin + window.location.pathname + '#' + sectionId;
+        navigator.clipboard.writeText(url).catch(function () {});
+    };
+
+    /* ── Build "On This Page" ── */
+    function buildOnPage(section) {
+        var list = document.getElementById('onpage-list');
+        list.innerHTML = '';
+        var headings = section.querySelectorAll('.rl-content-section');
+        headings.forEach(function (cs) {
+            var titleEl = cs.querySelector('.rl-content-section__title');
+            if (!titleEl) return;
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+            a.className = 'rl-onpage__link';
+            a.textContent = titleEl.textContent;
+            a.href = '#' + cs.id;
+            a.addEventListener('click', function (e) {
+                e.preventDefault();
+                cs.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+            li.appendChild(a);
+            list.appendChild(li);
+        });
+        /* add "Prototype" link at top */
+        var previewArea = section.querySelector('.rl-preview-area');
+        if (previewArea) {
+            var liP = document.createElement('li');
+            var aP = document.createElement('a');
+            aP.className = 'rl-onpage__link';
+            aP.textContent = 'Prototype';
+            aP.href = '#';
+            aP.addEventListener('click', function (e) {
+                e.preventDefault();
+                previewArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+            liP.appendChild(aP);
+            list.insertBefore(liP, list.firstChild);
+        }
+    }
+
+    /* ── Handle deep-link via URL hash ── */
+    var hash = window.location.hash.replace('#', '');
+    var validIds = ['s0', 's1', 's2', 's3'];
+    if (validIds.indexOf(hash) !== -1) {
+        activateSection(hash);
+    } else {
+        /* default: activate first study */
+        activateSection('s1');
+    }
+
+})();
+</script>
+</body>
+</html>

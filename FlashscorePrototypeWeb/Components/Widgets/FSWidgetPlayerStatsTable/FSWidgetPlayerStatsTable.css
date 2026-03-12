@@ -138,8 +138,37 @@
 .fs-widget-player-stats-table__body {
     background-color: #FFFFFF;
     position: relative;
+    display: flex;
 }
 
+/* Body sticky column (all players) */
+.fs-widget-player-stats-table__body-sticky {
+    width: var(--sticky-col-width);
+    flex-shrink: 0;
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Body scroll container (all data) */
+.fs-widget-player-stats-table__body-scroll-container {
+    flex: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.fs-widget-player-stats-table__body-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Individual row styles (for old structure compatibility) */
 .fs-widget-player-stats-table__row {
     display: flex;
     height: var(--row-height);
@@ -147,15 +176,13 @@
 }
 
 .fs-widget-player-stats-table__row-sticky {
-    width: var(--sticky-col-width);
+    width: 100%;
     flex-shrink: 0;
-    position: sticky;
-    left: 0;
-    z-index: 2;
     display: flex;
     align-items: center;
     padding: 6px 2px 6px 12px;
     box-sizing: border-box;
+    height: var(--row-height);
 }
 
 .fs-widget-player-stats-table__row-scroll-container {
@@ -172,8 +199,10 @@
 
 .fs-widget-player-stats-table__row-data {
     display: flex;
-    height: 100%;
+    height: var(--row-height);
+    min-height: var(--row-height);
     background-color: #FFFFFF;
+    flex-shrink: 0;
 }
 
 .fs-widget-player-stats-table__data-cell {
@@ -200,17 +229,9 @@
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Continuous shadow for body using pseudo-element */
-.fs-widget-player-stats-table--scrolled .fs-widget-player-stats-table__body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: var(--sticky-col-width);
-    width: 4px;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.1), transparent);
-    pointer-events: none;
-    z-index: 1;
+/* Shadow on body sticky column */
+.fs-widget-player-stats-table--scrolled .fs-widget-player-stats-table__body-sticky {
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
 }
 
 /* =========================================== */

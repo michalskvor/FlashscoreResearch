@@ -1,0 +1,76 @@
+/* ============================================================
+   FSSectionHeadline — Atom Component
+   Section headline with optional advertisement label and divider.
+   ============================================================ */
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ── Base ────────────────────────────────────────────────────── */
+
+.fs-section-headline {
+    position: relative;
+    width: 100%;
+    padding: 0 12px 16px;
+}
+
+/* ── Content container ──────────────────────────────────────────── */
+
+.fs-section-headline__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 28px;
+}
+
+/* ── Headline text ──────────────────────────────────────────────── */
+
+.fs-section-headline__text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    color: #001E28;
+    flex: 1;
+}
+
+/* ── Advertisement label (optional) ─────────────────────────────── */
+
+.fs-section-headline__label {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    color: #555E61;
+    flex-shrink: 0;
+}
+
+/* ── Bottom divider (optional) ──────────────────────────────────── */
+
+.fs-section-headline--with-divider {
+    padding-bottom: 28px;
+}
+
+.fs-section-headline--with-divider::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #EEEEEE;
+}

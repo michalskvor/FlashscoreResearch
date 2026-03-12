@@ -346,19 +346,6 @@ body {
     }
 }
 
-@media (min-width: 640px) {
-    /* Above mobile breakpoint - template shouldn't be used */
-    body::before {
-        content: "⚠ This template is designed for mobile (≤639px). Please use Tablet or Desktop template.";
-        display: block;
-        padding: 12px;
-        background-color: #FF0046;
-        color: #FFFFFF;
-        text-align: center;
-        font-size: 12px;
-        font-weight: 700;
-    }
-}
 
 /* Design System Compliance Notes */
 /*

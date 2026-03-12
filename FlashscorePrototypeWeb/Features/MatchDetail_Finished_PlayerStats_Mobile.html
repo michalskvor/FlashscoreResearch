@@ -41,6 +41,12 @@
     <link rel="stylesheet" href="../Components/Molecules/FSIncidentBadgeFieldRow/FSIncidentBadgeFieldRow.css">
     <link rel="stylesheet" href="../Components/Molecules/FSLineupsNewParticipant/FSLineupsNewParticipant.css">
     <link rel="stylesheet" href="../Components/Molecules/FSInsight/FSInsight.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSPlayerStatsPlayerCell/FSPlayerStatsPlayerCell.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSBadgeRating/FSBadgeRating.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSTableSharedValue/FSTableSharedValue.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSSelect/FSSelect.css">
+    <link rel="stylesheet" href="../Components/Widgets/FSWidgetPlayerStatsTable/FSWidgetPlayerStatsTable.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSTableFootnote/FSTableFootnote.css">
 </head>
 <body>
     <!-- NavigationMain - Mobile -->
@@ -192,10 +198,10 @@
 
             <!-- Main Content Area -->
             <div class="layouttemplate-main__content">
-                <!-- FSWidgetHeadersMatch - Live -->
-                <div class="fs-widget-headers-match-mobile fs-widget-headers-match-mobile--live">
+                 <!-- FSWidgetHeadersMatch - Finished Match -->
+                <div class="fs-widget-headers-match-mobile">
                     <div class="fs-widget-headers-match-mobile__date-container">
-                        <p class="fs-widget-headers-match-mobile__date">28.12.2023 12:30</p>
+                        <p class="fs-widget-headers-match-mobile__date">15.04.2023 01:10</p>
                     </div>
                     <div class="fs-widget-headers-match-mobile__content">
 
@@ -205,14 +211,14 @@
                                 <div class="fs-widget-headers-match-mobile__empty-cell"></div>
                                 <div class="fs-widget-headers-match-mobile__participant-icons-center">
                                     <div class="fs-widget-headers-match-mobile__favorite">
-                                        <div class="fs-actions-favorite fs-actions-favorite--large fs-actions-favorite--base">
+                                        <div class="fs-actions-favorite fs-actions-favorite--large fs-actions-favorite--active">
                                             <svg class="fs-actions-favorite__icon" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.346 0L7.245 6.847L0.404 6.832L0 8.141L5.544 12.354L3.415 19.191L4.473 20L9.999 15.758L15.526 20L16.584 19.191L14.455 12.354L19.999 8.141L19.596 6.832L12.753 6.847L10.654 0H9.346ZM8.399 7.793L9.999 2.575L11.6 7.793L12.256 8.293L17.468 8.282L13.245 11.493L12.994 12.302L14.616 17.511L10.404 14.281H9.594L5.384 17.511L7.005 12.302L6.754 11.493L2.53 8.282L7.744 8.293L8.399 7.793Z" fill="#999999"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.346 0L7.245 6.847L0.404 6.832L0 8.141L5.544 12.354L3.415 19.191L4.473 20L9.999 15.758L15.526 20L16.584 19.191L14.455 12.354L19.999 8.141L19.596 6.832L12.753 6.847L10.654 0H9.346Z" fill="#FFCD00"/>
                                             </svg>
                                         </div>
                                     </div>
                                     <div class="fs-asset-boxed fs-asset-boxed--52px fs-asset-boxed--asset">
-                                        <img src="../Assets/TeamLogos/Premier league/Man city.png" alt="Manchester City" class="fs-asset-boxed__image fs-asset-boxed__image--asset">
+                                        <img src="../Assets/TeamLogos/Premier league/Man city.png" alt="Denver Nuggets" class="fs-asset-boxed__image fs-asset-boxed__image--asset">
                                     </div>
                                     <div class="fs-widget-headers-match-mobile__serve"></div>
                                 </div>
@@ -220,30 +226,21 @@
                             </div>
                             <div class="fs-widget-headers-match-mobile__participant-info">
                                 <div class="fs-widget-headers-match-mobile__participant-name">
-                                    <p class="fs-widget-headers-match-mobile__participant-text">Manchester City</p>
+                                    <img src="../Assets/Icons/Incidents/Next stage.svg" alt="" class="fs-widget-headers-match-mobile__next-stage-icon">
+                                    <p class="fs-widget-headers-match-mobile__participant-text fs-widget-headers-match-mobile__participant-text--bold">Manchester City</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Score Container — Live -->
+                        <!-- Score Container -->
                         <div class="fs-widget-headers-match-mobile__score-container">
                             <div class="fs-widget-headers-match-mobile__score-content">
-                                <div class="fs-widget-headers-match-mobile__score-home">2</div>
+                                <div class="fs-widget-headers-match-mobile__score-home">3</div>
                                 <div class="fs-widget-headers-match-mobile__score-separator">-</div>
-                                <div class="fs-widget-headers-match-mobile__score-away">0</div>
+                                <div class="fs-widget-headers-match-mobile__score-away">1</div>
                             </div>
                             <div class="fs-widget-headers-match-mobile__state">
-                                <div class="fs-widget-headers-match-mobile__live-info">
-                                    <p class="fs-widget-headers-match-mobile__live-period">1ST HALF</p>
-                                    <div class="fs-widget-headers-match-mobile__live-time">
-                                        <span class="fs-widget-headers-match-mobile__live-minutes">43'</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Live Stream Badge -->
-                            <div class="fs-badge-stream fs-badge-stream--live">
-                                <img src="../Assets/Icons/Action/Video/Play ALT.svg" alt="" class="fs-badge-stream__icon">
-                                <span class="fs-badge-stream__text">Live Stream</span>
+                                <p class="fs-widget-headers-match-mobile__state-text">FINISHED</p>
                             </div>
                         </div>
 
@@ -254,7 +251,7 @@
                                 <div class="fs-widget-headers-match-mobile__participant-icons-center">
                                     <div class="fs-widget-headers-match-mobile__serve"></div>
                                     <div class="fs-asset-boxed fs-asset-boxed--52px fs-asset-boxed--asset">
-                                        <img src="../Assets/TeamLogos/Premier league/Fulham.png" alt="Fulham" class="fs-asset-boxed__image fs-asset-boxed__image--asset">
+                                        <img src="../Assets/TeamLogos/Premier league/Fulham.png" alt="Chicago Bulls" class="fs-asset-boxed__image fs-asset-boxed__image--asset">
                                     </div>
                                     <div class="fs-widget-headers-match-mobile__favorite">
                                         <div class="fs-actions-favorite fs-actions-favorite--large fs-actions-favorite--base">
@@ -285,6 +282,10 @@
                 </div>
 
                 <button class="fs-tabs">
+                    <span class="fs-tabs__text">Report</span>
+                </button>
+
+                <button class="fs-tabs">
                     <span class="fs-tabs__text">Odds</span>
                 </button>
 
@@ -299,6 +300,10 @@
                 <button class="fs-tabs">
                     <span class="fs-tabs__text">News</span>
                 </button>
+
+                <button class="fs-tabs">
+                    <span class="fs-tabs__text">Video</span>
+                </button>
             </div>
 
             <!-- Divider Primary -->
@@ -306,26 +311,122 @@
 
             <!-- Tabs Secondary - Match Content Sections (FSTabs Component) -->
             <div class="fs-tabs-row fs-tabs-row--secondary">
-                <a href="MatchDetail_Live_Summary_Mobile.html" class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
+                <a href="MatchDetail_Finished_Summary_Mobile.html" class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
                     <span class="fs-tabs__text">Summary</span>
                 </a>
 
-                <button class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
+                <a href="MatchDetail_Finished_Stats_Mobile.html" class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
                     <span class="fs-tabs__text">Stats</span>
-                </button>
+                </a>
 
-                <button class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
+                <a href="MatchDetail_Finished_Lineups_Mobile.html" class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
                     <span class="fs-tabs__text">Lineups</span>
-                </button>
+                </a>
 
                 <button class="fs-tabs fs-tabs--secondary fs-tabs--grey-base fs-tabs--active">
-                    <span class="fs-tabs__text">Player stats</span>
+                    <span class="fs-tabs__text">Player Stats</span>
+                </button>
+
+                <button class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
+                    <span class="fs-tabs__text">Commentary</span>
                 </button>
             </div>
 
+            <!-- Player Stats Table Widget -->
+            <div class="layouttemplate-main__content" style="padding:0 12px 40px">
+                <!-- FSWidgetPlayerStatsTable -->
+                <div class="fs-widget-player-stats-table" id="playerStatsTable">
+                    <!-- Layer 1: Navigation Tabs -->
+                    <div class="fs-widget-player-stats-table__tabs">
+                        <button class="fs-tabs fs-tabs--tertiary fs-tabs--active" data-tab="top-stats">
+                            <span class="fs-tabs__text">Top Stats</span>
+                        </button>
+                        <button class="fs-tabs fs-tabs--tertiary" data-tab="shots">
+                            <span class="fs-tabs__text">Shots</span>
+                        </button>
+                        <button class="fs-tabs fs-tabs--tertiary" data-tab="attack">
+                            <span class="fs-tabs__text">Attack</span>
+                        </button>
+                        <button class="fs-tabs fs-tabs--tertiary" data-tab="passes">
+                            <span class="fs-tabs__text">Passes</span>
+                        </button>
+                        <button class="fs-tabs fs-tabs--tertiary" data-tab="defense">
+                            <span class="fs-tabs__text">Defense</span>
+                        </button>
+                        <button class="fs-tabs fs-tabs--tertiary" data-tab="goalkeeping">
+                            <span class="fs-tabs__text">Goalkeeping</span>
+                        </button>
+                        <button class="fs-tabs fs-tabs--tertiary" data-tab="general">
+                            <span class="fs-tabs__text">General</span>
+                        </button>
+                    </div>
+
+                    <!-- Tab Content: Top Stats -->
+                    <div class="fs-widget-player-stats-table__tab-content fs-widget-player-stats-table__tab-content--active" data-tab-content="top-stats">
+                        <!-- Layer 2: Column Headers -->
+                        <div class="fs-widget-player-stats-table__header">
+                            <div class="fs-widget-player-stats-table__header-sticky">
+                                <div class="fs-select fs-select--placeholder" style="width: 100%;">
+                                    <span class="fs-select__text fs-select__text--placeholder">All</span>
+                                    <img src="../Assets/Icons/Action/Navigation/Arrow/Down.svg" alt="" class="fs-select__chevron">
+                                </div>
+                            </div>
+                            <div class="fs-widget-player-stats-table__header-scroll-container" id="headerScroll">
+                                <div class="fs-widget-player-stats-table__header-row">
+                                    <div class="fs-widget-player-stats-table__header-cell fs-widget-player-stats-table__header-cell--sorted">
+                                        <span class="fs-widget-player-stats-table__header-cell-text">Player Rating</span>
+                                        <img src="../Assets/Icons/Action/Navigation/Dropdown.svg" alt="" class="fs-widget-player-stats-table__header-cell-icon">
+                                    </div>
+                                    <div class="fs-widget-player-stats-table__header-cell">
+                                        <span class="fs-widget-player-stats-table__header-cell-text">Total shots</span>
+                                    </div>
+                                    <div class="fs-widget-player-stats-table__header-cell">
+                                        <span class="fs-widget-player-stats-table__header-cell-text">Expected Goals (xG)</span>
+                                    </div>
+                                    <div class="fs-widget-player-stats-table__header-cell">
+                                        <span class="fs-widget-player-stats-table__header-cell-text">Accurate Passes</span>
+                                    </div>
+                                    <div class="fs-widget-player-stats-table__header-cell">
+                                        <span class="fs-widget-player-stats-table__header-cell-text">Touches</span>
+                                    </div>
+                                    <div class="fs-widget-player-stats-table__header-cell">
+                                        <span class="fs-widget-player-stats-table__header-cell-text">Touches in opposition box</span>
+                                    </div>
+                                    <div class="fs-widget-player-stats-table__header-cell">
+                                        <span class="fs-widget-player-stats-table__header-cell-text">Successful dribbles</span>
+                                    </div>
+                                    <div class="fs-widget-player-stats-table__header-cell">
+                                        <span class="fs-widget-player-stats-table__header-cell-text">Duels</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Layer 3: Data Rows -->
+                        <div class="fs-widget-player-stats-table__body">
+                            <!-- Player rows will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FSTableFootnote - Expected Goals Explanation -->
+                <div class="fs-table-footnote" style="margin-top: 12px; padding: 0 12px;">
+                    <div class="fs-table-footnote__item">
+                        <img class="fs-table-footnote__icon" src="../Assets/Icons/Settings/Info rounded.svg" alt="">
+                        <span class="fs-table-footnote__text"><span class="fs-table-footnote__text--bold">Expected goals (xG):</span> is a statistical measure of the quality of chances created and chances conceded. It is calculated based on several variables such as shot angle, distance from goal, body part used, type of pass and type of attack.</span>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </main>
+
+    <!-- Player Stats Data -->
+    <script src="../Utilities/manchesterCityPlayerStats.js"></script>
+    <script src="../Utilities/fulhamPlayerStats.js"></script>
+
+    <!-- Player Stats Renderer -->
+    <script src="../Utilities/renderPlayerStats.js"></script>
 
     <!-- Footer Widget - Mobile -->
     <footer class="footer-mobile">

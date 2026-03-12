@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Card — Top Stats &amp; Shot Map (Prototype)</title>
+    <script>
+        if (window.self !== window.top) document.documentElement.classList.add('player-card-embedded');
+    </script>
+    <link rel="stylesheet" href="../Components/LayoutTemplate/Mobile/LayoutDialog.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSButtonClose/FSButtonClose.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSButton/FSButton.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSAssetBoxed/FSAssetBoxed.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSActionsFavorite/FSActionsFavorite.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSPlayerStatsPlayerCell/FSPlayerStatsPlayerCell.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSTableSharedValue/FSTableSharedValue.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSBadgeRating/FSBadgeRating.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSBadgeForm/FSBadgeForm.css">
+    <link rel="stylesheet" href="../Components/Atoms/FSIncidentBadgeField/FSIncidentBadgeField.css">
+    <link rel="stylesheet" href="../Components/Molecules/FSIncidentBadgeFieldRow/FSIncidentBadgeFieldRow.css">
+    <link rel="stylesheet" href="../Components/Widgets/FSPlayerStatisticsRatingCard/FSPlayerStatisticsRatingCard.css">
+    <style>
+        .player-stats-header {
+            position: sticky;
+            top: 0;
+            background-color: #FFFFFF;
+            z-index: 10;
+            margin-left: -24px;
+            margin-right: -24px;
+            padding: 24px 24px 12px 24px;
+            flex-shrink: 0;
+        }
+        .player-stats-table { display: flex; flex-direction: column; gap: 4px; width: 100%; margin-top: 24px; }
+        .player-stats-table__headline { display: flex; align-items: center; min-height: 24px; width: 100%; }
+        .player-stats-table__headline-text { font-family: 'Livesport Finder LCGJK', sans-serif; font-size: 14px; font-weight: 700; line-height: 18px; color: #001E28; }
+        .player-stats-table__rows { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+        .player-stats-table__row { display: flex; height: 24px; min-height: 24px; align-items: center; justify-content: space-between; width: 100%; }
+        .player-stats-table__label-container { display: flex; height: 16px; align-items: center; padding-right: 8px; flex-shrink: 0; }
+        .player-stats-table__value { display: flex; align-items: center; justify-content: center; padding: 0 2px; border-radius: 4px; flex-shrink: 0; }
+        .player-card-not-found { padding: 24px; text-align: center; color: #555E61; }
+        body { max-width: 393px; margin: 0 auto; min-height: 100vh; box-shadow: 0 0 0 1px rgba(0,0,0,0.06); }
+        .layout-dialog-viewport { background: #FFFFFF; }
+        html.player-card-embedded,
+        html.player-card-embedded body {
+            height: 100%;
+            min-height: 100%;
+            overflow: hidden;
+        }
+        html.player-card-embedded .layout-dialog-viewport--player-card {
+            height: 100%;
+            min-height: 100%;
+        }
+        html.player-card-embedded .layout-dialog-bottom-sheet--player-card {
+            height: 100%;
+            min-height: 100%;
+            max-height: 100%;
+        }
+        .player-card-scroll-area {
+            flex: 1;
+            min-height: 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-top: 4px;
+            padding-bottom: 24px;
+            scrollbar-width: thin;
+        }
+        .player-card-scroll-area::-webkit-scrollbar { width: 4px; }
+        .player-card-rating-and-bonuses { width: 100%; }
+        .player-card-scroll-area::-webkit-scrollbar-track { background: transparent; }
+        .player-card-scroll-area::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 2px; }
+        .player-card-scroll-area .fs-player-statistics-rating-card__divider {
+            border: none;
+            border-top: 1px solid #FFFFFF;
+            margin: 0;
+            flex-shrink: 0;
+        }
+        .player-card-scroll-area #player-card-stats-tables {
+            flex: none;
+            overflow: visible;
+        }
+        #player-card-bonuses,
+        #player-card-bonuses .fs-player-statistics-rating-card__row {
+            overflow: visible;
+        }
+        .fs-player-statistics-rating-card__row--subtext { align-items: flex-start; }
+        .fs-player-statistics-rating-card__row-text--column {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+        }
+        .fs-player-statistics-rating-card__row-text-sub {
+            font-size: 12px;
+            line-height: 14px;
+            color: #555E61;
+        }
+        .fs-player-statistics-rating-card__saves-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            height: 22px;
+            padding: 0 6px;
+            background: #FFFFFF;
+            border: 1px solid #C8CDCD;
+            border-radius: 4px;
+        }
+        .fs-player-statistics-rating-card__saves-badge-icon {
+            width: 14px;
+            height: 14px;
+            display: block;
+            flex-shrink: 0;
+        }
+        .fs-player-statistics-rating-card__saves-badge-text {
+            font-family: 'Livesport Finder LCGJK', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 14px;
+            color: #001E28;
+            white-space: nowrap;
+        }
+
+        /* ── Top Stats bar ── */
+        .player-card-top-stats {
+            display: flex;
+            align-items: stretch;
+            background: #FFFFFF;
+            border: 1px solid #EBEBEB;
+            border-radius: 8px;
+            margin: 16px 0 0;
+            overflow: hidden;
+        }
+        .player-card-top-stats__item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 4px 8px;
+            gap: 2px;
+            position: relative;
+        }
+        .player-card-top-stats__item + .player-card-top-stats__item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            bottom: 10px;
+            width: 1px;
+            background: #EBEBEB;
+        }
+        .player-card-top-stats__value {
+            font-family: 'Livesport Finder LCGJK', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 22px;
+            color: #001E28;
+            text-align: center;
+        }
+        .player-card-top-stats__label {
+            font-family: 'Livesport Finder LCGJK', sans-serif;
+            font-size: 11px;
+            font-weight: 400;
+            line-height: 14px;
+            color: #555E61;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        /* ── Shot Map section ── */
+        .player-card-shot-map {
+            margin: 16px 0 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .player-card-shot-map__title {
+            font-family: 'Livesport Finder LCGJK', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 18px;
+            color: #001E28;
+        }
+        .player-card-shot-map__container {
+            border-radius: 8px;
+            overflow: hidden;
+            background: #2D6A2D;
+            width: 100%;
+            position: relative;
+        }
+        .player-card-shot-map__container svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .player-card-shot-map__legend {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        .player-card-shot-map__legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Livesport Finder LCGJK', sans-serif;
+            font-size: 11px;
+            font-weight: 400;
+            color: #555E61;
+        }
+        .player-card-shot-map__legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .player-card-shot-map__legend-dot--on-target {
+            background: #00A8E8;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        .player-card-shot-map__legend-dot--off-target {
+            background: rgba(200,205,205,0.4);
+            border: 1.5px solid #C8CDCD;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout-dialog-viewport layout-dialog-viewport--player-card">
+        <div class="layout-dialog-backdrop"></div>
+        <div class="layout-dialog-bottom-sheet layout-dialog-bottom-sheet--player-card">
+
+            <a href="match_finished_mobile_lineups_playerCard.html" class="fs-button-close layout-dialog-close" aria-label="Close" style="text-decoration: none;">
+                <img src="../Assets/Icons/Action/Navigation/Close.svg" alt="" class="fs-button-close__icon">
+            </a>
+
+            <div class="layout-dialog-body layout-dialog-body--player-card">
+
+                <div class="player-stats-header" id="player-card-header">
+                    <div class="fs-player-stats-player-cell fs-player-stats-player-cell--large">
+                        <div class="fs-player-stats-player-cell__player-container">
+                            <div class="fs-asset-boxed fs-asset-boxed--68px fs-asset-boxed--player">
+                                <img id="player-card-photo" class="fs-asset-boxed__image fs-asset-boxed__image--player" src="../Assets/PlayerPhotos/Football/ManchesterCity2/Haaland Erling Braut.jpg" alt="">
+                            </div>
+                            <div class="fs-player-stats-player-cell__team-container">
+                                <div class="fs-asset-boxed fs-asset-boxed--26px fs-asset-boxed--asset">
+                                    <img id="player-card-team" class="fs-asset-boxed__image fs-asset-boxed__image--asset" src="../Assets/TeamLogos/Premier league/Man city.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fs-player-stats-player-cell__text-container">
+                            <div class="fs-player-stats-player-cell__name-row">
+                                <span id="player-card-name" class="fs-player-stats-player-cell__name">Erling Haaland</span>
+                                <div class="fs-actions-favorite fs-actions-favorite--medium fs-actions-favorite--base">
+                                    <svg class="fs-actions-favorite__icon" width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.346 0L7.245 6.847L0.404 6.832L0 8.141L5.544 12.354L3.415 19.191L4.473 20L9.999 15.758L15.526 20L16.584 19.191L14.455 12.354L19.999 8.141L19.596 6.832L12.753 6.847L10.654 0H9.346ZM8.399 7.793L9.999 2.575L11.6 7.793L12.256 8.293L17.468 8.282L13.245 11.493L12.994 12.302L14.616 17.511L10.404 14.281H9.594L5.384 17.511L7.005 12.302L6.754 11.493L2.53 8.282L7.744 8.293L8.399 7.793Z" fill="#999999"/></svg>
+                                </div>
+                            </div>
+                            <div class="fs-player-stats-player-cell__position-row">
+                                <span id="player-card-position" class="fs-player-stats-player-cell__position">Forward</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="player-card-scroll-area" id="player-card-scroll-area">
+
+                    <!-- Rating card + bonuses (same as base prototype) -->
+                    <div class="player-card-rating-and-bonuses" id="player-card-rating-and-bonuses">
+                        <div class="fs-player-statistics-rating-card fs-player-statistics-rating-card--bonuses-below">
+                            <div class="fs-player-statistics-rating-card__stats">
+                                <div class="fs-player-statistics-rating-card__value-box">
+                                    <div class="fs-player-statistics-rating-card__value-container">
+                                        <span id="player-card-min" class="fs-player-statistics-rating-card__value">90'</span>
+                                    </div>
+                                    <div class="fs-player-statistics-rating-card__text-container">
+                                        <span class="fs-player-statistics-rating-card__label">Min.</span>
+                                    </div>
+                                </div>
+                                <div class="fs-player-statistics-rating-card__value-box">
+                                    <div class="fs-player-statistics-rating-card__value-container" id="player-card-top-events">
+                                        <div class="fs-player-statistics-rating-card_empty-value">–</div>
+                                    </div>
+                                    <div class="fs-player-statistics-rating-card__text-container">
+                                        <span class="fs-player-statistics-rating-card__label">Top events</span>
+                                    </div>
+                                </div>
+                                <div class="fs-player-statistics-rating-card__value-box">
+                                    <div class="fs-player-statistics-rating-card__value-container">
+                                        <div id="player-card-rating" class="fs-badge-rating fs-badge-rating--large fs-badge-rating--b">
+                                            <span class="fs-badge-rating__text">7.2</span>
+                                        </div>
+                                    </div>
+                                    <div class="fs-player-statistics-rating-card__text-container">
+                                        <span class="fs-player-statistics-rating-card__label">Rating</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="fs-player-statistics-rating-card__divider">
+                        <div class="fs-player-statistics-rating-card__bonuses" id="player-card-bonuses">
+                            <div class="fs-player-statistics-rating-card__rows"></div>
+                        </div>
+                    </div>
+
+                    <!-- NEW: Top Stats bar -->
+                    <div class="player-card-top-stats" id="player-card-top-stats-bar" style="display:none;">
+                        <div class="player-card-top-stats__item">
+                            <span class="player-card-top-stats__value" id="ts-shots">–</span>
+                            <span class="player-card-top-stats__label">Shots</span>
+                        </div>
+                        <div class="player-card-top-stats__item">
+                            <span class="player-card-top-stats__value" id="ts-xg">–</span>
+                            <span class="player-card-top-stats__label">xG</span>
+                        </div>
+                        <div class="player-card-top-stats__item">
+                            <span class="player-card-top-stats__value" id="ts-xgot">–</span>
+                            <span class="player-card-top-stats__label">xGOT</span>
+                        </div>
+                        <div class="player-card-top-stats__item">
+                            <span class="player-card-top-stats__value" id="ts-ontarget">–</span>
+                            <span class="player-card-top-stats__label">On target</span>
+                        </div>
+                    </div>
+
+                    <!-- NEW: Shot Map -->
+                    <div class="player-card-shot-map" id="player-card-shot-map" style="display:none;">
+                        <span class="player-card-shot-map__title">Shot map</span>
+                        <div class="player-card-shot-map__container">
+                            <!-- Half-pitch SVG, portrait, goal at top. Viewbox 345×200 -->
+                            <!-- Pitch 68m wide, showing 38m depth. Scale: 345/68=5.07px/m H, 200/38=5.26px/m V -->
+                            <!-- Goal 7.32m wide = 37px; centre x=172.5, goal x1=154 x2=191 -->
+                            <!-- Penalty area: 40.32m wide=204px, x=(345-204)/2=70.5; depth 16.5m=86.8px from y=0 -->
+                            <!-- Goal area: 18.32m=93px wide, x=(345-93)/2=126; depth 5.5m=29px -->
+                            <!-- Penalty spot: 11m=57.9px from top -->
+                            <!-- Penalty arc radius 9.15m=48px; bottom of penalty area at y=87 -->
+                            <svg id="shot-map-svg" viewBox="0 0 345 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Grass background with alternating stripes -->
+                                <rect width="345" height="200" fill="#306830"/>
+                                <rect x="0" y="0" width="345" height="25" fill="rgba(0,0,0,0.05)"/>
+                                <rect x="0" y="50" width="345" height="25" fill="rgba(0,0,0,0.05)"/>
+                                <rect x="0" y="100" width="345" height="25" fill="rgba(0,0,0,0.05)"/>
+                                <rect x="0" y="150" width="345" height="25" fill="rgba(0,0,0,0.05)"/>
+
+                                <!-- Pitch boundary -->
+                                <rect x="6" y="0" width="333" height="194" stroke="rgba(255,255,255,0.55)" stroke-width="1.5" fill="none"/>
+
+                                <!-- Goal (behind top boundary) -->
+                                <rect x="154" y="0" width="37" height="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.7)" stroke-width="1"/>
+                                <!-- Goal net suggestion -->
+                                <line x1="154" y1="0" x2="154" y2="6" stroke="rgba(255,255,255,0.5)" stroke-width="0.5"/>
+                                <line x1="163" y1="0" x2="163" y2="6" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+                                <line x1="172" y1="0" x2="172" y2="6" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+                                <line x1="182" y1="0" x2="182" y2="6" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+                                <line x1="191" y1="0" x2="191" y2="6" stroke="rgba(255,255,255,0.5)" stroke-width="0.5"/>
+
+                                <!-- Goal area box -->
+                                <rect x="126" y="0" width="93" height="29" stroke="rgba(255,255,255,0.55)" stroke-width="1.5" fill="none"/>
+
+                                <!-- Penalty area box -->
+                                <rect x="70" y="0" width="205" height="87" stroke="rgba(255,255,255,0.55)" stroke-width="1.5" fill="none"/>
+
+                                <!-- Penalty spot -->
+                                <circle cx="172" cy="58" r="2.5" fill="rgba(255,255,255,0.6)"/>
+
+                                <!-- Penalty arc (below penalty area) -->
+                                <path d="M 128 87 A 48 48 0 0 0 216 87" stroke="rgba(255,255,255,0.55)" stroke-width="1.5" fill="none"/>
+
+                                <!-- Shot dots (injected by JS, or static defaults shown here) -->
+                                <g id="shot-map-dots">
+                                    <!-- default placeholder dots (overwritten by JS) -->
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="player-card-shot-map__legend">
+                            <div class="player-card-shot-map__legend-item">
+                                <div class="player-card-shot-map__legend-dot player-card-shot-map__legend-dot--on-target"></div>
+                                On target
+                            </div>
+                            <div class="player-card-shot-map__legend-item">
+                                <div class="player-card-shot-map__legend-dot player-card-shot-map__legend-dot--off-target"></div>
+                                Off target
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="player-card-stats-tables"></div>
+                </div>
+                <div id="player-card-not-found" class="player-card-not-found" style="display: none;">
+                    Player not found. <a href="match_finished_mobile_lineups_playerCard.html">Back to Lineups</a>
+                </div>
+            </div>
+
+            <div class="layout-dialog-footer">
+                <a href="match_finished_mobile_lineups_playerCard.html" class="fs-button fs-button--primary fs-button--solid fs-button--medium layout-dialog-action-button" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center; justify-content: center;">
+                    <span class="fs-button__label">Go to player profile</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Utilities/manchesterCityPlayerStats.js"></script>
+    <script src="../Utilities/fulhamPlayerStats.js"></script>
+    <script>
+(function () {
+    function formatVal(v) { return (v !== null && v !== undefined && v !== '') ? v : '–'; }
+    function fmtStat(v, decimals) {
+        if (v === null || v === undefined) return '–';
+        return decimals != null ? Number(v).toFixed(decimals) : String(v);
+    }
+    function getRatingClass(r) {
+        if (r == null) return 'fs-badge-rating--c';
+        if (r >= 8) return 'fs-badge-rating--a';
+        if (r >= 7) return 'fs-badge-rating--b';
+        if (r >= 6.5) return 'fs-badge-rating--c';
+        if (r >= 6) return 'fs-badge-rating--d';
+        return 'fs-badge-rating--f';
+    }
+    function ensurePath(path) {
+        if (!path || path.startsWith('http')) return path;
+        if (path.indexOf('../') === 0) return path;
+        return '../' + path;
+    }
+    function row(label, value, valueClass) {
+        valueClass = valueClass || 'fs-table-shared-value--highlight fs-table-shared-value--primary';
+        return '<div class="player-stats-table__row">' +
+            '<div class="player-stats-table__label-container"><div class="fs-table-shared-value fs-table-shared-value--default fs-table-shared-value--primary"><span class="fs-table-shared-value__text fs-table-shared-value__text--regular">' + label + '</span></div></div>' +
+            '<div class="player-stats-table__value"><div class="fs-table-shared-value ' + valueClass + '"><span class="fs-table-shared-value__text fs-table-shared-value__text--bold">' + formatVal(value) + '</span></div></div></div>';
+    }
+    function renderTables(player) {
+        var s = player.stats || {};
+        var html = '';
+        html += '<div class="player-stats-table"><div class="player-stats-table__headline"><span class="player-stats-table__headline-text">Attacker</span></div><div class="player-stats-table__rows">';
+        html += row('Total shots', s.shotsTotal);
+        html += row('Expected goals (xG)', s.expectedGoals != null ? Number(s.expectedGoals).toFixed(2) : null);
+        html += row('xG on target (xGOT)', s.xGOT != null ? Number(s.xGOT).toFixed(2) : null);
+        html += row('Shots on target', s.shotsOnTarget);
+        html += row('Shots off target', s.shotsOffTarget);
+        html += row('Blocked shots', s.shotsBlocked);
+        html += row('Shots inside the box', s.shotsBoxIn);
+        html += row('Shots outside the box', s.shotsBoxOut);
+        html += row('Headed shots', s.shotsHead);
+        html += row('Touches in opposition box', s.touchesBoxOpposite);
+        html += row('Successful dribbles', s.dribblesWon != null && s.dribblesTotal != null ? s.dribblesWon + '/' + s.dribblesTotal + ' (' + s.dribblesSuccess + ')' : s.dribblesSuccess);
+        html += row('Fouls suffered', s.foulsSuffered);
+        html += row('Offsides', s.offsides);
+        html += '</div></div>';
+        html += '<div class="player-stats-table"><div class="player-stats-table__headline"><span class="player-stats-table__headline-text">Playmaker</span></div><div class="player-stats-table__rows">';
+        html += row('Key passes', s.keyPasses);
+        html += row('Expected assists (xA)', s.expectedAssists != null ? Number(s.expectedAssists).toFixed(2) : null, 'fs-table-shared-value--background fs-table-shared-value--blue');
+        html += row('Box entries', s.boxEntries);
+        html += row('Accurate crosses', s.accurateCrosses);
+        html += row('Accurate layoffs', s.accurateLayoffs);
+        html += row('Through balls', s.throughBalls);
+        html += '</div></div>';
+        html += '<div class="player-stats-table"><div class="player-stats-table__headline"><span class="player-stats-table__headline-text">Progressor</span></div><div class="player-stats-table__rows">';
+        html += row('Accurate passes', s.passesAccurate != null && s.passesTotal != null ? s.passesAccurate + '/' + s.passesTotal + ' (' + s.passesAccuracy + ')' : s.passesAccuracy);
+        html += row('Final third entries', s.finalThirdEntries);
+        html += row('Successful final third passes', s.successfulFinalThirdPasses);
+        html += row('Accurate long passes', s.accurateLongPasses != null && s.longPassesTotal != null ? s.accurateLongPasses + '/' + s.longPassesTotal + ' (' + (s.longPassesAccuracy || '–') + ')' : s.longPassesAccuracy);
+        html += row('Touches', s.touchesTotal);
+        html += '</div></div>';
+        html += '<div class="player-stats-table"><div class="player-stats-table__headline"><span class="player-stats-table__headline-text">Defender</span></div><div class="player-stats-table__rows">';
+        html += row('Duels won', s.duelsWon != null && s.duelsTotal != null ? s.duelsWon + '/' + s.duelsTotal + ' (' + (s.duelsSuccess || '–') + ')' : null);
+        html += row('Aerial duels won', s.aerialDuelsWon != null && s.aerialDuelsTotal != null ? s.aerialDuelsWon + '/' + s.aerialDuelsTotal + ' (' + (s.aerialDuelsSuccess || '–') + ')' : null);
+        html += row('Ground duels won', s.groundDuelsWon != null && s.groundDuelsTotal != null ? s.groundDuelsWon + '/' + s.groundDuelsTotal + ' (' + (s.groundDuelsSuccess || '–') + ')' : null);
+        html += row('Tackles won', s.tacklesWon != null && s.tacklesTotal != null ? s.tacklesWon + '/' + s.tacklesTotal + ' (' + (s.tacklesSuccess || '–') + ')' : null);
+        html += row('Dribbled past', s.dribbledPast);
+        html += row('Fouls committed', s.foulsCommitted);
+        html += row('Interceptions', s.interceptions);
+        html += row('Clearances', s.clearances);
+        html += row('Recovery', s.recovery);
+        html += row('Outfielder blocks', s.outfielderBlocks);
+        html += '</div></div>';
+        document.getElementById('player-card-stats-tables').innerHTML = html;
+    }
+
+    /* ── Top Stats bar ── */
+    function renderTopStats(player) {
+        var s = player.stats || {};
+        var bar = document.getElementById('player-card-top-stats-bar');
+        if (!bar) return;
+        var hasStats = (s.shotsTotal != null || s.expectedGoals != null || s.xGOT != null || s.shotsOnTarget != null);
+        if (!hasStats) return;
+        document.getElementById('ts-shots').textContent = fmtStat(s.shotsTotal);
+        document.getElementById('ts-xg').textContent = fmtStat(s.expectedGoals, 2);
+        document.getElementById('ts-xgot').textContent = fmtStat(s.xGOT, 2);
+        document.getElementById('ts-ontarget').textContent = fmtStat(s.shotsOnTarget);
+        bar.style.display = 'flex';
+    }
+
+    /* ── Shot Map ── */
+    /*
+     * Shot positions are hardcoded per player (prototype, not real data).
+     * Each shot: { x, y, onTarget, blocked }
+     * Coordinate system: SVG viewBox 345×200
+     *   y=0 is goal line (top), y=200 is ~38m from goal
+     *   x=0 is left touchline, x=345 is right touchline (centre x=172)
+     *
+     * Scale: 345/68m = 5.07px/m (horiz), 200/38m = 5.26px/m (vert)
+     * Penalty area bottom: y = 16.5 * 5.26 = 86.8 ≈ 87px
+     * Penalty spot: y = 11 * 5.26 = 57.9 ≈ 58px
+     */
+    var SHOT_DATA = {
+        /* Foden Phil: 2 shots — 1 on target (inside box, central), 1 off target (box edge, left) */
+        '1897739615272697856': [
+            { x: 172, y: 72, onTarget: true,  label: 'On target — 0.04 xGOT' },
+            { x: 115, y: 82, onTarget: false, label: 'Off target' }
+        ],
+        /* Dias Ruben: no shots */
+        '1897684426570334208': [],
+        /* Silva Bernardo: 1 on target (close range, central) */
+        '1897732563787841539': [
+            { x: 172, y: 52, onTarget: true,  label: 'On target — goal' },
+            { x: 160, y: 68, onTarget: true,  label: 'On target' },
+            { x: 188, y: 90, onTarget: false, label: 'Off target' }
+        ],
+        /* Doku Jeremy: 2 shots */
+        '1897739566216118272': [
+            { x: 145, y: 60, onTarget: true,  label: 'On target — goal' },
+            { x: 200, y: 76, onTarget: false, label: 'Off target' }
+        ],
+        /* Lecomte Benjamin (GK): no shots expected */
+        '1897728044861489153': []
+    };
+    var DEFAULT_SHOTS = [
+        { x: 172, y: 68, onTarget: false, label: 'Shot' }
+    ];
+
+    function renderShotMap(player) {
+        var s = player.stats || {};
+        var mapSection = document.getElementById('player-card-shot-map');
+        var dotsGroup = document.getElementById('shot-map-dots');
+        if (!mapSection || !dotsGroup) return;
+
+        /* Only show for outfield players with shot data */
+        if (player.position === 'Goalkeeper') return;
+        var shots = SHOT_DATA[player.id] || null;
+        if (shots === null) {
+            /* Use generic single shot if any shotsTotal */
+            if (s.shotsTotal && s.shotsTotal > 0) shots = DEFAULT_SHOTS;
+            else return;
+        }
+        if (shots.length === 0) return;
+
+        var svgDots = '';
+        shots.forEach(function (shot) {
+            if (shot.onTarget) {
+                /* Solid blue circle for on-target */
+                svgDots += '<circle cx="' + shot.x + '" cy="' + shot.y + '" r="9" fill="#00A8E8" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/>';
+                svgDots += '<circle cx="' + shot.x + '" cy="' + shot.y + '" r="3" fill="rgba(255,255,255,0.9)"/>';
+            } else {
+                /* Hollow grey circle for off-target */
+                svgDots += '<circle cx="' + shot.x + '" cy="' + shot.y + '" r="9" fill="rgba(200,205,205,0.25)" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/>';
+            }
+        });
+        dotsGroup.innerHTML = svgDots;
+        mapSection.style.display = 'flex';
+    }
+
+    function bonusRow(type, primaryText, secondaryText) {
+        var secondary = (secondaryText !== undefined && secondaryText !== '') ? '<span class="fs-player-statistics-rating-card__row-text-secondary">(' + secondaryText + ')</span>' : '';
+        if (type === 'plus') {
+            return '<div class="fs-player-statistics-rating-card__row"><div class="fs-badge-form fs-badge-form--plus"><svg class="fs-badge-form__icon" width="9.3" height="9.3" viewBox="0 0 10 10" fill="none"><path d="M1.5 5L8.5 5M5 1.5L5 8.5" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div><div class="fs-player-statistics-rating-card__row-text"><span class="fs-player-statistics-rating-card__row-text-primary">' + primaryText + '</span>' + secondary + '</div></div>';
+        }
+        if (type === 'minus') {
+            return '<div class="fs-player-statistics-rating-card__row"><div class="fs-badge-form fs-badge-form--minus"><svg class="fs-badge-form__icon" width="9.3" height="2" viewBox="0 0 10 2" fill="none"><path d="M1 1L9 1" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div><div class="fs-player-statistics-rating-card__row-text"><span class="fs-player-statistics-rating-card__row-text-primary">' + primaryText + '</span>' + secondary + '</div></div>';
+        }
+        if (type === 'stat') {
+            return '<div class="fs-player-statistics-rating-card__row"><div class="fs-badge-form fs-badge-form--informative"><svg class="fs-badge-form__icon-info" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M13.9976 2.52698H10.1404V12.0674H13.9976V2.52698ZM13.0412 11.1111H11.0968V3.48346H13.0412V11.1111Z" fill="#555E61"/><path d="M8.92845 0H5.07159V12.0674H8.92845V0ZM7.97211 11.1111H6.02793V0.95634H7.97211V11.1111Z" fill="#555E61"/><path d="M3.85952 5.797H0.00238037V12.0675H3.85952V5.797ZM2.90318 11.1111H0.95872V6.75348H2.90318V11.1111Z" fill="#555E61"/><path d="M14 13.0436H0V14H14V13.0436Z" fill="#555E61"/></svg></div><div class="fs-player-statistics-rating-card__row-text"><span class="fs-player-statistics-rating-card__row-text-primary">' + primaryText + '</span>' + secondary + '</div></div>';
+        }
+        if (type === 'plus-subtext') {
+            return '<div class="fs-player-statistics-rating-card__row fs-player-statistics-rating-card__row--subtext"><div class="fs-badge-form fs-badge-form--plus"><svg class="fs-badge-form__icon" width="9.3" height="9.3" viewBox="0 0 10 10" fill="none"><path d="M1.5 5L8.5 5M5 1.5L5 8.5" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div><div class="fs-player-statistics-rating-card__row-text fs-player-statistics-rating-card__row-text--column"><span class="fs-player-statistics-rating-card__row-text-primary">' + primaryText + '</span>' + (secondary ? '<span class="fs-player-statistics-rating-card__row-text-sub">' + secondary + '</span>' : '') + '</div></div>';
+        }
+        return '';
+    }
+    function renderBonuses(player) {
+        var container = document.getElementById('player-card-bonuses');
+        if (!container) return;
+        var rowsEl = container.querySelector('.fs-player-statistics-rating-card__rows');
+        if (!rowsEl) return;
+        var s = player.stats || {};
+        var id = player.id;
+        var isSilva = (String(id) === '1897732563787841539');
+        var html = '';
+        if (isSilva) {
+            html += bonusRow('plus', 'Goal', '');
+            html += bonusRow('plus', 'Assist', '');
+            html += bonusRow('plus', 'Big chances created', '');
+            html += bonusRow('plus-subtext', 'Finishing (non-penalty)', 'xGOT 0.92 - xG 0.2');
+            html += bonusRow('minus', 'Poor duelling', '');
+            html += bonusRow('minus', 'Frequent possession lost', '5');
+            html += bonusRow('stat', 'Hit the woodwork', '');
+        } else {
+            html += bonusRow('plus', 'Goal', (s.goals > 0 ? String(s.goals) : ''));
+            html += bonusRow('minus', 'Poor duelling', '');
+            html += bonusRow('stat', 'Hit the woodwork', '');
+        }
+        rowsEl.innerHTML = html;
+    }
+    function renderTopEvents(player) {
+        var container = document.getElementById('player-card-top-events');
+        if (!container) return;
+        var s = player.stats || {};
+        if (player.position === 'Goalkeeper') {
+            var saves = s.saves != null ? s.saves : 0;
+            var shotsAgainst = s.shotsOnTargetAgainst != null ? s.shotsOnTargetAgainst : 0;
+            if (shotsAgainst > 0) {
+                container.innerHTML = '<div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--large fs-incident-badge-field-row--top"><div class="fs-player-statistics-rating-card__saves-badge"><img class="fs-player-statistics-rating-card__saves-badge-icon" src="../Assets/Icons/Incidents/Goal/Goalkeeper.svg" alt="Saves"><span class="fs-player-statistics-rating-card__saves-badge-text">' + saves + '/' + shotsAgainst + '</span></div></div>';
+            } else {
+                container.innerHTML = '<div class="fs-player-statistics-rating-card_empty-value">–</div>';
+            }
+            return;
+        }
+        var goals = s.goals != null ? Number(s.goals) : 0;
+        var assists = s.assists != null ? Number(s.assists) : 0;
+        var yellowCard = s.yellowCard != null ? Number(s.yellowCard) : 0;
+        var redCard = s.redCard != null ? Number(s.redCard) : 0;
+        var parts = [];
+        if (goals > 0) parts.push('<div class="fs-incident-badge-field fs-incident-badge-field--large fs-incident-badge-field--icon-only"><img class="fs-incident-badge-field__icon" src="../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">' + (goals > 1 ? '<div class="fs-incident-badge-field__badge"><span class="fs-incident-badge-field__badge-text">' + goals + '</span></div>' : '') + '</div>');
+        if (assists > 0) parts.push('<div class="fs-incident-badge-field fs-incident-badge-field--large fs-incident-badge-field--icon-only"><img class="fs-incident-badge-field__icon" src="../Assets/Icons/Incidents/Assist.svg" alt="Assist">' + (assists > 1 ? '<div class="fs-incident-badge-field__badge"><span class="fs-incident-badge-field__badge-text">' + assists + '</span></div>' : '') + '</div>');
+        if (yellowCard > 0) parts.push('<div class="fs-incident-badge-field fs-incident-badge-field--large fs-incident-badge-field--icon-only"><img class="fs-incident-badge-field__icon" src="../Assets/Icons/Incidents/Yellow card.svg" alt="Yellow card"></div>');
+        if (redCard > 0) parts.push('<div class="fs-incident-badge-field fs-incident-badge-field--large fs-incident-badge-field--icon-only"><img class="fs-incident-badge-field__icon" src="../Assets/Icons/Incidents/Red card.svg" alt="Red card"></div>');
+        container.innerHTML = parts.length === 0
+            ? '<div class="fs-player-statistics-rating-card_empty-value">–</div>'
+            : '<div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--large fs-incident-badge-field-row--top">' + parts.join('') + '</div>';
+    }
+    function run() {
+        var params = new URLSearchParams(window.location.search);
+        var playerId = params.get('playerId');
+        var allPlayers = [];
+        if (typeof manchesterCityPlayers !== 'undefined') allPlayers = allPlayers.concat(manchesterCityPlayers);
+        if (typeof fulhamPlayers !== 'undefined') allPlayers = allPlayers.concat(fulhamPlayers);
+        var player = playerId ? allPlayers.find(function (p) { return p.id === playerId; }) : null;
+        if (!player && allPlayers.length) player = allPlayers[0];
+        if (!player) {
+            document.getElementById('player-card-header').style.display = 'none';
+            document.getElementById('player-card-scroll-area').style.display = 'none';
+            document.getElementById('player-card-not-found').style.display = 'block';
+            return;
+        }
+        var photo = document.getElementById('player-card-photo');
+        var team = document.getElementById('player-card-team');
+        var name = document.getElementById('player-card-name');
+        var position = document.getElementById('player-card-position');
+        var min = document.getElementById('player-card-min');
+        var ratingEl = document.getElementById('player-card-rating');
+        if (photo) { photo.src = ensurePath(player.playerPhoto); photo.alt = player.fullName || player.name; }
+        if (team) { team.src = ensurePath(player.teamLogo); team.alt = player.team; }
+        if (name) name.textContent = player.fullName || player.name;
+        if (position) position.textContent = player.position || '–';
+        if (min) min.textContent = '90\'';
+        if (ratingEl && player.stats && player.stats.rating != null) {
+            ratingEl.className = 'fs-badge-rating fs-badge-rating--large ' + getRatingClass(player.stats.rating);
+            var t = ratingEl.querySelector('.fs-badge-rating__text');
+            if (t) t.textContent = Number(player.stats.rating).toFixed(1);
+        }
+        renderTopEvents(player);
+        renderBonuses(player);
+        renderTopStats(player);
+        renderShotMap(player);
+        renderTables(player);
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+    else run();
+
+    if (window !== window.top) {
+        function notifyClose() {
+            try { window.parent.postMessage('closePlayerCard', '*'); } catch (e) {}
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            var innerBackdrop = document.querySelector('.layout-dialog-backdrop');
+            if (innerBackdrop) innerBackdrop.style.display = 'none';
+            var closeSelectors = 'a.layout-dialog-close, a[href*="match_finished_mobile_lineups_playerCard"], .layout-dialog-action-button, #player-card-not-found a';
+            document.querySelectorAll(closeSelectors).forEach(function (el) {
+                el.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    notifyClose();
+                });
+            });
+        });
+    }
+})();
+    </script>
+</body>
+</html>

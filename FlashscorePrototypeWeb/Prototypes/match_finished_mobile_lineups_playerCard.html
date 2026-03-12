@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Match Detail - Prematch Summary - Mobile</title>
+    <title>Match Detail - Finished Lineups (Prototype) - Mobile</title>
     <link rel="stylesheet" href="../Components/LayoutTemplate/Mobile/LayoutTemplate.css">
     <link rel="stylesheet" href="../Components/Atoms/FSBadgeNotification/FSBadgeNotification.css">
     <link rel="stylesheet" href="../Components/Widgets/FSWidgetNavigation/Mobile/NavigationMain-mobile.css">
@@ -48,27 +48,120 @@
     <link rel="stylesheet" href="../Components/Atoms/FSBadgeRating/FSBadgeRating.css">
     <link rel="stylesheet" href="../Components/Molecules/FSLineupsParticipantPitch/FSLineupsParticipantPitch.css">
     <link rel="stylesheet" href="../Components/Widgets/FSWidgetLineupsField/FSWidgetLineupsField.css">
-    <link rel="stylesheet" href="../Components/Atoms/FSSectionHeadline/FSSectionHeadline.css">
-    <link rel="stylesheet" href="../Components/Widgets/FSWidgetStartingLineups/FSWidgetStartingLineups.css">
-    <link rel="stylesheet" href="../Components/Molecules/FSLineupsParticipant/FSLineupsParticipant.css">
     <style>
-        /* Player card overlay – backdrop + dialog nad obsahem stránky */
+        body {
+            max-width: 393px;
+            margin: 0 auto;
+            height: 852px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.06);
+        }
+        /* Primární taby – horizontální scroll */
+        .fs-tabs-row--primary {
+            overflow-x: auto;
+            overflow-y: hidden;
+            flex-wrap: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+        }
+        .fs-tabs-row--primary .fs-tabs {
+            flex-shrink: 0;
+        }
+        /* Sekundární taby – horizontální scroll v rámci 393px, napravo až do kraje */
+        .fs-tabs-row--secondary {
+            overflow-x: auto;
+            overflow-y: hidden;
+            flex-wrap: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            margin-right: 0;
+        }
+        .fs-tabs-row--secondary .fs-tabs {
+            flex-shrink: 0;
+        }
+        /* Skóre v hlavičce zápasu – 30px */
+        .fs-widget-headers-match-mobile__score-home,
+        .fs-widget-headers-match-mobile__score-separator,
+        .fs-widget-headers-match-mobile__score-away {
+            font-size: 30px;
+        }
+        /* Sub-nav: bez scrollu – nevejdoucí položky zmizí, roletka přes More */
+        .nav-sub-mobile__items {
+            overflow-x: hidden;
+            min-width: 0;
+        }
+        .nav-sub-mobile__dropdown {
+            display: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            z-index: 100;
+            background: #EEEEEE;
+            border-top: 1px solid #C8CDCD;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+            max-height: 240px;
+            overflow-y: auto;
+        }
+        .nav-sub-mobile__dropdown.is-open {
+            display: block;
+        }
+        .nav-sub-mobile__dropdown-item {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            min-height: 48px;
+            padding: 0 16px;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #E8E8E8;
+            cursor: pointer;
+            font-family: 'Livesport Finder LCGJK', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 14px;
+            color: #555E61;
+            text-transform: uppercase;
+            text-align: left;
+        }
+        .nav-sub-mobile__dropdown-item:hover {
+            background: #E0E0E0;
+        }
+        .nav-sub-mobile__dropdown-item:last-child {
+            border-bottom: none;
+        }
+        .nav-sub-mobile { position: relative; }
+
+        /* Player card overlay – vždy nad celou stránkou (nad nav, lineups, footer), dialog 686px dole */
         #player-card-overlay {
             display: none;
             position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
             z-index: 9999;
             align-items: flex-end;
             justify-content: center;
             padding: 0;
             background: transparent;
         }
-        #player-card-overlay.is-open { display: flex; }
-        body.player-card-overlay-open { overflow: hidden; height: 100%; }
+        #player-card-overlay.is-open {
+            display: flex;
+        }
+        body.player-card-overlay-open {
+            overflow: hidden;
+            height: 100%;
+        }
         #player-card-backdrop {
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: rgba(0, 0, 0, 0.5);
             cursor: pointer;
             z-index: 1;
@@ -85,8 +178,10 @@
             z-index: 2;
         }
         #player-card-iframe {
-            width: 100%; height: 100%;
-            border: none; display: block;
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
         }
     </style>
 </head>
@@ -185,9 +280,18 @@
         </div>
 
         <!-- More Button -->
-        <button class="nav-sub-mobile__more">
+        <button class="nav-sub-mobile__more" aria-expanded="false" aria-haspopup="true">
             <img src="../Assets/Icons/Action/Navigation/Arrow/Down.svg" alt="More">
         </button>
+
+        <!-- Roletka – další sporty -->
+        <div class="nav-sub-mobile__dropdown" id="nav-sub-mobile-dropdown" role="menu" aria-label="More sports">
+            <button type="button" class="nav-sub-mobile__dropdown-item" role="menuitem">Football</button>
+            <button type="button" class="nav-sub-mobile__dropdown-item" role="menuitem">Tennis</button>
+            <button type="button" class="nav-sub-mobile__dropdown-item" role="menuitem">Basketball</button>
+            <button type="button" class="nav-sub-mobile__dropdown-item" role="menuitem">Hockey</button>
+            <button type="button" class="nav-sub-mobile__dropdown-item" role="menuitem">Golf</button>
+        </div>
     </div>
 
     <!-- Divider -->
@@ -240,10 +344,10 @@
 
             <!-- Main Content Area -->
             <div class="layouttemplate-main__content">
-                <!-- FSWidgetHeadersMatch - Pre-match (upcoming) -->
+                 <!-- FSWidgetHeadersMatch - Finished Match -->
                 <div class="fs-widget-headers-match-mobile">
                     <div class="fs-widget-headers-match-mobile__date-container">
-                        <p class="fs-widget-headers-match-mobile__date">22.02.2026 15:00</p>
+                        <p class="fs-widget-headers-match-mobile__date">15.04.2023 01:10</p>
                     </div>
                     <div class="fs-widget-headers-match-mobile__content">
 
@@ -260,7 +364,7 @@
                                         </div>
                                     </div>
                                     <div class="fs-asset-boxed fs-asset-boxed--52px fs-asset-boxed--asset">
-                                        <img src="../Assets/TeamLogos/Premier league/Man city.png" alt="Manchester City" class="fs-asset-boxed__image fs-asset-boxed__image--asset">
+                                        <img src="../Assets/TeamLogos/Premier league/Man city.png" alt="Denver Nuggets" class="fs-asset-boxed__image fs-asset-boxed__image--asset">
                                     </div>
                                     <div class="fs-widget-headers-match-mobile__serve"></div>
                                 </div>
@@ -268,20 +372,21 @@
                             </div>
                             <div class="fs-widget-headers-match-mobile__participant-info">
                                 <div class="fs-widget-headers-match-mobile__participant-name">
-                                    <p class="fs-widget-headers-match-mobile__participant-text">Manchester City</p>
+                                    <img src="../Assets/Icons/Incidents/Next stage.svg" alt="" class="fs-widget-headers-match-mobile__next-stage-icon">
+                                    <p class="fs-widget-headers-match-mobile__participant-text fs-widget-headers-match-mobile__participant-text--bold">Manchester City</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Score Container — Pre-match -->
+                        <!-- Score Container -->
                         <div class="fs-widget-headers-match-mobile__score-container">
-                            <div class="fs-widget-headers-match-mobile__pre-match-time">
-                                <p class="fs-widget-headers-match-mobile__pre-match-text">Starts in 2 hours</p>
+                            <div class="fs-widget-headers-match-mobile__score-content">
+                                <div class="fs-widget-headers-match-mobile__score-home">3</div>
+                                <div class="fs-widget-headers-match-mobile__score-separator">-</div>
+                                <div class="fs-widget-headers-match-mobile__score-away">1</div>
                             </div>
-                            <!-- Stream Badge -->
-                            <div class="fs-badge-stream">
-                                <img src="../Assets/Icons/Action/Video/Play ALT.svg" alt="" class="fs-badge-stream__icon">
-                                <span class="fs-badge-stream__text">Stream</span>
+                            <div class="fs-widget-headers-match-mobile__state">
+                                <p class="fs-widget-headers-match-mobile__state-text">FINISHED</p>
                             </div>
                         </div>
 
@@ -292,7 +397,7 @@
                                 <div class="fs-widget-headers-match-mobile__participant-icons-center">
                                     <div class="fs-widget-headers-match-mobile__serve"></div>
                                     <div class="fs-asset-boxed fs-asset-boxed--52px fs-asset-boxed--asset">
-                                        <img src="../Assets/TeamLogos/Premier league/Fulham.png" alt="Fulham" class="fs-asset-boxed__image fs-asset-boxed__image--asset">
+                                        <img src="../Assets/TeamLogos/Premier league/Fulham.png" alt="Chicago Bulls" class="fs-asset-boxed__image fs-asset-boxed__image--asset">
                                     </div>
                                     <div class="fs-widget-headers-match-mobile__favorite">
                                         <div class="fs-actions-favorite fs-actions-favorite--large fs-actions-favorite--base">
@@ -323,6 +428,10 @@
                 </div>
 
                 <button class="fs-tabs">
+                    <span class="fs-tabs__text">Report</span>
+                </button>
+
+                <button class="fs-tabs">
                     <span class="fs-tabs__text">Odds</span>
                 </button>
 
@@ -337,6 +446,10 @@
                 <button class="fs-tabs">
                     <span class="fs-tabs__text">News</span>
                 </button>
+
+                <button class="fs-tabs">
+                    <span class="fs-tabs__text">Video</span>
+                </button>
             </div>
 
             <!-- Divider Primary -->
@@ -344,28 +457,25 @@
 
             <!-- Tabs Secondary - Match Content Sections (FSTabs Component) -->
             <div class="fs-tabs-row fs-tabs-row--secondary">
-                <a href="MatchDetail_Prematch_Summary_Mobile.html" class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
+                <a href="#" class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
                     <span class="fs-tabs__text">Summary</span>
+                </a>
+
+                <a href="#" class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
+                    <span class="fs-tabs__text">Stats</span>
                 </a>
 
                 <button class="fs-tabs fs-tabs--secondary fs-tabs--grey-base fs-tabs--active">
                     <span class="fs-tabs__text">Lineups</span>
                 </button>
 
-                <button class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
-                    <span class="fs-tabs__text">H2H</span>
-                </button>
+                <a href="#" class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
+                    <span class="fs-tabs__text">Player Stats</span>
+                </a>
 
                 <button class="fs-tabs fs-tabs--secondary fs-tabs--grey-base">
-                    <span class="fs-tabs__text">News</span>
+                    <span class="fs-tabs__text">Commentary</span>
                 </button>
-            </div>
-
-            <!-- Section headline -->
-            <div class="fs-section-headline">
-                <div class="fs-section-headline__content">
-                    <span class="fs-section-headline__text">Predicted lineups</span>
-                </div>
             </div>
 
             <!-- Section header -->
@@ -393,7 +503,7 @@
                     <div class="fs-widget-lineups-field__team fs-widget-lineups-field__team--home">
                         <!-- Row 1: Goalkeeper -->
                         <div class="fs-widget-lineups-field__row" data-players="1">
-                            <div class="fs-lineups-participant-pitch" data-shirt-number="31" data-player-id="home-31">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="" data-shirt-number="31">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/ManchesterCity2/Trafford James.jpg" alt="Trafford James">
                                 </div>
@@ -401,7 +511,11 @@
                                     <span class="fs-lineups-participant-pitch__number">31</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Trafford James</span>
                                 </div>
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--b">
+                                            <span class="fs-badge-rating__text">7.2</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
@@ -410,7 +524,7 @@
 
                         <!-- Row 2: Defenders (4 players) -->
                         <div class="fs-widget-lineups-field__row" data-players="4">
-                            <div class="fs-lineups-participant-pitch" data-shirt-number="2">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="" data-shirt-number="2">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/ManchesterCity2/Bettinelli Marcus.jpg" alt="Bettinelli">
                                 </div>
@@ -418,12 +532,16 @@
                                     <span class="fs-lineups-participant-pitch__number">2</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Bettinelli</span>
                                 </div>
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--c">
+                                            <span class="fs-badge-rating__text">6.8</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
                             </div>
-                            <div class="fs-lineups-participant-pitch" data-player-id="1897684426570334208">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="1897684426570334208">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/ManchesterCity2/Dias Ruben.jpg" alt="Dias">
                                 </div>
@@ -431,12 +549,16 @@
                                     <span class="fs-lineups-participant-pitch__number">3</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Dias</span>
                                 </div>
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--b">
+                                            <span class="fs-badge-rating__text">7.4</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
                             </div>
-                            <div class="fs-lineups-participant-pitch" data-shirt-number="25">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="" data-shirt-number="25">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/ManchesterCity2/Ake Nathan.jpg" alt="Akanji">
                                 </div>
@@ -444,12 +566,16 @@
                                     <span class="fs-lineups-participant-pitch__number">25</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Akanji</span>
                                 </div>
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--b">
+                                            <span class="fs-badge-rating__text">7.0</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
                             </div>
-                            <div class="fs-lineups-participant-pitch" data-shirt-number="24">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="" data-shirt-number="24">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/ManchesterCity2/Gvardiol Josko.jpg" alt="Gvardiol">
                                 </div>
@@ -457,14 +583,24 @@
                                     <span class="fs-lineups-participant-pitch__number">24</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Gvardiol</span>
                                 </div>
-                                
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--c">
+                                            <span class="fs-badge-rating__text">6.5</span>
+                                    </div>
+                                </div>
+                                <div class="fs-lineups-participant-pitch__incidents">
+                                    <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                                        <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                            <img class="fs-incident-badge-field__icon" src="../Assets/Icons/Incidents/Yellow card.svg" alt="Yellow card">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Row 3: Midfielders (3 players) -->
                         <div class="fs-widget-lineups-field__row" data-players="3">
-                            <div class="fs-lineups-participant-pitch" data-player-id="1897732563787841539">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="1897732563787841539">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/ManchesterCity2/Silva Bernardo.jpg" alt="Silva">
                                 </div>
@@ -472,10 +608,20 @@
                                     <span class="fs-lineups-participant-pitch__number">20</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Silva</span>
                                 </div>
-                                
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--best">
+                                            <span class="fs-badge-rating__text">8.0</span>
+                                    </div>
+                                </div>
+                                <div class="fs-lineups-participant-pitch__incidents">
+                                    <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
+                                        <div class="fs-incident-badge-field fs-incident-badge-field--small">
+                                            <img class="fs-incident-badge-field__icon" src="../Assets/Icons/Incidents/Goal/Soccer.svg" alt="Goal">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="fs-lineups-participant-pitch" data-player-id="1897689487811805184">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="1897689487811805184">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/ManchesterCity2/Rodri.jpg" alt="Rodri">
                                 </div>
@@ -483,12 +629,16 @@
                                     <span class="fs-lineups-participant-pitch__number">16</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Rodri</span>
                                 </div>
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--a">
+                                            <span class="fs-badge-rating__text">7.8</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
                             </div>
-                            <div class="fs-lineups-participant-pitch" data-player-id="1897700133601280000">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="1897700133601280000">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/ManchesterCity2/Nunes Matheus Luiz.jpg" alt="Nunes">
                                 </div>
@@ -496,7 +646,11 @@
                                     <span class="fs-lineups-participant-pitch__number">27</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Nunes</span>
                                 </div>
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--b">
+                                            <span class="fs-badge-rating__text">7.0</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
@@ -505,7 +659,7 @@
 
                         <!-- Row 4: Attacking Midfielders (2 players) -->
                         <div class="fs-widget-lineups-field__row" data-players="2">
-                            <div class="fs-lineups-participant-pitch" data-player-id="1897739615272697856">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="1897739615272697856">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/ManchesterCity2/Foden Phil.jpg" alt="Foden">
                                 </div>
@@ -513,7 +667,11 @@
                                     <span class="fs-lineups-participant-pitch__number">47</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Foden</span>
                                 </div>
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--b">
+                                            <span class="fs-badge-rating__text">7.2</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom">
                                         <div class="fs-incident-badge-field fs-incident-badge-field--small">
@@ -522,7 +680,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="fs-lineups-participant-pitch" data-player-id="1897695264471515136">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="1897695264471515136">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/ManchesterCity2/Doku Jeremy.jpg" alt="Doku">
                                 </div>
@@ -530,7 +688,11 @@
                                     <span class="fs-lineups-participant-pitch__number">11</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Doku</span>
                                 </div>
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--c">
+                                            <span class="fs-badge-rating__text">6.7</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
@@ -539,7 +701,7 @@
 
                         <!-- Row 5: Forward (1 player) -->
                         <div class="fs-widget-lineups-field__row" data-players="1">
-                            <div class="fs-lineups-participant-pitch" data-player-id="1897739566216118272">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="1897739566216118272">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/ManchesterCity2/Haaland Erling Braut.jpg" alt="Haaland">
                                 </div>
@@ -547,7 +709,11 @@
                                     <span class="fs-lineups-participant-pitch__number">9</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Haaland</span>
                                 </div>
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--c">
+                                            <span class="fs-badge-rating__text">5.9</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
@@ -559,7 +725,7 @@
                     <div class="fs-widget-lineups-field__team fs-widget-lineups-field__team--away">
                         <!-- Row 1: Forward (1 player) -->
                         <div class="fs-widget-lineups-field__row" data-players="1">
-                            <div class="fs-lineups-participant-pitch" data-player-id="1897743760918577152">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="1897743760918577152">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/Fulham/Rodrigo Muniz.jpg" alt="Muniz">
                                 </div>
@@ -567,7 +733,11 @@
                                     <span class="fs-lineups-participant-pitch__number">9</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Muniz</span>
                                 </div>
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--a">
+                                            <span class="fs-badge-rating__text">7.6</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
@@ -576,7 +746,7 @@
 
                         <!-- Row 2: Attacking Midfielders (3 players) -->
                         <div class="fs-widget-lineups-field__row" data-players="3">
-                            <div class="fs-lineups-participant-pitch" data-player-id="1897692255825952768">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="1897692255825952768">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/Fulham/Smith Rowe Emile.jpg" alt="Smith Rowe">
                                 </div>
@@ -584,12 +754,16 @@
                                     <span class="fs-lineups-participant-pitch__number">32</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Smith Rowe</span>
                                 </div>
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--c">
+                                            <span class="fs-badge-rating__text">6.8</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
                             </div>
-                            <div class="fs-lineups-participant-pitch" data-player-id="1897700077255000064">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="1897700077255000064">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/Fulham/Bobb Oscar.jpg" alt="Bobb">
                                 </div>
@@ -597,12 +771,16 @@
                                     <span class="fs-lineups-participant-pitch__number">52</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Bobb</span>
                                 </div>
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--b">
+                                            <span class="fs-badge-rating__text">7.0</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
                             </div>
-                            <div class="fs-lineups-participant-pitch" data-player-id="1897731511424385027">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="1897731511424385027">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/Fulham/Iwobi Alex.jpg" alt="Iwobi">
                                 </div>
@@ -610,7 +788,11 @@
                                     <span class="fs-lineups-participant-pitch__number">17</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Iwobi</span>
                                 </div>
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--c">
+                                            <span class="fs-badge-rating__text">6.7</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
@@ -619,7 +801,7 @@
 
                         <!-- Row 3: Midfielders (3 players) -->
                         <div class="fs-widget-lineups-field__row" data-players="3">
-                            <div class="fs-lineups-participant-pitch" data-player-id="1897691124680884225">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="1897691124680884225">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/Fulham/Sessegnon Ryan.jpg" alt="Sessegnon">
                                 </div>
@@ -627,12 +809,16 @@
                                     <span class="fs-lineups-participant-pitch__number">30</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Sessegnon</span>
                                 </div>
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--c">
+                                            <span class="fs-badge-rating__text">6.7</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
                             </div>
-                            <div class="fs-lineups-participant-pitch" data-player-id="1897734875788869633">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="1897734875788869633">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/Fulham/Reed Harrison.jpg" alt="Reed">
                                 </div>
@@ -640,12 +826,16 @@
                                     <span class="fs-lineups-participant-pitch__number">6</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Reed</span>
                                 </div>
-                               
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--a">
+                                            <span class="fs-badge-rating__text">7.6</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
                             </div>
-                            <div class="fs-lineups-participant-pitch" data-player-id="1897679629330939904">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="1897679629330939904">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/Fulham/Cairney Tom.jpg" alt="Cairney">
                                 </div>
@@ -653,7 +843,11 @@
                                     <span class="fs-lineups-participant-pitch__number">10</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Cairney</span>
                                 </div>
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--c">
+                                            <span class="fs-badge-rating__text">6.9</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
@@ -662,7 +856,7 @@
 
                         <!-- Row 4: Defenders (3 players) -->
                         <div class="fs-widget-lineups-field__row" data-players="3">
-                            <div class="fs-lineups-participant-pitch" data-player-id="1897733303138779137">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="1897733303138779137">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/Fulham/Castagne Timothy.jpg" alt="Castagne">
                                 </div>
@@ -670,12 +864,16 @@
                                     <span class="fs-lineups-participant-pitch__number">21</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Castagne</span>
                                 </div>
-                               
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--c">
+                                            <span class="fs-badge-rating__text">6.9</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
                             </div>
-                            <div class="fs-lineups-participant-pitch" data-player-id="1897731018522361856">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="1897731018522361856">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/Fulham/Andersen Joachim.jpg" alt="Andersen">
                                 </div>
@@ -683,12 +881,16 @@
                                     <span class="fs-lineups-participant-pitch__number">5</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Andersen</span>
                                 </div>
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--b">
+                                            <span class="fs-badge-rating__text">7.3</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
                             </div>
-                            <div class="fs-lineups-participant-pitch" data-player-id="1897695203754770432">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="1897695203754770432">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/Fulham/Cuenca Jorge.jpg" alt="Cuenca">
                                 </div>
@@ -696,7 +898,11 @@
                                     <span class="fs-lineups-participant-pitch__number">15</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Cuenca</span>
                                 </div>
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--c">
+                                            <span class="fs-badge-rating__text">6.5</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
@@ -705,7 +911,7 @@
 
                         <!-- Row 5: Goalkeeper (1 player) -->
                         <div class="fs-widget-lineups-field__row" data-players="1">
-                            <div class="fs-lineups-participant-pitch" data-player-id="1897728044861489153">
+                            <div class="fs-lineups-participant-pitch fs-lineups-participant-pitch--large" data-player-id="1897728044861489153">
                                 <div class="fs-lineups-participant-pitch__image">
                                     <img src="../Assets/PlayerPhotos/Football/Fulham/Lecomte Benjamin.jpg" alt="Lecomte">
                                 </div>
@@ -713,7 +919,11 @@
                                     <span class="fs-lineups-participant-pitch__number">23</span>
                                     <span class="fs-lineups-participant-pitch__player-name">Lecomte</span>
                                 </div>
-                                
+                                <div class="fs-lineups-participant-pitch__rating">
+                                    <div class="fs-badge-rating fs-badge-rating--small fs-badge-rating--a">
+                                            <span class="fs-badge-rating__text">7.5</span>
+                                    </div>
+                                </div>
                                 <div class="fs-lineups-participant-pitch__incidents">
                                     <div class="fs-incident-badge-field-row fs-incident-badge-field-row--vertical fs-incident-badge-field-row--small fs-incident-badge-field-row--bottom"></div>
                                 </div>
@@ -722,440 +932,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Widget Container -->
-        <div class="fs-widget-starting-lineups">
-
-            <!-- Header -->
-        <div class="fs-headers-section">
-            <div class="fs-headers-section__left"></div>
-            <div class="fs-headers-section__center">
-                <span class="fs-headers-section__text">Starting lineups</span>
-            </div>
-            <div class="fs-headers-section__right"></div>
-        </div>
-
-            <!-- Lineups Container -->
-            <div class="fs-widget-starting-lineups__body">
-
-                <!-- Row 1: Goalkeepers -->
-                <div class="fs-lineups-participant-row">
-                    <div class="fs-lineups-participant fs-lineups-participant--left fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">1</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/Italy.imageset/Italy.svg" alt="Italy" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Donnarumma G.</span>
-                            </div>
-                            
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Goalkeeper</div>
-                    </div>
-
-                    <div class="fs-lineups-participant fs-lineups-participant--right fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">1</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/Germany.imageset/Germany.svg" alt="Germany" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Leno B.</span>
-                            </div>
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Goalkeeper</div>
-                    </div>
-                </div>
-
-                <!-- Row 2: Defender (Grey BG) -->
-                <div class="fs-lineups-participant-row fs-lineups-participant-row--grey-bg">
-                    <div class="fs-lineups-participant fs-lineups-participant--left fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">3</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/Portugal.imageset/Portugal.svg" alt="Portugal" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Dias R.</span>
-                            </div>
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Defender</div>
-                    </div>
-
-                    <div class="fs-lineups-participant fs-lineups-participant--right fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">5</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/Denmark.imageset/Denmark.svg" alt="Denmark" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Andersen J.</span>
-                            </div>
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Defender</div>
-                    </div>
-                </div>
-
-                <!-- Row 3: Defender -->
-                <div class="fs-lineups-participant-row">
-                    <div class="fs-lineups-participant fs-lineups-participant--left fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">5</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/England.imageset/England.svg" alt="England" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Stones J.</span>
-                            </div>
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Defender</div>
-                    </div>
-
-                    <div class="fs-lineups-participant fs-lineups-participant--right fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">3</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/Nigeria.imageset/Nigeria.svg" alt="Nigeria" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Bassey C.</span>
-                            </div>
-                            <div class="fs-lineups-participant__incidents">
-                                <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small"></div>
-                            </div>
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Defender</div>
-                    </div>
-                </div>
-
-                <!-- Row 4: Defender (Grey BG) -->
-                <div class="fs-lineups-participant-row fs-lineups-participant-row--grey-bg">
-                    <div class="fs-lineups-participant fs-lineups-participant--left fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">24</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/Croatia.imageset/Croatia.svg" alt="Croatia" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Gvardiol J.</span>
-                            </div>
-                            
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Defender</div>
-                    </div>
-
-                    <div class="fs-lineups-participant fs-lineups-participant--right fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">33</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/USA.imageset/USA.svg" alt="USA" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Robinson A.</span>
-                            </div>
-                            <div class="fs-lineups-participant__incidents">
-                                <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small"></div>
-                            </div>
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Defender</div>
-                    </div>
-                </div>
-
-                <!-- Row 5: Defender -->
-                <div class="fs-lineups-participant-row">
-                    <div class="fs-lineups-participant fs-lineups-participant--left fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">82</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/England.imageset/England.svg" alt="England" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Lewis R.</span>
-                            </div>
-                            <div class="fs-lineups-participant__incidents">
-                                <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small"></div>
-                            </div>
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Defender</div>
-                    </div>
-
-                    <div class="fs-lineups-participant fs-lineups-participant--right fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">2</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/Netherlands.imageset/Netherlands.svg" alt="Netherlands" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Tete K.</span>
-                            </div>
-                            <div class="fs-lineups-participant__incidents">
-                                <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small"></div>
-                            </div>
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Defender</div>
-                    </div>
-                </div>
-
-                <!-- Row 6: Midfielder (Grey BG) -->
-                <div class="fs-lineups-participant-row fs-lineups-participant-row--grey-bg">
-                    <div class="fs-lineups-participant fs-lineups-participant--left fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">16</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/Spain.imageset/Spain.svg" alt="Spain" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Rodri</span>
-                            </div>
-                            <div class="fs-lineups-participant__incidents">
-                                <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small"></div>
-                            </div>
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Midfielder</div>
-                    </div>
-
-                    <div class="fs-lineups-participant fs-lineups-participant--right fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">16</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/Norway.imageset/Norway.svg" alt="Norway" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Berge S.</span>
-                            </div>
-                            
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Midfielder</div>
-                    </div>
-                </div>
-
-                <!-- Row 7: Midfielder -->
-                <div class="fs-lineups-participant-row">
-                    <div class="fs-lineups-participant fs-lineups-participant--left fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">47</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../../../Assets/Flags/England.imageset/England.svg" alt="England" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Foden P.</span>
-                            </div>
-                            <div class="fs-lineups-participant__incidents">
-                                <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small">
-                                    <div class="fs-incident-badge-field fs-incident-badge-field--small">
-                                        <img class="fs-incident-badge-field__icon" src="../../../Assets/Icons/Incidents/Assist ALT.svg" alt="Assist">
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Midfielder</div>
-                    </div>
-
-                    <div class="fs-lineups-participant fs-lineups-participant--right fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">32</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/England.imageset/England.svg" alt="England" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Smith Rowe E.</span>
-                            </div>
-                            
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Midfielder</div>
-                    </div>
-                </div>
-
-                <!-- Row 8: Midfielder (Grey BG) -->
-                <div class="fs-lineups-participant-row fs-lineups-participant-row--grey-bg">
-                    <div class="fs-lineups-participant fs-lineups-participant--left fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">20</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/Portugal.imageset/Portugal.svg" alt="Portugal" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Silva B.</span>
-                            </div>
-                            
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Midfielder</div>
-                    </div>
-
-                    <div class="fs-lineups-participant fs-lineups-participant--right fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">10</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/Scotland.imageset/Scotland.svg" alt="Scotland" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Cairney T.</span>
-                            </div>
-                            <div class="fs-lineups-participant__incidents">
-                                <div class="fs-incident-badge-field-row fs-incident-badge-field-row--horizontal fs-incident-badge-field-row--small"></div>
-                            </div>
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Midfielder</div>
-                    </div>
-                </div>
-
-                <!-- Row 9: Forward -->
-                <div class="fs-lineups-participant-row">
-                    <div class="fs-lineups-participant fs-lineups-participant--left fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">9</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/Norway.imageset/Norway.svg" alt="Norway" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Haaland E.</span>
-                            </div>
-                            
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Forward</div>
-                    </div>
-
-                    <div class="fs-lineups-participant fs-lineups-participant--right fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">9</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/Brazil.imageset/Brazil.svg" alt="Brazil" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Rodrigo Muniz</span>
-                            </div>
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Forward</div>
-                    </div>
-                </div>
-
-                <!-- Row 10: Forward (Grey BG) -->
-                <div class="fs-lineups-participant-row fs-lineups-participant-row--grey-bg">
-                    <div class="fs-lineups-participant fs-lineups-participant--left fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">7</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/Egypt.imageset/Egypt.svg" alt="Egypt" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Marmoush O.</span>
-                            </div>
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Forward</div>
-                    </div>
-
-                    <div class="fs-lineups-participant fs-lineups-participant--right fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">8</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/Wales.imageset/Wales.svg" alt="Wales" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Wilson H.</span>
-                            </div>
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Forward</div>
-                    </div>
-                </div>
-
-                <!-- Row 11: Forward -->
-                <div class="fs-lineups-participant-row">
-                    <div class="fs-lineups-participant fs-lineups-participant--left fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">11</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/Belgium.imageset/Belgium.svg" alt="Belgium" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Doku J.</span>
-                            </div>
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Forward</div>
-                    </div>
-
-                    <div class="fs-lineups-participant fs-lineups-participant--right fs-lineups-participant--fluid">
-                        <div class="fs-lineups-participant__main">
-                            <div class="fs-lineups-participant__jersey">
-                                <span class="fs-lineups-participant__jersey-text">17</span>
-                            </div>
-                            <div class="fs-lineups-participant__asset">
-                                <img src="../Assets/Flags/Nigeria.imageset/Nigeria.svg" alt="Nigeria" class="fs-lineups-participant__asset-image">
-                            </div>
-                            <div class="fs-lineups-participant__info">
-                                <span class="fs-lineups-participant__name">Iwobi A.</span>
-                            </div>
-                            
-                        </div>
-                        <div class="fs-lineups-participant__description">Midfielder</div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
 
             <!-- FSWidgetLineupsNewTopScorers -->
             <div class="fs-widget-lineups-new-top-scorers">
@@ -2202,10 +1978,9 @@
         </div>
     </div>
 
-    <script>var PLAYER_CARD_URL = '../Prototypes/Dialog_PlayerCard_Prototype.html';</script>
     <script src="../Utilities/manchesterCityPlayerStats.js"></script>
     <script src="../Utilities/fulhamPlayerStats.js"></script>
     <script src="../Utilities/lineupMatchData.js"></script>
-    <script src="../Prototypes/prototype-lineups-links.js"></script>
+    <script src="prototype-lineups-links.js"></script>
 </body>
 </html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSSectionHeadline - Atom Component</title>
+    <link rel="stylesheet" href="FSSectionHeadline.css">
+    <style>
+        body { background: #F5F5F5; padding: 32px; font-family: sans-serif; }
+        h1 { font-size: 18px; color: #001E28; margin-bottom: 4px; }
+        h2 { font-size: 12px; color: #999; font-weight: 400; margin: 24px 0 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .demo-section { margin-bottom: 32px; }
+        .demo-container { background: #FFFFFF; padding: 16px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <h1>FSSectionHeadline</h1>
+
+    <!-- ── Base variant ─────────────────────────────────────────────── -->
+    <h2>Base — Headline only</h2>
+
+    <div class="demo-section">
+        <div class="demo-container">
+            <div class="fs-section-headline">
+                <div class="fs-section-headline__content">
+                    <span class="fs-section-headline__text">Headline</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── With Advertisement label ──────────────────────────────────── -->
+    <h2>With Advertisement label</h2>
+
+    <div class="demo-section">
+        <div class="demo-container">
+            <div class="fs-section-headline">
+                <div class="fs-section-headline__content">
+                    <span class="fs-section-headline__text">Headline</span>
+                    <span class="fs-section-headline__label">Advertisement</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── With bottom divider ───────────────────────────────────────── -->
+    <h2>With bottom divider</h2>
+
+    <div class="demo-section">
+        <div class="demo-container">
+            <div class="fs-section-headline fs-section-headline--with-divider">
+                <div class="fs-section-headline__content">
+                    <span class="fs-section-headline__text">Headline</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── With both label and divider ────────────────────────────────── -->
+    <h2>With Advertisement label and divider</h2>
+
+    <div class="demo-section">
+        <div class="demo-container">
+            <div class="fs-section-headline fs-section-headline--with-divider">
+                <div class="fs-section-headline__content">
+                    <span class="fs-section-headline__text">Headline</span>
+                    <span class="fs-section-headline__label">Advertisement</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Different headlines ────────────────────────────────────────── -->
+    <h2>Various use cases</h2>
+
+    <div class="demo-section">
+        <div class="demo-container">
+            <div class="fs-section-headline fs-section-headline--with-divider">
+                <div class="fs-section-headline__content">
+                    <span class="fs-section-headline__text">Top scorers</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <div class="demo-container">
+            <div class="fs-section-headline fs-section-headline--with-divider">
+                <div class="fs-section-headline__content">
+                    <span class="fs-section-headline__text">Missing players</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <div class="demo-container">
+            <div class="fs-section-headline fs-section-headline--with-divider">
+                <div class="fs-section-headline__content">
+                    <span class="fs-section-headline__text">Odds</span>
+                    <span class="fs-section-headline__label">Advertisement</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

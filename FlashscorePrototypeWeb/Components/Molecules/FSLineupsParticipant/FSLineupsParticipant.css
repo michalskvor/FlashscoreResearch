@@ -1,0 +1,191 @@
+/* ============================================================
+   FSLineupsParticipant — Molecule Component
+   Lineups participant with jersey number, flag/logo, name, incidents, and rating.
+   Supports left and right alignment, optional jersey and description.
+   Depends on:
+     ../../Atoms/FSIncidentBadgeField/FSIncidentBadgeField.css
+     ../FSIncidentBadgeFieldRow/FSIncidentBadgeFieldRow.css
+     ../../Atoms/FSBadgeRating/FSBadgeRating.css
+   ============================================================ */
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('../../../DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ── Base container ──────────────────────────────────────────── */
+.fs-lineups-participant {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 300px;
+    max-width: 304px;
+    box-sizing: border-box;
+}
+
+/* ── Main Row ────────────────────────────────────────────────── */
+.fs-lineups-participant__main {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+}
+
+/* ── Jersey Number (Optional) ────────────────────────────────── */
+.fs-lineups-participant__jersey {
+    width: 16px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.fs-lineups-participant__jersey-text {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #001E28;
+}
+
+/* ── Asset (Flag/Logo) ───────────────────────────────────────── */
+.fs-lineups-participant__asset {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.fs-lineups-participant__asset-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ── Info Column (Name + Description) ────────────────────────── */
+.fs-lineups-participant__info {
+    width: auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.fs-lineups-participant__name {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #001E28;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.fs-lineups-participant__description {
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #555E61;
+    display: block;
+}
+
+/* ── Incidents Container ─────────────────────────────────────── */
+.fs-lineups-participant__incidents {
+    flex-shrink: 0;
+}
+
+/* ── Rating Badge ────────────────────────────────────────────── */
+.fs-lineups-participant__rating {
+    flex-shrink: 0;
+}
+
+/* ── LEFT ALIGNMENT ──────────────────────────────────────────── */
+.fs-lineups-participant--left .fs-lineups-participant__main {
+    flex-direction: row;
+}
+
+.fs-lineups-participant--left .fs-lineups-participant__info {
+    align-items: flex-start;
+}
+
+.fs-lineups-participant--left .fs-lineups-participant__name {
+    text-align: left;
+}
+
+.fs-lineups-participant--left .fs-lineups-participant__description {
+    text-align: left;
+}
+
+/* Only add padding if jersey is present */
+.fs-lineups-participant--left:has(.fs-lineups-participant__jersey) .fs-lineups-participant__description {
+    padding-left: 20px;
+}
+
+/* ── RIGHT ALIGNMENT ─────────────────────────────────────────── */
+.fs-lineups-participant--right {
+    align-items: flex-end;
+}
+
+.fs-lineups-participant--right .fs-lineups-participant__main {
+    flex-direction: row-reverse;
+}
+
+.fs-lineups-participant--right .fs-lineups-participant__info {
+    align-items: flex-end;
+}
+
+.fs-lineups-participant--right .fs-lineups-participant__name {
+    text-align: right;
+}
+
+.fs-lineups-participant--right .fs-lineups-participant__description {
+    text-align: right;
+}
+
+/* Only add padding if jersey is present */
+.fs-lineups-participant--right:has(.fs-lineups-participant__jersey) .fs-lineups-participant__description {
+    padding-right: 20px;
+}
+
+/* ── FLUID VARIANT (lineup table context) ────────────────────── */
+
+/* Participant row container — side-by-side layout */
+.fs-lineups-participant-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    width: auto;
+    height: 48px;
+    box-sizing: border-box;
+}
+
+/* Fluid participant — fills available space instead of fixed width */
+.fs-lineups-participant--fluid {
+    flex: 1;
+    width: auto;
+    max-width: none;
+}
+
+.fs-lineups-participant-row--grey-bg {
+    background-color: rgb(238,238,238,0.4);
+    
+}

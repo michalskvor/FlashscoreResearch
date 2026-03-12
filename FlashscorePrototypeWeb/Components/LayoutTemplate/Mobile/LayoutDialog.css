@@ -174,3 +174,59 @@
     }
 }
 
+/* =========================================== */
+/* PLAYER CARD VARIANT (686px, sticky header/footer, scrollable body) */
+/* =========================================== */
+
+.layout-dialog-viewport--player-card {
+    height: 686px;
+}
+
+.layout-dialog-bottom-sheet--player-card {
+    height: 686px;
+    max-height: 686px;
+}
+
+.layout-dialog-body--player-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    padding: 0 24px 0;
+}
+
+.layout-dialog-body--player-card .player-stats-header {
+    flex-shrink: 0;
+}
+
+.layout-dialog-body--player-card .layout-dialog-body__scroll,
+.layout-dialog-body--player-card #player-card-stats-tables {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding-bottom: 24px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.layout-dialog-body--player-card .layout-dialog-body__scroll::-webkit-scrollbar,
+.layout-dialog-body--player-card #player-card-stats-tables::-webkit-scrollbar {
+    width: 4px;
+}
+
+.layout-dialog-body--player-card .layout-dialog-body__scroll::-webkit-scrollbar-track,
+.layout-dialog-body--player-card #player-card-stats-tables::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.layout-dialog-body--player-card .layout-dialog-body__scroll::-webkit-scrollbar-thumb,
+.layout-dialog-body--player-card #player-card-stats-tables::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+}
+
+.layout-dialog-body--player-card #player-card-not-found {
+    flex-shrink: 0;
+}
+

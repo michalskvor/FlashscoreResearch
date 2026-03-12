@@ -37,6 +37,12 @@ button.fs-tabs {
     outline: none;
 }
 
+/* Remove anchor default styles */
+a.fs-tabs {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* Tab Text */
 .fs-tabs__text {
     font-family: 'Livesport Finder LCGJK', sans-serif;
@@ -48,6 +54,11 @@ button.fs-tabs {
     transition: color 0.2s ease;
     white-space: nowrap;
 }
+
+.fs-tabs a {
+    color: inherit;
+    text-decoration: none !important;
+}   
 
 /* Active State */
 .fs-tabs--active .fs-tabs__text {

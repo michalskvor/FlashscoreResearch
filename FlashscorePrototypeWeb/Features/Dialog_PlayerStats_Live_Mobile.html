@@ -25,8 +25,7 @@
             z-index: 10;
             margin-left: -24px;
             margin-right: -24px;
-            margin-top: -24px;
-            padding: 24px 24px 16px 24px;
+            padding: 24px 24px 12px 24px;
         }
 
         /* Player Statistics Table Styles */
@@ -96,22 +95,22 @@
     </style>
 </head>
 <body>
-    <!-- Viewport Container (639px max width, 852px height) -->
-    <div class="layout-dialog-viewport">
+    <!-- Viewport Container (639px max width, 686px height for player card) -->
+    <div class="layout-dialog-viewport layout-dialog-viewport--player-card">
 
         <!-- Backdrop (Dims underlying content) -->
         <div class="layout-dialog-backdrop"></div>
 
         <!-- Bottom-Sheet Dialog -->
-        <div class="layout-dialog-bottom-sheet">
+        <div class="layout-dialog-bottom-sheet layout-dialog-bottom-sheet--player-card">
 
             <!-- Close Button (Top-Right Corner) -->
             <button class="fs-button-close layout-dialog-close" aria-label="Close">
                 <img src="../Assets/Icons/Action/Navigation/Close.svg" alt="" class="fs-button-close__icon">
             </button>
 
-            <!-- Scrollable Body Content -->
-            <div class="layout-dialog-body">
+            <!-- Body: sticky header + scrollable stats -->
+            <div class="layout-dialog-body layout-dialog-body--player-card">
 
                 <!-- Sticky Player Header -->
                 <div class="player-stats-header">
@@ -145,50 +144,83 @@
                         </div>
                     </div>
 
-                    <!-- Player Statistics Rating Card -->
-                    <div class="fs-player-statistics-rating-card" style="margin-top: 16px;">
-                        <!-- Stats Section -->
-                        <div class="fs-player-statistics-rating-card__stats">
-                            <!-- Minutes -->
-                        <div class="fs-player-statistics-rating-card__value-box">
-                            <div class="fs-player-statistics-rating-card__value-container">
-                                <span class="fs-player-statistics-rating-card__value_live">5'</span>
-                            </div>
-                            <div class="fs-player-statistics-rating-card__text-container">
-                                <span class="fs-player-statistics-rating-card__label">Min.</span>
-                            </div>
-                        </div>
-
-                        <!-- Incidents -->
-                        <div class="fs-player-statistics-rating-card__value-box">
-                            <div class="fs-player-statistics-rating-card__value-container">
-                                <div class="fs-player-statistics-rating-card_empty-value">
-                                   –⁠⁠⁠⁠⁠⁠
-                                </div>
-                            </div>
-                            <div class="fs-player-statistics-rating-card__text-container">
-                                <span class="fs-player-statistics-rating-card__label">Top Events</span>
-                            </div>
-                        </div>
-
-                        <!-- Rating -->
-                        <div class="fs-player-statistics-rating-card__value-box">
-                            <div class="fs-player-statistics-rating-card__value-container">
-                                <div class="fs-badge-rating fs-badge-rating--large fs-badge-rating--a">
-                                    <span class="fs-badge-rating__text">8.8</span>
-                                </div>
-                            </div>
-                            <div class="fs-player-statistics-rating-card__text-container">
-                                <span class="fs-player-statistics-rating-card__label">Rating</span>
-                            </div>
-                        </div>
-                        </div>
-
-                       
-                        
-                    </div>
                 </div>
 
+                <div class="layout-dialog-body__scroll">
+                    <!-- Rating card + bonuses tvoří vizuálně jeden celek (jako v prototype) -->
+                    <div class="player-card-rating-and-bonuses">
+                        <div class="fs-player-statistics-rating-card fs-player-statistics-rating-card--bonuses-below" style="margin-top: 16px;">
+                            <!-- Stats Section -->
+                            <div class="fs-player-statistics-rating-card__stats">
+                                <!-- Minutes -->
+                                <div class="fs-player-statistics-rating-card__value-box">
+                                    <div class="fs-player-statistics-rating-card__value-container">
+                                        <span class="fs-player-statistics-rating-card__value_live">5'</span>
+                                    </div>
+                                    <div class="fs-player-statistics-rating-card__text-container">
+                                        <span class="fs-player-statistics-rating-card__label">Min.</span>
+                                    </div>
+                                </div>
+
+                                <!-- Incidents -->
+                                <div class="fs-player-statistics-rating-card__value-box">
+                                    <div class="fs-player-statistics-rating-card__value-container">
+                                        <div class="fs-player-statistics-rating-card_empty-value">
+                                            –
+                                        </div>
+                                    </div>
+                                    <div class="fs-player-statistics-rating-card__text-container">
+                                        <span class="fs-player-statistics-rating-card__label">Top Events</span>
+                                    </div>
+                                </div>
+
+                                <!-- Rating -->
+                                <div class="fs-player-statistics-rating-card__value-box">
+                                    <div class="fs-player-statistics-rating-card__value-container">
+                                        <div class="fs-badge-rating fs-badge-rating--large fs-badge-rating--a">
+                                            <span class="fs-badge-rating__text">8.8</span>
+                                        </div>
+                                    </div>
+                                    <div class="fs-player-statistics-rating-card__text-container">
+                                        <span class="fs-player-statistics-rating-card__label">Rating</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 1px oddělovač (bílý = neviditelný na šedém pozadí) -->
+                        <hr class="fs-player-statistics-rating-card__divider">
+                    <div class="fs-player-statistics-rating-card__bonuses">
+                        <div class="fs-player-statistics-rating-card__rows">
+                            <div class="fs-player-statistics-rating-card__row">
+                                <div class="fs-badge-form fs-badge-form--plus">
+                                    <svg class="fs-badge-form__icon" width="9.3" height="9.3" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 5L8.5 5M5 1.5L5 8.5" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+                                </div>
+                                <div class="fs-player-statistics-rating-card__row-text">
+                                    <span class="fs-player-statistics-rating-card__row-text-primary">Goal</span>
+                                    <span class="fs-player-statistics-rating-card__row-text-secondary"></span>
+                                </div>
+                            </div>
+                            <div class="fs-player-statistics-rating-card__row">
+                                <div class="fs-badge-form fs-badge-form--minus">
+                                    <svg class="fs-badge-form__icon" width="9.3" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L9 1" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+                                </div>
+                                <div class="fs-player-statistics-rating-card__row-text">
+                                    <span class="fs-player-statistics-rating-card__row-text-primary">Poor duelling</span>
+                                    <span class="fs-player-statistics-rating-card__row-text-secondary"></span>
+                                </div>
+                            </div>
+                            <div class="fs-player-statistics-rating-card__row">
+                                <div class="fs-badge-form fs-badge-form--informative">
+                                    <svg class="fs-badge-form__icon-info" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.9976 2.52698H10.1404V12.0674H13.9976V2.52698ZM13.0412 11.1111H11.0968V3.48346H13.0412V11.1111Z" fill="#555E61"/><path d="M8.92845 0H5.07159V12.0674H8.92845V0ZM7.97211 11.1111H6.02793V0.95634H7.97211V11.1111Z" fill="#555E61"/><path d="M3.85952 5.797H0.00238037V12.0675H3.85952V5.797ZM2.90318 11.1111H0.95872V6.75348H2.90318V11.1111Z" fill="#555E61"/><path d="M14 13.0436H0V14H14V13.0436Z" fill="#555E61"/></svg>
+                                </div>
+                                <div class="fs-player-statistics-rating-card__row-text">
+                                    <span class="fs-player-statistics-rating-card__row-text-primary">Hit the woodwork</span>
+                                    <span class="fs-player-statistics-rating-card__row-text-secondary"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div><!-- /.player-card-rating-and-bonuses -->
                 <!--
                     PLAYER STATISTICS TABLE
                 -->
@@ -626,6 +658,8 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
                 </div>
 
             </div>

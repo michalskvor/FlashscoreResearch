@@ -1,0 +1,514 @@
+/* ============================================================
+   Flashscore Research — Landing Page Styles
+   ============================================================ */
+
+@font-face {
+    font-family: 'Finder';
+    src: url('Assets/Fonts/Finder/Finder-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Finder';
+    src: url('Assets/Fonts/Finder/Finder-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+/* Fallback: original LCGJK woff2 */
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('Components/DesignTokens/Typography/font-family/LivesportFinderLCGJK-Regular_Static.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Livesport Finder LCGJK';
+    src: url('Components/DesignTokens/Typography/font-family/LivesportFinderLCGJK-Bold_Static.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ── Reset / Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Finder', 'Livesport Finder LCGJK', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #171717;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ── Page shell ── */
+.rl-shell {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* ── Body layout ── */
+.rl-body {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    padding-left: 256px;
+    padding-right: 224px;
+}
+
+/* ── Left sidebar ── */
+.rl-sidebar {
+    width: 256px;
+    flex-shrink: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    background: #FFFFFF;
+    border-right: 1px solid #E5E5E5;
+    padding: 0 0 32px;
+    scrollbar-width: thin;
+}
+
+.rl-sidebar::-webkit-scrollbar { width: 4px; }
+.rl-sidebar::-webkit-scrollbar-thumb { background: #D4D4D4; border-radius: 2px; }
+.rl-sidebar::-webkit-scrollbar-track { background: transparent; }
+
+/* Logo area inside sidebar */
+.rl-sidebar__logo {
+    display: block;
+    padding: 24px 24px 8px;
+    margin-bottom: 8px;
+    text-decoration: none;
+}
+
+.rl-sidebar__logo-img {
+    height: 32px;
+    width: auto;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.rl-sidebar__logo-subtitle {
+    font-size: 14px;
+    color: #737373;
+    font-weight: 400;
+}
+
+/* Search inside sidebar */
+.rl-sidebar__search {
+    margin: 0 12px 20px;
+    position: relative;
+}
+
+.rl-sidebar__search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    color: #A3A3A3;
+    pointer-events: none;
+}
+
+.rl-sidebar__search-input {
+    width: 100%;
+    padding: 8px 10px 8px 32px;
+    font-size: 13px;
+    font-family: 'Finder', 'Livesport Finder LCGJK', sans-serif;
+    border: 1px solid #D4D4D4;
+    border-radius: 8px;
+    outline: none;
+    color: #171717;
+    background: #FFFFFF;
+    transition: border-color 0.12s, box-shadow 0.12s;
+}
+
+.rl-sidebar__search-input::placeholder { color: #A3A3A3; }
+
+.rl-sidebar__search-input:focus {
+    border-color: #0F2D37;
+    box-shadow: 0 0 0 3px rgba(15,45,55,0.08);
+}
+
+/* Nav groups */
+.rl-sidebar__nav { padding: 0 12px; }
+
+.rl-sidebar__group { margin-bottom: 24px; }
+
+.rl-sidebar__group-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #737373;
+    padding: 0 4px;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.rl-sidebar__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #404040;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.1s, color 0.1s;
+    user-select: none;
+    line-height: 1.35;
+}
+
+.rl-sidebar__item:hover {
+    background: #F5F5F5;
+    color: #171717;
+}
+
+.rl-sidebar__item.is-active {
+    color: #FFFFFF;
+    font-weight: 500;
+}
+.rl-sidebar__item.is-active { background: #0F2D37; }
+
+.rl-sidebar__item-badge {
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: #F0F0F0;
+    color: #999999;
+    border-radius: 3px;
+    padding: 2px 5px;
+    flex-shrink: 0;
+    line-height: 1.4;
+}
+
+.rl-sidebar__item.is-active .rl-sidebar__item-badge {
+    background: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.7);
+}
+
+.rl-sidebar__item--wip {
+    color: #AAAAAA;
+}
+
+.rl-sidebar__item-badge--wip {
+    background: #EBEBEB;
+    color: #AAAAAA;
+}
+
+/* ── Main content ── */
+.rl-main {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 980px;
+    min-width: 0;
+    padding: 64px 48px 96px;
+}
+
+/* ── Right "On This Page" panel ── */
+.rl-onpage {
+    width: 224px;
+    flex-shrink: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    padding: 32px 24px 32px 32px;
+}
+
+.rl-onpage__label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #737373;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.rl-onpage__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.rl-onpage__link {
+    font-size: 13px;
+    color: #525252;
+    padding: 5px 0;
+    display: block;
+    transition: color 0.1s;
+    line-height: 1.4;
+}
+
+.rl-onpage__link:hover {
+    color: #171717;
+}
+
+.rl-onpage__link.is-active {
+    color: #E62929;
+    font-weight: 500;
+}
+
+/* ── Section ── */
+.rl-section { display: none; }
+.rl-section.is-active { display: block; }
+
+/* ── Page header block ── */
+.rl-page-header {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+/* ── Breadcrumb ── */
+.rl-breadcrumb {
+    font-size: 13px;
+    font-weight: 500;
+    color: #737373;
+    margin-bottom: 8px;
+}
+
+/* ── Title ── */
+.rl-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #171717;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+}
+
+/* ── Description ── */
+.rl-description {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.65;
+    color: #525252;
+    max-width: 680px;
+    margin-bottom: 0;
+}
+
+/* ── Action buttons row ── */
+.rl-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    margin-bottom: 48px;
+}
+
+.rl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 40px;
+    padding: 0 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Finder', 'Livesport Finder LCGJK', sans-serif;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: opacity 0.12s;
+}
+
+.rl-btn:hover { opacity: 0.85; }
+
+.rl-btn--figma {
+    background: #0F2D37;
+    color: #FFFFFF;
+}
+
+.rl-btn--copy {
+    background: #F5F5F5;
+    color: #404040;
+    border: 1px solid #E5E5E5;
+}
+
+.rl-btn__icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+/* ── Prototype preview frame ── */
+.rl-preview-area {
+    background: #F0F0F0;
+    border-radius: 12px;
+    padding: 32px 32px 28px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+/* A/B tabs above the iframe */
+.rl-preview-tabs {
+    display: flex;
+    gap: 2px;
+    background: #E0E0E0;
+    border-radius: 8px;
+    padding: 3px;
+    align-self: center;
+}
+
+.rl-preview-tab {
+    padding: 6px 18px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #555E61;
+    transition: background 0.12s, color 0.12s;
+    border: none;
+    background: transparent;
+    font-family: 'Livesport Finder LCGJK', sans-serif;
+    user-select: none;
+}
+
+.rl-preview-tab.is-active {
+    background: #FFFFFF;
+    color: #001E28;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+/* Device frame wrapping the iframe */
+.rl-device {
+    position: relative;
+    background: #1A1A1A;
+    border-radius: 36px;
+    padding: 12px;
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,0.06),
+        0 8px 32px rgba(0,0,0,0.28),
+        0 2px 8px rgba(0,0,0,0.18);
+    width: fit-content;
+}
+
+.rl-device__screen {
+    border-radius: 26px;
+    overflow: hidden;
+    display: block;
+    background: #FFFFFF;
+    width: 393px;
+}
+
+.rl-device__screen iframe {
+    display: block;
+    border: none;
+    width: 393px;
+    height: 852px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* ── Content sections ── */
+.rl-content-section {
+    margin-bottom: 48px;
+    scroll-margin-top: 80px;
+}
+
+.rl-content-section__title {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: #171717;
+    margin-bottom: 16px;
+}
+
+.rl-content-section__body {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #404040;
+}
+
+.rl-content-section__body p { margin-bottom: 14px; }
+.rl-content-section__body p:last-child { margin-bottom: 0; }
+
+/* Task list */
+.rl-tasks {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.rl-task {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #FAFAFA;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #404040;
+}
+
+.rl-task__num {
+    font-size: 11px;
+    font-weight: 700;
+    color: #FFFFFF;
+    background: #0F2D37;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Research goal tag */
+.rl-goal-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background: #FFF0F3;
+    border: 1px solid #FFB3C1;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #CC0033;
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* Bullet / Q / dot task nums */
+.rl-task__num--light {
+    background: transparent;
+    color: #999;
+    font-size: 15px;
+    border: 1px solid #D4D4D4;
+}
