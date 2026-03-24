@@ -1,5 +1,12 @@
 {
   "rewrites": [
-    { "source": "/:path*", "destination": "/FlashscorePrototypeWeb/:path*" }
+    {
+      "source": "/",
+      "destination": "/FlashscorePrototypeWeb/"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/FlashscorePrototypeWeb/:path*"
+    }
   ]
 }
